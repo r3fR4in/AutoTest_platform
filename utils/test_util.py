@@ -47,7 +47,7 @@ def replace_environment_variable(s, model, e_id):
 def debug(log, e_id, title, url, header, method, body, param, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
-    start_line = log.get_number_of_rows()
+    # start_line = log.get_number_of_rows()
     try:
         # 設置請求頭
         debug_log.append(log.info_return_message("标题:" + title))
