@@ -1,0 +1,258 @@
+[2022-01-05 15:50:44,954] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:50:44,956] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 15:50:44,956] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 15:50:44,957] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:50:44,958] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 15:50:44,959] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 15:50:45,037] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 15:50:45,038] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 07:50:13 GMT"}
+[2022-01-05 15:50:45,038] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641369013781, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 15:50:45,039] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:50:45,040] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:52:54,516] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:52:54,517] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 15:52:54,518] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 15:52:54,519] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:52:54,520] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 15:52:54,521] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 15:52:54,565] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 15:52:54,566] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 07:52:23 GMT"}
+[2022-01-05 15:52:54,567] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641369143319, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 15:52:54,568] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:52:54,568] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:53:58,589] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:53:58,590] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 15:53:58,590] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 15:53:58,591] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:53:58,592] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 15:53:58,593] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 15:53:58,639] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 15:53:58,640] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 07:53:27 GMT"}
+[2022-01-05 15:53:58,641] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641369207398, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 15:53:58,641] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:53:58,642] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:44,741] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:44,741] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,741] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:44,742] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:44,742] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,742] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:44,743] [log.py|__console] [line:37] INFO    : 测试一下
+[2022-01-05 15:55:44,744] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,743] [log.py|__console] [line:37] INFO    : 测试一下
+[2022-01-05 15:55:44,756] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:44,756] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,756] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:44,757] [log.py|__console] [line:37] INFO    : 标题:测试一下
+[2022-01-05 15:55:44,757] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,757] [log.py|__console] [line:37] INFO    : 标题:测试一下
+[2022-01-05 15:55:44,758] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:44,759] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,758] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:44,760] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:44,760] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,760] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:44,760] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "BasicY2l0aWMtd2EtdHJpYWw6Y2l0aWNAODkzNQ=="}
+[2022-01-05 15:55:44,760] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,760] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "BasicY2l0aWMtd2EtdHJpYWw6Y2l0aWNAODkzNQ=="}
+[2022-01-05 15:55:44,761] [log.py|__console] [line:37] INFO    : 请求体:{"channel":"whatsapp","to":"85259842833","whatsapp":{"type":"text","text":{"body":"测试"},"preview_url":false}}
+[2022-01-05 15:55:44,761] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,761] [log.py|__console] [line:37] INFO    : 请求体:{"channel":"whatsapp","to":"85259842833","whatsapp":{"type":"text","text":{"body":"测试"},"preview_url":false}}
+[2022-01-05 15:55:44,967] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:44,969] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,967] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:44,971] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Encoding": "gzip", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT", "Keep-Alive": "timeout=60", "Connection": "keep-alive"}
+[2022-01-05 15:55:44,972] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,971] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Encoding": "gzip", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT", "Keep-Alive": "timeout=60", "Connection": "keep-alive"}
+[2022-01-05 15:55:44,976] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "08021000", "message": "Account Key not yet bind to WhatsApp API number "}
+[2022-01-05 15:55:44,977] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,976] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "08021000", "message": "Account Key not yet bind to WhatsApp API number "}
+[2022-01-05 15:55:44,977] [log.py|__console] [line:37] INFO    : 断言替换环境变量
+[2022-01-05 15:55:44,977] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:44,977] [log.py|__console] [line:37] INFO    : 断言替换环境变量
+[2022-01-05 15:55:45,011] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-01-05 15:55:45,012] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,011] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-01-05 15:55:45,016] [log.py|__console] [line:37] INFO    : 断言内容:success1
+[2022-01-05 15:55:45,017] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,016] [log.py|__console] [line:37] INFO    : 断言内容:success1
+[2022-01-05 15:55:45,019] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-01-05 15:55:45,019] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,019] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-01-05 15:55:45,020] [log.py|__console] [line:37] INFO    : 断言模式:equal
+[2022-01-05 15:55:45,021] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,020] [log.py|__console] [line:37] INFO    : 断言模式:equal
+[2022-01-05 15:55:45,022] [log.py|__console] [line:37] INFO    : 断言内容:success2
+[2022-01-05 15:55:45,024] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,022] [log.py|__console] [line:37] INFO    : 断言内容:success2
+[2022-01-05 15:55:45,025] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-01-05 15:55:45,025] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,025] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-01-05 15:55:45,027] [log.py|__console] [line:37] INFO    : 断言模式:not in
+[2022-01-05 15:55:45,027] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,027] [log.py|__console] [line:37] INFO    : 断言模式:not in
+[2022-01-05 15:55:45,028] [log.py|__console] [line:37] INFO    : 断言内容:success3
+[2022-01-05 15:55:45,029] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,028] [log.py|__console] [line:37] INFO    : 断言内容:success3
+[2022-01-05 15:55:45,030] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-01-05 15:55:45,030] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,030] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-01-05 15:55:45,031] [log.py|__console] [line:37] INFO    : 断言模式:not equal
+[2022-01-05 15:55:45,031] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,031] [log.py|__console] [line:37] INFO    : 断言模式:not equal
+[2022-01-05 15:55:45,033] [log.py|__console] [line:37] INFO    : 断言内容:test1
+[2022-01-05 15:55:45,034] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,033] [log.py|__console] [line:37] INFO    : 断言内容:test1
+[2022-01-05 15:55:45,035] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-01-05 15:55:45,035] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,035] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-01-05 15:55:45,036] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 15:55:45,036] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,036] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 15:55:45,038] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:45,038] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,038] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:45,120] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:45,120] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,120] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:45,121] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:45,121] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,121] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:45,121] [log.py|__console] [line:37] INFO    : tt
+[2022-01-05 15:55:45,122] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,121] [log.py|__console] [line:37] INFO    : tt
+[2022-01-05 15:55:45,125] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:45,125] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,125] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:45,126] [log.py|__console] [line:37] INFO    : 标题:tt
+[2022-01-05 15:55:45,126] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,126] [log.py|__console] [line:37] INFO    : 标题:tt
+[2022-01-05 15:55:45,127] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:45,127] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,127] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:45,127] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:45,127] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,127] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:45,128] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-01-05 15:55:45,128] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,128] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-01-05 15:55:45,143] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:45,144] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,143] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:45,146] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT"}
+[2022-01-05 15:55:45,146] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,146] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT"}
+[2022-01-05 15:55:45,147] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "00000001", "message": "HttpMessageNotReadableException Error"}
+[2022-01-05 15:55:45,147] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,147] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "00000001", "message": "HttpMessageNotReadableException Error"}
+[2022-01-05 15:55:45,148] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:55:45,148] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,148] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:55:45,149] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:45,149] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,149] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:45,217] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:45,217] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,217] [log.py|__console] [line:37] INFO    : whatsapp API
+[2022-01-05 15:55:45,217] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:45,218] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,217] [log.py|__console] [line:37] INFO    : test
+[2022-01-05 15:55:45,218] [log.py|__console] [line:37] INFO    : tt2
+[2022-01-05 15:55:45,218] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,218] [log.py|__console] [line:37] INFO    : tt2
+[2022-01-05 15:55:45,223] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:45,223] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,223] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 15:55:45,224] [log.py|__console] [line:37] INFO    : 标题:tt2
+[2022-01-05 15:55:45,224] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,224] [log.py|__console] [line:37] INFO    : 标题:tt2
+[2022-01-05 15:55:45,224] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:45,225] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,224] [log.py|__console] [line:37] INFO    : url:http://172.30.22.186:8003/eep_emg/whatsapp/message
+[2022-01-05 15:55:45,225] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:45,225] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,225] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 15:55:45,226] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-01-05 15:55:45,226] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,226] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-01-05 15:55:45,239] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:45,240] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,239] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-01-05 15:55:45,240] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT"}
+[2022-01-05 15:55:45,241] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,240] [log.py|__console] [line:37] INFO    : 响应头:{"Pragma": "no-cache", "Cache-Control": "no-cache", "Expires": "Wed, 31 Dec 1969 23:59:59 GMT", "Access-Control-Allow-Methods": "POST, GET, PUT, DELETE", "Access-Control-Allow-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "Access-Control-Allow-Credentials": "true", "Access-Control-Expose-Headers": "UndoneCount, UnreadCount, language, appName, Authorization, Content-Type, Content-Disposition", "X-Content-Type-Options": "nosniff", "X-XSS-Protection": "1; mode=block", "vary": "accept-encoding", "Content-Type": "application/json", "Transfer-Encoding": "chunked", "Date": "Wed, 05 Jan 2022 07:55:11 GMT"}
+[2022-01-05 15:55:45,243] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "00000001", "message": "HttpMessageNotReadableException Error"}
+[2022-01-05 15:55:45,243] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,243] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "00000001", "message": "HttpMessageNotReadableException Error"}
+[2022-01-05 15:55:45,244] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:55:45,244] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,244] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-01-05 15:55:45,244] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 15:55:45,244] [log.py|write] [line:232] WARNING : [2022-01-05 15:55:45,244] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:08:05,042] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:08:05,043] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:08:05,044] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:08:05,044] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:08:05,045] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:08:05,046] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:08:05,101] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:08:05,102] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:07:33 GMT"}
+[2022-01-05 16:08:05,103] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370053916, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:08:05,104] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:08:05,105] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:08:05,105] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:08:07,170] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:08:07,172] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:08:07,173] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:08:07,174] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:08:07,174] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:08:07,175] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:08:07,197] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:08:07,198] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:07:36 GMT"}
+[2022-01-05 16:08:07,199] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370056013, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:08:07,200] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:08:07,200] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:08:07,201] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:08:12,739] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:08:12,741] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:08:12,742] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:08:12,742] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:08:12,743] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:08:12,744] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:08:12,765] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:08:12,766] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:07:41 GMT"}
+[2022-01-05 16:08:12,767] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370061581, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:08:12,768] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:08:12,768] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:08:12,769] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:08:21,910] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:08:21,914] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:08:21,915] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:08:21,916] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:08:21,917] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:08:21,917] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:08:21,939] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:08:21,940] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:07:50 GMT"}
+[2022-01-05 16:08:21,941] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370070756, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:08:21,942] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:08:21,942] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:08:21,943] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:09:31,126] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:09:31,127] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:09:31,128] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:09:31,128] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:09:31,129] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:09:31,130] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:09:31,171] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:09:31,172] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:08:59 GMT"}
+[2022-01-05 16:09:31,172] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370139992, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:09:31,173] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:09:31,174] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:09:31,175] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:10:27,602] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:10:27,603] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:10:27,604] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:10:27,605] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:10:27,605] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:10:27,606] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:10:27,672] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:10:27,673] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:09:56 GMT"}
+[2022-01-05 16:10:27,674] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370196498, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:10:27,674] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:10:27,675] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:10:27,676] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:10:34,285] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:10:34,289] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:10:34,291] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:10:34,293] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:10:34,295] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:10:34,296] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:10:34,354] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:10:34,357] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:10:03 GMT"}
+[2022-01-05 16:10:34,359] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370203177, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:10:57,559] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:10:57,561] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:10:57,562] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:11:13,092] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:11:13,093] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:11:13,093] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:11:13,093] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:11:13,094] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:11:13,095] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:11:13,134] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:11:13,136] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:10:41 GMT"}
+[2022-01-05 16:11:13,138] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370241958, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:11:13,139] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:11:13,141] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:11:13,142] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:11:29,189] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:11:29,192] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:11:29,194] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:11:29,195] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:11:29,197] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:11:29,198] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:11:29,253] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:11:29,255] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:10:58 GMT"}
+[2022-01-05 16:11:29,256] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370258081, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:12:33,311] [log.py|__console] [line:43] ERROR   : 
+[2022-01-05 16:12:33,313] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:12:33,314] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-01-05 16:13:05,264] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-01-05 16:13:05,266] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2022-01-05 16:13:05,266] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2022-01-05 16:13:05,267] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-01-05 16:13:05,268] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2022-01-05 16:13:05,268] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2022-01-05 16:13:05,315] [log.py|__console] [line:37] INFO    : 响应码:404
+[2022-01-05 16:13:05,315] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Wed, 05 Jan 2022 08:12:34 GMT"}
+[2022-01-05 16:13:05,316] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1641370354150, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2022-01-05 16:13:05,317] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-01-05 16:13:05,318] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

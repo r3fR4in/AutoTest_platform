@@ -1,0 +1,67 @@
+[2021-12-30 11:36:23,408] [log.py|__console] [line:37] INFO    : 業務管理員
+[2021-12-30 11:36:23,409] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,408] [log.py|__console] [line:37] INFO    : 業務管理員
+[2021-12-30 11:36:23,410] [log.py|__console] [line:37] INFO    : 发票
+[2021-12-30 11:36:23,410] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,410] [log.py|__console] [line:37] INFO    : 发票
+[2021-12-30 11:36:23,411] [log.py|__console] [line:37] INFO    : linda test
+[2021-12-30 11:36:23,411] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,411] [log.py|__console] [line:37] INFO    : linda test
+[2021-12-30 11:36:23,419] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2021-12-30 11:36:23,420] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,419] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2021-12-30 11:36:23,421] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2021-12-30 11:36:23,421] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,421] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2021-12-30 11:36:23,422] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2021-12-30 11:36:23,422] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,422] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2021-12-30 11:36:23,422] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2021-12-30 11:36:23,423] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,422] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2021-12-30 11:36:23,423] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2021-12-30 11:36:23,423] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,423] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2021-12-30 11:36:23,424] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2021-12-30 11:36:23,424] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,424] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2021-12-30 11:36:23,537] [log.py|__console] [line:37] INFO    : 响应码:404
+[2021-12-30 11:36:23,537] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,537] [log.py|__console] [line:37] INFO    : 响应码:404
+[2021-12-30 11:36:23,538] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Thu, 30 Dec 2021 03:32:56 GMT"}
+[2021-12-30 11:36:23,538] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,538] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Thu, 30 Dec 2021 03:32:56 GMT"}
+[2021-12-30 11:36:23,539] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1640835176639, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2021-12-30 11:36:23,539] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,539] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1640835176639, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2021-12-30 11:36:23,539] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2021-12-30 11:36:23,540] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,539] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2021-12-30 11:36:23,540] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2021-12-30 11:36:23,540] [log.py|write] [line:232] WARNING : [2021-12-30 11:36:23,540] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2021-12-30 11:41:36,272] [log.py|__console] [line:37] INFO    : 業務管理員
+[2021-12-30 11:41:36,272] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,272] [log.py|__console] [line:37] INFO    : 業務管理員
+[2021-12-30 11:41:36,273] [log.py|__console] [line:37] INFO    : 发票
+[2021-12-30 11:41:36,273] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,273] [log.py|__console] [line:37] INFO    : 发票
+[2021-12-30 11:41:36,274] [log.py|__console] [line:37] INFO    : linda test
+[2021-12-30 11:41:36,274] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,274] [log.py|__console] [line:37] INFO    : linda test
+[2021-12-30 11:41:36,283] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2021-12-30 11:41:36,284] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,283] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2021-12-30 11:41:36,284] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2021-12-30 11:41:36,284] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,284] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2021-12-30 11:41:36,285] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2021-12-30 11:41:36,285] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,285] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2021-12-30 11:41:36,286] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2021-12-30 11:41:36,286] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,286] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2021-12-30 11:41:36,286] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2021-12-30 11:41:36,287] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,286] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2021-12-30 11:41:36,287] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2021-12-30 11:41:36,288] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,287] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2021-12-30 11:41:36,326] [log.py|__console] [line:37] INFO    : 响应码:404
+[2021-12-30 11:41:36,326] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,326] [log.py|__console] [line:37] INFO    : 响应码:404
+[2021-12-30 11:41:36,327] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Thu, 30 Dec 2021 03:38:09 GMT"}
+[2021-12-30 11:41:36,327] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,327] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Thu, 30 Dec 2021 03:38:09 GMT"}
+[2021-12-30 11:41:36,328] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1640835489448, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2021-12-30 11:41:36,328] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,328] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1640835489448, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2021-12-30 11:41:36,328] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2021-12-30 11:41:36,328] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,328] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2021-12-30 11:41:36,329] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2021-12-30 11:41:36,329] [log.py|write] [line:232] WARNING : [2021-12-30 11:41:36,329] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2021-12-30 12:04:46,731] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2021-12-30 12:05:35,659] [log.py|__console] [line:37] INFO    : 标题:linda test
+[2021-12-30 12:05:35,671] [log.py|__console] [line:37] INFO    : url:http://172.30.22.167:7003/n/callback/updateStatusToCSMSReq
+[2021-12-30 12:05:35,672] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2021-12-30 12:05:35,674] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json"}
+[2021-12-30 12:05:35,676] [log.py|__console] [line:37] INFO    : 请求体:{"ID1":"2021101300158","ID2":"CS211014002002","ID3":"2021101401","status1":4,"inputBaseMessage":{"apiName":"updateStatusToCSMSReq","apiVersion":"1.0","systemModel":"QUOTE_STATUS_UPDATE","reqWho":"csr","systemChannel":"CSMS"}}
+[2021-12-30 12:05:35,736] [log.py|__console] [line:37] INFO    : 响应码:404
+[2021-12-30 12:05:35,738] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json;charset=UTF-8", "Transfer-Encoding": "chunked", "Content-Encoding": "gzip", "Vary": "Accept-Encoding", "Date": "Thu, 30 Dec 2021 04:02:08 GMT"}
+[2021-12-30 12:05:35,740] [log.py|__console] [line:37] INFO    : 响应内容:{"timestamp": 1640836928950, "status": 404, "error": "Not Found", "message": "No message available", "path": "/n/callback/updateStatusToCSMSReq"}
+[2021-12-30 12:05:35,741] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2021-12-30 12:05:35,743] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
