@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="隨便更更">
-      <change beforePath="$PROJECT_DIR$/utils/requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/requests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/test_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/test_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +13,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AutoTest_platform$time.coverage" NAME="time Coverage Results" MODIFIED="1623737409007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$manage.coverage" NAME="manage Coverage Results" MODIFIED="1620293623281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1641717084349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1641722313419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1640594730646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$assert.coverage" NAME="assert Coverage Results" MODIFIED="1624003849148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$test_util.coverage" NAME="test_util Coverage Results" MODIFIED="1624852844940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
@@ -58,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="187">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -67,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/test_util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
-              <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+              <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -82,8 +81,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/requests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="167">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,6 +140,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
               <caret line="650" column="39" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="342" column="5" selection-start-line="342" selection-start-column="5" selection-end-line="342" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-input#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-button#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-button#1;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-select#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-input#0;n#el-form-item#2;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#5946#6043#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,7 +223,6 @@
         <option value="$PROJECT_DIR$/appfront/src/views/index.vue" />
         <option value="$PROJECT_DIR$/appfront/src/main.js" />
         <option value="$PROJECT_DIR$/appfront/src/router/index.js" />
-        <option value="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" />
         <option value="$PROJECT_DIR$/config/blueprintConfig.py" />
         <option value="$PROJECT_DIR$/Lib/site-packages/celery/utils/timer2.py" />
         <option value="$PROJECT_DIR$/views/apiTest/test.py" />
@@ -233,6 +258,7 @@
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" />
         <option value="$PROJECT_DIR$/utils/requests.py" />
         <option value="$PROJECT_DIR$/utils/test_util.py" />
+        <option value="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" />
       </list>
     </option>
   </component>
@@ -598,7 +624,7 @@
       <workItem from="1636955647818" duration="73000000" />
       <workItem from="1640153491111" duration="14977000" />
       <workItem from="1640595526211" duration="43077000" />
-      <workItem from="1640946745037" duration="14618000" />
+      <workItem from="1640946745037" duration="16822000" />
     </task>
     <task id="LOCAL-00001" summary="隨便更更">
       <created>1641460444805</created>
@@ -611,7 +637,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="824987000" />
+    <option name="totallyTimeSpent" value="827191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,14 +650,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972875" visible="true" weight="0.22654584" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972875" visible="true" weight="0.22654584" />
       <window_info id="Structure" order="1" sideWeight="0.5027125" side_tool="true" weight="0.22654584" />
       <window_info id="Favorites" order="2" sideWeight="0.5027125" side_tool="true" weight="0.22654584" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49413645" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49093816" visible="true" weight="0.4002169" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49093816" visible="true" weight="0.4002169" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
@@ -717,15 +744,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="隨便更更" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/test_util.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.FlaskServer">
         <watch expression="celery.AsyncResult" />
@@ -961,39 +979,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/apiTest/apiTestDetailModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/apiTest/apiView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="650" column="39" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1015,13 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="494" selection-start-column="494" selection-end-column="494" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/apiModule.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="343" column="24" lean-forward="true" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1055,16 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lib/site-packages/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1072,19 +1044,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/requests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="167">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/test_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
-          <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+          <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/apiTest/apiView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/apiModule.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="343" column="24" lean-forward="true" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="650" column="39" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="342" column="5" selection-start-line="342" selection-start-column="5" selection-end-line="342" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-input#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#1;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-select#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-input#0;n#el-form-item#2;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#5946#6043#0" expanded="true" />
           </folding>
         </state>
       </provider>

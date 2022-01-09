@@ -126,7 +126,6 @@
 <script>
   import {apiTestcaseData, debugApi, saveApiTestcase, deleteUploadFile} from '../../api/apiTestApi'
   import JsonView from '../../components/JsonView'
-  // import io from 'socket.io-client'
 export default {
   components: {JsonView},
   data() {
@@ -163,7 +162,7 @@ export default {
       }],
       apiData: {
         api_id: '',
-        encode: 'utf8',
+        encode: '',
         id: '',
         request_body: '',
         request_param: '',
@@ -203,7 +202,11 @@ export default {
             })
           } else {
             this.apiData.api_id = res.data.api_id;
-            this.apiData.encode = res.data.encode;
+            if(res.data.encode === '') {
+              this.apiData.encode = 'utf8'
+            } else {
+              this.apiData.encode = res.data.encode;
+            }
             this.apiData.id = res.data.id;
             this.apiData.request_body = res.data.request_body;
             this.apiData.request_param = res.data.request_param;
@@ -342,48 +345,6 @@ export default {
           this.$message.error('移除文件失败，请稍后再试！')
         })
     }
-    // debug(){
-    //   // // 要和后端的namespace相同
-    //   // let namespace = '/debug_log';
-    //   // let websocket_url = document.domain + ':' + location.port + namespace;
-    //   // let socket = io.connect(websocket_url);
-    //   // socket.emit('socket_connect', 'connect');
-    //   // socket.on('socket_connect', function (res) {
-    //   //   console.log(res);
-    //   // });
-    //   debugApi(this.apiData)
-    //     .then(res => {
-    //       if (res.success) {
-    //         // 要和后端的namespace相同
-    //         let namespace = '/debug_log';
-    //         let websocket_url = document.domain + ':' + location.port + namespace;
-    //         let socket = io.connect(websocket_url);
-    //         socket.emit('socket_connect', 'connect');
-    //         socket.on('socket_connect', function (res) {
-    //           console.log(res);
-    //         });
-    //         let _this = this;
-    //         socket.on('debug', function (res) {
-    //           _this.debugLog.push(res);
-    //           console.log(_this.debugLog);
-    //           // if(res.search('==============================================end==============================================')){
-    //           //   _this.debugLog.push(res);
-    //           //   socket.close();
-    //           // } else {
-    //           //   _this.debugLog.push(res);
-    //           // }
-    //         })
-    //       }else  {
-    //         this.$message({
-    //           type: 'info',
-    //           message: res.msg
-    //         })
-    //       }
-    //     });
-    //   socket.on('socket_close', function () {
-    //     socket.close();
-    //   })
-    // }
   }
 }
 </script>
