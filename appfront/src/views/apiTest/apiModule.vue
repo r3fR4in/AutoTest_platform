@@ -8,7 +8,7 @@
       <!-- 搜索筛选 -->
       <el-form :inline="true" :model="formInline" class="user-search">
         <el-form-item label="项目名称：">
-          <el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync"></el-autocomplete>
+          <el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync" @input="inputChange"></el-autocomplete>
         </el-form-item>
         <el-form-item label="项目环境名称：">
           <el-select size="small" v-model="value" clearable placeholder="请选择" @change="handleChange">
@@ -336,6 +336,13 @@ export default {
       });
       this.formInline.projectEnvironment_name = obj.label;
       this.getdata(this.formInline);
+    },
+    //項目名稱修改后清空環境選擇
+    inputChange(){
+      this.formInline.projectEnvironment_id = '';
+      this.formInline.projectEnvironment_name = '';
+      this.options = '';
+      this.value = '';
     }
   }
 }
