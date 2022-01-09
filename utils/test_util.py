@@ -1,6 +1,8 @@
 import mimetypes
 import os
 
+from requests import Response
+
 from utils.extensions import db
 from models.apiTest.environmentVariableModel import EnvironmentVariable
 from models.apiTest.apiTestDetailModel import ApiTestDetail
@@ -96,9 +98,10 @@ def debug(log, e_id, title, url, header, method, body, param, files, encode, ver
         else:
             re = requests.SendRequests(method, url, log).request(headers=header, verify=verify)
 
-        # 判断有没有拿到响应
-        if re is None:
-            debug_log.append(log.info_return_message("获取响应失败，请检查"))
+        # 判断有没有拿到响应，沒有則打印異常信息
+        if type(re) is not Response:
+            debug_log.append(log.error_return_message(str(re)))
+            debug_log.append(log.error_return_message("获取响应失败，请检查"))
             final_result = False
             raise Exception  # 主動抛出異常，執行finally語句
 

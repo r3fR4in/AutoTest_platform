@@ -23,4 +23,5 @@ class SendRequests():
             return re
         except Exception as e:
             self.log.error(e)
+            return e
 
