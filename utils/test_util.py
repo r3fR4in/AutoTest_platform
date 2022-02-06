@@ -74,6 +74,7 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
             body = replace_environment_variable(body, EnvironmentVariable, e_id)
         # 判断有无文件，有则打印日志
         if files:
+            files = ast.literal_eval(str(files))
             debug_log.append(log.info_return_message("文件名:" + files[0]['name'] + "，後臺文件名:" + files[0]['realname']))
         # 发送请求
         re = requests.SendRequests(method, url, header, body, files, encode,  verify, log).request()
@@ -184,7 +185,7 @@ def execute_apitest_task(task_id):
                         # request_param = api_testcase1.request_param.replace('\n', '').replace(' ', '')
                         if request_header != '':
                             request_header = ast.literal_eval(request_header)
-                        debug_log = debug(log, e_id[0], api_testcase1.title, api_testcase1.url, request_header, api_testcase1.request_method, request_body, []
+                        debug_log = debug(log, e_id[0], api_testcase1.title, api_testcase1.url, request_header, api_testcase1.request_method, request_body, api_testcase1.file_name
                                           , api_testcase1.encode, api_testcase1.verify, api_testcase1.is_assert, api_testcase1.assert_content, api_testcase1.is_post_processor
                                           , api_testcase1.post_processor_content)
                         if debug_log[-1] is True:
