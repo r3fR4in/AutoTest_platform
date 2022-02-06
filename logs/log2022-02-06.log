@@ -1,0 +1,113 @@
+[2022-02-06 13:17:29,687] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:17:29,689] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,687] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:17:29,690] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:17:29,691] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,690] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:17:29,691] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:17:29,692] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,691] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:17:29,710] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:17:29,711] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,710] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:17:29,737] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:17:29,738] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,737] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:17:29,739] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:17:29,739] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,739] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:17:29,740] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:17:29,742] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,740] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:17:29,753] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:17:29,754] [log.py|write] [line:232] WARNING : [2022-02-06 13:17:29,753] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:32:53,262] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-02-06 13:32:53,263] [log.py|__console] [line:37] INFO    : 标题:测试
+[2022-02-06 13:32:53,264] [log.py|__console] [line:37] INFO    : url:http://127.0.0.1:5000/project/projectList?currentPage=1&pageSize=10&projectName=
+[2022-02-06 13:32:53,264] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-02-06 13:32:53,265] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-02-06 13:32:53,266] [log.py|__console] [line:37] INFO    : 文件名:.gitconfig，後臺文件名:d651f57b707a475e9e212416cc76a163
+[2022-02-06 13:32:53,297] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-02-06 13:32:53,297] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json", "Content-Length": "51", "Server": "Werkzeug/2.0.2 Python/3.7.5", "Date": "Sun, 06 Feb 2022 05:32:53 GMT"}
+[2022-02-06 13:32:53,298] [log.py|__console] [line:37] INFO    : 响应内容:{"code": 401, "msg": "缺少参数token"}
+[2022-02-06 13:32:53,299] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-02-06 13:32:53,299] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-02-06 13:34:23,305] [log.py|__console] [line:43] ERROR   : 'NoneType' object has no attribute 'status'
+[2022-02-06 13:34:23,305] [log.py|write] [line:232] WARNING : [2022-02-06 13:34:23,305] [log.py|__console] [line:43] ERROR   : 'NoneType' object has no attribute 'status'
+[2022-02-06 13:36:45,134] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:36:45,135] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,134] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:36:45,137] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:36:45,137] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,137] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:36:45,138] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:36:45,138] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,138] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:36:45,165] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:36:45,166] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,165] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:36:45,192] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:36:45,192] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,192] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:36:45,193] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:36:45,193] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,193] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:36:45,194] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:36:45,195] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,194] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:36:45,205] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:36:45,206] [log.py|write] [line:232] WARNING : [2022-02-06 13:36:45,205] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:38:32,979] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:38:32,979] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:32,979] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:38:32,980] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:38:32,980] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:32,980] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:38:32,981] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:38:32,981] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:32,981] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:38:32,986] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:38:32,987] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:32,986] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:38:33,003] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:38:33,004] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:33,003] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:38:33,004] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:38:33,004] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:33,004] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:38:33,005] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:38:33,005] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:33,005] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:38:33,024] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:38:33,024] [log.py|write] [line:232] WARNING : [2022-02-06 13:38:33,024] [log.py|__console] [line:43] ERROR   : 'ApiTestcase' object has no attribute 'request_param'
+[2022-02-06 13:39:37,057] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:39:37,059] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,057] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:39:37,060] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:39:37,061] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,060] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:39:37,062] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:39:37,063] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,062] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:39:37,085] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-02-06 13:39:37,087] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,085] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-02-06 13:39:37,088] [log.py|__console] [line:37] INFO    : 标题:测试
+[2022-02-06 13:39:37,089] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,088] [log.py|__console] [line:37] INFO    : 标题:测试
+[2022-02-06 13:39:37,090] [log.py|__console] [line:37] INFO    : url:http://127.0.0.1:5000/project/projectList?currentPage=1&pageSize=10&projectName=
+[2022-02-06 13:39:37,091] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,090] [log.py|__console] [line:37] INFO    : url:http://127.0.0.1:5000/project/projectList?currentPage=1&pageSize=10&projectName=
+[2022-02-06 13:39:37,095] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-02-06 13:39:37,096] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,095] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-02-06 13:39:37,098] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-02-06 13:39:37,099] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,098] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-02-06 13:39:37,122] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-02-06 13:39:37,122] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,122] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-02-06 13:39:37,124] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json", "Content-Length": "51", "Server": "Werkzeug/2.0.2 Python/3.7.5", "Date": "Sun, 06 Feb 2022 05:39:37 GMT"}
+[2022-02-06 13:39:37,125] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,124] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json", "Content-Length": "51", "Server": "Werkzeug/2.0.2 Python/3.7.5", "Date": "Sun, 06 Feb 2022 05:39:37 GMT"}
+[2022-02-06 13:39:37,127] [log.py|__console] [line:37] INFO    : 响应内容:{"code": 401, "msg": "缺少参数token"}
+[2022-02-06 13:39:37,127] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,127] [log.py|__console] [line:37] INFO    : 响应内容:{"code": 401, "msg": "缺少参数token"}
+[2022-02-06 13:39:37,128] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-02-06 13:39:37,129] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,128] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-02-06 13:39:37,129] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-02-06 13:39:37,129] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,129] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-02-06 13:39:37,155] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:39:37,156] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,155] [log.py|__console] [line:37] INFO    : 测试模块
+[2022-02-06 13:39:37,157] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:39:37,157] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,157] [log.py|__console] [line:37] INFO    : 查询项目
+[2022-02-06 13:39:37,158] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:39:37,158] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,158] [log.py|__console] [line:37] INFO    : 测试
+[2022-02-06 13:39:37,165] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-02-06 13:39:37,165] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,165] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-02-06 13:39:37,166] [log.py|__console] [line:37] INFO    : 标题:测试
+[2022-02-06 13:39:37,168] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,166] [log.py|__console] [line:37] INFO    : 标题:测试
+[2022-02-06 13:39:37,168] [log.py|__console] [line:37] INFO    : url:http://127.0.0.1:5000/project/projectList?currentPage=1&pageSize=10&projectName=
+[2022-02-06 13:39:37,169] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,168] [log.py|__console] [line:37] INFO    : url:http://127.0.0.1:5000/project/projectList?currentPage=1&pageSize=10&projectName=
+[2022-02-06 13:39:37,170] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-02-06 13:39:37,171] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,170] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-02-06 13:39:37,171] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-02-06 13:39:37,172] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,171] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-02-06 13:39:37,185] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-02-06 13:39:37,185] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,185] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-02-06 13:39:37,186] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json", "Content-Length": "51", "Server": "Werkzeug/2.0.2 Python/3.7.5", "Date": "Sun, 06 Feb 2022 05:39:37 GMT"}
+[2022-02-06 13:39:37,186] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,186] [log.py|__console] [line:37] INFO    : 响应头:{"Content-Type": "application/json", "Content-Length": "51", "Server": "Werkzeug/2.0.2 Python/3.7.5", "Date": "Sun, 06 Feb 2022 05:39:37 GMT"}
+[2022-02-06 13:39:37,188] [log.py|__console] [line:37] INFO    : 响应内容:{"code": 401, "msg": "缺少参数token"}
+[2022-02-06 13:39:37,189] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,188] [log.py|__console] [line:37] INFO    : 响应内容:{"code": 401, "msg": "缺少参数token"}
+[2022-02-06 13:39:37,190] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-02-06 13:39:37,190] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,190] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-02-06 13:39:37,191] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-02-06 13:39:37,192] [log.py|write] [line:232] WARNING : [2022-02-06 13:39:37,191] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

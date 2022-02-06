@@ -45,7 +45,7 @@ def list_apiTestcase():
             # dic['url'] = c_url
             del dic['encode']
             del dic['request_body']
-            del dic['request_param']
+            # del dic['request_param']
             del dic['request_header']
             del dic['verify']
             list.append(dic)
@@ -82,7 +82,7 @@ def copy_testcase():
     try:
         apiTestcase1 = ApiTestcase.query.get(param_id)
         apitestcase2 = ApiTestcase(api_id=apiTestcase1.api_id, title=apiTestcase1.title, request_method=apiTestcase1.request_method, request_header=apiTestcase1.request_header
-                                   , request_body=apiTestcase1.request_body, request_param=apiTestcase1.request_param, encode=apiTestcase1.encode, verify=apiTestcase1.verify
+                                   , request_body=apiTestcase1.request_body, encode=apiTestcase1.encode, verify=apiTestcase1.verify
                                    , url=apiTestcase1.url, is_assert=apiTestcase1.is_assert, assert_content=apiTestcase1.assert_content, is_post_processor=apiTestcase1.is_post_processor
                                    , post_processor_content=apiTestcase1.post_processor_content)
         db.session.add(apitestcase2)
@@ -118,7 +118,7 @@ def get_apiTestcase():
                     file_list = eval(output['data']['file_name'])
                     file_name = []
                     for file in file_list:
-                        file_name.append({'name': file['old'], 'realname': file['new']})
+                        file_name.append({'name': file['name'], 'realname': file['realname']})
                     output['data']['file_name'] = file_name
         else:
             # 获取完整的测试url和request_method
@@ -151,7 +151,7 @@ def save_apiTestcase():
         param_encode = data['encode']
         param_id = data['id']
         param_request_body = data['request_body']
-        param_request_param = data['request_param']
+        # param_request_param = data['request_param']
         param_request_header = data['request_header']
         param_request_method = data['request_method']
         param_title = data['title']
@@ -165,7 +165,7 @@ def save_apiTestcase():
         # 根据id判断新增或编辑，id为空则是新增，否则为编辑
         if param_id == '':
             apiTestcase1 = ApiTestcase(api_id=param_api_id, title=param_title, request_method=param_request_method, request_header=param_request_header, request_body=param_request_body
-                                       , request_param=param_request_param, encode=param_encode, verify=param_verify, url=param_url, is_assert=param_assert
+                                       , encode=param_encode, verify=param_verify, url=param_url, is_assert=param_assert
                                        , assert_content=param_assert_content, is_post_processor=param_post_processor
                                        , post_processor_content=param_post_processor_content)
             db.session.add(apiTestcase1)
@@ -178,7 +178,7 @@ def save_apiTestcase():
             apiTestcase1.request_method = param_request_method
             apiTestcase1.request_header = param_request_header
             apiTestcase1.request_body = param_request_body
-            apiTestcase1.request_param = param_request_param
+            # apiTestcase1.request_param = param_request_param
             apiTestcase1.encode = param_encode
             apiTestcase1.verify = param_verify
             apiTestcase1.url = param_url
@@ -212,10 +212,10 @@ def getAndSaveUploadFile():
         apiTestcase1 = ApiTestcase.query.get(param_id)
         if apiTestcase1.file_name == '' or apiTestcase1.file_name is None:
             # apiTestcase1.file_name = str([file_name + suffix])
-            apiTestcase1.file_name = str([{'new': file_name + suffix, 'old': file.filename}])
+            apiTestcase1.file_name = str([{'realname': file_name + suffix, 'name': file.filename}])
         else:
             file_list = eval(apiTestcase1.file_name)
-            file_list.append({'new': file_name + suffix, 'old': file.filename})
+            file_list.append({'realname': file_name + suffix, 'name': file.filename})
             apiTestcase1.file_name = str(file_list)
         db.session.commit()
         file.save(setting.updateFiles_DIR + '/' + file_name + suffix)
@@ -275,7 +275,7 @@ def debugApi():
         param_encode = data['encode']
         # param_id = request.form.get('id')
         param_request_body = data['request_body'].replace('\n', '').replace(' ', '')
-        param_request_param = data['request_param'].replace('\n', '').replace(' ', '')
+        # param_request_param = data['request_param'].replace('\n', '').replace(' ', '')
         param_request_file = data['request_file']
         param_request_header = data['request_header'].replace('\n', '').replace(' ', '')
         if param_request_header != '':
@@ -293,7 +293,7 @@ def debugApi():
         e_id = db.session.query(ApiModule.projectEnvironment_id).join(Api).filter(Api.id == param_api_id).first()
 
         data = test_util.debug(log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
-                     , param_request_param, param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
+                     , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
                      , param_post_processor_content)
         del data[-1]  # 返回值最後一行會帶上測試結果的bool值，測試任務用的，所以要調試這裏要刪掉
 

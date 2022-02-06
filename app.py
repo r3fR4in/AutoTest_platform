@@ -22,7 +22,7 @@
 # app.config['REDIS_EXPIRE'] = setting.REDIS['EXPIRE']
 #
 # # 配置celery並創建實例，需要用時從app引用celery
-# # 啓動命令：進入項目目錄的Scripts，celery -A app.celery worker -l INFO
+# # 啓動命令：進入項目目錄的Scripts，celery -A app.celery worker -l INFO -P eventlet -c 10
 # app.config['broker_url'] = "redis://localhost:6379/1"
 # app.config['result_backend'] = "redis://localhost:6379/2"
 # # celery = Celery(app.name, broker=app.config['broker_url'], backend=app.config['result_backend'])
@@ -64,6 +64,9 @@ from utils.extensions import db, celery
 
 app = create_app()
 db.init_app(app)
+# 创建表用的
+# with app.app_context():
+#     db.create_all()
 celery.init_app(app)
 
 

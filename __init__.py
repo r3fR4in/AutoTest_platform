@@ -23,8 +23,8 @@ def create_app():
 
     # 配置celery並創建實例，需要用時從app引用celery
     # 啓動命令：進入項目目錄的Scripts，celery -A app:celery worker -l INFO -P threads
-    app.config['broker_url'] = "redis://localhost:6379/1"
-    app.config['result_backend'] = "redis://localhost:6379/2"
+    app.config['broker_url'] = "redis://127.0.0.1:6379/1"
+    app.config['result_backend'] = "redis://127.0.0.1:6379/2"
     app.config['worker_redirects_stdouts_level'] = "INFO"
     app.config['worker_redirect_stdouts'] = "Disable"
     # celery = Celery(app.name, broker=app.config['broker_url'], backend=app.config['result_backend'])

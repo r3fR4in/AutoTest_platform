@@ -46,7 +46,7 @@ def replace_environment_variable(s, model, e_id):
 
 """调试api"""
 # @socketio.on('log_output', namespace='/debug_log')
-def debug(log, e_id, title, url, header, method, body, param, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
+def debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
     # start_line = log.get_number_of_rows()
@@ -68,35 +68,15 @@ def debug(log, e_id, title, url, header, method, body, param, files, encode, ver
         else:
             verify = True
 
-        # 替換環境變量后發送請求
-        if body:
-            if '{{' in body and '}}' in body:
-                debug_log.append(log.info_return_message("请求体替换环境变量"))
-                body = replace_environment_variable(body, EnvironmentVariable, e_id)
-            debug_log.append(log.info_return_message("请求体:" + str(body).replace('\'', '"')))
-            # 判斷content type
-            if "application/x-www-form-urlencoded" in str(header):  # application/x-www-form-urlencoded需要處理一下body的數據格式才能發送請求
-                body = ast.literal_eval(body)
-                re = requests.SendRequests(method, url, log).request(headers=header, data=body, verify=verify)
-            else:
-                re = requests.SendRequests(method, url, log).request(headers=header, data=body.encode(encode), verify=verify)
-        elif param:
-            if '{{' in param and '}}' in param:
-                debug_log.append(log.info_return_message("请求体替换环境变量"))
-                param = replace_environment_variable(param, EnvironmentVariable, e_id)
-            debug_log.append(log.info_return_message("请求体:" + param))
-            re = requests.SendRequests(method, url, log).request(headers=header, params=param.encode(encode), verify=verify)
-        elif files:
+        # 替換環境變量
+        if '{{' in body and '}}' in body:
+            debug_log.append(log.info_return_message("请求体替换环境变量"))
+            body = replace_environment_variable(body, EnvironmentVariable, e_id)
+        # 判断有无文件，有则打印日志
+        if files:
             debug_log.append(log.info_return_message("文件名:" + files[0]['name'] + "，後臺文件名:" + files[0]['realname']))
-            filepath = os.path.join(setting.updateFiles_DIR, files[0]['realname'])
-            file = open(filepath, 'rb')
-            if header == '':
-                header = {}
-            header["Content-Type"] = mimetypes.guess_type(filepath)[0]
-            re = requests.SendRequests(method, url, log).request(headers=header, data=file, verify=verify)
-
-        else:
-            re = requests.SendRequests(method, url, log).request(headers=header, verify=verify)
+        # 发送请求
+        re = requests.SendRequests(method, url, header, body, files, encode,  verify, log).request()
 
         # 判断有没有拿到响应，沒有則打印異常信息
         if type(re) is not Response:
@@ -160,7 +140,6 @@ def debug(log, e_id, title, url, header, method, body, param, files, encode, ver
                     final_result = False
                 else:
                     debug_log.append(log.error_return_message("断言结果:" + assert_result))
-
     except Exception as e:
         final_result = False
         if str(e) != '':
@@ -202,10 +181,10 @@ def execute_apitest_task(task_id):
                         e_id = db.session.query(ApiModule.projectEnvironment_id).join(Api).filter(Api.id == api_testcase1.api_id).first()
                         request_header = api_testcase1.request_header.replace('\n', '').replace(' ', '')
                         request_body = api_testcase1.request_body.replace('\n', '').replace(' ', '')
-                        request_param = api_testcase1.request_param.replace('\n', '').replace(' ', '')
+                        # request_param = api_testcase1.request_param.replace('\n', '').replace(' ', '')
                         if request_header != '':
                             request_header = ast.literal_eval(request_header)
-                        debug_log = debug(log, e_id[0], api_testcase1.title, api_testcase1.url, request_header, api_testcase1.request_method, request_body, request_param, []
+                        debug_log = debug(log, e_id[0], api_testcase1.title, api_testcase1.url, request_header, api_testcase1.request_method, request_body, []
                                           , api_testcase1.encode, api_testcase1.verify, api_testcase1.is_assert, api_testcase1.assert_content, api_testcase1.is_post_processor
                                           , api_testcase1.post_processor_content)
                         if debug_log[-1] is True:

@@ -69,23 +69,23 @@
             v-model="apiData.request_header">
           </el-input>
         </el-tab-pane>
-        <el-tab-pane label="Body" name="second" id="body" v-bind:disabled="this.apiData.request_param !== '' || this.apiData.request_file.length !== 0">
+        <el-tab-pane label="Body" name="second" id="body" v-bind:disabled="this.apiData.request_file.length !== 0">
           <el-input
             type="textarea"
             :rows="6"
-            placeholder='输入字典，以data形式传输，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'
+            placeholder='输入字典，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'
             v-model="apiData.request_body">
           </el-input>
         </el-tab-pane>
-        <el-tab-pane label="Params" name="third" id="param" v-bind:disabled="this.apiData.request_body !== '' || this.apiData.request_file.length !== 0">
+        <!--<el-tab-pane label="Params" name="third" id="param" v-bind:disabled="this.apiData.request_body !== '' || this.apiData.request_file.length !== 0">
           <el-input
             type="textarea"
             :rows="6"
             placeholder='输入字典，以params形式传输，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'
             v-model="apiData.request_param">
           </el-input>
-        </el-tab-pane>
-        <el-tab-pane label="Upload" name="fourth" id="upload" v-bind:disabled="this.apiData.request_body !== '' || this.apiData.request_param !==''">
+        </el-tab-pane>-->
+        <el-tab-pane label="Upload" name="fourth" id="upload" v-bind:disabled="this.apiData.request_body !== ''">
           <div style="width: 360px">
             <el-upload
               class="upload-demo"
@@ -165,7 +165,7 @@ export default {
         encode: '',
         id: '',
         request_body: '',
-        request_param: '',
+        // request_param: '',
         request_header: '',
         request_file: [],
         request_method: '',
@@ -209,7 +209,7 @@ export default {
             }
             this.apiData.id = res.data.id;
             this.apiData.request_body = res.data.request_body;
-            this.apiData.request_param = res.data.request_param;
+            // this.apiData.request_param = res.data.request_param;
             this.apiData.request_header = res.data.request_header;
             this.apiData.request_method = res.data.request_method;
             this.apiData.title = res.data.title;

@@ -16,7 +16,7 @@ class ApiTestcase(db.Model, EntityBase):
     request_method = db.Column(db.String(10))  # 请求方法
     request_header = db.Column(db.String(3000))  # 请求头
     request_body = db.Column(db.String(3000))  # 请求体
-    request_param = db.Column(db.String(3000))  # 请求体
+    # request_param = db.Column(db.String(3000))  # 请求体
     encode = db.Column(db.String(50))  # 请求体编码
     verify = db.Column(db.String(10))  # 是否移除ssl认证
     url = db.Column(db.String(500))  # url

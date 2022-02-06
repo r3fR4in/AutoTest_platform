@@ -157,7 +157,10 @@ def api_test_report():
             api_dic = {'module_name': apiTest_details[0].module_name, 'api_name': apiTest_details[0].api_name}
             testcase_list = []
             for apiTest_detail in apiTest_details:
-                testcase_dic = {'testcase_name': apiTest_detail.testcase_name, 'output_log': eval(apiTest_detail.output_log)['log'], 'status': apiTest_detail.status}
+                try:
+                    testcase_dic = {'testcase_name': apiTest_detail.testcase_name, 'output_log': eval(apiTest_detail.output_log)['log'], 'status': apiTest_detail.status}
+                except Exception as e:
+                    testcase_dic = {'testcase_name': apiTest_detail.testcase_name, 'output_log': str(e), 'status': apiTest_detail.status}
                 testcase_list.append(testcase_dic)
             api_dic['testcase'] = testcase_list
             api_list.append(api_dic)
@@ -182,7 +185,7 @@ def api_test_report():
         output = {'code': 1, 'msg': '获取测试报告成功', 'exception': None, 'success': True, 'all_count': all_count, 'pass_count': pass_count, 'fail_count': fail_count,
                   'data': api_list, 'title': title[0]}
     except Exception as e:
-        output = {'code': 0, 'msg': '获取测试报告失败', 'success': False, 'errorMsg': e}
+        output = {'code': 0, 'msg': '获取测试报告失败', 'success': False, 'errorMsg': str(e)}
 
     return jsonify(output)
 
