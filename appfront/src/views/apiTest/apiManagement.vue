@@ -224,11 +224,6 @@
         limit: 10,
         projectEnvironment_id: '',
       },
-      // 删除项目
-      seletedata: {
-        ids: '',
-        token: localStorage.getItem('logintoken')
-      },
       userparm: [], //搜索权限
       listData: [], //项目环境数据
       // 分页参数

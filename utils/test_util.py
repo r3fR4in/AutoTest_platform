@@ -77,7 +77,7 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
             files = ast.literal_eval(str(files))
             debug_log.append(log.info_return_message("文件名:" + files[0]['name'] + "，後臺文件名:" + files[0]['realname']))
         # 发送请求
-        re = requests.SendRequests(method, url, header, body, files, encode,  verify, log).request()
+        re = requests.SendRequests(method, url, header, body, files, encode, verify, log).request()
 
         # 判断有没有拿到响应，沒有則打印異常信息
         if type(re) is not Response:

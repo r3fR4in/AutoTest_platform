@@ -3,8 +3,10 @@ import ast
 from flask import Blueprint, jsonify, request
 from utils.extensions import db
 from models.base.userModel import User
-from models.base.dataDictionaryModel import dataDictionary
+from models.base.dataDictionaryModel import DataDictionary
 from utils import token_util, redis_util
+from config import setting
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 user = Blueprint('user', __name__)
 
@@ -81,7 +83,7 @@ def menu():
         user = token_util.verify_token(token)
         if user:
             role = user['role']
-            menu = dataDictionary.query.filter(dataDictionary.key == role).first()
+            menu = DataDictionary.query.filter(DataDictionary.key == role).first()
             output = {'code': 1, 'data': ast.literal_eval(menu.value), 'success': True}
             return jsonify(output)
         else:
@@ -90,3 +92,134 @@ def menu():
     except Exception as e:
         output = {'code': 0, 'msg': '獲取菜單失敗', 'exception': e}
         return jsonify(output)
+
+
+"""获取用户列表"""
+@user.route('/userList', methods=['GET'])
+@token_util.login_required()
+def list_user():
+    try:
+        # 从get请求拿参数
+        param_currentPage = request.args.get('currentPage')
+        param_pageSize = request.args.get('pageSize')
+        param_nickname = request.args.get('nickname')
+        # 获取用户列表和用户数
+        users = User.query.filter(User.nickname.like("%" + str(param_nickname) + "%")).paginate(int(param_currentPage), int(param_pageSize)).items
+        userNum = User.query.filter(User.nickname.like("%" + str(param_nickname) + "%")).count()
+        # 封装字典并转成json返回前端
+        output = {'code': 1, 'msg': None, 'count': userNum, 'success': True}
+        userList = []
+        for p in users:
+            userList.append(p.to_json())
+        output['data'] = userList
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取用户列表失败', 'count': 0, 'success': False, 'exception': e}
+
+    return jsonify(output)
+
+
+"""获取角色权限选项"""
+@user.route('/getRoleCode', methods=['GET'])
+@token_util.login_required()
+def get_role_code():
+    try:
+        role_option = DataDictionary.query.filter(DataDictionary.key == 'role_option').first()
+        output = {'code': 1, 'data': ast.literal_eval(role_option.value), 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取角色权限选项失败', 'success': False, 'exception': e}
+
+    return jsonify(output)
+
+
+"""添加或修改用户"""
+@user.route('/saveUser', methods=['POST'])
+@token_util.login_required()
+def save_user():
+    # 从post请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_username = data['username']
+    param_nickname = data['nickname']
+    param_role = data['role_code']
+    param_phone = data['phone']
+    param_email = data['email']
+    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
+    try:
+        if param_id == '':
+            user1 = User(username=param_username, password='a123456', nickname=param_nickname, email=param_email, phone=param_phone, status='1', role=param_role)
+            db.session.add(user1)
+            db.session.commit()
+            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        else:
+            user1 = User.query.get(param_id)
+            user1.username = param_username
+            user1.nickname = param_nickname
+            user1.email = param_email
+            user1.phone = param_phone
+            user1.role = param_role
+            db.session.commit()
+            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""用户状态变更"""
+@user.route('/changeUserStatus', methods=['GET'])
+@token_util.login_required()
+def change_user_status():
+    # 从get请求拿参数
+    param_id = request.args.get('id')
+    param_status = request.args.get('status')
+    try:
+        user1 = User.query.get(param_id)
+        user1.status = param_status
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""删除用户"""
+@user.route('/deleteUser', methods=['DELETE'])
+@token_util.login_required()
+def delete_user():
+    # 从get请求拿参数
+    param_id = request.args.get('id')
+    try:
+        # 检查是否删除自己账号，不允许删除自己
+        # 在请求头上拿到token
+        token = request.headers["Authorization"]
+        s = Serializer(setting.SECRET_KEY)
+        user = s.loads(token)
+        if str(user["id"]) == param_id:
+            output = {'code': 0, 'msg': '不允许删除自身账号', 'exception': None, 'success': False}
+        else:
+            user1 = User.query.get(param_id)
+            db.session.delete(user1)
+            db.session.commit()
+            output = {'code': 1, 'msg': '删除成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '删除失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""重置用户名密码"""
+@user.route('/resetPwd', methods=['GET'])
+@token_util.login_required()
+def reset_pwd():
+    # 从get请求拿参数
+    param_id = request.args.get('id')
+    try:
+        user1 = User.query.get(param_id)
+        user1.password = 'a123456'
+        db.session.commit()
+        output = {'code': 1, 'msg': '重置成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '重置失败', 'exception': e, 'success': False}
+
+    return jsonify(output)

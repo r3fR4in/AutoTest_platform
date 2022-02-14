@@ -7,7 +7,7 @@ class EntityBase(object):
             del fields["_sa_instance_state"]
         return fields
 
-class dataDictionary(db.Model, EntityBase):
+class DataDictionary(db.Model, EntityBase):
     __tablename__ = 'data_dictionary'
     id = db.Column(db.Integer, primary_key=True)
     key = db.Column(db.String(50))
