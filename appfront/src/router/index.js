@@ -36,6 +36,12 @@ import project from '@/views/project/project';
 import projectEnvironment from '@/views/project/projectEnvironment';
 
 /**
+ * 提测管理
+ */
+// 提测管理界面
+import submittedTestsManagement from '@/views/submittedTests/submittedTestsManagement';
+
+/**
  * 接口测试
  */
 // 功能模块管理界面
@@ -195,6 +201,14 @@ export default new Router({
             path: '/apiTest/apiTestTask/apiTestReport',
             name: '测试报告',
             component: apiTestReport,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        }, {
+            path: '/submittedTests/submittedTestsManagement',
+            name: '测试报告',
+            component: submittedTestsManagement,
             meta: {
                 requireAuth: true,
                 keepAlive: false

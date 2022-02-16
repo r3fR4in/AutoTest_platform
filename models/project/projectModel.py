@@ -16,5 +16,6 @@ class Project(db.Model, EntityBase):
     create_time = db.Column(db.DateTime)
     project_environment = db.relationship('ProjectEnvironment', backref=db.backref('project'))
     apiTest_task = db.relationship('ApiTestTask', backref=db.backref('project'))
+    submitted_tests = db.relationship('SubmittedTests', backref=db.backref('project'))
 
 

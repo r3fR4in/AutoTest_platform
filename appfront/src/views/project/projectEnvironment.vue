@@ -91,7 +91,7 @@ export default {
       },
       // rules表单验证
       rules: {
-        p_name: [{ required: true, message: '请输入环境名称', trigger: 'blur' }],
+        p_name: [{ required: true, message: '请输入项目名称', trigger: 'blur' }],
         e_name: [{ required: true, message: '请输入环境名称', trigger: 'blur' }],
         url: [{ required: true, message: '请输入url', trigger: 'blur' }],
         e_description: [{ required: true, message: '请输入项目描述', trigger: 'blur' }]
