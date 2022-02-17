@@ -35,7 +35,7 @@
       </el-table-column>
       <el-table-column sortable prop="test_status" label="测试状态" min-width="150">
         <template scope="scope">
-          <el-tag v-if="scope.row.test_status===1">测试中</el-tag>
+          <el-tag v-if="scope.row.test_status===1">已提测</el-tag>
           <el-tag type="success" v-if="scope.row.test_status===2">测试完成</el-tag>
           <el-tag type="danger" v-if="scope.row.test_status===3">退回</el-tag>
         </template>
@@ -95,8 +95,8 @@
         <el-form-item label="提测负责人" prop="submitted_test_director">
           <el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :disabled=editFormControl.submitted_test_director_disabled></el-input>
         </el-form-item>
-        <el-form-item label="提测详情" prop="submitted_test_detail">
-          <el-input type="textarea" size="small" v-model="editForm.submitted_test_detail" auto-complete="off" placeholder="请输入提测详情" :disabled=editFormControl.submitted_test_detail_disabled></el-input>
+        <el-form-item label="提测说明" prop="submitted_test_detail">
+          <el-input type="textarea" size="medium" v-model="editForm.submitted_test_detail" auto-complete="off" placeholder="请输入提测详情" :disabled=editFormControl.submitted_test_detail_disabled></el-input>
         </el-form-item>
         <el-form-item label="测试负责人" prop="test_director">
           <el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :disabled=editFormControl.test_director_disabled></el-input>
@@ -399,7 +399,7 @@ export default {
         }else {
           this.title = '编辑';
           // 控制组件显示和是否禁用
-          this.editFormControl.projectName_disabled = false;
+          this.editFormControl.projectName_disabled = true;
           this.editFormControl.submitted_test_name_disabled = false;
           this.editFormControl.submitted_date_disabled = false;
           this.editFormControl.submitted_test_director_disabled = false;

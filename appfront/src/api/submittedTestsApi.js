@@ -16,3 +16,15 @@ export const deleteSubmittedTest = (params) => { return deleteReq("/submittedTes
 export const saveSmokeTestingResult = (params) => { return postReq("/submittedTests/saveSmokeTestingResult", params) };
 // 保存最终测试结果
 export const saveTestResult = (params) => { return postReq("/submittedTests/saveTestResult", params) };
+
+/**
+ * 完成提测冒烟测试排名
+ **/
+// 完成提测冒烟测试排名
+export const smokeTestingRankReport = (params) => { return getReq("/submittedTestsReport/smokeTestingRankReport", params) };
+
+/**
+ * 项目非一次性通过原因分析
+ **/
+// 完成提测冒烟测试排名
+export const smokeTestingFailReasonAnalysisReport = (params) => { return getReq("/submittedTestsReport/smokeTestingFailReasonAnalysisReport", params) };

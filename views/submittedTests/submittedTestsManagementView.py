@@ -25,13 +25,14 @@ def list_submittedTests():
             project = Project.query.filter(Project.projectName == param_projectName).first()
             if project is not None:
                 # 根据project的id找到submittedTests
-                submittedTests = SubmittedTests.query.filter(SubmittedTests.project_id == project.id).paginate(int(param_currentPage), int(param_pageSize)).items
+                submittedTests = SubmittedTests.query.filter(SubmittedTests.project_id == project.id).order_by(SubmittedTests.id.desc())\
+                    .paginate(int(param_currentPage), int(param_pageSize)).items
                 num = SubmittedTests.query.filter(SubmittedTests.project_id == project.id).count()
             else:
                 output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
                 return jsonify(output)
         else:
-            submittedTests = SubmittedTests.query.paginate(int(param_currentPage), int(param_pageSize)).items
+            submittedTests = SubmittedTests.query.order_by(SubmittedTests.id.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
             num = SubmittedTests.query.count()
 
         # 封装字典并转成json返回前端

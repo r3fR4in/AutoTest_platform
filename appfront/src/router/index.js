@@ -40,6 +40,10 @@ import projectEnvironment from '@/views/project/projectEnvironment';
  */
 // 提测管理界面
 import submittedTestsManagement from '@/views/submittedTests/submittedTestsManagement';
+// 完成提测冒烟测试排名
+import smokeTestingRankReport from '@/views/submittedTests/smokeTestingRankReport';
+// 项目非一次性通过原因分析
+import smokeTestingFailReasonAnalysisReport from '@/views/submittedTests/smokeTestingFailReasonAnalysisReport';
 
 /**
  * 接口测试
@@ -207,8 +211,24 @@ export default new Router({
             }
         }, {
             path: '/submittedTests/submittedTestsManagement',
-            name: '测试报告',
+            name: '提测申请管理',
             component: submittedTestsManagement,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        }, {
+            path: '/submittedTests/smokeTestingRankReport',
+            name: '完成提测冒烟测试排名',
+            component: smokeTestingRankReport,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        }, {
+            path: '/submittedTests/smokeTestingFailReasonAnalysisReport',
+            name: '项目非一次性通过原因分析',
+            component: smokeTestingFailReasonAnalysisReport,
             meta: {
                 requireAuth: true,
                 keepAlive: false
