@@ -1,6 +1,6 @@
 import os
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
 from sqlalchemy import and_
 from utils import requests, time, test_util, token_util
 from utils.log import Log
@@ -13,6 +13,7 @@ from models.project.projectEnvironmentModel import ProjectEnvironment
 import datetime, ast, uuid
 from config import setting
 from flask_socketio import emit
+import mimetypes
 
 apiTestcase = Blueprint('apiTestcase', __name__)
 
@@ -218,7 +219,7 @@ def getAndSaveUploadFile():
             file_list.append({'realname': file_name + suffix, 'name': file.filename})
             apiTestcase1.file_name = str(file_list)
         db.session.commit()
-        file.save(setting.updateFiles_DIR + '/' + file_name + suffix)
+        file.save(setting.updateFiles_DIR_apiTest + '/' + file_name + suffix)
         output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
     except Exception as e:
         output = {'code': 0, 'msg': '上传失败', 'exception': e.args[0], 'success': False}
@@ -240,8 +241,8 @@ def deleteUploadFile():
         new_file_name = ''
         # 遍历找到删掉后，跳出循环
         for i in range(len(file_list)):
-            if param_file_name in file_list[i]['old']:
-                new_file_name = file_list[i]['new']
+            if param_file_name in file_list[i]['name']:
+                new_file_name = file_list[i]['realname']
                 del file_list[i]
                 break
         # file_list.remove(param_file_name)
@@ -250,7 +251,7 @@ def deleteUploadFile():
         apiTestcase1.file_name = str(file_list)
         db.session.commit()
         # 删除对应路径的文件
-        path = setting.updateFiles_DIR + '/' + new_file_name
+        path = setting.updateFiles_DIR_apiTest + '/' + new_file_name
         if os.path.exists(path):
             os.remove(path)
         else:
@@ -261,6 +262,25 @@ def deleteUploadFile():
         output = {'code': 0, 'msg': '删除失败', 'exception': e, 'success': False}
 
     return jsonify(output)
+
+
+"""下载上传的文件"""
+@apiTestcase.route('/downloadFile', methods=['get'])
+@token_util.login_required()
+def download_file():
+    param_realname = request.args.get('file')
+    path = setting.updateFiles_DIR_apiTest + '/' + param_realname
+    try:
+        if os.path.exists(path):
+            mimetype = mimetypes.guess_type(path)[0]
+            res = send_file(path, mimetype=mimetype, attachment_filename=param_realname, as_attachment=True)
+            return res
+        else:
+            output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
+            return jsonify(output)
+    except Exception as e:
+        output = {'code': 0, 'msg': '下载失败', 'exception': e, 'success': False}
+        return jsonify(output)
 
 
 """调试api"""

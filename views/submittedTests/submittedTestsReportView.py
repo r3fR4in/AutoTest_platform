@@ -35,16 +35,16 @@ def smokeTesting_rank_report():
             count(*) as 'submittedTest_num' 
         FROM submitted_tests a inner join project b 
         on a.project_id = b.id 
-        where a.submitted_date BETWEEN '""" + param_start_date + """' and '""" + param_end_date + """'  and a.test_status != 1 
+        where a.submitted_date BETWEEN :start_date and :end_date  and a.test_status != 1 
         GROUP BY a.project_id, b.projectName, a.submitted_test_director order BY a.project_id, a.submitted_test_director) d
         left join 
         (select c.project_id, c.submitted_test_director, count(*) as 'smokeTesting_pass_num' 
         from submitted_tests c 
-        where c.submitted_date BETWEEN '""" + param_start_date + """' and '""" + param_end_date + """'  and c.test_status != 1 and c.smoke_testing_result = 1 
+        where c.submitted_date BETWEEN :start_date and :end_date  and c.test_status != 1 and c.smoke_testing_result = 1 
         GROUP BY c.project_id, c.submitted_test_director order BY c.project_id, c.submitted_test_director) e
         on d.project_id = e.project_id and d.submitted_test_director = e.submitted_test_director
         order by `smokeTesting_pass_rate` desc"""
-        rets = db.session.execute(sql)
+        rets = db.session.execute(sql, {'start_date': param_start_date, 'end_date': param_end_date})
         rets = list(rets)
         result_list = []
         # 查询结果集格式调整为符合json的格式
@@ -83,15 +83,15 @@ def smokeTesting_fail_reason_analysis_report():
         from
         (select b.projectName, a.project_id, a.smoke_testing_fail_reason_category, a.smoke_testing_fail_reason_detail
         from submitted_tests a left join project b on a.project_id = b.id 
-        where a.submitted_date BETWEEN '""" + param_start_date + """' and '""" + param_end_date + """' and a.test_status = 3)c
+        where a.submitted_date BETWEEN :start_date and :end_date and a.test_status = 3)c
         GROUP BY c.project_id, c.projectName, c.smoke_testing_fail_reason_category, c.smoke_testing_fail_reason_detail)d,
         (select project_id, count(*) as smoke_testing_fail_num from submitted_tests 
-        where submitted_date BETWEEN '""" + param_start_date + """' and '""" + param_end_date + """' and test_status = 3
+        where submitted_date BETWEEN :start_date and :end_date and test_status = 3
         GROUP BY project_id)e
         where d.project_id = e.project_id
         order by project_id
         """
-        rets = db.session.execute(sql)
+        rets = db.session.execute(sql, {'start_date': param_start_date, 'end_date': param_end_date})
         rets = list(rets)
         result_list1 = []
         # 查询结果集格式调整为符合json的格式

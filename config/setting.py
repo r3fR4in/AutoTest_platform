@@ -4,8 +4,8 @@ sys.path.append(BASE_DIR)
 
 # 日志目录
 LOG_DIR = os.path.join(BASE_DIR, "logs")
-# 上传文件目录
-updateFiles_DIR = os.path.join(BASE_DIR, "updateFiles")
+# 接口测试的上传文件目录
+updateFiles_DIR_apiTest = os.path.join(BASE_DIR, "updateFiles/apiTest")
 # redis配置
 REDIS = {
     'HOST': '127.0.0.1',

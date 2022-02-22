@@ -75,7 +75,7 @@
     <!-- 分页组件 -->
     <Pagination v-bind:child-msg="pageparm" @callFather="callFather"></Pagination>
     <!-- 编辑界面 -->
-    <el-dialog :title="title" :visible.sync="editFormVisible" width="30%" @click="closeDialog">
+    <el-dialog :title="title" :visible.sync="editFormVisible" width="45%" @click="closeDialog">
       <el-form label-width="120px" :model="editForm" :rules="rules" ref="editForm">
         <el-form-item label="项目名称" prop="projectName">
           <el-autocomplete size="small" v-model="editForm.projectName" @select="handleSelect" :fetch-suggestions="querySearchAsync" placeholder="请输入项目名称" :disabled=editFormControl.projectName_disabled></el-autocomplete>

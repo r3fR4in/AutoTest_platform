@@ -94,11 +94,12 @@
               :data="uploadData"
               :with-credentials="true"
               :on-remove="removeFile"
+              :on-preview="handlePreview"
               :on-success="uploadSuccess"
               :before-remove="beforeRemove"
               :file-list="apiData.request_file">
               <el-button size="small" type="primary">点击上传</el-button>
-              <div slot="tip" class="el-upload__tip">現在只支持上傳一個文件，多個文件的情況等遇到了再去擴展</div>
+              <div slot="tip" class="el-upload__tip">現在只支持请求一個文件，多個文件的情況等遇到了再去擴展</div>
             </el-upload>
           </div>
         </el-tab-pane>
@@ -124,7 +125,7 @@
 </template>
 
 <script>
-  import {apiTestcaseData, debugApi, saveApiTestcase, deleteUploadFile} from '../../api/apiTestApi'
+  import {apiTestcaseData, debugApi, saveApiTestcase, deleteUploadFile, downloadFile} from '../../api/apiTestApi'
   import JsonView from '../../components/JsonView'
 export default {
   components: {JsonView},
@@ -343,6 +344,32 @@ export default {
           console.log(err);
           this.loading = false;
           this.$message.error('移除文件失败，请稍后再试！')
+        })
+    },
+    // 实现点击下载文件
+    handlePreview(file, fileList){
+      let parameter = {
+        file: file.realname
+      };
+      downloadFile(parameter)
+        .then(res => {
+          const content = res.data;
+          const blob = new Blob([content]);
+          // console.log(blob);
+          // let fileName = res.headers["content-disposition"].split("=")[1];
+          if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveOrOpenBlob(blob, file.name);
+          }
+          // console.log(file.name);
+          // console.log(response.data);
+          let url = window.URL.createObjectURL(blob);
+          // console.log(url)
+          let a = document.createElement("a");
+          document.body.appendChild(a);
+          a.href = url;
+          a.download = decodeURI(file.name); //命名下载名称
+          a.click(); //点击触发下载
+          window.URL.revokeObjectURL(url);  //下载完成进行释放
         })
     }
   }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {loginreq, getReq, postReq, deleteReq} from './axiosFun';
+import {loginreq, getReq, postReq, deleteReq, getFile} from './axiosFun';
 
 /**
  * 功能模块管理
@@ -58,6 +58,8 @@ export const saveApiTestcase = (params) => { return postReq("/apiTest/saveApiTes
 export const debugApi = (params) => { return postReq("/apiTest/debugApi", params) };
 // 删除上传文件
 export const deleteUploadFile = (params) => { return deleteReq("/apiTest/deleteUploadFile", params) };
+// 下载上传文件
+export const downloadFile = (params) => { return getFile("/apiTest/downloadFile", params) };
 
 /**
  * 测试任务

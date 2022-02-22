@@ -12,7 +12,7 @@ const loginreq = (method, url, params) => {
         traditional: true,
         transformRequest: [
             function(data) {
-                let ret = ''
+                let ret = '';
                 for (let it in data) {
                     ret +=
                         encodeURIComponent(it) +
@@ -38,7 +38,7 @@ const req = (method, url, params) => {
         traditional: true,
         transformRequest: [
             function(data) {
-                let ret = ''
+                let ret = '';
                 for (let it in data) {
                     ret +=
                         encodeURIComponent(it) +
@@ -106,6 +106,33 @@ const getReq = (url, params) => {
     }).then(res => res.data);
 };
 
+const getFile = (url, params) => {
+    return axios({
+        method: 'get',
+        url: url,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': localStorage.getItem('logintoken')
+        },
+        params: params,
+        traditional: true,
+        responseType: 'blob',
+        transformRequest: [
+            function(data) {
+                let ret = '';
+                for (let it in data) {
+                    ret +=
+                        encodeURIComponent(it) +
+                        '=' +
+                        encodeURIComponent(data[it]) +
+                        '&'
+                }
+                return ret
+            }
+        ]
+    }).then(res => res);
+};
+
 // 通用公用方法
 const deleteReq = (url, params) => {
     return axios({
@@ -138,5 +165,6 @@ export {
     req,
     postReq,
     getReq,
-    deleteReq
+    deleteReq,
+    getFile
 }
