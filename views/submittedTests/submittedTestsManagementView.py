@@ -1,12 +1,16 @@
 import datetime
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, send_file
 from utils.extensions import db
 from utils import token_util, redis_util
 from models.project.projectModel import Project
 from models.base.dataDictionaryModel import DataDictionary
 from models.submittedTests.submittedTestsModel import SubmittedTests
+from config import setting
 import ast
+import uuid
+import os
+import mimetypes
 
 submittedTests = Blueprint('submittedTests', __name__)
 
@@ -45,6 +49,16 @@ def list_submittedTests():
             dict['projectName'] = p_name
             # 删除字典中的project对象，否则转json会报错
             del dict['project']
+            # 将文件名从字符串转成列表
+            if dict['file_name'] != '':
+                if dict['file_name'] is None:
+                    dict['file_name'] = []
+                else:
+                    file_list = eval(dict['file_name'])
+                    file_name = []
+                    for file in file_list:
+                        file_name.append({'name': file['name'], 'realname': file['realname']})
+                    dict['file_name'] = file_name
             list.append(dict)
         output['data'] = list
     except Exception as e:
@@ -79,6 +93,7 @@ def save_submittedTest():
     param_submitted_test_director = data['submitted_test_director']
     param_submitted_test_detail = data['submitted_test_detail']
     param_test_director = data['test_director']
+    param_file_name = data['file_name']
     try:
         # 根据id判断新增或编辑，id为空则是新增，否则为编辑
         if param_id == '':
@@ -89,7 +104,7 @@ def save_submittedTest():
                 project1_dict = project1.to_json()
                 submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name, submitted_test_detail=param_submitted_test_detail,
                                                  submitted_date=param_submitted_date, submitted_test_director=param_submitted_test_director, test_director=param_test_director,
-                                                 test_status=1, smoke_testing_result=0, test_result=0)
+                                                 test_status=1, smoke_testing_result=0, test_result=0, file_name=str(data['file_name']))
                 db.session.add(submittedTests1)
                 db.session.commit()
                 output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
@@ -108,6 +123,94 @@ def save_submittedTest():
     return jsonify(output)
 
 
+"""获取上传的文件并保存"""
+@submittedTests.route('/uploadFile', methods=['post'])
+@token_util.login_required()
+def get_and_save_upload_files():
+    file = request.files['file']
+    param_id = request.form.get('id')
+    try:
+        # 获取文件后缀，生成随机文件名
+        file_name = uuid.uuid4().hex
+        suffix = os.path.splitext(file.filename)[-1]
+        # 通过id检查是新增还是编辑
+        if param_id == '':
+            # 新增：保存文件，并将新旧名字传回给前端
+            file.save(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
+            output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
+        else:
+            # 编辑：保存文件，同时更新表字段值
+            submittedTests1 = SubmittedTests.query.get(param_id)
+            if submittedTests1.file_name == '' or submittedTests1.file_name is None:
+                submittedTests1.file_name = str([{'realname': file_name + suffix, 'name': file.filename}])
+            else:
+                file_list = eval(submittedTests1.file_name)
+                file_list.append({'realname': file_name + suffix, 'name': file.filename})
+                submittedTests1.file_name = str(file_list)
+            db.session.commit()
+            file.save(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
+            output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
+    except Exception as e:
+        output = {'code': 0, 'msg': '上传失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""删除上传的文件"""
+@submittedTests.route('/deleteUploadFile', methods=['delete'])
+@token_util.login_required()
+def delete_upload_file():
+    # 从delete请求拿参数
+    param_file_realname = request.args.get('file')
+    param_id = request.args.get('id')
+    try:
+        # 通过id检查是新增还是编辑
+        if param_id != '':
+            # 编辑：删除后台文件，且更新表字段值
+            # 新增：直接删除后台文件
+            submittedTests1 = SubmittedTests.query.get(param_id)
+            file_list = eval(submittedTests1.file_name)
+            # 遍历找到删掉后，跳出循环
+            for i in range(len(file_list)):
+                if param_file_realname in file_list[i]['realname']:
+                    del file_list[i]
+                    break
+            if not file_list:
+                file_list = ''
+            submittedTests1.file_name = str(file_list)
+            db.session.commit()
+        # 删除对应路径的文件
+        path = setting.updateFiles_DIR_submittedTests + '/' + param_file_realname
+        if os.path.exists(path):
+            os.remove(path)
+            output = {'code': 1, 'msg': '删除成功', 'exception': None, 'success': True}
+        else:
+            output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
+    except Exception as e:
+        output = {'code': 0, 'msg': '删除失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""下载上传的文件"""
+@submittedTests.route('/downloadFile', methods=['get'])
+@token_util.login_required()
+def download_file():
+    param_realname = request.args.get('file')
+    path = setting.updateFiles_DIR_submittedTests + '/' + param_realname
+    try:
+        if os.path.exists(path):
+            mimetype = mimetypes.guess_type(path)[0]
+            res = send_file(path, mimetype=mimetype, attachment_filename=param_realname, as_attachment=True)
+            return res
+        else:
+            output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
+            return jsonify(output)
+    except Exception as e:
+        output = {'code': 0, 'msg': '下载失败', 'exception': e, 'success': False}
+        return jsonify(output)
+
+
 """删除提测申请"""
 @submittedTests.route('/deleteSubmittedTest', methods=['DELETE'])
 @token_util.login_required()
@@ -116,6 +219,14 @@ def delete_submittedTest():
     param_id = request.args.get('id')
     try:
         submittedTests1 = SubmittedTests.query.get(param_id)
+        # 删除文件
+        file_list = eval(submittedTests1.file_name)
+        for i in range(len(file_list)):
+            # 删除对应路径的文件
+            path = setting.updateFiles_DIR_submittedTests + '/' + file_list[i]['realname']
+            if os.path.exists(path):
+                os.remove(path)
+        # 删除数据
         db.session.delete(submittedTests1)
         db.session.commit()
         output = {'code': 1, 'msg': '删除成功', 'exception': None, 'success': True}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {loginreq, getReq, postReq, deleteReq} from './axiosFun';
+import {loginreq, getReq, postReq, deleteReq, getFile} from './axiosFun';
 
 /**
  * 提测申请管理
@@ -16,6 +16,10 @@ export const deleteSubmittedTest = (params) => { return deleteReq("/submittedTes
 export const saveSmokeTestingResult = (params) => { return postReq("/submittedTests/saveSmokeTestingResult", params) };
 // 保存最终测试结果
 export const saveTestResult = (params) => { return postReq("/submittedTests/saveTestResult", params) };
+// 删除上传文件
+export const deleteUploadFile = (params) => { return deleteReq("/submittedTests/deleteUploadFile", params) };
+// 下载上传文件
+export const downloadFile = (params) => { return getFile("/submittedTests/downloadFile", params) };
 
 /**
  * 完成提测冒烟测试排名

@@ -120,6 +120,23 @@
           <el-tag type="success" v-if="editForm.test_result===1">测试通过</el-tag>
           <el-tag type="danger" v-if="editForm.test_result===2">测试不通过</el-tag>
         </el-form-item>
+        <el-form-item label="附件" prop="file_name">
+          <el-upload
+              class="upload-demo"
+              action="/submittedTests/uploadFile"
+              ref="upload"
+              :disabled="editFormControl.upload_show"
+              :headers="uploadToken"
+              :data="{'id': editForm.id}"
+              :with-credentials="true"
+              :on-remove="removeFile"
+              :on-preview="handlePreview"
+              :on-success="uploadSuccess"
+              :before-remove="beforeRemove"
+              :file-list="editForm.file_name">
+              <el-button size="small" type="primary" v-if="editFormControl.upload_button_show">点击上传</el-button>
+            </el-upload>
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button size="small" @click="closeDialog">取消</el-button>
@@ -182,7 +199,7 @@
 <script>
 import Pagination from '../../components/Pagination'
 import { getAllProject } from '../../api/projectApi'
-import { submittedTestsList, getReasonOption, saveSubmittedTest, deleteSubmittedTest, saveSmokeTestingResult, saveTestResult } from '../../api/submittedTestsApi'
+import { submittedTestsList, getReasonOption, saveSubmittedTest, deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
 export default {
   data() {
     return {
@@ -203,7 +220,9 @@ export default {
         test_status_show: false,
         smoke_testing_result_show: false,
         test_result_show: false,
-        submit_show: false
+        submit_show: false,
+        upload_show: false,
+        upload_button_show: true
       },
       editForm: {
         id: '',
@@ -217,7 +236,8 @@ export default {
         smoke_testing_result: '',
         smoke_testing_fail_reason: [],
         test_result: '',
-        complete_date: ''
+        complete_date: '',
+        file_name: ''
       },
       smokeTestFormVisible: false,
       smokeTestForm: {
@@ -256,7 +276,9 @@ export default {
         pageSize: 10,
         oldPageSize: 10,
         total: 10
-      }
+      },
+      // 獲取緩存中的token
+      uploadToken:{'Authorization': localStorage.getItem('logintoken')}
     }
   },
   // 注册组件
@@ -332,6 +354,22 @@ export default {
       this.editFormVisible = false;
       this.smokeTestFormVisible = false;
       this.completeTestFormVisible = false;
+      this.clearEditForm();
+    },
+    // 清除editform
+    clearEditForm() {
+      this.editForm.id = '';
+      this.editForm.projectName = '';
+      this.editForm.submitted_test_name = '';
+      this.editForm.submitted_date = '';
+      this.editForm.submitted_test_director = '';
+      this.editForm.submitted_test_detail = '';
+      this.editForm.test_director = '';
+      this.editForm.test_status = '';
+      this.editForm.smoke_testing_result = '';
+      this.editForm.smoke_testing_fail_reason = [];
+      this.editForm.test_result = '';
+      this.editForm.file_name = '';
     },
     // 获取所有项目信息
     loadAllProject(){
@@ -358,18 +396,12 @@ export default {
         this.editFormControl.smoke_testing_result_show = false;
         this.editFormControl.test_result_show = false;
         this.editFormControl.submit_show = true;
+        this.editFormControl.upload_show = false;
+        this.editFormControl.upload_button_show = true;
         // 清除editform
-        this.editForm.id = '';
-        this.editForm.projectName = '';
-        this.editForm.submitted_test_name = '';
-        this.editForm.submitted_date = '';
-        this.editForm.submitted_test_director = '';
-        this.editForm.submitted_test_detail = '';
-        this.editForm.test_director = '';
-        this.editForm.test_status = '';
-        this.editForm.smoke_testing_result = '';
-        this.editForm.smoke_testing_fail_reason = [];
-        this.editForm.test_result = '';
+        this.clearEditForm();
+        console.log(this.$refs);
+        this.$refs.upload.clearFiles();
       } else {
         if (option === 'check'){
           this.title = '查看';
@@ -384,6 +416,8 @@ export default {
           this.editFormControl.smoke_testing_result_show = true;
           this.editFormControl.test_result_show = true;
           this.editFormControl.submit_show = false;
+          this.editFormControl.upload_show = true;
+          this.editFormControl.upload_button_show = false;
           // 赋值
           this.editForm.id = row.id;
           this.editForm.projectName = row.projectName;
@@ -396,6 +430,7 @@ export default {
           this.editForm.smoke_testing_result = row.smoke_testing_result;
           this.editForm.smoke_testing_fail_reason = [row.smoke_testing_fail_reason_category, row.smoke_testing_fail_reason_detail];
           this.editForm.test_result = row.test_result;
+          this.editForm.file_name = row.file_name;
         }else {
           this.title = '编辑';
           // 控制组件显示和是否禁用
@@ -409,6 +444,8 @@ export default {
           this.editFormControl.smoke_testing_result_show = false;
           this.editFormControl.test_result_show = false;
           this.editFormControl.submit_show = true;
+          this.editFormControl.upload_show = false;
+          this.editFormControl.upload_button_show = true;
           // 赋值
           this.editForm.id = row.id;
           this.editForm.projectName = row.projectName;
@@ -421,6 +458,7 @@ export default {
           this.editForm.smoke_testing_result = row.smoke_testing_result;
           this.editForm.smoke_testing_fail_reason = [row.smoke_testing_fail_reason_category, row.smoke_testing_fail_reason_detail];
           this.editForm.test_result = row.test_result;
+          this.editForm.file_name = row.file_name;
         }
       }
     },
@@ -434,6 +472,7 @@ export default {
               this.loading = false;
               if (res.success) {
                 this.getdata(this.formInline);
+                this.clearEditForm();
                 this.$message({
                   type: 'success',
                   message: res.msg
@@ -454,6 +493,81 @@ export default {
           return false
         }
       })
+    },
+    //上传成功的钩子
+    uploadSuccess(res, file, fileList, row){
+      if (this.editForm.file_name === ''){
+          this.editForm.file_name = [];
+      }
+      if (this.editForm.id === ''){
+        // 新增
+        this.editForm.file_name.push({name: res.file_name, realname: res.real_file_name});
+      } else {
+        // 编辑
+        this.editForm.file_name.push({name: res.file_name, realname: res.real_file_name});
+        this.getdata(this.formInline);
+      }
+    },
+    beforeRemove(file, fileList) {
+        return this.$confirm(`确定移除 ${ file.name }？`)
+    },
+    removeFile(file, fileList){
+      let parameter = {
+        id: this.editForm.id,
+        file: file.realname
+      };
+      deleteUploadFile(parameter)
+        .then(res => {
+          if (res.success) {
+            this.$message({
+              type: 'success',
+              message: res.msg
+            });
+            this.editForm.file_name.some((item, i) => {
+              if (item.name === file.name) {
+                this.editForm.file_name.splice(this.editForm.file_name.indexOf(i), 1);
+                return true;
+              }
+            });
+            this.getdata(this.formInline);
+          } else {
+            this.$message({
+              type: 'info',
+              message: res.msg
+            })
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          this.loading = false;
+          this.$message.error('移除文件失败，请稍后再试！')
+        })
+    },
+    // 实现点击下载文件
+    handlePreview(file, fileList){
+      let parameter = {
+        file: file.realname
+      };
+      downloadFile(parameter)
+        .then(res => {
+          const content = res.data;
+          const blob = new Blob([content]);
+          // console.log(blob);
+          // let fileName = res.headers["content-disposition"].split("=")[1];
+          if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveOrOpenBlob(blob, file.name);
+          }
+          // console.log(file.name);
+          // console.log(response.data);
+          let url = window.URL.createObjectURL(blob);
+          // console.log(url)
+          let a = document.createElement("a");
+          document.body.appendChild(a);
+          a.href = url;
+          a.download = decodeURI(file.name); //命名下载名称
+          a.click(); //点击触发下载
+          window.URL.revokeObjectURL(url);  //下载完成进行释放
+        })
     },
     // 显示冒烟测试标记页面
     smokeTesting: function(index, row) {
