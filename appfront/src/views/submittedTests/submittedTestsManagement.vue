@@ -96,7 +96,13 @@
           <el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :disabled=editFormControl.submitted_test_director_disabled></el-input>
         </el-form-item>
         <el-form-item label="提测说明" prop="submitted_test_detail">
-          <el-input type="textarea" size="medium" v-model="editForm.submitted_test_detail" auto-complete="off" placeholder="请输入提测详情" :disabled=editFormControl.submitted_test_detail_disabled></el-input>
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.submitted_test_detail"
+                    auto-complete="off"
+                    placeholder="请输入提测详情"
+                    :rows="8"
+                    :disabled=editFormControl.submitted_test_detail_disabled></el-input>
         </el-form-item>
         <el-form-item label="测试负责人" prop="test_director">
           <el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :disabled=editFormControl.test_director_disabled></el-input>
