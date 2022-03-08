@@ -21,6 +21,8 @@
         <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
       </el-form-item>
     </el-form>
+    <!-- 图形 -->
+    <div id="echarts_box" style="width: 90%;height: 400px"></div>
     <!--列表-->
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
       <el-table-column prop="project_id" label="项目id" v-if=false>
@@ -41,6 +43,7 @@
 
 <script>
 import { smokeTestingRankReport } from '../../api/submittedTestsApi'
+import echarts from 'echarts'
 export default {
   data() {
     return {
@@ -65,6 +68,7 @@ export default {
               })
             } else {
               this.listData = res.data;
+              this.showChart(res.data);
             }
           })
           .catch(err => {
@@ -72,6 +76,55 @@ export default {
             console.log(err);
             this.$message.error('报表加载失败，请稍后再试！')
           })
+    },
+    // echarts渲染
+    showChart(data) {
+      let myChart = echarts.init(document.getElementById('echarts_box'));
+      let option = {
+        legend: {},
+        tooltip: {},
+        dataset: {
+          source: [
+            ['items', '通过率', '提测总数', '通过数']  // 图例
+          ]
+        },
+        xAxis: { type: 'category' },
+        yAxis: [
+          {
+            name: '通过率%',
+            type: 'value',
+            min: 0,
+            max: 100
+          },
+          {
+            name: '数量',
+            type: 'value',
+            min: 0,
+            max: 100
+          }
+        ],
+        series: [{
+          type: 'bar',
+          yAxisIndex: 0
+        }, {
+          type: 'bar',
+          yAxisIndex: 1
+        }, {
+          type: 'bar',
+          yAxisIndex: 1
+        }]
+      };
+      // 遍历data，将数据加入source中
+      let max_num = 0; //设置最大值，用于动态设置数量y轴最大值
+      data.forEach(item => {
+        let array = [item.projectName + '-' + item.submitted_test_director, item.smokeTesting_pass_rate, item.submittedTest_num, item.smokeTesting_pass_num];
+        option.dataset.source.push(array);
+        if (item.submittedTest_num > max_num){
+          max_num = item.submittedTest_num + 2
+        }
+      });
+      option.yAxis[1].max = max_num;
+      myChart.setOption(option);
     }
   }
 }
