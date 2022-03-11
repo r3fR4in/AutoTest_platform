@@ -94,8 +94,8 @@ export default {
       // rules表单验证
       rules: {
         e_name: [{ required: true, message: '请输入环境名称', trigger: 'blur' }],
-        m_name: [{ required: true, message: '请输入环境名称', trigger: 'blur' }],
-        m_description: [{ required: true, message: '请输入url', trigger: 'blur' }]
+        m_name: [{ required: true, message: '请输入模塊名称', trigger: 'blur' }],
+        m_description: [{ required: true, message: '请输入模塊描述', trigger: 'blur' }]
       },
       projects: '',
       state: '',

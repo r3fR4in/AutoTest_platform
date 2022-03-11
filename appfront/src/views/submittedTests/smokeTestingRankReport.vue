@@ -120,9 +120,11 @@ export default {
         let array = [item.projectName + '-' + item.submitted_test_director, item.smokeTesting_pass_rate, item.submittedTest_num, item.smokeTesting_pass_num];
         option.dataset.source.push(array);
         if (item.submittedTest_num > max_num){
-          max_num = item.submittedTest_num + 2
+          max_num = item.submittedTest_num;
         }
       });
+      let max_num_re = max_num % 5;
+      max_num = max_num + (5 - max_num_re);
       option.yAxis[1].max = max_num;
       myChart.setOption(option);
     }

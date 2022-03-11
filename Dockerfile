@@ -11,4 +11,4 @@ EXPOSE 5001
 # CMD ["python", "./app.py"]
 # CMD ["celery", "-A", "app:celery", "worker", "-l", "INFO", "-P", "threads"]
 
-CMD nohup python ./app.py && celery -A app:celery worker -l INFO -P threads
+CMD python ./app.py && celery -A app:celery worker -l INFO -P threads

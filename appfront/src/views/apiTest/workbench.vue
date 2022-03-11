@@ -295,8 +295,8 @@ export default {
       let v = str.match(/\{.*\}/);
       try {
         // console.log(v[0]);
-        // console.log(typeof jsonData);
-        // console.log(jsonData);
+        // console.log(typeof v);
+        // console.log(v);
         return JSON.parse(v[0]);
       } catch (e) {
         console.log(e);

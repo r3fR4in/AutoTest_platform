@@ -16,7 +16,7 @@
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
       <el-table-column align="center" type="selection" width="60">
       </el-table-column>
-      <el-table-column prop="id" label="id">
+      <el-table-column prop="id" label="id" v-if="false">
       </el-table-column>
       <el-table-column sortable prop="title" label="标题" width="300">
       </el-table-column>
@@ -37,6 +37,7 @@
 
 <script>
 import { apiTestcaseList, deleteApiTestcase, copyTestcase } from '../../api/apiTestApi'
+import Pagination from '../../components/Pagination'
 export default {
   data() {
     return{
@@ -58,6 +59,10 @@ export default {
       },
       listData: [], //测试用例数据
     }
+  },
+  // 注册组件
+  components: {
+    Pagination
   },
   created() {
     this.getParams();

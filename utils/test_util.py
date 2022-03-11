@@ -88,9 +88,11 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
 
         # 輸出響應數據
         debug_log.append(log.info_return_message("响应码:" + str(re.status_code)))
-        response_headers = str(re.headers).replace('\'', '"').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+        response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
+            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
         debug_log.append(log.info_return_message("响应头:" + response_headers))
-        response = str(re.json()).replace('\'', '"').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+        response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
+            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
         debug_log.append(log.info_return_message("响应内容:" + response))
         if str(re.status_code) != '200':
             final_result = False

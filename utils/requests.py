@@ -26,14 +26,16 @@ class SendRequests():
         global re
         try:
             if self.files:
-                filepath = os.path.join(setting.updateFiles_DIR, self.files[0]['realname'])
+                filepath = os.path.join(setting.updateFiles_DIR_apiTest, self.files[0]['realname'])
                 file = open(filepath, 'rb')
                 if self.header == '':
                     self.header = {}
                 self.header["Content-Type"] = mimetypes.guess_type(filepath)[0]
                 re = requests.request(self.method, self.url, headers=self.header, data=file, verify=self.verify)
             elif self.method == 'GET':
-                re = requests.request(self.method, self.url, headers=self.header, params=self.body.encode(self.encode), verify=self.verify)
+                if self.body != '':
+                    self.body = ast.literal_eval(str(self.body))
+                re = requests.request(self.method, self.url, headers=self.header, params=self.body, verify=self.verify)
             elif self.method == 'POST':
                 # 判斷content type
                 if "application/x-www-form-urlencoded" in str(self.header):  # application/x-www-form-urlencoded需要處理一下body的數據格式才能發送請求
