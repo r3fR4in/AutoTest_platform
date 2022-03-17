@@ -1,3 +1,12 @@
+# 1.先将容器的文件夹拷贝至本地
+# docker cp autotest_platform:/AutoTest_platform/logs D:\PycharmProjects
+# docker cp autotest_platform:/AutoTest_platform/updateFiles D:\PycharmProjects
+# 2.打包镜像
+# docker build -t autotest_platform:1.0.0 .
+# 3.启动镜像后，把拷出来的文件放到容器中
+# docker cp D:\PycharmProjects\logs autotest_platform:/AutoTest_platform/
+# docker cp D:\PycharmProjects\updateFiles autotest_platform:/AutoTest_platform/
+
 FROM python:3.7.5-slim-stretch
 #FROM python:3.7.5-windowsservercore-1809
 WORKDIR /AutoTest_platform

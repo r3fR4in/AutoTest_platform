@@ -72,7 +72,7 @@ router.beforeEach((to, from, next) => {
                      * 防刷新，如果登录，修改路由跳转到登录页面，修改路由为登录后的首页
                      */
                     next({
-                        path: '/project/project'
+                        path: JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
                     })
                 }
             } else {

@@ -20,9 +20,9 @@ export const userSave = (params) => { return postReq("/user/saveUser", params) }
 // 修改用户状态
 export const changeUserStatus = (params) => { return getReq("/user/changeUserStatus", params) };
 // 删除用户
-export const resetPwd = (params) => { return getReq("/user/resetPwd", params) };
+export const userDelete = (params) => { return getReq("/user/deleteUser", params) };
 // 用户重置密码
-export const userPwd = (params) => { return req("post", "/api/User/pwd", params) };
+export const resetPwd = (params) => { return getReq("/user/resetPwd", params) };
 // 用户管理-数据权限
 export const UserDeptTree = (params) => { return axios.get("/api/UserDept/tree/" + params + "?token=" + localStorage.getItem('logintoken')) };
 // 用户管理-数据权限保存

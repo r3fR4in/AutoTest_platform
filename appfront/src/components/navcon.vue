@@ -58,6 +58,7 @@ export default {
                   localStorage.removeItem('userInfo');
                   localStorage.removeItem('logintoken');
                   localStorage.removeItem('userdata');
+                  localStorage.removeItem('menu');
                   this.$message({
                     type: 'success',
                     message: '已退出登录!'

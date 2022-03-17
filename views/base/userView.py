@@ -36,7 +36,7 @@ def login():
         return jsonify(output)
 
     token = token_util.create_token(user.id, user.username, user.role)
-    data = {'token': token, 'nickname': user.nickname}
+    data = {'token': token, 'nickname': user.nickname, 'role': user.role}
     try:
         redis = redis_util.Redis
         redis.write(f"token_{user.username}", token)

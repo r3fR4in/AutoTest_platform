@@ -245,6 +245,10 @@ export default {
       this.formInline.page = 1;
       this.getdata(this.formInline)
     },
+    // 关闭编辑、增加弹出框
+    closeDialog() {
+      this.editFormVisible = false
+    },
     //显示编辑界面
     handleEdit: function(index, row) {
       this.editFormVisible = true;

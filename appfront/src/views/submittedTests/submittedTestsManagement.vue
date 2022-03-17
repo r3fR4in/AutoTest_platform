@@ -66,9 +66,9 @@
         <template slot-scope="scope">
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row, 'check')">查看</el-button>
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row, 'edit')">编辑</el-button>
-          <el-button size="mini" @click="smokeTesting(scope.$index, scope.row)" v-if="scope.row.smoke_testing_result===0">冒烟测试标记</el-button>
-          <el-button size="mini" @click="completeTesting(scope.$index, scope.row)" v-if="scope.row.smoke_testing_result===1 && scope.row.test_result===0">完成标记</el-button>
-          <el-button size="mini" type="danger" @click="submittedTestDelete(scope.$index, scope.row)">删除</el-button>
+          <el-button size="mini" @click="smokeTesting(scope.$index, scope.row)" v-if="scope.row.smoke_testing_result===0 && user_role !== 'dev_role'">冒烟测试标记</el-button>
+          <el-button size="mini" @click="completeTesting(scope.$index, scope.row)" v-if="scope.row.smoke_testing_result===1 && scope.row.test_result===0 && user_role !== 'dev_role'">完成标记</el-button>
+          <el-button size="mini" type="danger" @click="submittedTestDelete(scope.$index, scope.row)" v-if="user_role !== 'dev_role'">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -216,6 +216,7 @@ export default {
       title: '添加',
       disabled: false,
       reason_option: '',
+      user_role: '',
       editFormControl: {
         projectName_disabled: false,
         submitted_test_name_disabled: false,
@@ -260,7 +261,7 @@ export default {
         submitted_date: [{ required: true, message: '请选择提测时间', trigger: 'change' }],
         submitted_test_director: [{ required: true, message: '请输入提测负责人', trigger: 'blur' }],
         submitted_test_detail: [{ required: true, message: '请输入提测详情', trigger: 'blur' }],
-        test_director: [{ required: true, message: '请输入测试负责人', trigger: 'blur' }],
+        // test_director: [{ required: true, message: '请输入测试负责人', trigger: 'blur' }],
         smoke_testing_result: [{ required: true, message: '请选择冒烟测试结果', trigger: 'blur' }],
         smoke_testing_fail_reason: [{ required: true, message: '请选择不通过原因', trigger: 'blur' }],
         complete_date: [{ required: true, message: '请选择完成时间', trigger: 'blur' }]
@@ -292,6 +293,8 @@ export default {
     Pagination
   },
   created() {
+    this.user_role = JSON.parse(localStorage.getItem('userdata')).role;
+    console.log(this.user_role);
     this.getdata(this.formInline);
     this.loadAllProject();
     this.getReasonOption();
@@ -406,7 +409,7 @@ export default {
         this.editFormControl.upload_button_show = true;
         // 清除editform
         this.clearEditForm();
-        console.log(this.$refs);
+        this.editForm.submitted_test_director = JSON.parse(localStorage.getItem('userdata')).nickname;
         this.$refs.upload.clearFiles();
       } else {
         if (option === 'check'){

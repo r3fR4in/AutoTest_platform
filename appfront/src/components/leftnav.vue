@@ -32,167 +32,20 @@ export default {
   },
   // 创建完毕状态(里面是操作)
   created() {
-    // // 获取图形验证码
-    // let res = {
-    //   success: true,
-    //   data: [{
-// 	"menuid": 1,
-// 	"icon": "li-icon-xiangmuguanli",
-// 	"menuname": "项目管理",
-// 	"hasThird": "",
-// 	"url": "",
-// 	"menus": [{
-// 		"menuid": 2,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "项目管理",
-// 		"hasThird": "N",
-// 		"url": "project/project",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 3,
-// 		"icon": "icon-promotion-manage",
-// 		"menuname": "项目环境配置",
-// 		"hasThird": "N",
-// 		"url": "project/projectEnvironment",
-// 		"menus": ""
-// 	}]
-// }, {
-// 	"menuid": 8,
-// 	"icon": "li-icon-xiangmuguanli",
-// 	"menuname": "提测管理",
-// 	"hasThird": "",
-// 	"url": "",
-// 	"menus": [{
-// 		"menuid": 9,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "提测申请管理",
-// 		"hasThird": "N",
-// 		"url": "submittedTests/submittedTestsManagement",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 10,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "完成提测冒烟测试排名",
-// 		"hasThird": "N",
-// 		"url": "submittedTests/smokeTestingRankReport",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 11,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "项目非一次性通过原因分析",
-// 		"hasThird": "N",
-// 		"url": "submittedTests/smokeTestingFailReasonAnalysisReport",
-// 		"menus": ""
-// 	}]
-// }, {
-// 	"menuid": 4,
-// 	"icon": "li-icon-xiangmuguanli",
-// 	"menuname": "接口测试",
-// 	"hasThird": "",
-// 	"url": "",
-// 	"menus": [{
-// 		"menuid": 5,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "模块套件管理",
-// 		"hasThird": "N",
-// 		"url": "apiTest/apiModule",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 6,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "接口管理",
-// 		"hasThird": "N",
-// 		"url": "apiTest/apiManagement",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 7,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "测试任务",
-// 		"hasThird": "N",
-// 		"url": "apiTest/apiTestTask",
-// 		"menus": ""
-// 	}]
-// }, {
-// 	"menuid": 71,
-// 	"icon": "li-icon-xitongguanli",
-// 	"menuname": "系统管理",
-// 	"hasThird": "",
-// 	"url": "",
-// 	"menus": [{
-// 		"menuid": 72,
-// 		"icon": "icon-cus-manage",
-// 		"menuname": "用户管理",
-// 		"hasThird": "N",
-// 		"url": "system/user",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 174,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "菜单管理",
-// 		"hasThird": "N",
-// 		"url": "system/Module",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 73,
-// 		"icon": "icon-news-manage",
-// 		"menuname": "角色管理",
-// 		"hasThird": "N",
-// 		"url": "system/Role",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 74,
-// 		"icon": "icon-cs-manage",
-// 		"menuname": "公司管理",
-// 		"hasThird": "N",
-// 		"url": "system/Dept",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 75,
-// 		"icon": "icon-promotion-manage",
-// 		"menuname": "系统环境变量",
-// 		"hasThird": "N",
-// 		"url": "system/Variable",
-// 		"menus": ""
-// 	}, {
-// 		"menuid": 76,
-// 		"icon": "icon-cms-manage",
-// 		"menuname": "权限管理",
-// 		"hasThird": "N",
-// 		"url": "system/Permission",
-// 		"menus": ""
-// 	}]
-// }, {
-// 	"menuid": 150,
-// 	"icon": "li-icon-shangchengxitongtubiaozitihuayuanwenjian91",
-// 	"menuname": "图表",
-// 	"hasThird": "",
-// 	"url": "",
-// 	"menus": [{
-// 		"menuid": 159,
-// 		"icon": "icon-provider-manage",
-// 		"menuname": "数据可视化",
-// 		"hasThird": "N",
-// 		"url": "charts/statistics",
-// 		"menus": ""
-// 	}]
-// }],
-    //   msg: 'success'
-    // }
-    //       this.allmenu = res.data
-
-    menu(localStorage.getItem('logintoken'))
-      .then(res => {
-        // console.log(JSON.stringify(res));
-        if (res.success) {
-          this.allmenu = res.data;
-        } else {
-          this.$message.error(res.msg);
-          return false;
-        }
-      })
-      .catch(err => {
-        this.$message.error('菜单加载失败，请稍后再试！');
-      });
+    // menu(localStorage.getItem('logintoken'))
+    //   .then(res => {
+    //     // console.log(JSON.stringify(res));
+    //     if (res.success) {
+    //       this.allmenu = res.data;
+    //     } else {
+    //       this.$message.error(res.msg);
+    //       return false;
+    //     }
+    //   })
+    //   .catch(err => {
+    //     this.$message.error('菜单加载失败，请稍后再试！');
+    //   });
+    this.allmenu = JSON.parse(localStorage.getItem('menu'));
     // 监听
     this.$root.Bus.$on('toggle', value => {
       this.collapsed = !value;

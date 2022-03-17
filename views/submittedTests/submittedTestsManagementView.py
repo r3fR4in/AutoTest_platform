@@ -104,7 +104,7 @@ def save_submittedTest():
                 project1_dict = project1.to_json()
                 submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name, submitted_test_detail=param_submitted_test_detail,
                                                  submitted_date=param_submitted_date, submitted_test_director=param_submitted_test_director, test_director=param_test_director,
-                                                 test_status=1, smoke_testing_result=0, test_result=0, file_name=str(data['file_name']))
+                                                 test_status=1, smoke_testing_result=0, test_result=0, file_name=str(param_file_name))
                 db.session.add(submittedTests1)
                 db.session.commit()
                 output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
@@ -136,6 +136,8 @@ def get_and_save_upload_files():
         # 通过id检查是新增还是编辑
         if param_id == '':
             # 新增：保存文件，并将新旧名字传回给前端
+            if not os.path.exists(setting.updateFiles_DIR_submittedTests):
+                os.mkdir(setting.updateFiles_DIR_submittedTests)
             file.save(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
             output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
         else:
@@ -217,15 +219,23 @@ def download_file():
 def delete_submittedTest():
     # 从delete请求拿参数
     param_id = request.args.get('id')
+    token = request.headers['Authorization']
+    user = token_util.verify_token(token)
     try:
+        # 获取角色权限，如果是开发人员则不能操作
+        role = user['role']
+        if role == 'dev_role':
+            output = {'code': 0, 'msg': '权限不足', 'exception': '', 'success': False}
+            return jsonify(output)
         submittedTests1 = SubmittedTests.query.get(param_id)
         # 删除文件
-        file_list = eval(submittedTests1.file_name)
-        for i in range(len(file_list)):
-            # 删除对应路径的文件
-            path = setting.updateFiles_DIR_submittedTests + '/' + file_list[i]['realname']
-            if os.path.exists(path):
-                os.remove(path)
+        if submittedTests1.file_name != None and submittedTests1.file_name != '':
+            file_list = eval(submittedTests1.file_name)
+            for i in range(len(file_list)):
+                # 删除对应路径的文件
+                path = setting.updateFiles_DIR_submittedTests + '/' + file_list[i]['realname']
+                if os.path.exists(path):
+                    os.remove(path)
         # 删除数据
         db.session.delete(submittedTests1)
         db.session.commit()
@@ -245,7 +255,14 @@ def save_smokeTesting_result():
     param_id = data['id']
     param_smoke_testing_result = int(data['smoke_testing_result'])
     param_smoke_testing_fail_reason = data['smoke_testing_fail_reason']
+    token = request.headers['Authorization']
+    user = token_util.verify_token(token)
     try:
+        # 获取角色权限，如果是开发人员则不能操作
+        role = user['role']
+        if role == 'dev_role':
+            output = {'code': 0, 'msg': '权限不足', 'exception': '', 'success': False}
+            return jsonify(output)
         if param_smoke_testing_result == 1:
             # 测试通过
             submittedTests1 = SubmittedTests.query.get(param_id)
@@ -281,7 +298,14 @@ def save_test_result():
     param_id = data['id']
     param_test_result = int(data['test_result'])
     param_complete_date = datetime.datetime.strptime(data['complete_date'], '%Y-%m-%d')
+    token = request.headers['Authorization']
+    user = token_util.verify_token(token)
     try:
+        # 获取角色权限，如果是开发人员则不能操作
+        role = user['role']
+        if role == 'dev_role':
+            output = {'code': 0, 'msg': '权限不足', 'exception': '', 'success': False}
+            return jsonify(output)
         submittedTests1 = SubmittedTests.query.get(param_id)
         submittedTests1.test_result = param_test_result
         submittedTests1.complete_date = param_complete_date

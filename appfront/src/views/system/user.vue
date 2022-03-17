@@ -235,6 +235,10 @@ export default {
         this.role_option = res.data;
       })
     },
+    // 关闭编辑、增加弹出框
+    closeDialog() {
+      this.editFormVisible = false
+    },
     // 修改type
     editType: function(index, row) {
       this.loading = true;

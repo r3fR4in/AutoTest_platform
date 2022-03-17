@@ -219,6 +219,8 @@ def getAndSaveUploadFile():
             file_list.append({'realname': file_name + suffix, 'name': file.filename})
             apiTestcase1.file_name = str(file_list)
         db.session.commit()
+        if not os.path.exists(setting.updateFiles_DIR_apiTest):
+            os.mkdir(setting.updateFiles_DIR_apiTest)
         file.save(setting.updateFiles_DIR_apiTest + '/' + file_name + suffix)
         output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
     except Exception as e:

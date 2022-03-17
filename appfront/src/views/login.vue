@@ -26,7 +26,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-import { login } from '../api/userMG'
+import { login, menu } from '../api/userMG'
 import { setCookie, getCookie, delCookie } from '../utils/util'
 import md5 from 'js-md5'
 export default {
@@ -53,6 +53,10 @@ export default {
       }
     }
   },
+  mounted(){
+    //绑定事件
+     window.addEventListener('keydown',this.keyDown);
+  },
   // 创建完毕状态(里面是操作)
   created() {
     // this.$message({
@@ -73,6 +77,12 @@ export default {
         this.ruleForm.username = getCookie('user')
         this.ruleForm.password = getCookie('pwd')
         this.rememberpwd = true
+      }
+    },
+    keyDown(e) {
+      //如果是回车则执行登录方法
+      if (e.keyCode === 13) {
+        this.submitForm('ruleForm');
       }
     },
     //获取info列表
@@ -105,9 +115,24 @@ export default {
                 localStorage.setItem('logintoken', res.data.token);
                 // 缓存用户个人信息
                 localStorage.setItem('userdata', JSON.stringify(res.data));
+                // 获取菜单信息并存入缓存，取第一个菜单作为登录后跳转的页面
+                menu(localStorage.getItem('logintoken'))
+                  .then(res => {
+                    // console.log(JSON.stringify(res));
+                    if (res.success) {
+                      localStorage.setItem('menu', JSON.stringify(res.data));
+                      console.log(JSON.parse(localStorage.getItem('menu')));
+                      this.$router.push({ path: JSON.parse(localStorage.getItem('menu'))[0].menus[0].url });
+                    } else {
+                      this.$message.error(res.msg);
+                      return false;
+                    }
+                  })
+                  .catch(err => {
+                    this.$message.error('菜单加载失败，请稍后再试！');
+                  });
                 this.$store.commit('login', 'true');
-                this.$router.push({ path: '/project/project' });
-              }, 1000)
+              }, 1000);
             } else {
               this.$message.error(res.msg);
               this.logining = false;
@@ -122,7 +147,10 @@ export default {
           return false;
         }
       })
-    },
+    }
+  },
+  destroyed(){
+    window.removeEventListener('keydown',this.keyDown,false);
   }
 }
 </script>
