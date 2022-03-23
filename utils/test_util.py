@@ -4,12 +4,12 @@ import os
 from requests import Response
 
 from utils.extensions import db
-from models.apiTest.environmentVariableModel import EnvironmentVariable
-from models.apiTest.apiTestDetailModel import ApiTestDetail
-from models.apiTest.apiTestcaseModel import ApiTestcase
-from models.apiTest.apiModuleModel import ApiModule
-from models.apiTest.apiModel import Api
-from models.apiTest.apiTestTaskModel import ApiTestTask
+from models.apiTestModel import EnvironmentVariable
+from models.apiTestModel import ApiTestDetail
+from models.apiTestModel import ApiTestcase
+from models.apiTestModel import ApiModule
+from models.apiTestModel import Api
+from models.apiTestModel import ApiTestTask
 from utils import requests
 from config import setting
 import ast

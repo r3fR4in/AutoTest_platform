@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 
 from utils.extensions import db
-from models.apiTest.environmentVariableModel import EnvironmentVariable
+from models.apiTestModel import EnvironmentVariable
 from utils import token_util
 
 environmentVariable = Blueprint('environmentVariable', __name__)

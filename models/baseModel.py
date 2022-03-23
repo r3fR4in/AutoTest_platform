@@ -18,3 +18,10 @@ class User(db.Model, EntityBase):
     phone = db.Column(db.String(50))
     status = db.Column(db.Integer)  # 狀態：1正常，2禁用
     role = db.Column(db.String(50))  # 角色：管理員 admin_role
+
+class DataDictionary(db.Model, EntityBase):
+    __tablename__ = 'data_dictionary'
+    id = db.Column(db.Integer, primary_key=True)
+    key = db.Column(db.String(50))
+    value = db.Column(db.String(10240))
+

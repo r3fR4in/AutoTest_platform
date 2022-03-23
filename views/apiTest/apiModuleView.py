@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify, request
 from utils.extensions import db
-from models.apiTest.apiModuleModel import ApiModule
-from models.project.projectEnvironmentModel import ProjectEnvironment
-from models.project.projectModel import Project
+from models.apiTestModel import ApiModule
+from models.projectModel import ProjectEnvironment
+from models.projectModel import Project
 import datetime
 from utils import token_util
 

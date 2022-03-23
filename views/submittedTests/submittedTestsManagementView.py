@@ -2,10 +2,10 @@ import datetime
 
 from flask import Blueprint, jsonify, request, send_file
 from utils.extensions import db
-from utils import token_util, redis_util
-from models.project.projectModel import Project
-from models.base.dataDictionaryModel import DataDictionary
-from models.submittedTests.submittedTestsModel import SubmittedTests
+from utils import token_util
+from models.projectModel import Project
+from models.baseModel import DataDictionary
+from models.submittedTestsModel import SubmittedTests
 from config import setting
 import ast
 import uuid

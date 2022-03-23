@@ -1,14 +1,7 @@
-import datetime
-
 from flask import Blueprint, jsonify, request
-from sqlalchemy import and_
 
 from utils.extensions import db
-from utils import token_util, redis_util
-from models.project.projectModel import Project
-from models.base.dataDictionaryModel import DataDictionary
-from models.submittedTests.submittedTestsModel import SubmittedTests
-import ast
+from utils import token_util
 
 submittedTestsReport = Blueprint('submittedTestsReport', __name__)
 

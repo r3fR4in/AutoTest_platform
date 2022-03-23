@@ -5,11 +5,10 @@ from sqlalchemy import and_
 from utils import requests, time, test_util, token_util
 from utils.log import Log
 from utils.extensions import db
-from models.apiTest.apiTestcaseModel import ApiTestcase
-from models.apiTest.apiModel import Api
-from models.apiTest.apiModuleModel import ApiModule
-from models.apiTest.environmentVariableModel import EnvironmentVariable
-from models.project.projectEnvironmentModel import ProjectEnvironment
+from models.apiTestModel import ApiTestcase
+from models.apiTestModel import Api
+from models.apiTestModel import ApiModule
+from models.projectModel import ProjectEnvironment
 import datetime, ast, uuid
 from config import setting
 from flask_socketio import emit

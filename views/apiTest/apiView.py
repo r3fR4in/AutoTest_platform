@@ -1,13 +1,9 @@
 from flask import Blueprint, jsonify, request
-from sqlalchemy import and_
 
 from utils.extensions import db
-from models.apiTest.apiModel import Api
-from models.apiTest.apiTestcaseModel import ApiTestcase
-from models.apiTest.apiModuleModel import ApiModule
-from models.project.projectEnvironmentModel import ProjectEnvironment
-from models.project.projectModel import Project
-import datetime
+from models.apiTestModel import Api
+from models.apiTestModel import ApiTestcase
+from models.apiTestModel import ApiModule
 from utils import token_util
 
 api = Blueprint('api', __name__)

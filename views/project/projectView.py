@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from utils.extensions import db
-from models.project.projectModel import Project
-from models.project.projectEnvironmentModel import ProjectEnvironment
+from models.projectModel import Project
+from models.projectModel import ProjectEnvironment
 import datetime
 from utils import token_util
 

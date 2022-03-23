@@ -4,12 +4,12 @@ from sqlalchemy import and_, distinct
 # from config import scheduler  # 导入已初始化的scheduler对象
 
 from utils.extensions import db
-from models.apiTest.apiTestTaskModel import ApiTestTask
-from models.apiTest.apiTestDetailModel import ApiTestDetail
-from models.project.projectModel import Project
-from models.project.projectEnvironmentModel import ProjectEnvironment
-from models.apiTest.apiModel import Api
-from models.apiTest.apiTestcaseModel import ApiTestcase
+from models.apiTestModel import ApiTestTask
+from models.apiTestModel import ApiTestDetail
+from models.projectModel import Project
+from models.projectModel import ProjectEnvironment
+from models.apiTestModel import Api
+from models.apiTestModel import ApiTestcase
 import datetime
 from utils import test_util, token_util
 

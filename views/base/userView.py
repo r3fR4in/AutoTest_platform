@@ -2,8 +2,8 @@ import ast
 
 from flask import Blueprint, jsonify, request
 from utils.extensions import db
-from models.base.userModel import User
-from models.base.dataDictionaryModel import DataDictionary
+from models.baseModel import User
+from models.baseModel import DataDictionary
 from utils import token_util, redis_util
 from config import setting
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
@@ -223,3 +223,18 @@ def reset_pwd():
         output = {'code': 0, 'msg': '重置失败', 'exception': e, 'success': False}
 
     return jsonify(output)
+
+
+# """返回项目权限分配列表"""
+# @user.route('/projectPermissionsList', methods=['GET'])
+# @token_util.login_required()
+# def list_project_permissions():
+#     # 从get请求拿参数
+#     param_id = request.args.get('id')
+#     try:
+#         userProjects = UserProject.query.filter(UserProject.user_id == param_id).all()
+#
+#     except Exception as e:
+#         output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
+#
+#     return jsonify(output)
