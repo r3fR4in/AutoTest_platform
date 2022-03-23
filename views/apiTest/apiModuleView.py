@@ -39,14 +39,8 @@ def list_apiModule():
         param_projectEnvironment_id = request.args.get('projectEnvironment_id')
         # 根据param_projectEnvironment_id判断是否有选择项目环境名称，如果没有，返回提示
         if param_projectEnvironment_id != '':
-            # 判断有无currentPage和pageSize，没有则无需分页返回所有数据
-            if param_currentPage is None and param_pageSize is None:
-                apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).all()
-                num = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).count()
-            else:
-                # 根据projectEnvironment_id查找api模块
-                apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).paginate(int(param_currentPage), int(param_pageSize)).items
-                num = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).count()
+            apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).paginate(int(param_currentPage), int(param_pageSize)).items
+            num = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).count()
         else:
             output = {'code': 0, 'msg': '未选择项目环境名称', 'count': 0, 'success': False, 'data': ''}
             return jsonify(output)

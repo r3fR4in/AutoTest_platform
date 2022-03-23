@@ -19,21 +19,20 @@ def list_projectEnvironment():
         param_currentPage = request.args.get('currentPage')
         param_pageSize = request.args.get('pageSize')
         param_projectName = request.args.get('projectName')
-        # 判断param_projectName是否为空，为空代表用户未输入搜索框查询，默认显示所有数据
-        if param_projectName != '':
+
+        filterList = []
+
+        if param_projectName is not None and param_projectName != '':
             # 根据projectName找到project
             project = Project.query.filter(Project.projectName == param_projectName).first()
             if project is not None:
-                # 根据project的id找到projectEnvironment
-                projectEnvironments = ProjectEnvironment.query.filter(ProjectEnvironment.project_id == project.id).paginate(int(param_currentPage), int(param_pageSize)).items
-                num = ProjectEnvironment.query.filter(ProjectEnvironment.project_id == project.id).count()
+                filterList.append(ProjectEnvironment.project_id == project.id)
             else:
-                output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
+                output = {'code': 0, 'msg': '项目不存在', 'count': 0, 'success': False, 'errorMsg': ''}
                 return jsonify(output)
-        else:
-            # 有风险，如果做项目的权限控制则需要修改
-            projectEnvironments = ProjectEnvironment.query.paginate(int(param_currentPage), int(param_pageSize)).items
-            num = ProjectEnvironment.query.count()
+
+        projectEnvironments = ProjectEnvironment.query.filter(*filterList).paginate(int(param_currentPage), int(param_pageSize)).items
+        num = ProjectEnvironment.query.filter(*filterList).count()
 
         # 封装字典并转成json返回前端
         output = {'code': 1, 'msg': None, 'count': num, 'success': True}

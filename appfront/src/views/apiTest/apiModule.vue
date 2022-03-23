@@ -334,7 +334,9 @@ export default {
       obj = this.options.find((item) => {
         return item.value === val;
       });
-      this.formInline.projectEnvironment_name = obj.label;
+      if(obj !== undefined){
+        this.formInline.projectEnvironment_name = obj.label;
+      }
       this.getdata(this.formInline);
     },
     //項目名稱修改后清空環境選擇

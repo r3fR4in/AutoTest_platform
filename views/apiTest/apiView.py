@@ -45,41 +45,41 @@ def list_api():
         if param_projectEnvironmentId == '':
             output = {'code': 0, 'msg': '未选择项目环境名称', 'count': 0, 'success': False}
             return jsonify(output)
-        # 判断param_apiModuleName是否为空，为空代表用户未输入模块名查询，默认显示该环境下所有api
-        if param_apiModuleName != '':
-            # 根据apiModuleName和apiModuleId找到apiModule
-            apiModule = ApiModule.query.filter(and_(ApiModule.module_name == param_apiModuleName, ApiModule.id == param_apiModuleId)).first()
+
+        filterList = []
+
+        # 判断param_apiModuleId是否为空，为空代表用户未输入模块名查询，默认显示该环境下所有api
+        if param_apiModuleId is not None and param_apiModuleId != '':
+            apiModule = ApiModule.query.filter(ApiModule.id == param_apiModuleId).first()
             if apiModule is not None:
-                apis = Api.query.filter(Api.apiModule_id == apiModule.id).order_by(Api.seq).paginate(int(param_currentPage), int(param_pageSize)).items
-                num = Api.query.filter(Api.apiModule_id == apiModule.id).count()
-            else:
+                filterList.append(Api.apiModule_id == apiModule.id)
+        else:
+            if param_apiModuleName is not None and param_apiModuleName != '':
                 output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
                 return jsonify(output)
-            # 封装字典并转成json返回前端
-            output = {'code': 1, 'msg': None, 'count': num, 'success': True}
-            list = []
-            for api in apis:
-                dic = api.to_json()
-                dic['module_name'] = param_apiModuleName
-                list.append(dic)
-            output['data'] = list
-        else:
-            # 根据projectEnvironmentId，将表api和api_module进行关联查询，找到该环境下所有api
-            # results是一个list，里面一行数据是一个元组，元组包含一个Api和一个ApiModule的model
-            results = db.session.query(Api, ApiModule) \
-                .join(ApiModule, ApiModule.id == Api.apiModule_id) \
-                .filter(ApiModule.projectEnvironment_id == param_projectEnvironmentId).order_by(Api.seq).paginate(int(param_currentPage), int(param_pageSize)).items
-            num = db.session.query(Api, ApiModule) \
-                .join(ApiModule, ApiModule.id == Api.apiModule_id) \
-                .filter(ApiModule.projectEnvironment_id == param_projectEnvironmentId).count()
-            # 遍历results
-            data = []
-            for result in results:
-                dic = result[0].to_json()  # 将Api转成dict
-                dic['module_name'] = result[1].to_json()['module_name']  # 将ApiModule的module_name拿出来放到dic里
-                data.append(dic)
-            # 封装字典并转成json返回前端
-            output = {'code': 1, 'msg': None, 'count': num, 'success': True, 'data': data}
+            # 找出当前环境id下所有api_module
+            apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironmentId).all()
+            if apiModules is not None:
+                # 遍历取出所有id组成list
+                id_list = []
+                for apiModule in apiModules:
+                    id_list.append(apiModule.id)
+                filterList.append(Api.apiModule_id.in_(id_list))
+
+        apis = Api.query.filter(*filterList).order_by(Api.seq).paginate(int(param_currentPage), int(param_pageSize)).items
+        num = Api.query.filter(*filterList).count()
+
+        # 封装字典并转成json返回前端
+        output = {'code': 1, 'msg': None, 'count': num, 'success': True}
+        list = []
+        for api in apis:
+            module_name = api.api_module.module_name
+            dic = api.to_json()
+            dic['module_name'] = module_name
+            # 删除字典中的project对象，否则转json会报错
+            del dic['api_module']
+            list.append(dic)
+        output['data'] = list
 
     except Exception as e:
         output = {'code': 0, 'msg': '获取项目环境配置列表失败', 'count': 0, 'success': False, 'errorMsg': e}

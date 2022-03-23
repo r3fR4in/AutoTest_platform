@@ -21,7 +21,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="模块：">
-          <el-autocomplete size="small" v-model="formInline.module_name" placeholder="输入模块名称" @select="handleSelect2" :fetch-suggestions="querySearchAsync2" @input="inputEvent"></el-autocomplete>
+          <el-autocomplete size="small" v-model="formInline.module_name" placeholder="输入模块名称" @change="handleChange2" @select="handleSelect2" :fetch-suggestions="querySearchAsync2" @input="inputEvent"></el-autocomplete>
         </el-form-item>
         <el-form-item>
           <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
@@ -281,8 +281,7 @@
         currentPage: this.pageparm.currentPage,
         pageSize: this.pageparm.pageSize,
         projectEnvironmentId: this.formInline.projectEnvironment_id,
-        apiModuleId: this.formInline.module_id,
-        apiModuleName: this.formInline.module_name
+        apiModuleId: this.formInline.module_id
       };
       /***
        * 调用接口，注释上面模拟数据 取消下面注释
@@ -635,6 +634,10 @@
           this.api_modules = res;
         }
       )
+    },
+    // 修改模块中的数据时，清除模块id
+    handleChange2(val){
+      this.formInline.module_id = '';
     },
     //項目名稱修改后清空環境選擇
     inputChange(){

@@ -18,26 +18,25 @@ submittedTests = Blueprint('submittedTests', __name__)
 @submittedTests.route('/submittedTestsList', methods=['get'])
 @token_util.login_required()
 def list_submittedTests():
-    # 从get请求获取参数
-    param_currentPage = request.args.get('currentPage')
-    param_pageSize = request.args.get('pageSize')
-    param_projectName = request.args.get('projectName')
     try:
-        # 判断param_projectName是否为空，为空代表用户未输入搜索框查询，默认显示所有数据
-        if param_projectName != '':
+        # 从get请求获取参数
+        param_currentPage = request.args.get('currentPage')
+        param_pageSize = request.args.get('pageSize')
+        param_projectName = request.args.get('projectName')
+
+        filterList = []
+
+        if param_projectName is not None and param_projectName != '':
             # 根据projectName找到project
             project = Project.query.filter(Project.projectName == param_projectName).first()
             if project is not None:
-                # 根据project的id找到submittedTests
-                submittedTests = SubmittedTests.query.filter(SubmittedTests.project_id == project.id).order_by(SubmittedTests.id.desc())\
-                    .paginate(int(param_currentPage), int(param_pageSize)).items
-                num = SubmittedTests.query.filter(SubmittedTests.project_id == project.id).count()
+                filterList.append(SubmittedTests.project_id == project.id)
             else:
-                output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
+                output = {'code': 0, 'msg': '项目不存在', 'count': 0, 'success': False, 'errorMsg': ''}
                 return jsonify(output)
-        else:
-            submittedTests = SubmittedTests.query.order_by(SubmittedTests.id.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
-            num = SubmittedTests.query.count()
+
+        submittedTests = SubmittedTests.query.filter(*filterList).order_by(SubmittedTests.id.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
+        num = SubmittedTests.query.filter(*filterList).count()
 
         # 封装字典并转成json返回前端
         output = {'code': 1, 'msg': None, 'count': num, 'success': True}

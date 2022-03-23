@@ -22,27 +22,29 @@ apiTestTask = Blueprint('apiTestTask', __name__)
 @apiTestTask.route('/apiTestTaskList', methods=['get'])
 @token_util.login_required()
 def list_apiTestTask():
-    # 从get请求获取参数
-    param_currentPage = request.args.get('currentPage')
-    param_pageSize = request.args.get('pageSize')
-    param_projectName = request.args.get('projectName')
-    param_title = request.args.get('title')
     try:
-        # 判断搜索条件是否包含项目名称
-        if param_projectName == '' or param_projectName is None:
-            # 获取任务列表和数量
-            apiTestTasks = ApiTestTask.query.filter(ApiTestTask.title.like("%" + str(param_title) + "%")).paginate(int(param_currentPage), int(param_pageSize)).items
-            num = ApiTestTask.query.filter(ApiTestTask.title.like("%" + str(param_title) + "%")).count()
-        else:
-            # 根据projectName找到projectId
-            projectId = db.session.query(Project.id).filter(Project.projectName == param_projectName).first()
-            if projectId is not None:
-                apiTestTasks = ApiTestTask.query.filter(and_(ApiTestTask.title.like("%" + str(param_title) + "%"), ApiTestTask.project_id == projectId[0]))\
-                    .order_by(ApiTestTask.create_time.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
-                num = ApiTestTask.query.filter(and_(ApiTestTask.title.like("%" + str(param_title) + "%"), ApiTestTask.project_id == projectId)).count()
+        # 从get请求获取参数
+        param_currentPage = request.args.get('currentPage')
+        param_pageSize = request.args.get('pageSize')
+        param_projectName = request.args.get('projectName')
+        param_title = request.args.get('title')
+
+        filterList = []
+
+        if param_projectName is not None and param_projectName != '':
+            # 根据projectName找到project
+            project = Project.query.filter(Project.projectName == param_projectName).first()
+            if project is not None:
+                filterList.append(ApiTestTask.project_id == project.id)
             else:
-                output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
+                output = {'code': 0, 'msg': '项目不存在', 'count': 0, 'success': False, 'errorMsg': ''}
                 return jsonify(output)
+        if param_title is not None and param_title != '':
+            filterList.append(ApiTestTask.title.like("%" + str(param_title) + "%"))
+
+        apiTestTasks = ApiTestTask.query.filter(*filterList).order_by(ApiTestTask.create_time.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
+        num = ApiTestTask.query.filter(*filterList).count()
+
         # 封装字典并转成json返回前端
         output = {'code': 1, 'msg': None, 'count': num, 'success': True}
         list = []
