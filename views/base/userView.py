@@ -4,9 +4,12 @@ from flask import Blueprint, jsonify, request
 from utils.extensions import db
 from models.baseModel import User
 from models.baseModel import DataDictionary
+from models.baseModel import UserProject
+from models.projectModel import Project
 from utils import token_util, redis_util
 from config import setting
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from sqlalchemy import and_
 
 user = Blueprint('user', __name__)
 
@@ -225,16 +228,48 @@ def reset_pwd():
     return jsonify(output)
 
 
-# """返回项目权限分配列表"""
-# @user.route('/projectPermissionsList', methods=['GET'])
-# @token_util.login_required()
-# def list_project_permissions():
-#     # 从get请求拿参数
-#     param_id = request.args.get('id')
-#     try:
-#         userProjects = UserProject.query.filter(UserProject.user_id == param_id).all()
-#
-#     except Exception as e:
-#         output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
-#
-#     return jsonify(output)
+"""返回项目权限分配列表"""
+@user.route('/projectPermissionsList', methods=['GET'])
+@token_util.login_required()
+def list_project_permissions():
+    # 从get请求拿参数
+    param_id = request.args.get('id')
+    try:
+        # userProjects = User.query.filter(User.id == param_id).join(user_project).join(Project).with_entities(User.id, Project.id, Project.projectName).all()
+        userProjects = Project.query.outerjoin(UserProject, and_(UserProject.project_id == Project.id, UserProject.user_id == param_id)).with_entities(Project.id, Project.projectName, UserProject.user_id).all()
+        # 封装字典并转成json返回前端
+        output = {'code': 1, 'msg': None, 'success': True}
+        key_list = ['project_id', 'projectName', 'user_id']
+        userProjectList = []
+        for userProject in userProjects:
+            dic = dict(zip(key_list, list(userProject)))
+            userProjectList.append(dic)
+        output['data'] = userProjectList
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""保存项目权限分配"""
+@user.route('/projectPermissionsSave', methods=['POST'])
+@token_util.login_required()
+def save_project_permissions():
+    # 从post请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_list = data['list']
+    try:
+        UserProject.query.filter(UserProject.user_id == param_id).delete(synchronize_session=False)
+        if param_list is not None and param_list != []:
+            userProject_list = []
+            for item in param_list:
+                userProject = UserProject(user_id=param_id, project_id=item['project_id'])
+                userProject_list.append(userProject)
+            db.session.add_all(userProject_list)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
+
+    return jsonify(output)

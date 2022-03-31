@@ -21,9 +21,7 @@
       </el-form-item>
     </el-form>
     <!--列表-->
-    <el-table size="small" @selection-change="selectChange" :data="userData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
-      <el-table-column align="center" type="selection" width="50">
-      </el-table-column>
+    <el-table size="small" :data="userData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
       <el-table-column prop="id" label="用户id" v-if=false>
       </el-table-column>
       <el-table-column prop="role" label="用户权限" v-if=false>
@@ -38,22 +36,23 @@
       </el-table-column>
       <el-table-column align="center" sortable prop="status" label="状态" min-width="50">
         <template slot-scope="scope">
-          <el-switch v-model="scope.row.status=='1'?nshow:fshow" active-color="#13ce66" inactive-color="#ff4949" @change="editType(scope.$index, scope.row)">
+          <el-switch v-model="scope.row.status=='1'?nshow:fshow" active-color="#13ce66" inactive-color="#ff4949" @change="editStatus(scope.$index, scope.row)">
           </el-switch>
         </template>
       </el-table-column>
       <el-table-column label="操作" min-width="150">
         <template slot-scope="scope">
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-          <el-button size="mini" type="danger" @click="deleteUser(scope.$index, scope.row)">删除</el-button>
+          <el-button size="mini" @click="getProjectPermissionList(scope.$index, scope.row)" v-if="scope.row.role === 'dev_role'">权限配置</el-button>
           <el-button size="mini" type="success" @click="resetpwd(scope.$index, scope.row)">重置密码</el-button>
+          <el-button size="mini" type="danger" @click="deleteUser(scope.$index, scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
     <!-- 分页组件 -->
     <Pagination v-bind:child-msg="pageparm" @callFather="callFather"></Pagination>
     <!-- 编辑界面 -->
-    <el-dialog :title="title" :visible.sync="editFormVisible" width="30%" @click='closeDialog("edit")'>
+    <el-dialog :title="title" :visible.sync="editFormVisible" width="30%" @click='closeDialog()'>
       <el-form label-width="80px" ref="editForm" :model="editForm" :rules="rules">
         <el-form-item label="用户名" prop="username">
           <el-input size="small" v-model="editForm.username" auto-complete="off" placeholder="请输入用户名"></el-input>
@@ -79,8 +78,29 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button size="small" @click='closeDialog("edit")'>取消</el-button>
+        <el-button size="small" @click='closeDialog()'>取消</el-button>
         <el-button size="small" type="primary" :loading="loading" class="title" @click="submitForm('editForm')">保存</el-button>
+      </div>
+    </el-dialog>
+    <!-- 权限配置界面 -->
+    <el-dialog title="权限配置" :visible.sync="projectPermissionVisible" width="30%" @click='closeDialog()'>
+      <el-table size="small"
+                ref="projectPermissionTable"
+                :data="projectPermissionData"
+                highlight-current-row v-loading="loading"
+                border element-loading-text="拼命加载中"
+                @selection-change="(selection)=>{handleSelectChange(selection)}"
+                style="width: 100%;">
+        <el-table-column align="center" type="selection" width="50">
+        </el-table-column>
+        <el-table-column prop="project_id" label="项目id" v-if=false>
+        </el-table-column>
+        <el-table-column align="center" sortable prop="projectName" label="项目名称">
+        </el-table-column>
+      </el-table>
+      <div slot="footer" class="dialog-footer">
+        <el-button size="small" type="primary" @click='projectPermissionsSave()'>保存</el-button>
+        <el-button size="small" @click='closeDialog()'>取消</el-button>
       </div>
     </el-dialog>
   </div>
@@ -95,6 +115,8 @@ import {
   userDelete,
   resetPwd,
   changeUserStatus,
+  projectPermissionsList,
+  projectPermissionsSave
 } from '../../api/userMG'
 import Pagination from '../../components/Pagination'
 export default {
@@ -105,6 +127,9 @@ export default {
       loading: false, //是显示加载
       title: '添加用户',
       editFormVisible: false, //控制编辑页面显示与隐藏
+      projectPermissionVisible: false, //控制权限配置页面显示与隐藏
+      current_user_id: '',
+      projectPermissionSelection: '',
       // 编辑与添加
       editForm: {
         id: '',
@@ -159,6 +184,8 @@ export default {
       },
       //用户数据
       userData: [],
+      //项目权限数据
+      projectPermissionData: [],
       // 分页参数
       pageparm: {
         currentPage: 1,
@@ -237,10 +264,11 @@ export default {
     },
     // 关闭编辑、增加弹出框
     closeDialog() {
-      this.editFormVisible = false
+      this.editFormVisible = false;
+      this.projectPermissionVisible = false;
     },
-    // 修改type
-    editType: function(index, row) {
+    // 修改状态
+    editStatus: function(index, row) {
       this.loading = true;
       let param = {
         status: '',
@@ -248,7 +276,7 @@ export default {
       };
       param.id = row.id;
       let status = row.status;
-      if (status === '2') {
+      if (status === 2) {
         param.status = '1'
       } else {
         param.status = '2'
@@ -323,16 +351,6 @@ export default {
         }
       })
     },
-    // 关闭编辑、增加弹出框
-    closeDialog1(dialog) {
-      if (dialog == 'edit') {
-        this.editFormVisible = false
-      } else if (dialog == 'perm') {
-        this.dataAccessshow = false
-      } else if (dialog == 'unit') {
-        this.unitAccessshow = false
-      }
-    },
     // 删除用户
     deleteUser(index, row) {
       this.$confirm('确定要删除吗?', '信息', {
@@ -372,6 +390,74 @@ export default {
           })
         })
     },
+    //显示项目权限界面
+    getProjectPermissionList: function(index, row) {
+      this.projectPermissionVisible = true;
+      this.current_user_id = row.id;
+      let param = {
+        id: this.current_user_id
+      };
+      projectPermissionsList(param).then(res => {
+          this.loading = false;
+          if (res.success === false) {
+            this.$message({
+              type: 'info',
+              message: res.msg
+            })
+          } else {
+            this.projectPermissionData = res.data;
+            this.toggleSelection();
+          }
+        })
+        .catch(err => {
+          this.loading = false;
+          console.log(err);
+          this.$message.error('数据获取失败')
+        });
+    },
+    toggleSelection(){
+      this.$nextTick(() => {
+        this.projectPermissionData.forEach(item => {
+          if(item.user_id != null){
+            this.$refs.projectPermissionTable.toggleRowSelection(item, true);
+          }
+        })
+      });
+    },
+    // 表格选择事件
+    handleSelectChange(selection){
+      this.projectPermissionSelection = selection;
+    },
+    // 保存项目权限
+    projectPermissionsSave(){
+      this.projectPermissionSelection.forEach(item => {
+        delete item.user_id;
+      });
+      let param = {
+        id: this.current_user_id,
+        list: this.projectPermissionSelection
+      };
+      projectPermissionsSave(param).then(res => {
+          this.loading = false;
+          if (res.success === false) {
+            this.$message({
+              type: 'info',
+              message: res.msg
+            })
+          } else {
+            this.projectPermissionVisible = false;
+            this.$message({
+              type: 'success',
+              message: '保存成功！'
+            })
+          }
+        })
+        .catch(err => {
+          this.loading = false;
+          console.log(err);
+          this.$message.error('保存失败')
+        });
+    },
     // 重置密码
     resetpwd(index, row) {
       this.$confirm('确定要重置密码吗?', '信息', {
@@ -399,7 +485,7 @@ export default {
               }
             })
             .catch(err => {
-              this.loading = false
+              this.loading = false;
               this.$message.error('重置密码失败，请稍后再试！')
             })
         })
@@ -408,175 +494,6 @@ export default {
             type: 'info',
             message: '取消重置密码！'
           })
-        })
-    },
-    // 数据权限
-    dataAccess: function(index, row) {
-      this.dataAccessshow = true
-      this.saveroleId = row.userId
-      UserDeptTree(row.userId)
-        .then(res => {
-          if (res.data.success) {
-            this.checkmenu = this.changemenu(res.data.data)
-            this.UserDept = this.changeArr(res.data.data)
-          } else {
-            this.$message({
-              type: 'info',
-              message: res.data.msg
-            })
-          }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('获取权限失败，请稍后再试！')
-        })
-    },
-    //数据格式化
-    changeArr(data) {
-      var pos = {}
-      var tree = []
-      var i = 0
-      while (data.length != 0) {
-        if (data[i].pId == 0) {
-          tree.push({
-            id: data[i].id,
-            name: data[i].name,
-            pId: data[i].pId,
-            open: data[i].open,
-            checked: data[i].checked,
-            children: []
-          })
-          pos[data[i].id] = [tree.length - 1]
-          data.splice(i, 1)
-          i--
-        } else {
-          var posArr = pos[data[i].pId]
-          if (posArr != undefined) {
-            var obj = tree[posArr[0]]
-            for (var j = 1; j < posArr.length; j++) {
-              obj = obj.children[posArr[j]]
-            }
-
-            obj.children.push({
-              id: data[i].id,
-              name: data[i].name,
-              pId: data[i].pId,
-              open: data[i].open,
-              checked: data[i].checked,
-              children: []
-            })
-            pos[data[i].id] = posArr.concat([obj.children.length - 1])
-            data.splice(i, 1)
-            i--
-          }
-        }
-        i++
-        if (i > data.length - 1) {
-          i = 0
-        }
-      }
-      return tree
-    },
-    // 选中菜单
-    changemenu(arr) {
-      let change = []
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].checked) {
-          change.push(arr[i].id)
-        }
-      }
-      return change
-    },
-    // 菜单权限-保存
-    menuPermSave() {
-      let parm = {
-        userId: this.saveroleId,
-        deptIds: ''
-      }
-      let node = this.$refs.tree.getCheckedNodes()
-      let moduleIds = []
-      if (node.length != 0) {
-        for (let i = 0; i < node.length; i++) {
-          moduleIds.push(node[i].id)
-        }
-        parm.deptIds = JSON.stringify(moduleIds)
-      }
-      UserDeptSave(parm)
-        .then(res => {
-          if (res.success) {
-            this.$message({
-              type: 'success',
-              message: '权限保存成功'
-            })
-            this.dataAccessshow = false
-            this.getdata(this.formInline)
-          } else {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('权限保存失败，请稍后再试！')
-        })
-    },
-    // 下线用户
-    offlineUser(index, row) {
-      this.$confirm('确定要让' + row.userName + '用户下线吗?', '信息', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      })
-        .then(() => {
-          userExpireToken(row.userName)
-            .then(res => {
-              if (res.success) {
-                this.$message({
-                  type: 'success',
-                  message: '用户' + row.userName + '强制下线成功！'
-                })
-                this.getdata(this.formInline)
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.loading = false
-              this.$message.error('用户下线失败，请稍后再试！')
-            })
-        })
-        .catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消'
-          })
-        })
-    },
-    // 刷新缓存
-    refreshCache(index, row) {
-      userFlashCache(row.userName)
-        .then(res => {
-          if (res.success) {
-            this.$message({
-              type: 'success',
-              message: '刷新成功！'
-            })
-            this.getdata(this.formInline)
-          } else {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('刷新失败，请稍后再试！')
         })
     }
   }

@@ -23,18 +23,10 @@ export const changeUserStatus = (params) => { return getReq("/user/changeUserSta
 export const userDelete = (params) => { return getReq("/user/deleteUser", params) };
 // 用户重置密码
 export const resetPwd = (params) => { return getReq("/user/resetPwd", params) };
-// 用户管理-数据权限
-export const UserDeptTree = (params) => { return axios.get("/api/UserDept/tree/" + params + "?token=" + localStorage.getItem('logintoken')) };
-// 用户管理-数据权限保存
-export const UserDeptSave = (params) => { return req("post", "/api/UserDept/save", params) };
-// 用户管理-获取部门设置
-export const UserDeptdeptTree = (params) => { return axios.get("/api/UserDept/deptTree/" + params + "?token=" + localStorage.getItem('logintoken')) };
-// 用户管理-保存部门设置
-export const UserChangeDept = (params) => { return req("post", "/api/User/change/dept", params) };
-// 用户管理-用户下线
-export const userExpireToken = (params) => { return req("get", "/api/User/expireToken/" + params, {}) };
-// 用户管理-刷新缓存
-export const userFlashCache = (params) => { return req("get", "/api/User/flashCache/" + params, {}) };
+// 获取项目权限列表
+export const projectPermissionsList = (params) => { return getReq("/user/projectPermissionsList", params) };
+// 保存项目权限
+export const projectPermissionsSave = (params) => { return postReq("/user/projectPermissionsSave", params) };
 
 /**
  * 菜单管理

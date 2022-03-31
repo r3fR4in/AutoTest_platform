@@ -25,3 +25,17 @@ class DataDictionary(db.Model, EntityBase):
     key = db.Column(db.String(50))
     value = db.Column(db.String(10240))
 
+class UserProject(db.Model, EntityBase):
+    __tablename__ = 'user_project'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
+
+# # 创建中间表
+# user_project = db.Table(
+#     'user_project',
+#     db.Column('id', db.Integer, primary_key=True),
+#     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+#     db.Column('project_id', db.Integer, db.ForeignKey('project.id'))
+# )
+

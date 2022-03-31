@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from utils.extensions import db
 from models.projectModel import ProjectEnvironment
 from models.projectModel import Project
+from models.baseModel import UserProject
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestcase
 from models.apiTestModel import ApiModule
@@ -56,7 +57,20 @@ def list_projectEnvironment():
 @projectEnvironment.route('/getAllProject', methods=['get'])
 @token_util.login_required()
 def load_all_project():
-    projects = Project.query.all()
+    filterList = []
+
+    # 解析token獲取user_id和role
+    token = request.headers["Authorization"]
+    user = token_util.verify_token(token)
+    if user['role'] == 'dev_role':
+        userProjects = UserProject.query.filter(UserProject.user_id == user['id']).all()
+        list = []
+        for userProject in userProjects:
+            dic = userProject.to_json()
+            list.append(dic['project_id'])
+        filterList.append(Project.id.in_(list))
+
+    projects = Project.query.filter(*filterList).all()
     projectList = []
     for project in projects:
         # 先转成dict

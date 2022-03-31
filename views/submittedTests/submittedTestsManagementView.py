@@ -4,7 +4,7 @@ from flask import Blueprint, jsonify, request, send_file
 from utils.extensions import db
 from utils import token_util
 from models.projectModel import Project
-from models.baseModel import DataDictionary
+from models.baseModel import DataDictionary, UserProject
 from models.submittedTestsModel import SubmittedTests
 from config import setting
 import ast
@@ -26,6 +26,16 @@ def list_submittedTests():
 
         filterList = []
 
+        # 解析token獲取user_id和role
+        token = request.headers["Authorization"]
+        user = token_util.verify_token(token)
+        if user['role'] == 'dev_role':
+            userProjects = UserProject.query.filter(UserProject.user_id == user['id']).all()
+            list = []
+            for userProject in userProjects:
+                dic = userProject.to_json()
+                list.append(dic['project_id'])
+            filterList.append(SubmittedTests.project_id.in_(list))
         if param_projectName is not None and param_projectName != '':
             # 根据projectName找到project
             project = Project.query.filter(Project.projectName == param_projectName).first()

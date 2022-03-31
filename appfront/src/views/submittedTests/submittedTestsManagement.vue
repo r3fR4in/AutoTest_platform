@@ -294,7 +294,6 @@ export default {
   },
   created() {
     this.user_role = JSON.parse(localStorage.getItem('userdata')).role;
-    console.log(this.user_role);
     this.getdata(this.formInline);
     this.loadAllProject();
     this.getReasonOption();
