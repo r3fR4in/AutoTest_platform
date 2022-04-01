@@ -10,6 +10,7 @@ from utils import token_util, redis_util
 from config import setting
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from sqlalchemy import and_
+import hashlib
 
 user = Blueprint('user', __name__)
 
@@ -219,7 +220,12 @@ def reset_pwd():
     param_id = request.args.get('id')
     try:
         user1 = User.query.get(param_id)
-        user1.password = 'a123456'
+        pwd = 'a123456'
+        m = hashlib.md5()
+        b = pwd.encode('utf-8')
+        m.update(b)
+        str_md5 = m.hexdigest()
+        user1.password = str_md5
         db.session.commit()
         output = {'code': 1, 'msg': '重置成功', 'exception': None, 'success': True}
     except Exception as e:

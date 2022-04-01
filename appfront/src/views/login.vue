@@ -73,9 +73,9 @@ export default {
   methods: {
     // 获取用户名密码
     getuserpwd() {
-      if (getCookie('user') != '' && getCookie('pwd') != '') {
-        this.ruleForm.username = getCookie('user')
-        this.ruleForm.password = getCookie('pwd')
+      if (getCookie('user') !== '' && getCookie('pwd') !== '') {
+        this.ruleForm.username = getCookie('user');
+        this.ruleForm.password = getCookie('pwd');
         this.rememberpwd = true
       }
     },
@@ -97,7 +97,9 @@ export default {
           //   this.$router.push({ path: '/project/project' })
           // }, 1000)
           // 注释
-          login(this.ruleForm).then(res => {
+          let param = this.ruleForm;
+          param.password = md5(param.password);
+          login(param).then(res => {
             if (res.success) {
               if (this.rememberpwd) {
                 //保存帐号到cookie，有效期7天
