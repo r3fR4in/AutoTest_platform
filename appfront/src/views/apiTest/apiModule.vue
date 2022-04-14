@@ -70,8 +70,8 @@
 </template>
 
 <script>
-import { getAllProject } from '../../api/projectApi'
-import { getAllProjectEnvironment, apiModuleList, saveApiModule, deleteApiModule } from '../../api/apiTestApi'
+import { getAllProject, getAllProjectEnvironment } from '../../api/projectApi'
+import { apiModuleList, saveApiModule, deleteApiModule } from '../../api/apiTestApi'
 import Pagination from '../../components/Pagination'
 export default {
   data() {
@@ -88,8 +88,7 @@ export default {
         e_name: '',
         m_name: '',
         m_description: '',
-        create_time: '',
-        token: localStorage.getItem('logintoken')
+        create_time: ''
       },
       // rules表单验证
       rules: {

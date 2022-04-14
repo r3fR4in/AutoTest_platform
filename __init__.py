@@ -52,7 +52,8 @@ def register_blueprint(app):
     with app.app_context():
         from views.project.projectView import project
         from views.project.projectEnvironmentView import projectEnvironment
-        from views.apiTest.apiModuleView import apiModule
+        from views.project.projectModuleView import projectModule
+        # from views.apiTest.apiModuleView import apiModule
         from views.apiTest.apiView import api
         from views.apiTest.apiTestcaseView import apiTestcase
         from views.apiTest.environmentVariableView import environmentVariable
@@ -62,7 +63,8 @@ def register_blueprint(app):
         from views.submittedTests.submittedTestsReportView import submittedTestsReport
     app.register_blueprint(project, url_prefix='/project')
     app.register_blueprint(projectEnvironment, url_prefix='/project')
-    app.register_blueprint(apiModule, url_prefix='/apiTest')
+    app.register_blueprint(projectModule, url_prefix='/project')
+    # app.register_blueprint(apiModule, url_prefix='/apiTest')
     app.register_blueprint(api, url_prefix='/apiTest')
     app.register_blueprint(apiTestcase, url_prefix='/apiTest')
     app.register_blueprint(environmentVariable, url_prefix='/apiTest')

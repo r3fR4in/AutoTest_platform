@@ -20,9 +20,6 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="模块：">
-          <el-autocomplete size="small" v-model="formInline.module_name" placeholder="输入模块名称" @change="handleChange2" @select="handleSelect2" :fetch-suggestions="querySearchAsync2" @input="inputEvent"></el-autocomplete>
-        </el-form-item>
         <el-form-item>
           <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
           <el-button size="small" type="primary" icon="el-icon-plus" @click="handleEdit()">添加</el-button>
@@ -30,61 +27,90 @@
         </el-form-item>
       </el-form>
       <!--列表-->
-      <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
-        <el-table-column align="center" type="selection" width="60">
-        </el-table-column>
-        <el-table-column prop="id" label="api Id" v-if=false>
-        </el-table-column>
-        <el-table-column prop="apiModule_id" label="模块id" v-if=false>
-        </el-table-column>
-        <el-table-column prop="seq" label="排序号" v-if=false>
-        </el-table-column>
-        <el-table-column sortable prop="module_name" label="所属模块" width="200">
-        </el-table-column>
-        <el-table-column sortable prop="api_name" label="接口名称" width="200">
-        </el-table-column>
-        <el-table-column sortable prop="request_method" label="请求方法" width="100">
-        </el-table-column>
-        <el-table-column sortable prop="url" label="url" width="250">
-        </el-table-column>
-        <el-table-column prop="independent" label="是否为独立接口" width="150" align="center">
-          <template scope="scope">
-            <p v-if="scope.row.independent===false">否</p>
-            <p v-if="scope.row.independent===true">是</p>
-          </template>
-        </el-table-column>
-        <el-table-column sortable prop="summary" label="概述" width="300">
-        </el-table-column>
-        <el-table-column sortable prop="status" label="状态" width="75" align="center">
-          <template slot-scope="scope">
-            <el-switch
-              v-model="scope.row.status"
-              @change="changeStatus(scope.$index, scope.row)"
-              active-color="#13ce66"
-              inactive-color="#ff4949">
-            </el-switch>
-          </template>
-        </el-table-column>
-        <el-table-column align="center" label="操作" min-width="300">
-          <template slot-scope="scope">
-            <el-button size="mini" type="primary" @click="toTestCase(scope.row)">测试用例</el-button>
-            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-            <el-button size="mini" type="danger" @click="apiDelete(scope.$index, scope.row)">删除</el-button>
-            <el-button-group>
-              <el-button size="mini" @click="upLayer(scope.$index, scope.row)">上移</el-button>
-              <el-button size="mini" @click="downLayer(scope.$index, scope.row)">下移</el-button>
-            </el-button-group>
-          </template>
-        </el-table-column>
-      </el-table>
-      <!-- 分页组件 -->
-      <Pagination v-bind:child-msg="pageparm" @callFather="callFather"></Pagination>
+      <el-row :gutter="20">
+        <el-col :span="4">
+          <el-card class="box-card;">
+            <el-input
+              size="small"
+              placeholder="输入关键字进行过滤"
+              v-model="filterText">
+            </el-input>
+            <div style="margin: 20px;"></div>
+            <el-tree
+              class="filter-tree"
+              :data="module_list"
+              :props="defaultProps"
+              node-key="id"
+              default-expand-all
+              :highlight-current="true"
+              :filter-node-method="filterNode"
+              @node-click="handleNodeClick"
+              ref="tree">
+            </el-tree>
+          </el-card>
+        </el-col>
+        <el-col :span="20">
+          <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
+            <el-table-column prop="id" label="api Id" v-if=false>
+            </el-table-column>
+            <el-table-column prop="apiModule_id" label="模块id" v-if=false>
+            </el-table-column>
+            <el-table-column prop="seq" label="排序号" v-if=false>
+            </el-table-column>
+            <el-table-column sortable prop="module_name" label="所属模块" width="200">
+            </el-table-column>
+            <el-table-column sortable prop="api_name" label="接口名称" width="200">
+            </el-table-column>
+            <el-table-column sortable prop="request_method" label="请求方法" width="100">
+            </el-table-column>
+            <el-table-column sortable prop="url" label="url" width="250">
+            </el-table-column>
+            <el-table-column prop="independent" label="是否为独立接口" width="150" align="center">
+              <template scope="scope">
+                <p v-if="scope.row.independent===false">否</p>
+                <p v-if="scope.row.independent===true">是</p>
+              </template>
+            </el-table-column>
+            <el-table-column sortable prop="summary" label="概述" width="300">
+            </el-table-column>
+            <el-table-column sortable prop="status" label="状态" width="75" align="center">
+              <template slot-scope="scope">
+                <el-switch
+                  v-model="scope.row.status"
+                  @change="changeStatus(scope.$index, scope.row)"
+                  active-color="#13ce66"
+                  inactive-color="#ff4949">
+                </el-switch>
+              </template>
+            </el-table-column>
+            <el-table-column align="center" label="操作" min-width="300">
+              <template slot-scope="scope">
+                <el-button size="mini" type="primary" @click="toTestCase(scope.row)">测试用例</el-button>
+                <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                <el-button size="mini" type="danger" @click="apiDelete(scope.$index, scope.row)">删除</el-button>
+                <el-button-group>
+                  <el-button size="mini" @click="upLayer(scope.$index, scope.row)">上移</el-button>
+                  <el-button size="mini" @click="downLayer(scope.$index, scope.row)">下移</el-button>
+                </el-button-group>
+              </template>
+            </el-table-column>
+          </el-table>
+          <!-- 分页组件 -->
+          <Pagination v-bind:child-msg="pageparm" @callFather="callFather"></Pagination>
+        </el-col>
+      </el-row>
       <!-- 编辑界面 -->
       <el-dialog :title="title" :visible.sync="editFormVisible" width="30%" @click="closeDialog">
         <el-form label-width="120px" :model="editForm" :rules="rules" ref="editForm">
-          <el-form-item label="所属模块" prop="module_name">
-            <!--<el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync"></el-autocomplete>-->
-            <el-autocomplete size="small" v-model="editForm.module_name" @select="handleSelect3" :fetch-suggestions="querySearchAsync2" placeholder="请输入所属模块"></el-autocomplete>
+          <el-form-item label="所属模块" prop="module_id">
+            <el-select size="small" v-model="editForm.module_id" clearable placeholder="请选择" @change="m_handleChange">
+              <el-option
+                v-for="item in m_options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
           </el-form-item>
           <el-form-item label="接口名称" prop="api_name">
             <el-input size="small" v-model="editForm.api_name" auto-complete="off" placeholder="请输入接口名称"></el-input>
@@ -160,11 +186,11 @@
 </template>
 
 <script>
-  import {getAllProject} from '../../api/projectApi'
-  import {apiList, deleteApi, deleteEnvironmentVariable, downApi, getAllApiModule, getAllProjectEnvironment, getEnvironmentVariable
+  import {getAllProject, projectModuleList, getAllProjectEnvironment} from '../../api/projectApi'
+  import {apiList, deleteApi, deleteEnvironmentVariable, downApi, getEnvironmentVariable
     , saveApi, saveEnvironmentVariable, upApi, changeApiStatus} from '../../api/apiTestApi'
   import Pagination from '../../components/Pagination'
-  import { setCookie, getCookie, delCookie } from '../../utils/util'
+  import { list_to_option, list_to_tree } from '../../utils/util'
 
   export default {
    name: "apiManagement",
@@ -198,7 +224,7 @@
       },
       // rules表单验证
       rules: {
-        module_name: [{ required: true, message: '请输入模块名称', trigger: 'blur' }],
+        module_id: [{ required: true, message: '请输入模块名称', trigger: 'blur' }],
         request_method: [{ required: true, message: '请选择请求方法', trigger: 'blur' }],
         api_name: [{ required: true, message: '请输入接口名称', trigger: 'blur' }],
         url: [{ required: true, message: '请输入url', trigger: 'blur' }],
@@ -207,6 +233,13 @@
       projects: '',
       state: '',
       api_modules: '',
+      module_list: '',
+      defaultProps: {
+        children: 'children',
+        label: 'module_name'
+      },
+      current_module_id: '',
+      filterText: '',
       formInline: {
         page: 1,
         limit: 10,
@@ -242,6 +275,8 @@
       // 下拉框选项
       options: '',
       value: '',
+      // 编辑页模块下拉框选项
+      m_options: '',
       request_method_options: [{
         value: 'GET',
         label: 'GET'
@@ -272,7 +307,34 @@
    * 里面的方法只有被调用才会执行
    */
   methods: {
-    // 获取项目列表
+    // 获取模块列表
+    getModuleData(parameter) {
+      parameter = {
+        projectEnvironment_id : this.formInline.projectEnvironment_id
+      };
+      projectModuleList(parameter)
+        .then(res => {
+          if (res.success === false) {
+            this.$message({
+              type: 'info',
+              message: res.msg
+            })
+          } else {
+            this.originData = res.data;
+            if (res.data !== []) {
+              this.m_options = list_to_option(this.originData);
+              this.module_list = list_to_tree(this.originData);
+              console.log(this.module_list);
+            }
+          }
+        })
+        .catch(err => {
+          this.loading = false;
+          console.log(err);
+          this.$message.error('模块加载失败，请稍后再试！')
+        })
+    },
+    // 获取api列表
     getdata(parameter) {
       this.loading = true;
       this.pageparm.currentPage = this.formInline.page;
@@ -295,21 +357,7 @@
               message: res.msg
             })
           } else {
-            // //处理status，并赋值给listData
-            // this.listData = res.data.map((item, i) => {
-            //   console.log(item);
-            //   if (item.status === 'true') {
-            //     console.log(item.status);
-            //     this.$set(item, 'status', true)
-            //   } else if (item.status === 'false') {
-            //     console.log(item.status);
-            //     this.$set(item, 'status', false)
-            //   }
-            // });
             this.listData = res.data;
-            // 分页赋值
-            // this.pageparm.currentPage = this.formInline.page;
-            // this.pageparm.pageSize = this.formInline.limit;
             this.pageparm.total = res.count;
           }
         })
@@ -334,7 +382,9 @@
     // 搜索事件
     search() {
       this.formInline.page = 1;
-      this.getdata(this.formInline)
+      this.formInline.module_id = '';
+      this.getModuleData(this.formInline);
+      this.getdata(this.formInline);
     },
     //显示编辑界面
     handleEdit: function(index, row) {
@@ -343,25 +393,14 @@
         this.title = '修改';
         this.editForm.id = row.id;
         this.editForm.module_id = row.apiModule_id;
-        this.editForm.module_name = row.module_name;
         this.editForm.request_method = row.request_method;
         this.editForm.api_name = row.api_name;
         this.editForm.url = row.url;
         this.editForm.independent = row.independent;
         this.editForm.summary = row.summary;
-      } else if (this.editForm.module_id !== '' && this.editForm.module_name !== '') { // 判断搜索框的模块有无被选择，有选择则新增时自动选择所属模块
-        this.title = '添加';
-        this.editForm.id = '';
-        this.editForm.request_method = '';
-        this.editForm.api_name = '';
-        this.editForm.url = '';
-        this.editForm.summary = '';
-        this.editForm.seq = this.pageparm.total + 1;
       } else {
         this.title = '添加';
-        this.editForm.id = '';
-        this.editForm.module_id = '';
-        this.editForm.module_name = '';
+        this.editForm.module_id = this.current_module_id;
         this.editForm.request_method = '';
         this.editForm.api_name = '';
         this.editForm.url = '';
@@ -575,12 +614,6 @@
 
       cb(results);
     },
-    querySearchAsync2(queryString, cb) {
-      var api_modules = this.api_modules;
-      var results = queryString ? api_modules.filter(this.createStateFilter(queryString)) : api_modules;
-
-      cb(results);
-    },
     createStateFilter(queryString) {
       return (state) => {
         return (state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
@@ -592,16 +625,6 @@
       this.loadAllProjectEnvironment(item);
       this.formInline.module_id = '';
       this.formInline.module_name = '';
-    },
-    handleSelect2(item) {
-      this.formInline.module_id = item.id;
-      this.formInline.module_name = item.value;
-      this.editForm.module_id = item.id;
-      this.editForm.module_name = item.value
-    },
-    handleSelect3(item) {
-      this.editForm.module_id = item.id;
-      this.editForm.module_name = item.value
     },
     inputEvent(){
       if(this.formInline.module_name === ''){
@@ -626,18 +649,6 @@
       this.formInline.module_name = '';
       this.formInline.module_id = '';
       this.formInline.projectEnvironment_id = val;
-      let params = {
-        id: val
-      };
-      getAllApiModule(params).then(
-        res => {
-          this.api_modules = res;
-        }
-      )
-    },
-    // 修改模块中的数据时，清除模块id
-    handleChange2(val){
-      this.formInline.module_id = '';
     },
     //項目名稱修改后清空環境選擇
     inputChange(){
@@ -647,6 +658,9 @@
       this.value = '';
       this.formInline.module_id = '';
       this.formInline.module_name = '';
+    },
+    m_handleChange(val){
+      this.editForm.module_id = val;
     },
     //上移
     upLayer(index, row){
@@ -726,7 +740,16 @@
     },
     closeEnvironmentVariableDialog(){
       this.environmentVariableVisible = false;
-    }
+    },
+    filterNode(value, data) {
+      if (!value) return true;
+      return data.module_name.indexOf(value) !== -1;
+    },
+    handleNodeClick(data) {
+      this.formInline.module_id = data.id;
+      this.current_module_id = data.id;
+      this.getdata(this.formInline);
+    },
   }
 }
 </script>

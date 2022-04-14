@@ -7,7 +7,7 @@ from utils.log import Log
 from utils.extensions import db
 from models.apiTestModel import ApiTestcase
 from models.apiTestModel import Api
-from models.apiTestModel import ApiModule
+from models.projectModel import ProjectModule
 from models.projectModel import ProjectEnvironment
 import datetime, ast, uuid
 from config import setting
@@ -125,7 +125,7 @@ def get_apiTestcase():
             # 判断是否为独立接口，是则直接取api url，否则要拼接url
             api = db.session.query(Api.url, Api.request_method, Api.independent).filter(Api.id == param_apiId).first()
             if api[2] == 0:
-                projectEnvironment_id = db.session.query(ApiModule.projectEnvironment_id).join(Api).filter(Api.id == param_apiId).first()
+                projectEnvironment_id = db.session.query(ProjectModule.projectEnvironment_id).join(Api).filter(Api.id == param_apiId).first()
                 base_url = db.session.query(ProjectEnvironment.url).filter(ProjectEnvironment.id == projectEnvironment_id[0]).first()
                 c_url = base_url[0] + api[0]
                 request_method = api[1]
@@ -311,7 +311,7 @@ def debugApi():
         param_is_post_processor = 'true' if data['postProcessor'] is True else 'false'
         param_post_processor_content = data['post_processor_content']
         # 获取项目环境id，给后续取环境变量
-        e_id = db.session.query(ApiModule.projectEnvironment_id).join(Api).filter(Api.id == param_api_id).first()
+        e_id = db.session.query(ProjectModule.projectEnvironment_id).join(Api).filter(Api.id == param_api_id).first()
 
         data = test_util.debug(log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
                      , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor

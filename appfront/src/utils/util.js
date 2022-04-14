@@ -76,8 +76,38 @@ function delCookie(name) {
     setCookie(name, null, -1);
 };
 
+// 将后端返回模块数据转成下拉选项option
+function list_to_option(data){
+  let list = [];
+  for (let i = 0; i < data.length; i++){
+    let row = data[i];
+    list.push({'label': row.module_name, 'value': row.id});
+  }
+      return list;
+}
+// 将后端返回模块数据转成el-tree的格式
+function list_to_tree(data){
+  let res = {};
+  for (let i = 0; i < data.length; i++) {
+    let row = data[i];
+    // 此行代码用以统一根节点的paren_id, 跟节点的parent_id 可以为 0 或 null
+    row.parent_id = row.parent_id ? row.parent_id : 0;
+    if (res[row.id]) {
+      Object.assign(res[row.id], {id: row.id, module_name: row.module_name, module_description: row.module_description, parent_id: row.parent_id});
+    } else {
+      res[row.id] = {id: row.id, module_name: row.module_name, module_description: row.module_description, parent_id: row.parent_id, children: []};
+    }
+    if (res[row.parent_id]) {
+      res[row.parent_id].children.push(res[row.id]);
+    } else {
+      res[row.parent_id] = {children: [res[row.id]]};
+    }
+  }
+  return res[0].children;
+}
+
 /**
- * 导出 
+ * 导出
  **/
 export {
     timestampToTime,
@@ -86,5 +116,7 @@ export {
     removeStore,
     setCookie,
     getCookie,
-    delCookie
+    delCookie,
+    list_to_option,
+    list_to_tree
 }

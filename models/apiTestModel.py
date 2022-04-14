@@ -8,19 +8,20 @@ class EntityBase(object):
             del fields["_sa_instance_state"]
         return fields
 
-class ApiModule(db.Model, EntityBase):
-    __tablename__ = 'api_module'
-    id = db.Column(db.Integer, primary_key=True)
-    projectEnvironment_id = db.Column(db.Integer, db.ForeignKey('project_environment.id'))
-    module_name = db.Column(db.String(50))
-    module_description = db.Column(db.String(300))
-    create_time = db.Column(db.DateTime)
-    api = db.relationship('Api', backref=db.backref('api_module'))
+# class ApiModule(db.Model, EntityBase):
+#     __tablename__ = 'api_module'
+#     id = db.Column(db.Integer, primary_key=True)
+#     projectEnvironment_id = db.Column(db.Integer, db.ForeignKey('project_environment.id'))
+#     parent_id = db.Column(db.Integer)
+#     module_name = db.Column(db.String(50))
+#     module_description = db.Column(db.String(300))
+#     create_time = db.Column(db.DateTime)
+#     api = db.relationship('Api', backref=db.backref('api_module'))
 
 class Api(db.Model, EntityBase):
     __tablename__ = 'api'
     id = db.Column(db.Integer, primary_key=True)
-    apiModule_id = db.Column(db.Integer, db.ForeignKey('api_module.id'))
+    apiModule_id = db.Column(db.Integer, db.ForeignKey('project_module.id'))
     api_name = db.Column(db.String(100))  # 接口名称
     request_method = db.Column(db.String(20))
     url = db.Column(db.String(100))

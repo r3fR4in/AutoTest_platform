@@ -4,8 +4,6 @@ import {loginreq, getReq, postReq, deleteReq, getFile} from './axiosFun';
 /**
  * 功能模块管理
  **/
-// 下拉框获取项目环境列表
-export const getAllProjectEnvironment = (params) => { return getReq("/apiTest/getAllProjectEnvironment", params) };
 // 获取功能模块列表
 export const apiModuleList = (params) => { return getReq("/apiTest/apiModuleList", params) };
 // 保存功能模块

@@ -26,6 +26,14 @@ class ProjectEnvironment(db.Model, EntityBase):
     url = db.Column(db.String(100))
     e_description = db.Column(db.String(300))
     create_time = db.Column(db.DateTime)
-    api_module = db.relationship('ApiModule', backref=db.backref('project_environment'))
+    api_module = db.relationship('ProjectModule', backref=db.backref('project_environment'))
 
-
+class ProjectModule(db.Model, EntityBase):
+    __tablename__ = 'project_module'
+    id = db.Column(db.Integer, primary_key=True)
+    projectEnvironment_id = db.Column(db.Integer, db.ForeignKey('project_environment.id'))
+    parent_id = db.Column(db.Integer)
+    module_name = db.Column(db.String(50))
+    module_description = db.Column(db.String(300))
+    create_time = db.Column(db.DateTime)
+    api = db.relationship('Api', backref=db.backref('project_module'))

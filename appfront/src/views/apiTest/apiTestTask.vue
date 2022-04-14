@@ -110,8 +110,8 @@
 </template>
 
 <script>
-    import { apiTestTaskList, getAllProjectEnvironment, apiModuleList, addApiTestTask, deleteApiTestTask } from '../../api/apiTestApi'
-    import { getAllProject } from '../../api/projectApi'
+    import { apiTestTaskList, apiModuleList, addApiTestTask, deleteApiTestTask } from '../../api/apiTestApi'
+    import { getAllProject, projectModuleList, getAllProjectEnvironment } from '../../api/projectApi'
     import Pagination from '../../components/Pagination'
 
     export default {
@@ -214,7 +214,7 @@
           /***
           * 调用接口，注释上面模拟数据 取消下面注释
           */
-          apiModuleList(parameter)
+          projectModuleList(parameter)
             .then(res => {
               this.loading = false;
               if (res.success === false) {

@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from utils.extensions import db
-from models.apiTestModel import ApiModule
+from models.projectModel import ProjectModule
 from models.projectModel import ProjectEnvironment
 from models.projectModel import Project
 import datetime
@@ -39,8 +39,8 @@ def list_apiModule():
         param_projectEnvironment_id = request.args.get('projectEnvironment_id')
         # 根据param_projectEnvironment_id判断是否有选择项目环境名称，如果没有，返回提示
         if param_projectEnvironment_id != '':
-            apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).paginate(int(param_currentPage), int(param_pageSize)).items
-            num = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironment_id).count()
+            apiModules = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_projectEnvironment_id).paginate(int(param_currentPage), int(param_pageSize)).items
+            num = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_projectEnvironment_id).count()
         else:
             output = {'code': 0, 'msg': '未选择项目环境名称', 'count': 0, 'success': False, 'data': ''}
             return jsonify(output)
@@ -71,12 +71,12 @@ def save_apiModule():
     # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
         if param_id == '':
-            apiModule1 = ApiModule(projectEnvironment_id=param_e_id, module_name=param_m_name, module_description=param_m_description, create_time=param_create_time)
+            apiModule1 = ProjectModule(projectEnvironment_id=param_e_id, module_name=param_m_name, module_description=param_m_description, create_time=param_create_time)
             db.session.add(apiModule1)
             db.session.commit()
             output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
         else:
-            apiModule1 = ApiModule.query.get(param_id)
+            apiModule1 = ProjectModule.query.get(param_id)
             apiModule1.projectEnvironment_id = param_e_id
             apiModule1.module_name = param_m_name
             apiModule1.module_description = param_m_description
@@ -96,7 +96,7 @@ def delete_apiModule():
     param_id = request.args.get('id')
     # 删除项目环境配置
     try:
-        apiModule1 = ApiModule.query.get(param_id)
+        apiModule1 = ProjectModule.query.get(param_id)
         db.session.delete(apiModule1)
         db.session.commit()
         output = {'code': 1, 'msg': '删除成功', 'exception': None, 'success': True}

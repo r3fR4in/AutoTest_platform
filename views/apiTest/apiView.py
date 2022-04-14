@@ -3,7 +3,7 @@ from flask import Blueprint, jsonify, request
 from utils.extensions import db
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestcase
-from models.apiTestModel import ApiModule
+from models.projectModel import ProjectModule
 from utils import token_util
 
 api = Blueprint('api', __name__)
@@ -16,7 +16,7 @@ def load_all_apiModule():
     # 从get请求获取参数
     param_e_id = request.args.get('id')
     # 根据id找到module
-    apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_e_id).all()
+    apiModules = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_e_id).all()
     output = []
     if apiModules is not None:
         for apiModule in apiModules:
@@ -46,7 +46,7 @@ def list_api():
 
         # 判断param_apiModuleId是否为空，为空代表用户未输入模块名查询，默认显示该环境下所有api
         if param_apiModuleId is not None and param_apiModuleId != '':
-            apiModule = ApiModule.query.filter(ApiModule.id == param_apiModuleId).first()
+            apiModule = ProjectModule.query.filter(ProjectModule.id == param_apiModuleId).first()
             if apiModule is not None:
                 filterList.append(Api.apiModule_id == apiModule.id)
         else:
@@ -54,7 +54,7 @@ def list_api():
                 output = {'code': 1, 'msg': None, 'count': 0, 'success': True, 'data': ''}
                 return jsonify(output)
             # 找出当前环境id下所有api_module
-            apiModules = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_projectEnvironmentId).all()
+            apiModules = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_projectEnvironmentId).all()
             if apiModules is not None:
                 # 遍历取出所有id组成list
                 id_list = []

@@ -34,6 +34,8 @@ import statistics from '@/views/charts/statistics';
 import project from '@/views/project/project';
 // 项目环境配置
 import projectEnvironment from '@/views/project/projectEnvironment';
+// 模块管理
+import projectModule from '@/views/project/projectModule';
 
 /**
  * 提测管理
@@ -157,6 +159,14 @@ export default new Router({
             path: '/project/projectEnvironment',
             name: '项目环境配置',
             component: projectEnvironment,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        }, {
+            path: '/project/projectModule',
+            name: '项目环境配置',
+            component: projectModule,
             meta: {
                 requireAuth: true,
                 keepAlive: false

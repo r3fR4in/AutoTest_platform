@@ -24,3 +24,15 @@ export const saveProjectEnvironment = (params) => { return postReq("/project/sav
 export const deleteProjectEnvironment = (params) => { return deleteReq("/project/deleteProjectEnvironment", params) };
 // 复制项目环境
 export const copyEnvironment = (params) => { return getReq("/project/copyEnvironment", params) };
+
+/**
+ * 项目模块
+ **/
+// 获取模块列表
+export const projectModuleList = (params) => { return getReq("/project/projectModuleList", params) };
+// 保存模块
+export const saveProjectModule = (params) => { return postReq("/project/saveProjectModule", params) };
+// 删除模块
+export const deleteProjectModule = (params) => { return deleteReq("/project/deleteProjectModule", params) };
+// 下拉框获取项目环境列表
+export const getAllProjectEnvironment = (params) => { return getReq("/project/getAllProjectEnvironment", params) };

@@ -5,7 +5,7 @@ from models.projectModel import Project
 from models.baseModel import UserProject
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestcase
-from models.apiTestModel import ApiModule
+from models.projectModel import ProjectModule
 import datetime
 from utils import token_util
 
@@ -110,8 +110,8 @@ def save_projectEnvironment():
             # 三表关联找到该环境下所有testcase
             api_testcases = db.session.query(ApiTestcase)\
                 .join(Api, Api.id == ApiTestcase.api_id)\
-                .join(ApiModule, ApiModule.id == Api.apiModule_id)\
-                .filter(ApiModule.projectEnvironment_id == param_id).all()
+                .join(ProjectModule, ProjectModule.id == Api.apiModule_id)\
+                .filter(ProjectModule.projectEnvironment_id == param_id).all()
             projectEnvironment_url = db.session.query(ProjectEnvironment.url).filter(ProjectEnvironment.id == param_id).first()
             # 遍历并将url替换成新url
             for api_testcase in api_testcases:
@@ -140,7 +140,7 @@ def delete_projectEnvironment():
     param_id = request.args.get('id')
     # 删除项目环境配置
     try:
-        apiModule1 = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_id).first()
+        apiModule1 = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_id).first()
         if apiModule1 is None:
             projectEnvironment1 = ProjectEnvironment.query.get(param_id)
             db.session.delete(projectEnvironment1)
@@ -167,9 +167,9 @@ def copy_environment():
                                                  , e_description=projectEnvironment1.e_description, create_time=datetime.datetime.now())
         db.session.add(projectEnvironment2)
         # 添加模块
-        apiModule1 = ApiModule.query.filter(ApiModule.projectEnvironment_id == param_id).all()
+        apiModule1 = ProjectModule.query.filter(ProjectModule.projectEnvironment_id == param_id).all()
         for i in range(len(apiModule1)):
-            apiModule2 = ApiModule(projectEnvironment_id=projectEnvironment2.id, module_name=apiModule1[i].module_name, module_description=apiModule1[i].module_description
+            apiModule2 = ProjectModule(projectEnvironment_id=projectEnvironment2.id, module_name=apiModule1[i].module_name, module_description=apiModule1[i].module_description
                                    , create_time=datetime.datetime.now())
             db.session.add(apiModule2)
             # 添加api

@@ -7,7 +7,7 @@ from utils.extensions import db
 from models.apiTestModel import EnvironmentVariable
 from models.apiTestModel import ApiTestDetail
 from models.apiTestModel import ApiTestcase
-from models.apiTestModel import ApiModule
+from models.projectModel import ProjectModule
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestTask
 from utils import requests
@@ -182,7 +182,7 @@ def execute_apitest_task(task_id):
                 api_testcase1 = ApiTestcase.query.get(apitest_detail.apiTestcase_id)
                 if api_testcase1 is not None:
                     try:
-                        e_id = db.session.query(ApiModule.projectEnvironment_id).join(Api).filter(Api.id == api_testcase1.api_id).first()
+                        e_id = db.session.query(ProjectModule.projectEnvironment_id).join(Api).filter(Api.id == api_testcase1.api_id).first()
                         request_header = api_testcase1.request_header.replace('\n', '').replace(' ', '')
                         request_body = api_testcase1.request_body.replace('\n', '').replace(' ', '')
                         # request_param = api_testcase1.request_param.replace('\n', '').replace(' ', '')
