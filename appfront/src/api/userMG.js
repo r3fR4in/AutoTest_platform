@@ -27,6 +27,8 @@ export const resetPwd = (params) => { return getReq("/user/resetPwd", params) };
 export const projectPermissionsList = (params) => { return getReq("/user/projectPermissionsList", params) };
 // 保存项目权限
 export const projectPermissionsSave = (params) => { return postReq("/user/projectPermissionsSave", params) };
+// 保存项目权限
+export const modifyPwd = (params) => { return postReq("/user/modifyPwd", params) };
 
 /**
  * 菜单管理

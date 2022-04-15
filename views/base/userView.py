@@ -279,3 +279,33 @@ def save_project_permissions():
         output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
 
     return jsonify(output)
+
+
+"""修改密码"""
+@user.route('/modifyPwd', methods=['POST'])
+@token_util.login_required()
+def modify_pwd():
+    try:
+        # 从post请求拿参数
+        data = request.get_json()
+        param_old_password = data['old_password']
+        param_new_password = data['new_password']
+        param_confirm_password = data['confirm_password']
+        if param_new_password != param_confirm_password:
+            output = {'code': 0, 'msg': '确认密码与新密码不一致', 'exception': None, 'success': False}
+            return jsonify(output)
+        # 在请求头上拿到token
+        token = request.headers["Authorization"]
+        s = Serializer(setting.SECRET_KEY)
+        user = s.loads(token)
+        user1 = User.query.get(user["id"])
+        if user1.password != param_old_password:
+            output = {'code': 0, 'msg': '原密码错误', 'exception': None, 'success': False}
+            return jsonify(output)
+        user1.password = param_confirm_password
+        db.session.commit()
+        output = {'code': 1, 'msg': '修改密码成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取项目权限分配列表失败', 'exception': e, 'success': False}
+
+    return jsonify(output)

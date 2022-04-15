@@ -10,6 +10,8 @@ import index from '@/views/index';
  */
 // 用户管理
 import user from '@/views/system/user';
+// 修改密码
+import modifyPwd from '@/views/system/modifyPwd';
 // 菜单管理
 import Module from '@/views/system/Module';
 // 角色管理
@@ -95,6 +97,14 @@ export default new Router({
             path: '/system/user',
             name: '用户管理',
             component: user,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        },{
+            path: '/system/modifyPwd',
+            name: '修改密码',
+            component: modifyPwd,
             meta: {
                 requireAuth: true,
                 keepAlive: false

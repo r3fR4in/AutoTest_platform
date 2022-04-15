@@ -10,7 +10,7 @@
       <!-- <template slot="title">{{user.userRealName}}</template> -->
       <template slot="title">{{user.nickname}}</template>
       <!--<el-menu-item index="2-1">设置</el-menu-item>-->
-      <!--<el-menu-item @click="content()" index="2-2">个人中心</el-menu-item>-->
+      <el-menu-item @click="toModifyPwd" index="2-2">修改密碼</el-menu-item>
       <el-menu-item @click="exit()" index="2-3">退出</el-menu-item>
     </el-submenu>
   </el-menu>
@@ -32,6 +32,13 @@ export default {
     this.user = JSON.parse(localStorage.getItem('userdata'))
   },
   methods: {
+    // 跳转修改密码页面
+    toModifyPwd(row){
+      // // 将搜索条件存入cookie
+      this.$router.push({
+        path: '/system/modifyPwd',
+      })
+    },
     // 退出登录
     exit() {
       this.$confirm('退出登录, 是否继续?', '提示', {
