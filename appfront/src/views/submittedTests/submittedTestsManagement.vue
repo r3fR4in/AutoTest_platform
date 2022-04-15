@@ -27,34 +27,40 @@
       </el-table-column>
       <el-table-column sortable prop="submitted_test_name" label="提测名称" min-width="150">
       </el-table-column>
-      <el-table-column sortable prop="submitted_date" label="提测时间" min-width="150">
+      <el-table-column sortable prop="submitted_date" label="申请日期" min-width="120">
       </el-table-column>
-      <el-table-column sortable prop="submitted_test_director" label="提测负责人" min-width="150">
+      <el-table-column sortable prop="test_date" label="提交测试日期" min-width="120">
       </el-table-column>
-      <el-table-column sortable prop="test_director" label="测试负责人" min-width="150">
+      <el-table-column sortable prop="online_date" label="项目上线日期" min-width="120">
       </el-table-column>
-      <el-table-column sortable prop="test_status" label="测试状态" min-width="150">
+      <el-table-column sortable prop="submitted_test_director" label="提测负责人" min-width="120">
+      </el-table-column>
+      <el-table-column sortable prop="fix_bug_director" label="缺陷修复处理人员" min-width="150">
+      </el-table-column>
+      <el-table-column sortable prop="test_director" label="测试负责人" min-width="120">
+      </el-table-column>
+      <el-table-column sortable prop="test_status" label="测试状态" min-width="120">
         <template scope="scope">
           <el-tag v-if="scope.row.test_status===1">已提测</el-tag>
           <el-tag type="success" v-if="scope.row.test_status===2">测试完成</el-tag>
           <el-tag type="danger" v-if="scope.row.test_status===3">退回</el-tag>
         </template>
       </el-table-column>
-      <el-table-column sortable prop="smoke_testing_result" label="冒烟测试结果" min-width="150">
+      <el-table-column sortable prop="smoke_testing_result" label="冒烟测试结果" min-width="120">
         <template scope="scope">
           <el-tag v-if="scope.row.smoke_testing_result===0">—</el-tag>
           <el-tag type="success" v-if="scope.row.smoke_testing_result===1">测试通过</el-tag>
           <el-tag type="danger" v-if="scope.row.smoke_testing_result===2">测试不通过</el-tag>
         </template>
       </el-table-column>
-      <el-table-column sortable prop="test_result" label="最终测试结果" min-width="150">
+      <el-table-column sortable prop="test_result" label="最终测试结果" min-width="120">
         <template scope="scope">
           <el-tag v-if="scope.row.test_result===0">—</el-tag>
           <el-tag type="success" v-if="scope.row.test_result===1">测试通过</el-tag>
           <el-tag type="danger" v-if="scope.row.test_result===2">测试不通过</el-tag>
         </template>
       </el-table-column>
-      <el-table-column sortable prop="complete_date" label="完成时间" min-width="150">
+      <el-table-column sortable prop="complete_date" label="完成时间" min-width="120">
       </el-table-column>
       <el-table-column prop="submitted_test_detail" label="提测详情" v-if=false>
       </el-table-column>
@@ -76,36 +82,108 @@
     <Pagination v-bind:child-msg="pageparm" @callFather="callFather"></Pagination>
     <!-- 编辑界面 -->
     <el-dialog :title="title" :visible.sync="editFormVisible" width="45%" @click="closeDialog">
-      <el-form label-width="120px" :model="editForm" :rules="rules" ref="editForm">
-        <el-form-item label="项目名称" prop="projectName">
-          <el-autocomplete size="small" v-model="editForm.projectName" @select="handleSelect" :fetch-suggestions="querySearchAsync" placeholder="请输入项目名称" :disabled=editFormControl.projectName_disabled></el-autocomplete>
+      <el-form label-width="140px" :model="editForm" :rules="rules" ref="editForm">
+        <el-form-item label="测试系统" prop="projectName">
+          <el-autocomplete size="small" v-model="editForm.projectName" @select="handleSelect" :fetch-suggestions="querySearchAsync" placeholder="请输入项目名称" :readonly=editFormControl.projectName_disabled></el-autocomplete>
         </el-form-item>
         <el-form-item label="提测名称" prop="submitted_test_name">
-          <el-input size="small" v-model="editForm.submitted_test_name" auto-complete="off" placeholder="请输入提测名称" :disabled=editFormControl.submitted_test_name_disabled></el-input>
+          <el-input size="small" v-model="editForm.submitted_test_name" auto-complete="off" placeholder="请输入提测名称" :readonly=editFormControl.submitted_test_name_disabled></el-input>
         </el-form-item>
-        <el-form-item label="提测时间" prop="submitted_date">
+        <el-form-item label="申请日期" prop="submitted_date">
           <el-date-picker
             v-model="editForm.submitted_date"
             type="date"
             value-format="yyyy-MM-dd"
-            :disabled=editFormControl.submitted_date_disabled
+            :readonly=editFormControl.submitted_date_disabled
+            placeholder="选择日期">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item label="提交测试日期" prop="test_date">
+          <el-date-picker
+            v-model="editForm.test_date"
+            type="date"
+            value-format="yyyy-MM-dd"
+            :readonly=editFormControl.test_date_disabled
+            placeholder="选择日期">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item label="项目上线日期" prop="online_date">
+          <el-date-picker
+            v-model="editForm.online_date"
+            type="date"
+            value-format="yyyy-MM-dd"
+            :readonly=editFormControl.online_date_disabled
             placeholder="选择日期">
           </el-date-picker>
         </el-form-item>
         <el-form-item label="提测负责人" prop="submitted_test_director">
-          <el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :disabled=editFormControl.submitted_test_director_disabled></el-input>
+          <el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :readonly=editFormControl.submitted_test_director_disabled></el-input>
         </el-form-item>
-        <el-form-item label="提测说明" prop="submitted_test_detail">
+        <el-form-item label="缺陷修复处理人员" prop="fix_bug_director">
+          <el-input size="small" v-model="editForm.fix_bug_director" auto-complete="off" placeholder="请输入缺陷修复处理人员" :readonly=editFormControl.fix_bug_director_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="自测报告地址" prop="self_test_report_url">
+          <el-input size="small" v-model="editForm.self_test_report_url" auto-complete="off" placeholder="请输入自测报告地址" :readonly=editFormControl.self_test_report_url_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="测试地址" prop="test_url">
+          <el-input size="small" v-model="editForm.test_url" auto-complete="off" placeholder="请输入测试地址" :readonly=editFormControl.test_url_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="测试范围" prop="test_scope">
           <el-input type="textarea"
                     size="medium"
-                    v-model="editForm.submitted_test_detail"
+                    v-model="editForm.test_scope"
                     auto-complete="off"
-                    placeholder="请输入提测详情"
-                    :rows="8"
-                    :disabled=editFormControl.submitted_test_detail_disabled></el-input>
+                    placeholder="请输入测试范围"
+                    :rows="5"
+                    :readonly=editFormControl.test_scope_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="影响范围" prop="influence_scope">
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.influence_scope"
+                    auto-complete="off"
+                    placeholder="请输入影响范围"
+                    :rows="5"
+                    :readonly=editFormControl.influence_scope_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="注意事项" prop="points_for_attention">
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.points_for_attention"
+                    auto-complete="off"
+                    placeholder="请输入注意事项"
+                    :rows="5"
+                    :readonly=editFormControl.points_for_attention_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="配置路径" prop="config_url">
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.config_url"
+                    auto-complete="off"
+                    placeholder="请输入配置路径"
+                    :rows="5"
+                    :readonly=editFormControl.config_url_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="脚本路径" prop="script_url">
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.script_url"
+                    auto-complete="off"
+                    placeholder="请输入脚本路径"
+                    :rows="5"
+                    :readonly=editFormControl.script_url_disabled></el-input>
+        </el-form-item>
+        <el-form-item label="兼容说明" prop="compatibility_desc">
+          <el-input type="textarea"
+                    size="medium"
+                    v-model="editForm.compatibility_desc"
+                    auto-complete="off"
+                    placeholder="请输入兼容说明"
+                    :rows="5"
+                    :readonly=editFormControl.compatibility_desc_disabled></el-input>
         </el-form-item>
         <el-form-item label="测试负责人" prop="test_director">
-          <el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :disabled=editFormControl.test_director_disabled></el-input>
+          <el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :readonly=editFormControl.test_director_disabled></el-input>
         </el-form-item>
         <el-form-item label="测试状态" prop="test_status" v-if=editFormControl.test_status_show>
           <el-tag v-if="editForm.test_status===1">测试中</el-tag>
@@ -221,9 +299,19 @@ export default {
         projectName_disabled: false,
         submitted_test_name_disabled: false,
         submitted_date_disabled: false,
+        test_date_disabled: false,
+        online_date_disabled: false,
         submitted_test_director_disabled: false,
-        submitted_test_detail_disabled: false,
+        fix_bug_director_disabled: false,
         test_director_disabled: false,
+        self_test_report_url_disabled: false,
+        test_url_disabled: false,
+        test_scope_disabled: false,
+        influence_scope_disabled: false,
+        points_for_attention_disabled: false,
+        config_url_disabled: false,
+        script_url_disabled: false,
+        compatibility_desc_disabled: false,
         test_status_show: false,
         smoke_testing_result_show: false,
         test_result_show: false,
@@ -236,9 +324,19 @@ export default {
         projectName: '',
         submitted_test_name: '',
         submitted_date: '',
+        test_date: '',
+        online_date: '',
         submitted_test_director: '',
-        submitted_test_detail: '',
+        fix_bug_director: '',
         test_director: '',
+        self_test_report_url: '',
+        test_url: '',
+        test_scope: '',
+        influence_scope: '',
+        points_for_attention: '',
+        config_url: '',
+        script_url: '',
+        compatibility_desc: '',
         test_status: '',
         smoke_testing_result: '',
         smoke_testing_fail_reason: [],
@@ -256,11 +354,12 @@ export default {
       completeTestFormVisible: false,
       // rules表单验证
       rules: {
-        projectName: [{ required: true, message: '请输入项目名称', trigger: 'blur' }],
+        projectName: [{ required: true, message: '请输入测试系统', trigger: 'blur' }],
         submitted_test_name: [{ required: true, message: '请输入提测名称', trigger: 'blur' }],
-        submitted_date: [{ required: true, message: '请选择提测时间', trigger: 'change' }],
+        submitted_date: [{ required: true, message: '请选择申请日期', trigger: 'change' }],
+        test_date: [{ required: true, message: '请选择提交测试日期', trigger: 'change' }],
         submitted_test_director: [{ required: true, message: '请输入提测负责人', trigger: 'blur' }],
-        submitted_test_detail: [{ required: true, message: '请输入提测详情', trigger: 'blur' }],
+        fix_bug_director: [{ required: true, message: '请输入缺陷修复处理人员', trigger: 'blur' }],
         // test_director: [{ required: true, message: '请输入测试负责人', trigger: 'blur' }],
         smoke_testing_result: [{ required: true, message: '请选择冒烟测试结果', trigger: 'blur' }],
         smoke_testing_fail_reason: [{ required: true, message: '请选择不通过原因', trigger: 'blur' }],
@@ -371,7 +470,6 @@ export default {
       this.editForm.submitted_test_name = '';
       this.editForm.submitted_date = '';
       this.editForm.submitted_test_director = '';
-      this.editForm.submitted_test_detail = '';
       this.editForm.test_director = '';
       this.editForm.test_status = '';
       this.editForm.smoke_testing_result = '';
@@ -397,8 +495,18 @@ export default {
         this.editFormControl.projectName_disabled = false;
         this.editFormControl.submitted_test_name_disabled = false;
         this.editFormControl.submitted_date_disabled = false;
+        this.editFormControl.test_date_disabled = false;
+        this.editFormControl.online_date_disabled = false;
         this.editFormControl.submitted_test_director_disabled = false;
-        this.editFormControl.submitted_test_detail_disabled = false;
+        this.editFormControl.fix_bug_director_disabled = false;
+        this.editFormControl.self_test_report_url_disabled = false;
+        this.editFormControl.test_url_disabled = false;
+        this.editFormControl.test_scope_disabled = false;
+        this.editFormControl.influence_scope_disabled = false;
+        this.editFormControl.points_for_attention_disabled = false;
+        this.editFormControl.config_url_disabled = false;
+        this.editFormControl.script_url_disabled = false;
+        this.editFormControl.compatibility_desc_disabled = false;
         this.editFormControl.test_director_disabled = false;
         this.editFormControl.test_status_show = false;
         this.editFormControl.smoke_testing_result_show = false;
@@ -417,8 +525,18 @@ export default {
           this.editFormControl.projectName_disabled = true;
           this.editFormControl.submitted_test_name_disabled = true;
           this.editFormControl.submitted_date_disabled = true;
+          this.editFormControl.test_date_disabled = true;
+          this.editFormControl.online_date_disabled = true;
           this.editFormControl.submitted_test_director_disabled = true;
-          this.editFormControl.submitted_test_detail_disabled = true;
+          this.editFormControl.fix_bug_director_disabled = true;
+          this.editFormControl.self_test_report_url_disabled = true;
+          this.editFormControl.test_url_disabled = true;
+          this.editFormControl.test_scope_disabled = true;
+          this.editFormControl.influence_scope_disabled = true;
+          this.editFormControl.points_for_attention_disabled = true;
+          this.editFormControl.config_url_disabled = true;
+          this.editFormControl.script_url_disabled = true;
+          this.editFormControl.compatibility_desc_disabled = true;
           this.editFormControl.test_director_disabled = true;
           this.editFormControl.test_status_show = true;
           this.editFormControl.smoke_testing_result_show = true;
@@ -431,8 +549,18 @@ export default {
           this.editForm.projectName = row.projectName;
           this.editForm.submitted_test_name = row.submitted_test_name;
           this.editForm.submitted_date = row.submitted_date;
+          this.editForm.test_date = row.test_date;
+          this.editForm.online_date = row.online_date;
           this.editForm.submitted_test_director = row.submitted_test_director;
-          this.editForm.submitted_test_detail = row.submitted_test_detail;
+          this.editForm.fix_bug_director = row.fix_bug_director;
+          this.editForm.self_test_report_url = row.self_test_report_url;
+          this.editForm.test_url = row.test_url;
+          this.editForm.test_scope = row.test_scope;
+          this.editForm.influence_scope = row.influence_scope;
+          this.editForm.points_for_attention = row.points_for_attention;
+          this.editForm.config_url = row.config_url;
+          this.editForm.script_url = row.script_url;
+          this.editForm.compatibility_desc = row.compatibility_desc;
           this.editForm.test_director = row.test_director;
           this.editForm.test_status = row.test_status;
           this.editForm.smoke_testing_result = row.smoke_testing_result;
@@ -445,8 +573,18 @@ export default {
           this.editFormControl.projectName_disabled = true;
           this.editFormControl.submitted_test_name_disabled = false;
           this.editFormControl.submitted_date_disabled = false;
+          this.editFormControl.test_date_disabled = false;
+          this.editFormControl.online_date_disabled = false;
           this.editFormControl.submitted_test_director_disabled = false;
-          this.editFormControl.submitted_test_detail_disabled = false;
+          this.editFormControl.fix_bug_director_disabled = false;
+          this.editFormControl.self_test_report_url_disabled = false;
+          this.editFormControl.test_url_disabled = false;
+          this.editFormControl.test_scope_disabled = false;
+          this.editFormControl.influence_scope_disabled = false;
+          this.editFormControl.points_for_attention_disabled = false;
+          this.editFormControl.config_url_disabled = false;
+          this.editFormControl.script_url_disabled = false;
+          this.editFormControl.compatibility_desc_disabled = false;
           this.editFormControl.test_director_disabled = false;
           this.editFormControl.test_status_show = false;
           this.editFormControl.smoke_testing_result_show = false;
@@ -459,8 +597,18 @@ export default {
           this.editForm.projectName = row.projectName;
           this.editForm.submitted_test_name = row.submitted_test_name;
           this.editForm.submitted_date = row.submitted_date;
+          this.editForm.test_date = row.test_date;
+          this.editForm.online_date = row.online_date;
           this.editForm.submitted_test_director = row.submitted_test_director;
-          this.editForm.submitted_test_detail = row.submitted_test_detail;
+          this.editForm.fix_bug_director = row.fix_bug_director;
+          this.editForm.self_test_report_url = row.self_test_report_url;
+          this.editForm.test_url = row.test_url;
+          this.editForm.test_scope = row.test_scope;
+          this.editForm.influence_scope = row.influence_scope;
+          this.editForm.points_for_attention = row.points_for_attention;
+          this.editForm.config_url = row.config_url;
+          this.editForm.script_url = row.script_url;
+          this.editForm.compatibility_desc = row.compatibility_desc;
           this.editForm.test_director = row.test_director;
           this.editForm.test_status = row.test_status;
           this.editForm.smoke_testing_result = row.smoke_testing_result;

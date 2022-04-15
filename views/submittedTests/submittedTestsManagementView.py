@@ -99,8 +99,18 @@ def save_submittedTest():
     param_projectName = data['projectName']
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
+    param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
+    param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
-    param_submitted_test_detail = data['submitted_test_detail']
+    param_fix_bug_director = data['fix_bug_director']
+    param_self_test_report_url = data['self_test_report_url']
+    param_test_url = data['test_url']
+    param_test_scope = data['test_scope']
+    param_influence_scope = data['influence_scope']
+    param_points_for_attention = data['points_for_attention']
+    param_config_url = data['config_url']
+    param_script_url = data['script_url']
+    param_compatibility_desc = data['compatibility_desc']
     param_test_director = data['test_director']
     param_file_name = data['file_name']
     try:
@@ -111,8 +121,11 @@ def save_submittedTest():
                 output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
             else:
                 project1_dict = project1.to_json()
-                submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name, submitted_test_detail=param_submitted_test_detail,
-                                                 submitted_date=param_submitted_date, submitted_test_director=param_submitted_test_director, test_director=param_test_director,
+                submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name,
+                                                 submitted_date=param_submitted_date, test_date=param_test_date, online_date=param_online_date, fix_bug_director=param_fix_bug_director,
+                                                 self_test_report_url=param_self_test_report_url, test_url=param_test_url, test_scope=param_test_scope, influence_scope=param_influence_scope,
+                                                 points_for_attention=param_points_for_attention, config_url=param_config_url, script_url=param_script_url, compatibility_desc=param_compatibility_desc,
+                                                 submitted_test_director=param_submitted_test_director, test_director=param_test_director,
                                                  test_status=1, smoke_testing_result=0, test_result=0, file_name=str(param_file_name))
                 db.session.add(submittedTests1)
                 db.session.commit()
@@ -120,9 +133,19 @@ def save_submittedTest():
         else:
             submittedTests1 = SubmittedTests.query.get(param_id)
             submittedTests1.submitted_test_name = param_submitted_test_name
-            submittedTests1.submitted_test_detail = param_submitted_test_detail
             submittedTests1.submitted_date = param_submitted_date
+            submittedTests1.test_date = param_test_date
+            submittedTests1.online_date = param_online_date
             submittedTests1.submitted_test_director = param_submitted_test_director
+            submittedTests1.fix_bug_director = param_fix_bug_director
+            submittedTests1.self_test_report_url = param_self_test_report_url
+            submittedTests1.test_url = param_test_url
+            submittedTests1.test_scope = param_test_scope
+            submittedTests1.influence_scope = param_influence_scope
+            submittedTests1.points_for_attention = param_points_for_attention
+            submittedTests1.config_url = param_config_url
+            submittedTests1.script_url = param_script_url
+            submittedTests1.compatibility_desc = param_compatibility_desc
             submittedTests1.test_director = param_test_director
             db.session.commit()
             output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
