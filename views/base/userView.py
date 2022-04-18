@@ -161,7 +161,7 @@ def add_user():
 @user.route('/saveUser', methods=['put'])
 @token_util.login_required()
 def edit_user():
-    # 从pput请求拿参数
+    # 从put请求拿参数
     data = request.get_json()
     param_id = data['id']
     param_username = data['username']

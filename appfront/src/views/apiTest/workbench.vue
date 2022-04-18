@@ -40,42 +40,78 @@
       <el-checkbox v-model="apiData.postProcessor">后置处理</el-checkbox>
       <div style="margin-top: 18px" v-show="apiData.assert">
         <el-form-item label="断言">
-          <el-input
-            type="textarea"
-            :rows="3"
-            placeholder='输入预取断言字段，[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'
+          <!--<el-input-->
+            <!--type="textarea"-->
+            <!--:rows="3"-->
+            <!--placeholder='输入预取断言字段，[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'-->
+            <!--v-model="apiData.assert_content"-->
+            <!--style="margin-top: 10px">-->
+          <!--</el-input>-->
+          <el-alert
+            title='格式如：[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'
+            type="info"
+            :closable="false"></el-alert>
+          <vue-json-editor
             v-model="apiData.assert_content"
-            style="margin-top: 10px">
-          </el-input>
+            :show-btns="false"
+            :mode="'code'"
+            lang="zh"></vue-json-editor>
         </el-form-item>
       </div>
       <div style="margin-top: 18px" v-show="apiData.postProcessor">
         <el-form-item label="后置处理">
-          <el-input
-            type="textarea"
-            :rows="3"
-            placeholder='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'
+          <!--<el-input-->
+            <!--type="textarea"-->
+            <!--:rows="3"-->
+            <!--placeholder='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'-->
+            <!--v-model="apiData.post_processor_content"-->
+            <!--style="margin-top: 10px">-->
+          <!--</el-input>-->
+          <el-alert
+            title='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'
+            type="info"
+            :closable="false"></el-alert>
+          <vue-json-editor
             v-model="apiData.post_processor_content"
-            style="margin-top: 10px">
-          </el-input>
+            :show-btns="false"
+            :mode="'code'"
+            lang="zh"></vue-json-editor>
         </el-form-item>
       </div>
       <el-tabs v-model="activeName" @tab-click="handleClick" type="border-card" style="margin-top: 18px">
         <el-tab-pane label="Headers" name="first">
-          <el-input
-            type="textarea"
-            :rows="6"
-            placeholder='输入字典，如：{"Content-Type": "application/json;charset=UTF-8", "Authorization": "xxxxxxxxxxxxx"}'
-            v-model="apiData.request_header">
-          </el-input>
+          <!--<el-input-->
+            <!--type="textarea"-->
+            <!--:rows="6"-->
+            <!--placeholder='输入字典，如：{"Content-Type": "application/json;charset=UTF-8", "Authorization": "xxxxxxxxxxxxx"}'-->
+            <!--v-model="apiData.request_header">-->
+          <!--</el-input>-->
+          <el-alert
+            title='格式如：{"Content-Type": "application/json;charset=UTF-8", "Authorization": "xxxxxxxxxxxxx"}'
+            type="info"
+            :closable="false"></el-alert>
+          <vue-json-editor
+            v-model="apiData.request_header"
+            :show-btns="false"
+            :mode="'code'"
+            lang="zh"></vue-json-editor>
         </el-tab-pane>
         <el-tab-pane label="Body" name="second" id="body" v-bind:disabled="this.apiData.request_file.length !== 0">
-          <el-input
-            type="textarea"
-            :rows="6"
-            placeholder='输入字典，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'
-            v-model="apiData.request_body">
-          </el-input>
+          <!--<el-input-->
+            <!--type="textarea"-->
+            <!--:rows="6"-->
+            <!--placeholder='输入字典，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'-->
+            <!--v-model="apiData.request_body">-->
+          <!--</el-input>-->
+          <el-alert
+            title='格式如：{"channel":"whatsapp","to":"85259842833","whatsapp":{"type":"text","text":{"body":"测试"},"preview_url":false}}'
+            type="info"
+            :closable="false"></el-alert>
+          <vue-json-editor
+            v-model="apiData.request_body"
+            :show-btns="false"
+            :mode="'code'"
+            lang="zh"></vue-json-editor>
         </el-tab-pane>
         <!--<el-tab-pane label="Params" name="third" id="param" v-bind:disabled="this.apiData.request_body !== '' || this.apiData.request_file.length !== 0">
           <el-input
@@ -127,8 +163,9 @@
 <script>
   import {apiTestcaseData, debugApi, addApiTestcase, editApiTestcase, deleteUploadFile, downloadFile} from '../../api/apiTestApi'
   import JsonView from '../../components/JsonView'
+  import vueJsonEditor from 'vue-json-editor'
 export default {
-  components: {JsonView},
+  components: { JsonView, vueJsonEditor },
   data() {
     return{
       id: '',
@@ -209,9 +246,13 @@ export default {
               this.apiData.encode = res.data.encode;
             }
             this.apiData.id = res.data.id;
-            this.apiData.request_body = res.data.request_body;
+            if (res.data.request_body !== ''){
+              this.apiData.request_body = JSON.parse(res.data.request_body);
+            }
             // this.apiData.request_param = res.data.request_param;
-            this.apiData.request_header = res.data.request_header;
+            if (res.data.request_header !== ''){
+              this.apiData.request_header = JSON.parse(res.data.request_header);
+            }
             this.apiData.request_method = res.data.request_method;
             this.apiData.title = res.data.title;
             this.apiData.url = res.data.url;
@@ -219,9 +260,13 @@ export default {
             this.request_method_select = res.data.request_method;
             this.apiData.assert = res.data.is_assert === 'true';
             // this.apiData.assert_pattern = res.data.assert_pattern;
-            this.apiData.assert_content = res.data.assert_content;
+            if (res.data.assert_content !== ''){
+              this.apiData.assert_content = JSON.parse(res.data.assert_content);
+            }
             this.apiData.postProcessor = res.data.is_post_processor === 'true';
-            this.apiData.post_processor_content = res.data.post_processor_content;
+            if (res.data.post_processor_content !== ''){
+              this.apiData.post_processor_content = JSON.parse(res.data.post_processor_content);
+            }
             this.apiData.request_file = res.data.file_name;
           }
         })
@@ -242,8 +287,12 @@ export default {
     },
     save(){
       this.apiData.post_processor_content = ''; // 不知道爲什麽初始化值為undefined，所以在這裏設為空格
+      let param = this.apiData;
+      param['request_header'] = JSON.stringify(param['request_header']);
+      param['request_body'] = JSON.stringify(param['request_body']);
+      param['assert_content'] = JSON.stringify(param['assert_content']);
+      param['post_processor_content'] = JSON.stringify(param['post_processor_content']);
       if (this.apiData.id === ''){
-        let param = this.apiData;
         delete param['id'];
         addApiTestcase(param)
           .then(res => {
@@ -257,6 +306,7 @@ export default {
                 this.apiData.id = res.id;
                 this.uploadData.id = res.id;
               }
+              this.getData();
             } else {
               this.$message({
                 type: 'info',
@@ -268,7 +318,6 @@ export default {
             this.$message.error('保存失败，请稍后再试！')
           })
       } else {
-        let param = this.apiData;
         editApiTestcase(param)
           .then(res => {
             if (res.success) {
@@ -281,6 +330,7 @@ export default {
                 this.apiData.id = res.id;
                 this.uploadData.id = res.id;
               }
+              this.getData();
             } else {
               this.$message({
                 type: 'info',
@@ -305,11 +355,16 @@ export default {
     },
     //调试
     debug(){
-      debugApi(this.apiData)
+      let param = this.apiData;
+      param['request_header'] = JSON.stringify(param['request_header']);
+      param['request_body'] = JSON.stringify(param['request_body']);
+      param['assert_content'] = JSON.stringify(param['assert_content']);
+      param['post_processor_content'] = JSON.stringify(param['post_processor_content']);
+      debugApi(param)
         .then(res => {
           if (res.success){
             this.debugLog = res.data;
-            console.log(this.debugLog);
+            this.getData();
           } else {
             this.$message({
               type: 'info',

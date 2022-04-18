@@ -3,32 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="隨便更更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/api/apiTestApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/apiTestApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/api/axiosFun.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/axiosFun.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/api/projectApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/projectApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/api/submittedTestsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/submittedTestsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/api/userMG.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/userMG.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/project/project.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/project/project.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/project/projectEnvironment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/project/projectEnvironment.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/project/projectModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/project/projectModule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/system/user.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.9847ebf318bcb0c4c28f106f372efef4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.9847ebf318bcb0c4c28f106f372efef4.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.ca277b6264ffcd5d1d8e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.ca277b6264ffcd5d1d8e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.372f7f4ebabb260412ecea79a2e81acd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.372f7f4ebabb260412ecea79a2e81acd.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.13c35c3e62b08ea757ef.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.13c35c3e62b08ea757ef.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor.df266c519ba5d6a99925.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor.df266c519ba5d6a99925.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/apiTest/apiView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/apiTest/apiView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/apiTest/environmentVariableView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/apiTest/environmentVariableView.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/base/userView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/base/userView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/project/projectEnvironmentView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/project/projectEnvironmentView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/project/projectModuleView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/project/projectModuleView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/project/projectView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/project/projectView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/base/userView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171">
-              <caret line="236" column="25" selection-start-line="236" selection-start-column="25" selection-end-line="236" selection-end-column="25" />
+            <state relative-caret-position="169">
+              <caret line="169" column="31" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -82,12 +68,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/views/system/user.vue">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="347" column="24" selection-start-line="347" selection-start-column="24" selection-end-line="347" selection-end-column="24" />
+            <state relative-caret-position="360">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="103" column="9" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
               <folding>
-                <element signature="e#5305#5475#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-button#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-button#1;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#5912#6039#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,6 +149,8 @@
       <find>cele</find>
       <find>request_param</find>
       <find>uploadData</find>
+      <find>ace</find>
+      <find>powered</find>
     </findStrings>
     <replaceStrings>
       <replace>file_name</replace>
@@ -147,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingRankReport.vue" />
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/apiTestCase.vue" />
         <option value="$PROJECT_DIR$/utils/requests.py" />
         <option value="$PROJECT_DIR$/config/setting.py" />
@@ -177,7 +192,6 @@
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/appfront/src/views/system/modifyPwd.vue" />
         <option value="$PROJECT_DIR$/models/submittedTestsModel.py" />
-        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
         <option value="$PROJECT_DIR$/appfront/src/api/axiosFun.js" />
         <option value="$PROJECT_DIR$/views/project/projectView.py" />
         <option value="$PROJECT_DIR$/appfront/src/views/project/project.vue" />
@@ -193,11 +207,13 @@
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" />
         <option value="$PROJECT_DIR$/views/apiTest/apiView.py" />
         <option value="$PROJECT_DIR$/appfront/src/api/apiTestApi.js" />
-        <option value="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" />
         <option value="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" />
         <option value="$PROJECT_DIR$/appfront/src/views/system/user.vue" />
         <option value="$PROJECT_DIR$/appfront/src/api/userMG.js" />
+        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
         <option value="$PROJECT_DIR$/views/base/userView.py" />
+        <option value="$PROJECT_DIR$/appfront/node_modules/vue-json-editor/assets/jsoneditor.js" />
+        <option value="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" />
       </list>
     </option>
   </component>
@@ -239,13 +255,6 @@
               <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
               <item name="appfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -259,58 +268,7 @@
             <path>
               <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="submittedTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="apiTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
@@ -617,7 +575,7 @@
       <workItem from="1649405302679" duration="40864000" />
       <workItem from="1649991098131" duration="815000" />
       <workItem from="1649992827994" duration="7066000" />
-      <workItem from="1650010993023" duration="16508000" />
+      <workItem from="1650010993023" duration="21895000" />
     </task>
     <task id="LOCAL-00001" summary="隨便更更">
       <created>1641460444805</created>
@@ -630,7 +588,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1193115000" />
+    <option name="totallyTimeSpent" value="1198502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,6 +601,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.24466951" />
       <window_info id="Structure" order="1" sideWeight="0.5048544" side_tool="true" weight="0.20095949" />
@@ -650,15 +609,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49200428" weight="0.3286334" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48773986" weight="0.35683298" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="8" sideWeight="0.4989339" weight="0.3286334" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.51226014" side_tool="true" weight="0.35683298" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.4989339" weight="0.3286334" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51226014" side_tool="true" weight="0.31995663" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.48773986" weight="0.35683298" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48827294" visible="true" weight="0.31995663" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48773986" visible="true" weight="0.31995663" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -772,19 +731,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/apiTest/apiModuleView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-920">
-          <caret line="11" selection-start-line="11" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/setting.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/apiTestModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -904,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/projectModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -922,13 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1124,23 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="282" column="13" selection-start-line="282" selection-start-column="13" selection-end-line="282" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#1;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-input#0;n#el-form-item#0;n#div#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#5912#6023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/api/apiTestApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -1151,12 +1066,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/api/userMG.js">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        <state relative-caret-position="360">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/base/userView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="169" column="31" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1171,12 +1093,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/base/userView.py">
+    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="236" column="25" selection-start-line="236" selection-start-column="25" selection-end-line="236" selection-end-column="25" />
+        <state relative-caret-position="160">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/api/userMG.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/node_modules/vue-json-editor/vue-json-editor.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/node_modules/vue-json-editor/assets/jsoneditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4381">
+          <caret line="16069" column="28" selection-start-line="16069" selection-start-column="28" selection-end-line="16069" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="103" column="9" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#1;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#5912#6039#0" expanded="true" />
           </folding>
         </state>
       </provider>
