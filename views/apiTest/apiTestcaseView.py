@@ -144,51 +144,69 @@ def get_apiTestcase():
 """保存测试用例数据"""
 @apiTestcase.route('/saveApiTestcase', methods=['post'])
 @token_util.login_required()
-def save_apiTestcase():
+def add_apiTestcase():
     try:
         data = request.get_json()
         param_api_id = data['api_id']
         param_encode = data['encode']
-        param_id = data['id']
         param_request_body = data['request_body']
-        # param_request_param = data['request_param']
         param_request_header = data['request_header']
         param_request_method = data['request_method']
         param_title = data['title']
         param_verify = 'true' if data['verify'] is True else 'false'
         param_url = data['url']
         param_assert = 'true' if data['assert'] is True else 'false'
-        # param_assert_pattern = request.form.get('assert_pattern')
         param_assert_content = data['assert_content']
         param_post_processor = 'true' if data['postProcessor'] is True else 'false'
         param_post_processor_content = data['post_processor_content']
-        # 根据id判断新增或编辑，id为空则是新增，否则为编辑
-        if param_id == '':
-            apiTestcase1 = ApiTestcase(api_id=param_api_id, title=param_title, request_method=param_request_method, request_header=param_request_header, request_body=param_request_body
-                                       , encode=param_encode, verify=param_verify, url=param_url, is_assert=param_assert
-                                       , assert_content=param_assert_content, is_post_processor=param_post_processor
-                                       , post_processor_content=param_post_processor_content)
-            db.session.add(apiTestcase1)
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True, 'id': apiTestcase1.id}
-        else:
-            apiTestcase1 = ApiTestcase.query.get(param_id)
-            apiTestcase1.api_id = param_api_id
-            apiTestcase1.title = param_title
-            apiTestcase1.request_method = param_request_method
-            apiTestcase1.request_header = param_request_header
-            apiTestcase1.request_body = param_request_body
-            # apiTestcase1.request_param = param_request_param
-            apiTestcase1.encode = param_encode
-            apiTestcase1.verify = param_verify
-            apiTestcase1.url = param_url
-            apiTestcase1.is_assert = param_assert
-            # apiTestcase1.assert_pattern = param_assert_pattern
-            apiTestcase1.assert_content = param_assert_content
-            apiTestcase1.is_post_processor = param_post_processor
-            apiTestcase1.post_processor_content = param_post_processor_content
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        apiTestcase1 = ApiTestcase(api_id=param_api_id, title=param_title, request_method=param_request_method, request_header=param_request_header, request_body=param_request_body
+                                    , encode=param_encode, verify=param_verify, url=param_url, is_assert=param_assert
+                                    , assert_content=param_assert_content, is_post_processor=param_post_processor
+                                    , post_processor_content=param_post_processor_content)
+        db.session.add(apiTestcase1)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True, 'id': apiTestcase1.id}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""保存测试用例数据"""
+@apiTestcase.route('/saveApiTestcase', methods=['put'])
+@token_util.login_required()
+def edit_apiTestcase():
+    try:
+        data = request.get_json()
+        param_api_id = data['api_id']
+        param_encode = data['encode']
+        param_id = data['id']
+        param_request_body = data['request_body']
+        param_request_header = data['request_header']
+        param_request_method = data['request_method']
+        param_title = data['title']
+        param_verify = 'true' if data['verify'] is True else 'false'
+        param_url = data['url']
+        param_assert = 'true' if data['assert'] is True else 'false'
+        param_assert_content = data['assert_content']
+        param_post_processor = 'true' if data['postProcessor'] is True else 'false'
+        param_post_processor_content = data['post_processor_content']
+
+        apiTestcase1 = ApiTestcase.query.get(param_id)
+        apiTestcase1.api_id = param_api_id
+        apiTestcase1.title = param_title
+        apiTestcase1.request_method = param_request_method
+        apiTestcase1.request_header = param_request_header
+        apiTestcase1.request_body = param_request_body
+        apiTestcase1.encode = param_encode
+        apiTestcase1.verify = param_verify
+        apiTestcase1.url = param_url
+        apiTestcase1.is_assert = param_assert
+        apiTestcase1.assert_content = param_assert_content
+        apiTestcase1.is_post_processor = param_post_processor
+        apiTestcase1.post_processor_content = param_post_processor_content
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 

@@ -188,7 +188,7 @@
 <script>
   import {getAllProject, projectModuleList, getAllProjectEnvironment} from '../../api/projectApi'
   import {apiList, deleteApi, deleteEnvironmentVariable, downApi, getEnvironmentVariable
-    , saveApi, saveEnvironmentVariable, upApi, changeApiStatus} from '../../api/apiTestApi'
+    , addApi, editApi, addEnvironmentVariable, editEnvironmentVariable, upApi, changeApiStatus} from '../../api/apiTestApi'
   import Pagination from '../../components/Pagination'
   import { list_to_option, list_to_tree } from '../../utils/util'
 
@@ -212,9 +212,7 @@
         api_name:'',
         url: '',
         summary: '',
-        seq: '',
-        independent: false,
-        token: localStorage.getItem('logintoken')
+        independent: false
       },
       e_editForm: {
         id: '',
@@ -324,7 +322,6 @@
             if (res.data !== []) {
               this.m_options = list_to_option(this.originData);
               this.module_list = list_to_tree(this.originData);
-              console.log(this.module_list);
             }
           }
         })
@@ -400,12 +397,12 @@
         this.editForm.summary = row.summary;
       } else {
         this.title = '添加';
+        this.editForm.id = '';
         this.editForm.module_id = this.current_module_id;
         this.editForm.request_method = '';
         this.editForm.api_name = '';
         this.editForm.url = '';
         this.editForm.summary = '';
-        this.editForm.seq = this.pageparm.total + 1;
       }
     },
     e_handleEdit: function(index, row) {
@@ -455,28 +452,56 @@
     submitForm(editData) {
       this.$refs[editData].validate(valid => {
         if (valid) {
-          saveApi(this.editForm)
-            .then(res => {
-              this.editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.getdata(this.formInline);
-                this.$message({
-                  type: 'success',
-                  message: res.msg
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('项目保存失败，请稍后再试！')
-            })
+          if (this.editForm.id === ''){
+            let param = this.editForm;
+            delete param['id'];
+            addApi(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          } else {
+            let param = this.editForm;
+            editApi(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }
@@ -485,28 +510,56 @@
     e_submitForm(e_editData) {
       this.$refs[e_editData].validate(valid => {
         if (valid) {
-          saveEnvironmentVariable(this.e_editForm)
-            .then(res => {
-              this.e_editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.handleEnvironmentVariable();
-                this.$message({
-                  type: 'success',
-                  message: res.msg
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('环境变量失败，请稍后再试！')
-            })
+          if (this.e_editForm.id === ''){
+            let param = this.e_editForm;
+            delete param['id'];
+            addEnvironmentVariable(param)
+              .then(res => {
+                this.e_editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.handleEnvironmentVariable();
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('环境变量失败，请稍后再试！')
+              })
+          } else {
+            let param = this.e_editForm;
+            editEnvironmentVariable(param)
+              .then(res => {
+                this.e_editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.handleEnvironmentVariable();
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('环境变量失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }
@@ -514,7 +567,7 @@
     },
     // 关闭编辑、增加弹出框
     closeDialog() {
-      this.editFormVisible = false
+      this.editFormVisible = false;
     },
     // 删除api模块
     apiDelete(index, row) {
@@ -746,7 +799,9 @@
       return data.module_name.indexOf(value) !== -1;
     },
     handleNodeClick(data) {
+      console.log(data);
       this.formInline.module_id = data.id;
+      this.formInline.module_name = data.module_name;
       this.current_module_id = data.id;
       this.getdata(this.formInline);
     },

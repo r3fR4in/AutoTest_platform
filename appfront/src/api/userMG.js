@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { loginreq, req, getReq, postReq, deleteReq } from './axiosFun';
+import { loginreq, req, getReq, putReq, postReq, deleteReq } from './axiosFun';
 
 // 登录接口
 export const login = (params) => { return loginreq("post", "/user/login", params) };
@@ -16,13 +16,15 @@ export const userList = (params) => { return getReq("/user/userList", params) };
 // 获取用户权限的code
 export const getRoleCode = (params) => { return getReq("/user/getRoleCode", params) };
 // 用户保存（添加编辑）
-export const userSave = (params) => { return postReq("/user/saveUser", params) };
+export const addUser = (params) => { return postReq("/user/saveUser", params) };
+// 用户保存（添加编辑）
+export const editUser = (params) => { return putReq("/user/saveUser", params) };
 // 修改用户状态
-export const changeUserStatus = (params) => { return getReq("/user/changeUserStatus", params) };
+export const changeUserStatus = (params) => { return putReq("/user/changeUserStatus", params) };
 // 删除用户
-export const userDelete = (params) => { return getReq("/user/deleteUser", params) };
+export const userDelete = (params) => { return deleteReq("/user/deleteUser", params) };
 // 用户重置密码
-export const resetPwd = (params) => { return getReq("/user/resetPwd", params) };
+export const resetPwd = (params) => { return putReq("/user/resetPwd", params) };
 // 获取项目权限列表
 export const projectPermissionsList = (params) => { return getReq("/user/projectPermissionsList", params) };
 // 保存项目权限

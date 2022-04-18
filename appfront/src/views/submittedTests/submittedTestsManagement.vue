@@ -283,7 +283,7 @@
 <script>
 import Pagination from '../../components/Pagination'
 import { getAllProject } from '../../api/projectApi'
-import { submittedTestsList, getReasonOption, saveSubmittedTest, deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
+import { submittedTestsList, getReasonOption, addSubmittedTest, editSubmittedTest, deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
 export default {
   data() {
     return {
@@ -622,29 +622,58 @@ export default {
     submitForm(editData) {
       this.$refs[editData].validate(valid => {
         if (valid) {
-          saveSubmittedTest(this.editForm)
-            .then(res => {
-              this.editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.getdata(this.formInline);
-                this.clearEditForm();
-                this.$message({
-                  type: 'success',
-                  message: res.msg
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('提测申请保存失败，请稍后再试！')
-            })
+          if (this.editForm.id === ''){
+            let param = this.editForm;
+            delete param['id'];
+            addSubmittedTest(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.clearEditForm();
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('提测申请保存失败，请稍后再试！')
+              })
+          } else {
+            let param = this.editForm;
+            editSubmittedTest(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.clearEditForm();
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('提测申请保存失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }

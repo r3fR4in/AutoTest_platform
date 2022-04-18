@@ -52,39 +52,56 @@ def list_projectModule():
     return jsonify(output)
 
 
-"""添加或修改功能模块"""
+"""添加功能模块"""
 @projectModule.route('/saveProjectModule', methods=['post'])
 @token_util.login_required()
-def save_projectModule():
+def add_projectModule():
     # 从post请求拿参数
+    data = request.get_json()
+    param_e_id = data['e_id']
+    param_parent_id = data['parent_id'] if data['parent_id'] != '' else 0
+    param_m_name = data['m_name']
+    param_m_description = data['m_description']
+    param_create_time = datetime.datetime.now()
+    try:
+        if param_e_id == '':
+            output = {'code': 0, 'msg': '请选择项目环境并查询', 'exception': None, 'success': False}
+            return jsonify(output)
+        projectModule1 = ProjectModule(projectEnvironment_id=param_e_id, parent_id=param_parent_id, module_name=param_m_name, module_description=param_m_description, create_time=param_create_time)
+        db.session.add(projectModule1)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""修改功能模块"""
+@projectModule.route('/saveProjectModule', methods=['put'])
+@token_util.login_required()
+def edit_projectModule():
+    # 从pput请求拿参数
     data = request.get_json()
     param_id = data['id']
     param_e_id = data['e_id']
     param_parent_id = data['parent_id'] if data['parent_id'] != '' else 0
     param_m_name = data['m_name']
     param_m_description = data['m_description']
-    param_create_time = datetime.datetime.now()
-    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
         if param_e_id == '':
             output = {'code': 0, 'msg': '请选择项目环境并查询', 'exception': None, 'success': False}
             return jsonify(output)
-        if param_id == '':
-            projectModule1 = ProjectModule(projectEnvironment_id=param_e_id, parent_id=param_parent_id, module_name=param_m_name, module_description=param_m_description, create_time=param_create_time)
-            db.session.add(projectModule1)
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
-        else:
-            if param_parent_id == param_id:
-                output = {'code': 0, 'msg': '父模块不能选择自己', 'exception': None, 'success': False}
-                return jsonify(output)
-            projectModule1 = ProjectModule.query.get(param_id)
-            projectModule1.projectEnvironment_id = param_e_id
-            projectModule1.parent_id = param_parent_id
-            projectModule1.module_name = param_m_name
-            projectModule1.module_description = param_m_description
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        if param_parent_id == param_id:
+            output = {'code': 0, 'msg': '父模块不能选择自己', 'exception': None, 'success': False}
+            return jsonify(output)
+        projectModule1 = ProjectModule.query.get(param_id)
+        projectModule1.projectEnvironment_id = param_e_id
+        projectModule1.parent_id = param_parent_id
+        projectModule1.module_name = param_m_name
+        projectModule1.module_description = param_m_description
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 

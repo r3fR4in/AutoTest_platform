@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { projectEnvironmentList, saveProjectEnvironment, deleteProjectEnvironment, getAllProject, copyEnvironment } from '../../api/projectApi'
+import { projectEnvironmentList, addProjectEnvironment, editProjectEnvironment, deleteProjectEnvironment, getAllProject, copyEnvironment } from '../../api/projectApi'
 import Pagination from '../../components/Pagination'
 export default {
   data() {
@@ -85,9 +85,7 @@ export default {
         p_name: '',
         e_name: '',
         url: '',
-        e_description: '',
-        create_time: '',
-        token: localStorage.getItem('logintoken')
+        e_description: ''
       },
       // rules表单验证
       rules: {
@@ -222,28 +220,56 @@ export default {
     submitForm(editData) {
       this.$refs[editData].validate(valid => {
         if (valid) {
-          saveProjectEnvironment(this.editForm)
-            .then(res => {
-              this.editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.getdata(this.formInline);
-                this.$message({
-                  type: 'success',
-                  message: res.msg
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('项目保存失败，请稍后再试！')
-            })
+          if (this.editForm.id === ''){
+            let param = this.editForm;
+            delete param['id'];
+            addProjectEnvironment(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          } else {
+            let param = this.editForm;
+            editProjectEnvironment(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }

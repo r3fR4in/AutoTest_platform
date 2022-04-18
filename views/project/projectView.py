@@ -33,29 +33,46 @@ def list_project():
     return jsonify(projects_output)
 
 
-"""添加或修改项目"""
+"""添加项目"""
 @project.route('/saveProject', methods=['post'])
 @token_util.login_required()
-def save_project():
+def add_project():
     # 从post请求拿参数
     data = request.get_json()
-    param_id = data['id']
     param_projectName = data['projectName']
     param_projectDescription = data['projectDescription']
     param_create_time = datetime.datetime.now()
     # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
-        if param_id == '':
-            project1 = Project(projectName=param_projectName, projectDescription=param_projectDescription, create_time=param_create_time)
-            db.session.add(project1)
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        project1 = Project(projectName=param_projectName, projectDescription=param_projectDescription, create_time=param_create_time)
+        db.session.add(project1)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        if 'pymysql.err.IntegrityError' in e.args[0]:
+            output = {'code': 0, 'msg': '项目名称不可重复', 'exception': e.args[0], 'success': False}
         else:
-            project1 = Project.query.get(param_id)
-            project1.projectName = param_projectName
-            project1.projectDescription = param_projectDescription
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+            output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""修改项目"""
+@project.route('/saveProject', methods=['put'])
+@token_util.login_required()
+def edit_project():
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_projectName = data['projectName']
+    param_projectDescription = data['projectDescription']
+    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
+    try:
+        project1 = Project.query.get(param_id)
+        project1.projectName = param_projectName
+        project1.projectDescription = param_projectDescription
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         if 'pymysql.err.IntegrityError' in e.args[0]:
             output = {'code': 0, 'msg': '项目名称不可重复', 'exception': e.args[0], 'success': False}

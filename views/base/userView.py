@@ -135,11 +135,33 @@ def get_role_code():
     return jsonify(output)
 
 
-"""添加或修改用户"""
+"""添加用户"""
 @user.route('/saveUser', methods=['POST'])
 @token_util.login_required()
-def save_user():
+def add_user():
     # 从post请求拿参数
+    data = request.get_json()
+    param_username = data['username']
+    param_nickname = data['nickname']
+    param_role = data['role_code']
+    param_phone = data['phone']
+    param_email = data['email']
+    try:
+        user1 = User(username=param_username, password='a123456', nickname=param_nickname, email=param_email, phone=param_phone, status='1', role=param_role)
+        db.session.add(user1)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e, 'success': False}
+
+    return jsonify(output)
+
+
+"""修改用户"""
+@user.route('/saveUser', methods=['put'])
+@token_util.login_required()
+def edit_user():
+    # 从pput请求拿参数
     data = request.get_json()
     param_id = data['id']
     param_username = data['username']
@@ -147,22 +169,15 @@ def save_user():
     param_role = data['role_code']
     param_phone = data['phone']
     param_email = data['email']
-    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
-        if param_id == '':
-            user1 = User(username=param_username, password='a123456', nickname=param_nickname, email=param_email, phone=param_phone, status='1', role=param_role)
-            db.session.add(user1)
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
-        else:
-            user1 = User.query.get(param_id)
-            user1.username = param_username
-            user1.nickname = param_nickname
-            user1.email = param_email
-            user1.phone = param_phone
-            user1.role = param_role
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        user1 = User.query.get(param_id)
+        user1.username = param_username
+        user1.nickname = param_nickname
+        user1.email = param_email
+        user1.phone = param_phone
+        user1.role = param_role
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e, 'success': False}
 
@@ -170,12 +185,13 @@ def save_user():
 
 
 """用户状态变更"""
-@user.route('/changeUserStatus', methods=['GET'])
+@user.route('/changeUserStatus', methods=['put'])
 @token_util.login_required()
 def change_user_status():
-    # 从get请求拿参数
-    param_id = request.args.get('id')
-    param_status = request.args.get('status')
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_status = data['status']
     try:
         user1 = User.query.get(param_id)
         user1.status = param_status
@@ -191,7 +207,7 @@ def change_user_status():
 @user.route('/deleteUser', methods=['DELETE'])
 @token_util.login_required()
 def delete_user():
-    # 从get请求拿参数
+    # 从delete请求拿参数
     param_id = request.args.get('id')
     try:
         # 检查是否删除自己账号，不允许删除自己
@@ -213,11 +229,12 @@ def delete_user():
 
 
 """重置用户名密码"""
-@user.route('/resetPwd', methods=['GET'])
+@user.route('/resetPwd', methods=['put'])
 @token_util.login_required()
 def reset_pwd():
-    # 从get请求拿参数
-    param_id = request.args.get('id')
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
     try:
         user1 = User.query.get(param_id)
         pwd = 'a123456'

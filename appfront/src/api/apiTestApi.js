@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {loginreq, getReq, postReq, deleteReq, getFile} from './axiosFun';
+import {loginreq, getReq, postReq, putReq, deleteReq, getFile} from './axiosFun';
 
 /**
  * 功能模块管理
@@ -19,21 +19,25 @@ export const getAllApiModule = (params) => { return getReq("/apiTest/getAllApiMo
 // 获取api列表
 export const apiList = (params) => { return getReq("/apiTest/apiList", params) };
 // 保存api
-export const saveApi = (params) => { return postReq("/apiTest/saveApi", params) };
+export const addApi = (params) => { return postReq("/apiTest/saveApi", params) };
+// 保存api
+export const editApi = (params) => { return putReq("/apiTest/saveApi", params) };
 // 删除api
 export const deleteApi = (params) => { return deleteReq("/apiTest/deleteApi", params) };
 // 获取环境变量
 export const getEnvironmentVariable = (params) => { return getReq("/apiTest/getEnvironmentVariable", params) };
 // 保存环境变量
-export const saveEnvironmentVariable = (params) => { return postReq("/apiTest/saveEnvironmentVariable", params) };
+export const addEnvironmentVariable = (params) => { return postReq("/apiTest/saveEnvironmentVariable", params) };
+// 保存环境变量
+export const editEnvironmentVariable = (params) => { return putReq("/apiTest/saveEnvironmentVariable", params) };
 // 删除环境变量
 export const deleteEnvironmentVariable = (params) => { return deleteReq("/apiTest/deleteEnvironmentVariable", params) };
 // api上移
-export const upApi = (params) => { return getReq("/apiTest/upApi", params) };
+export const upApi = (params) => { return putReq("/apiTest/upApi", params) };
 // api下移
-export const downApi = (params) => { return getReq("/apiTest/downApi", params) };
+export const downApi = (params) => { return putReq("/apiTest/downApi", params) };
 // 状态启用/禁用
-export const changeApiStatus = (params) => { return getReq("/apiTest/changeApiStatus", params) };
+export const changeApiStatus = (params) => { return putReq("/apiTest/changeApiStatus", params) };
 
 /**
  * 测试用例管理
@@ -51,7 +55,9 @@ export const copyTestcase = (params) => { return getReq("/apiTest/copyTestcase",
 // 获取apiTestcase数据
 export const apiTestcaseData = (params) => { return getReq("/apiTest/apiTestcaseData", params) };
 // 保存apiTestcase数据
-export const saveApiTestcase = (params) => { return postReq("/apiTest/saveApiTestcase", params) };
+export const addApiTestcase = (params) => { return postReq("/apiTest/saveApiTestcase", params) };
+// 保存apiTestcase数据
+export const editApiTestcase = (params) => { return putReq("/apiTest/saveApiTestcase", params) };
 // 调试
 export const debugApi = (params) => { return postReq("/apiTest/debugApi", params) };
 // 删除上传文件

@@ -69,11 +69,11 @@ def list_api():
         output = {'code': 1, 'msg': None, 'count': num, 'success': True}
         list = []
         for api in apis:
-            module_name = api.api_module.module_name
+            module_name = api.project_module.module_name
             dic = api.to_json()
             dic['module_name'] = module_name
             # 删除字典中的project对象，否则转json会报错
-            del dic['api_module']
+            del dic['project_module']
             list.append(dic)
         output['data'] = list
 
@@ -86,45 +86,60 @@ def list_api():
 """保存api"""
 @api.route('/saveApi', methods=['post'])
 @token_util.login_required()
-def save_api():
+def add_api():
     # 从post请求拿参数
     data = request.get_json()
-    param_id = data['id']
-    # param_module_name = request.form.get('module_name')
     param_module_id = data['module_id']
     param_request_method = data['request_method']
     param_api_name = data['api_name']
     param_url = data['url']
     param_summary = data['summary']
-    param_seq = data['seq']
     param_independent = data['independent']
-    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
-        if param_id == '':
-            api1 = Api(apiModule_id=param_module_id, request_method=param_request_method, api_name=param_api_name, url=param_url, summary=param_summary, seq=param_seq, status=False, independent=param_independent)
-            db.session.add(api1)
-            db.session.commit()
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
-        else:
-            # 查询该api下所有testcase，并获取其url
-            testcase = db.session.query(ApiTestcase).filter(ApiTestcase.api_id == param_id).first()
-            if testcase is not None and testcase != '':
-                # 替换新的url并批量更新testcase的url
-                api_url = db.session.query(Api.url).filter(Api.id == param_id).first()
-                new_url = testcase.url.replace(api_url[0], param_url)
-                db.session.query(ApiTestcase).filter(ApiTestcase.api_id == param_id).update({'url': new_url, 'request_method': param_request_method})
-                db.session.commit()
+        num = Api.query.filter(Api.apiModule_id == param_module_id).count()
+        api1 = Api(apiModule_id=param_module_id, request_method=param_request_method, api_name=param_api_name, url=param_url, summary=param_summary, seq=num+1, status=False, independent=param_independent)
+        db.session.add(api1)
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 
-            api1 = Api.query.get(param_id)
-            api1.apiModule_id = param_module_id
-            api1.request_method = param_request_method
-            api1.api_name = param_api_name
-            api1.url = param_url
-            api1.summary = param_summary
-            api1.independent = param_independent
+    return jsonify(output)
+
+
+"""保存api"""
+@api.route('/saveApi', methods=['put'])
+@token_util.login_required()
+def edit_api():
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_module_id = data['module_id']
+    param_request_method = data['request_method']
+    param_api_name = data['api_name']
+    param_url = data['url']
+    param_summary = data['summary']
+    param_independent = data['independent']
+    try:
+        # 查询该api下所有testcase，并获取其url
+        testcase = db.session.query(ApiTestcase).filter(ApiTestcase.api_id == param_id).first()
+        if testcase is not None and testcase != '':
+            # 替换新的url并批量更新testcase的url
+            api_url = db.session.query(Api.url).filter(Api.id == param_id).first()
+            new_url = testcase.url.replace(api_url[0], param_url)
+            db.session.query(ApiTestcase).filter(ApiTestcase.api_id == param_id).update({'url': new_url, 'request_method': param_request_method})
             db.session.commit()
 
-            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        api1 = Api.query.get(param_id)
+        api1.apiModule_id = param_module_id
+        api1.request_method = param_request_method
+        api1.api_name = param_api_name
+        api1.url = param_url
+        api1.summary = param_summary
+        api1.independent = param_independent
+        db.session.commit()
+
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 
@@ -155,13 +170,14 @@ def delete_api():
 
 
 """api上移"""
-@api.route('/upApi', methods=['get'])
+@api.route('/upApi', methods=['put'])
 @token_util.login_required()
 def up_api():
-    # 从get请求获取参数
-    param_apiModule_id = request.args.get('apiModule_id')
-    param_seq = int(request.args.get('seq'))
-    param_form_apiModule_name = request.args.get('form_apiModule_name')
+    # 从put请求获取参数
+    data = request.get_json()
+    param_apiModule_id = data['apiModule_id']
+    param_seq = int(data['seq'])
+    param_form_apiModule_name = data['form_apiModule_name']
     try:
         if param_form_apiModule_name == '' or param_form_apiModule_name is None:
             output = {'code': 0, 'msg': '未选择模块，不能上移', 'exception': None, 'success': False}
@@ -179,13 +195,14 @@ def up_api():
 
 
 """api下移"""
-@api.route('/downApi', methods=['get'])
+@api.route('/downApi', methods=['put'])
 @token_util.login_required()
 def down_api():
-    # 从get请求获取参数
-    param_apiModule_id = request.args.get('apiModule_id')
-    param_seq = int(request.args.get('seq'))
-    param_form_apiModule_name = request.args.get('form_apiModule_name')
+    # 从put请求获取参数
+    data = request.get_json()
+    param_apiModule_id = data['apiModule_id']
+    param_seq = int(data['seq'])
+    param_form_apiModule_name = data['form_apiModule_name']
     try:
         if param_form_apiModule_name == '' or param_form_apiModule_name is None:
             output = {'code': 0, 'msg': '未选择模块，不能下移', 'exception': None, 'success': False}
@@ -203,12 +220,13 @@ def down_api():
 
 
 """状态启用/禁用"""
-@api.route('/changeApiStatus', methods=['get'])
+@api.route('/changeApiStatus', methods=['put'])
 @token_util.login_required()
 def change_status():
-    # 从get请求获取参数
-    param_id = request.args.get('id')
-    param_status = request.args.get('status')
+    # 从put请求获取参数
+    data = request.get_json()
+    param_id = data['id']
+    param_status = data['status']
     try:
         api1 = Api.query.get(param_id)
         if param_status == 'true':

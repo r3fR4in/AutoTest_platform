@@ -80,6 +80,33 @@ const postReq = (url, params) => {
 };
 
 // 通用公用方法
+const putReq = (url, params) => {
+    return axios({
+        method: 'put',
+        url: url,
+        headers: {
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': localStorage.getItem('logintoken')
+        },
+        data: params,
+        // traditional: true,
+        // transformRequest: [
+        //     function(data) {
+        //         let ret = '';
+        //         for (let it in data) {
+        //             ret +=
+        //                 encodeURIComponent(it) +
+        //                 '=' +
+        //                 encodeURIComponent(data[it]) +
+        //                 '&'
+        //         }
+        //         return ret
+        //     }
+        // ]
+    }).then(res => res.data);
+};
+
+// 通用公用方法
 const getReq = (url, params) => {
     return axios({
         method: 'get',
@@ -164,6 +191,7 @@ export {
     loginreq,
     req,
     postReq,
+    putReq,
     getReq,
     deleteReq,
     getFile

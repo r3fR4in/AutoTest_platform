@@ -92,15 +92,14 @@ def get_reason_option():
 """保存提测申请"""
 @submittedTests.route('/saveSubmittedTest', methods=['POST'])
 @token_util.login_required()
-def save_submittedTest():
+def add_submittedTest():
     # 从post请求拿参数
     data = request.get_json()
-    param_id = data['id']
     param_projectName = data['projectName']
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
     param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
-    param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date']is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
@@ -114,41 +113,67 @@ def save_submittedTest():
     param_test_director = data['test_director']
     param_file_name = data['file_name']
     try:
-        # 根据id判断新增或编辑，id为空则是新增，否则为编辑
-        if param_id == '':
-            project1 = Project.query.filter(Project.projectName == param_projectName).first()
-            if None is project1:
-                output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
-            else:
-                project1_dict = project1.to_json()
-                submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name,
-                                                 submitted_date=param_submitted_date, test_date=param_test_date, online_date=param_online_date, fix_bug_director=param_fix_bug_director,
-                                                 self_test_report_url=param_self_test_report_url, test_url=param_test_url, test_scope=param_test_scope, influence_scope=param_influence_scope,
-                                                 points_for_attention=param_points_for_attention, config_url=param_config_url, script_url=param_script_url, compatibility_desc=param_compatibility_desc,
-                                                 submitted_test_director=param_submitted_test_director, test_director=param_test_director,
-                                                 test_status=1, smoke_testing_result=0, test_result=0, file_name=str(param_file_name))
-                db.session.add(submittedTests1)
-                db.session.commit()
-                output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        project1 = Project.query.filter(Project.projectName == param_projectName).first()
+        if None is project1:
+            output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
         else:
-            submittedTests1 = SubmittedTests.query.get(param_id)
-            submittedTests1.submitted_test_name = param_submitted_test_name
-            submittedTests1.submitted_date = param_submitted_date
-            submittedTests1.test_date = param_test_date
-            submittedTests1.online_date = param_online_date
-            submittedTests1.submitted_test_director = param_submitted_test_director
-            submittedTests1.fix_bug_director = param_fix_bug_director
-            submittedTests1.self_test_report_url = param_self_test_report_url
-            submittedTests1.test_url = param_test_url
-            submittedTests1.test_scope = param_test_scope
-            submittedTests1.influence_scope = param_influence_scope
-            submittedTests1.points_for_attention = param_points_for_attention
-            submittedTests1.config_url = param_config_url
-            submittedTests1.script_url = param_script_url
-            submittedTests1.compatibility_desc = param_compatibility_desc
-            submittedTests1.test_director = param_test_director
+            project1_dict = project1.to_json()
+            submittedTests1 = SubmittedTests(project_id=project1_dict['id'],submitted_test_name=param_submitted_test_name,
+                                             submitted_date=param_submitted_date, test_date=param_test_date, online_date=param_online_date, fix_bug_director=param_fix_bug_director,
+                                             self_test_report_url=param_self_test_report_url, test_url=param_test_url, test_scope=param_test_scope, influence_scope=param_influence_scope,
+                                             points_for_attention=param_points_for_attention, config_url=param_config_url, script_url=param_script_url, compatibility_desc=param_compatibility_desc,
+                                             submitted_test_director=param_submitted_test_director, test_director=param_test_director,
+                                             test_status=1, smoke_testing_result=0, test_result=0, file_name=str(param_file_name))
+            db.session.add(submittedTests1)
             db.session.commit()
             output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""保存提测申请"""
+@submittedTests.route('/saveSubmittedTest', methods=['put'])
+@token_util.login_required()
+def edit_submittedTest():
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_submitted_test_name = data['submitted_test_name']
+    param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
+    param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
+    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date']is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_submitted_test_director = data['submitted_test_director']
+    param_fix_bug_director = data['fix_bug_director']
+    param_self_test_report_url = data['self_test_report_url']
+    param_test_url = data['test_url']
+    param_test_scope = data['test_scope']
+    param_influence_scope = data['influence_scope']
+    param_points_for_attention = data['points_for_attention']
+    param_config_url = data['config_url']
+    param_script_url = data['script_url']
+    param_compatibility_desc = data['compatibility_desc']
+    param_test_director = data['test_director']
+    try:
+        submittedTests1 = SubmittedTests.query.get(param_id)
+        submittedTests1.submitted_test_name = param_submitted_test_name
+        submittedTests1.submitted_date = param_submitted_date
+        submittedTests1.test_date = param_test_date
+        submittedTests1.online_date = param_online_date
+        submittedTests1.submitted_test_director = param_submitted_test_director
+        submittedTests1.fix_bug_director = param_fix_bug_director
+        submittedTests1.self_test_report_url = param_self_test_report_url
+        submittedTests1.test_url = param_test_url
+        submittedTests1.test_scope = param_test_scope
+        submittedTests1.influence_scope = param_influence_scope
+        submittedTests1.points_for_attention = param_points_for_attention
+        submittedTests1.config_url = param_config_url
+        submittedTests1.script_url = param_script_url
+        submittedTests1.compatibility_desc = param_compatibility_desc
+        submittedTests1.test_director = param_test_director
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 
@@ -279,10 +304,10 @@ def delete_submittedTest():
 
 
 """保存冒烟测试结果"""
-@submittedTests.route('/saveSmokeTestingResult', methods=['POST'])
+@submittedTests.route('/saveSmokeTestingResult', methods=['put'])
 @token_util.login_required()
 def save_smokeTesting_result():
-    # 从post请求拿参数
+    # 从put请求拿参数
     data = request.get_json()
     param_id = data['id']
     param_smoke_testing_result = int(data['smoke_testing_result'])
@@ -322,10 +347,10 @@ def save_smokeTesting_result():
 
 
 """保存最终测试结果"""
-@submittedTests.route('/saveTestResult', methods=['POST'])
+@submittedTests.route('/saveTestResult', methods=['put'])
 @token_util.login_required()
 def save_test_result():
-    # 从post请求拿参数
+    # 从put请求拿参数
     data = request.get_json()
     param_id = data['id']
     param_test_result = int(data['test_result'])

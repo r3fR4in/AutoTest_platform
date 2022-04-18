@@ -37,11 +37,10 @@ def list_environmentVariable():
 """保存环境变量"""
 @environmentVariable.route('/saveEnvironmentVariable', methods=['post'])
 @token_util.login_required()
-def save_environmentVariable():
+def add_environmentVariable():
     try:
         # 从post请求拿参数
         data = request.get_json()
-        param_id = data['id']
         param_e_id = data['e_id']
         param_name = data['name']
         param_value = data['value']
@@ -51,19 +50,34 @@ def save_environmentVariable():
         if name_list:
             output = {'code': 0, 'msg': '同一环境下变量名重复', 'count': 0, 'success': False}
         else:
-            # 根据id判断新增或编辑，id为空则是新增，否则为编辑
-            if param_id == '':
-                environmentVariable1 = EnvironmentVariable(e_id=param_e_id, name=param_name, value=param_value)
-                db.session.add(environmentVariable1)
-                db.session.commit()
-                output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
-            else:
-                environmentVariable1 = EnvironmentVariable.query.get(param_id)
-                environmentVariable1.e_id = param_e_id
-                environmentVariable1.name = param_name
-                environmentVariable1.value = param_value
-                db.session.commit()
-                output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+            environmentVariable1 = EnvironmentVariable(e_id=param_e_id, name=param_name, value=param_value)
+            db.session.add(environmentVariable1)
+            db.session.commit()
+            output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取环境变量失败', 'count': 0, 'success': False, 'errorMsg': e}
+
+    return jsonify(output)
+
+
+"""保存环境变量"""
+@environmentVariable.route('/saveEnvironmentVariable', methods=['put'])
+@token_util.login_required()
+def edit_environmentVariable():
+    try:
+        # 从put请求拿参数
+        data = request.get_json()
+        param_id = data['id']
+        param_e_id = data['e_id']
+        param_name = data['name']
+        param_value = data['value']
+
+        environmentVariable1 = EnvironmentVariable.query.get(param_id)
+        environmentVariable1.e_id = param_e_id
+        environmentVariable1.name = param_name
+        environmentVariable1.value = param_value
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '获取环境变量失败', 'count': 0, 'success': False, 'errorMsg': e}
 

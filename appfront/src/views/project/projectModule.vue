@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { getAllProject, projectModuleList, saveProjectModule, deleteProjectModule, getAllProjectEnvironment } from '../../api/projectApi'
+import { getAllProject, projectModuleList, addProjectModule, editProjectModule, deleteProjectModule, getAllProjectEnvironment } from '../../api/projectApi'
 import { list_to_option, list_to_tree } from '../../utils/util'
 export default {
   data() {
@@ -131,7 +131,6 @@ export default {
         m_description: '',
       },
       addForm: {
-        id: '',
         e_id: '',
         e_name: '',
         parent_id: '',
@@ -282,10 +281,7 @@ export default {
           let param;
           if (form === 'addForm') {
             param = this.addForm;
-          } else if (form === 'editForm') {
-            param = this.editForm;
-          }
-          saveProjectModule(param)
+            addProjectModule(param)
             .then(res => {
               this.addFormVisible = false;
               this.loading = false;
@@ -307,6 +303,31 @@ export default {
               this.loading = false;
               this.$message.error('模块保存失败，请稍后再试！')
             })
+          } else if (form === 'editForm') {
+            param = this.editForm;
+            editProjectModule(param)
+            .then(res => {
+              this.addFormVisible = false;
+              this.loading = false;
+              if (res.success) {
+                this.getdata(this.formInline);
+                this.$message({
+                  type: 'success',
+                  message: res.msg
+                })
+              } else {
+                this.$message({
+                  type: 'info',
+                  message: res.msg
+                })
+              }
+            })
+            .catch(err => {
+              this.editFormVisible = false;
+              this.loading = false;
+              this.$message.error('模块保存失败，请稍后再试！')
+            })
+          }
         } else {
           return false
         }

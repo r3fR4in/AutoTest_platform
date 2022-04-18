@@ -125,7 +125,7 @@
 </template>
 
 <script>
-  import {apiTestcaseData, debugApi, saveApiTestcase, deleteUploadFile, downloadFile} from '../../api/apiTestApi'
+  import {apiTestcaseData, debugApi, addApiTestcase, editApiTestcase, deleteUploadFile, downloadFile} from '../../api/apiTestApi'
   import JsonView from '../../components/JsonView'
 export default {
   components: {JsonView},
@@ -242,28 +242,56 @@ export default {
     },
     save(){
       this.apiData.post_processor_content = ''; // 不知道爲什麽初始化值為undefined，所以在這裏設為空格
-      saveApiTestcase(this.apiData)
-        .then(res => {
-          if (res.success) {
-            this.$message({
-              type: 'success',
-              message: res.msg
-            });
-            if (res.hasOwnProperty('id')){
-              this.id = res.id;
-              this.apiData.id = res.id;
-              this.uploadData.id = res.id;
+      if (this.apiData.id === ''){
+        let param = this.apiData;
+        delete param['id'];
+        addApiTestcase(param)
+          .then(res => {
+            if (res.success) {
+              this.$message({
+                type: 'success',
+                message: res.msg
+              });
+              if (res.hasOwnProperty('id')){
+                this.id = res.id;
+                this.apiData.id = res.id;
+                this.uploadData.id = res.id;
+              }
+            } else {
+              this.$message({
+                type: 'info',
+                message: res.msg
+              })
             }
-          } else {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          }
-        })
-        .catch(err => {
-          this.$message.error('保存失败，请稍后再试！')
-        })
+          })
+          .catch(err => {
+            this.$message.error('保存失败，请稍后再试！')
+          })
+      } else {
+        let param = this.apiData;
+        editApiTestcase(param)
+          .then(res => {
+            if (res.success) {
+              this.$message({
+                type: 'success',
+                message: res.msg
+              });
+              if (res.hasOwnProperty('id')){
+                this.id = res.id;
+                this.apiData.id = res.id;
+                this.uploadData.id = res.id;
+              }
+            } else {
+              this.$message({
+                type: 'info',
+                message: res.msg
+              })
+            }
+          })
+          .catch(err => {
+            this.$message.error('保存失败，请稍后再试！')
+          })
+      }
     },
     sleep(n) {
         var start = new Date().getTime();

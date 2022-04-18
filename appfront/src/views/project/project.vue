@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { projectList, saveProject, deleteProject } from '../../api/projectApi'
+import { projectList, addProject, editProject, deleteProject } from '../../api/projectApi'
 import Pagination from '../../components/Pagination'
 export default {
   data() {
@@ -74,9 +74,7 @@ export default {
       editForm: {
         id: '',
         projectName: '',
-        projectDescription: '',
-        create_time: '',
-        token: localStorage.getItem('logintoken')
+        projectDescription: ''
       },
       // rules表单验证
       rules: {
@@ -268,28 +266,56 @@ export default {
     submitForm(editData) {
       this.$refs[editData].validate(valid => {
         if (valid) {
-          saveProject(this.editForm)
-            .then(res => {
-              this.editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.getdata(this.formInline);
-                this.$message({
-                  type: 'success',
-                  message: res.msg
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('项目保存失败，请稍后再试！')
-            })
+          if (this.editForm.id === '') {
+            let param = this.editForm;
+            delete param['id'];
+            addProject(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          } else {
+            let param = this.editForm;
+            editProject(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: res.msg
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('项目保存失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }

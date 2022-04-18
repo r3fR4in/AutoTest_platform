@@ -82,12 +82,11 @@ def load_all_project():
     return jsonify(projectList)
 
 
-"""添加或修改环境配置"""
+"""添加环境配置"""
 @projectEnvironment.route('/saveProjectEnvironment', methods=['post'])
-def save_projectEnvironment():
+def add_projectEnvironment():
     # 从post请求拿参数
     data = request.get_json()
-    param_id = data['id']
     param_p_name = data['p_name']
     param_e_name = data['e_name']
     param_url = data['url']
@@ -95,37 +94,53 @@ def save_projectEnvironment():
     param_create_time = datetime.datetime.now()
     # 根据id判断新增或编辑，id为空则是新增，否则为编辑
     try:
-        if param_id == '':
-            # 根据项目名称获取项目id
-            project1 = Project.query.filter(Project.projectName == param_p_name).first()
-            if None is project1:
-                output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
-            else:
-                project1_dict = project1.to_json()
-                projectEnvironment1 = ProjectEnvironment(project_id=project1_dict['id'], e_name=param_e_name, url=param_url, e_description=param_e_description, create_time=param_create_time)
-                db.session.add(projectEnvironment1)
-                db.session.commit()
-                output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+        # 根据项目名称获取项目id
+        project1 = Project.query.filter(Project.projectName == param_p_name).first()
+        if None is project1:
+            output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
         else:
-            # 三表关联找到该环境下所有testcase
-            api_testcases = db.session.query(ApiTestcase)\
-                .join(Api, Api.id == ApiTestcase.api_id)\
-                .join(ProjectModule, ProjectModule.id == Api.apiModule_id)\
-                .filter(ProjectModule.projectEnvironment_id == param_id).all()
-            projectEnvironment_url = db.session.query(ProjectEnvironment.url).filter(ProjectEnvironment.id == param_id).first()
-            # 遍历并将url替换成新url
-            for api_testcase in api_testcases:
-                api_testcase_url = api_testcase.url
-                new_url = api_testcase_url.replace(projectEnvironment_url[0], param_url)
-                api_testcase.url = new_url
-            db.session.commit()
-
-            projectEnvironment1 = ProjectEnvironment.query.get(param_id)
-            projectEnvironment1.e_name = param_e_name
-            projectEnvironment1.url = param_url
-            projectEnvironment1.e_description = param_e_description
+            project1_dict = project1.to_json()
+            projectEnvironment1 = ProjectEnvironment(project_id=project1_dict['id'], e_name=param_e_name, url=param_url, e_description=param_e_description, create_time=param_create_time)
+            db.session.add(projectEnvironment1)
             db.session.commit()
             output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""修改环境配置"""
+@projectEnvironment.route('/saveProjectEnvironment', methods=['put'])
+def edit_projectEnvironment():
+    # 从put请求拿参数
+    data = request.get_json()
+    param_id = data['id']
+    param_e_name = data['e_name']
+    param_url = data['url']
+    param_e_description = data['e_description']
+    param_create_time = datetime.datetime.now()
+    # 根据id判断新增或编辑，id为空则是新增，否则为编辑
+    try:
+        # 三表关联找到该环境下所有testcase
+        api_testcases = db.session.query(ApiTestcase)\
+            .join(Api, Api.id == ApiTestcase.api_id)\
+            .join(ProjectModule, ProjectModule.id == Api.apiModule_id)\
+            .filter(ProjectModule.projectEnvironment_id == param_id).all()
+        projectEnvironment_url = db.session.query(ProjectEnvironment.url).filter(ProjectEnvironment.id == param_id).first()
+        # 遍历并将url替换成新url
+        for api_testcase in api_testcases:
+            api_testcase_url = api_testcase.url
+            new_url = api_testcase_url.replace(projectEnvironment_url[0], param_url)
+            api_testcase.url = new_url
+        db.session.commit()
+
+        projectEnvironment1 = ProjectEnvironment.query.get(param_id)
+        projectEnvironment1.e_name = param_e_name
+        projectEnvironment1.url = param_url
+        projectEnvironment1.e_description = param_e_description
+        db.session.commit()
+        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
 

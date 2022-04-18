@@ -111,7 +111,8 @@
 import {
   userList,
   getRoleCode,
-  userSave,
+  addUser,
+  editUser,
   userDelete,
   resetPwd,
   changeUserStatus,
@@ -169,11 +170,6 @@ export default {
             trigger: 'blur'
           }
         ]
-      },
-      // 删除用户
-      seletedata: {
-        ids: '',
-        token: localStorage.getItem('logintoken')
       },
       // 请求数据参数
       formInline: {
@@ -323,29 +319,56 @@ export default {
     submitForm(editData) {
       this.$refs[editData].validate(valid => {
         if (valid) {
-          // 请求方法
-          userSave(this.editForm)
-            .then(res => {
-              this.editFormVisible = false;
-              this.loading = false;
-              if (res.success) {
-                this.getdata(this.formInline);
-                this.$message({
-                  type: 'success',
-                  message: '保存成功！'
-                })
-              } else {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              }
-            })
-            .catch(err => {
-              this.editFormVisible = false;
-              this.loading = false;
-              this.$message.error('保存失败，请稍后再试！')
-            })
+          if (this.editForm.id === ''){
+            let param = this.editForm;
+            delete param['id'];
+            addUser(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: '保存成功！'
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('保存失败，请稍后再试！')
+              })
+          } else {
+            let param = this.editForm;
+            editUser(param)
+              .then(res => {
+                this.editFormVisible = false;
+                this.loading = false;
+                if (res.success) {
+                  this.getdata(this.formInline);
+                  this.$message({
+                    type: 'success',
+                    message: '保存成功！'
+                  })
+                } else {
+                  this.$message({
+                    type: 'info',
+                    message: res.msg
+                  })
+                }
+              })
+              .catch(err => {
+                this.editFormVisible = false;
+                this.loading = false;
+                this.$message.error('保存失败，请稍后再试！')
+              })
+          }
         } else {
           return false
         }
