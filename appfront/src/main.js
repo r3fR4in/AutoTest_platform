@@ -4,6 +4,9 @@ import Vue from 'vue';
 // 引入element UI
 import ElementUI, {MessageBox} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// 修改 el-dialog 默认点击遮照为不关闭
+ElementUI.Dialog.props.closeOnClickModal.default = false;
+
 import App from './App';
 // 引入路由
 import router from './router';

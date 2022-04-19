@@ -180,10 +180,14 @@ export default {
             })
           } else {
             this.originData = res.data;
-            if (res.data !== []) {
+            if (this.originData.length > 0) {
               this.p_options1 = list_to_option(this.originData);
               this.p_options2 = this.p_options1;
               this.listData = list_to_tree(this.originData);
+            } else {
+              this.p_options1 = '';
+              this.p_options2 = '';
+              this.listData = [];
             }
             this.editForm.e_id = this.formInline.projectEnvironment_id;
           }
