@@ -8,7 +8,7 @@ environmentVariable = Blueprint('environmentVariable', __name__)
 
 """获取环境变量数据"""
 @environmentVariable.route('/getEnvironmentVariable', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_environmentVariable():
     try:
         # 从get请求获取参数
@@ -36,7 +36,7 @@ def list_environmentVariable():
 
 """保存环境变量"""
 @environmentVariable.route('/saveEnvironmentVariable', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_environmentVariable():
     try:
         # 从post请求拿参数
@@ -62,7 +62,7 @@ def add_environmentVariable():
 
 """保存环境变量"""
 @environmentVariable.route('/saveEnvironmentVariable', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def edit_environmentVariable():
     try:
         # 从put请求拿参数
@@ -86,7 +86,7 @@ def edit_environmentVariable():
 
 """删除环境变量"""
 @environmentVariable.route('/deleteEnvironmentVariable', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_environmentVariable():
     # 从delete请求拿参数
     param_id = request.args.get('id')

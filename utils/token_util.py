@@ -51,7 +51,7 @@ def login_required(*role):
                     # if not result:
                     #     return jsonify(code=1, msg="权限不够")
                     if user_role not in list(role):
-                        return jsonify(code=401, msg="权限不够")
+                        return jsonify(code=403, msg="权限不够")
             except Exception as e:
                 return jsonify(code=401, msg="登录已过期")
             return func(*args, **kw)

@@ -11,7 +11,7 @@ submittedTestsReport = Blueprint('submittedTestsReport', __name__)
 过滤：时间->项目->提测负责人
 """
 @submittedTestsReport.route('/smokeTestingRankReport', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def smokeTesting_rank_report():
     # 从get请求获取参数`
     param_start_date = request.args.get('start_date')
@@ -60,7 +60,7 @@ def smokeTesting_rank_report():
 报表字段：原因分类、原因分析、出现次数、占比、总占比
 """
 @submittedTestsReport.route('/smokeTestingFailReasonAnalysisReport', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def smokeTesting_fail_reason_analysis_report():
     # 从get请求获取参数`
     param_start_date = request.args.get('start_date')

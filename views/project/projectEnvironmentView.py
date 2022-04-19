@@ -13,7 +13,7 @@ projectEnvironment = Blueprint('projectEnvironment', __name__)
 
 """获取项目环境配置列表"""
 @projectEnvironment.route('/projectEnvironmentList', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_projectEnvironment():
     try:
         # 从get请求获取参数
@@ -55,7 +55,7 @@ def list_projectEnvironment():
 
 """获取所有项目数据"""
 @projectEnvironment.route('/getAllProject', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def load_all_project():
     filterList = []
 
@@ -84,6 +84,7 @@ def load_all_project():
 
 """添加环境配置"""
 @projectEnvironment.route('/saveProjectEnvironment', methods=['post'])
+@token_util.login_required('admin_role', 'test_role')
 def add_projectEnvironment():
     # 从post请求拿参数
     data = request.get_json()
@@ -112,6 +113,7 @@ def add_projectEnvironment():
 
 """修改环境配置"""
 @projectEnvironment.route('/saveProjectEnvironment', methods=['put'])
+@token_util.login_required('admin_role', 'test_role')
 def edit_projectEnvironment():
     # 从put请求拿参数
     data = request.get_json()
@@ -149,7 +151,7 @@ def edit_projectEnvironment():
 
 """删除环境配置"""
 @projectEnvironment.route('/deleteProjectEnvironment', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_projectEnvironment():
     # 从delete请求拿参数
     param_id = request.args.get('id')
@@ -171,7 +173,7 @@ def delete_projectEnvironment():
 
 """复制环境配置"""
 @projectEnvironment.route('/copyEnvironment', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def copy_environment():
     # 从请求拿参数
     param_id = request.args.get('id')

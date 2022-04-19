@@ -11,16 +11,15 @@ from models.projectModel import ProjectEnvironment
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestcase
 import datetime
-from utils import test_util, token_util
-
-from utils.log import Log
+from utils import token_util
+from engine import api_test
 
 apiTestTask = Blueprint('apiTestTask', __name__)
 
 
 """获取测试任务列表"""
 @apiTestTask.route('/apiTestTaskList', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_apiTestTask():
     try:
         # 从get请求获取参数
@@ -65,7 +64,7 @@ def list_apiTestTask():
 
 """添加测试任务"""
 @apiTestTask.route('/addApiTestTask', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_apiTest_Task():
     # 从post请求拿参数
     data = request.get_json()
@@ -99,7 +98,7 @@ def add_apiTest_Task():
         # api_test_job()
         # 調用執行測試任務
         # log = Log('log')
-        test_util.execute_apitest_task.delay(apiTestTask1.id)
+        api_test.execute_apitest_task.delay(apiTestTask1.id)
     except Exception as e:
         output = {'code': 0, 'msg': '添加任务失败', 'success': False, 'errorMsg': str(e)}
 
@@ -108,7 +107,7 @@ def add_apiTest_Task():
 
 """删除测试任务"""
 @apiTestTask.route('/deleteApiTestTask', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_apiTest_task():
     # 从post请求拿参数
     param_id = request.args.get('id')
@@ -146,7 +145,7 @@ def delete_apiTest_task():
 
 """输出测试报告"""
 @apiTestTask.route('/apiTestReport', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def api_test_report():
     # 从get请求获取参数
     param_task_id = request.args.get('task_id')

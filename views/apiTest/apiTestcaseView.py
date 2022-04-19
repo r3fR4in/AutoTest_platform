@@ -1,24 +1,23 @@
 import os
 
 from flask import Blueprint, jsonify, request, send_file
-from sqlalchemy import and_
-from utils import requests, time, test_util, token_util
+from utils import token_util
+from engine import api_test
 from utils.log import Log
 from utils.extensions import db
 from models.apiTestModel import ApiTestcase
 from models.apiTestModel import Api
 from models.projectModel import ProjectModule
 from models.projectModel import ProjectEnvironment
-import datetime, ast, uuid
+import ast, uuid
 from config import setting
-from flask_socketio import emit
 import mimetypes
 
 apiTestcase = Blueprint('apiTestcase', __name__)
 
 """获取测试用例列表"""
 @apiTestcase.route('/apiTestcaseList', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_apiTestcase():
     try:
         # 从get请求获取参数
@@ -58,7 +57,7 @@ def list_apiTestcase():
 
 """删除测试用例"""
 @apiTestcase.route('/deleteApiTestcase', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_apiTestcase():
     # 从delete请求拿参数
     param_id = request.args.get('id')
@@ -75,7 +74,7 @@ def delete_apiTestcase():
 
 """复制测试用例"""
 @apiTestcase.route('/copyTestcase', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def copy_testcase():
     # 从get请求获取参数
     param_id = request.args.get('id')
@@ -96,7 +95,7 @@ def copy_testcase():
 
 """获取测试用例数据"""
 @apiTestcase.route('/apiTestcaseData', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def get_apiTestcase():
     try:
         # 从get请求获取参数
@@ -143,7 +142,7 @@ def get_apiTestcase():
 
 """保存测试用例数据"""
 @apiTestcase.route('/saveApiTestcase', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_apiTestcase():
     try:
         data = request.get_json()
@@ -174,7 +173,7 @@ def add_apiTestcase():
 
 """保存测试用例数据"""
 @apiTestcase.route('/saveApiTestcase', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def edit_apiTestcase():
     try:
         data = request.get_json()
@@ -215,7 +214,7 @@ def edit_apiTestcase():
 
 """获取上传的文件并保存"""
 @apiTestcase.route('/uploadFile', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def getAndSaveUploadFile():
     try:
         file = request.files['file']
@@ -248,7 +247,7 @@ def getAndSaveUploadFile():
 
 """删除上传的文件"""
 @apiTestcase.route('/deleteUploadFile', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def deleteUploadFile():
     # 从delete请求拿参数
     param_file_name = request.args.get('file')
@@ -285,7 +284,7 @@ def deleteUploadFile():
 
 """下载上传的文件"""
 @apiTestcase.route('/downloadFile', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def download_file():
     param_realname = request.args.get('file')
     path = setting.updateFiles_DIR_apiTest + '/' + param_realname
@@ -304,7 +303,7 @@ def download_file():
 
 """调试api"""
 @apiTestcase.route('/debugApi', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def debugApi():
     try:
         log = Log('log')
@@ -331,9 +330,9 @@ def debugApi():
         # 获取项目环境id，给后续取环境变量
         e_id = db.session.query(ProjectModule.projectEnvironment_id).join(Api).filter(Api.id == param_api_id).first()
 
-        data = test_util.debug(log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
-                     , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
-                     , param_post_processor_content)
+        data = api_test.debug(log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
+                              , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
+                              , param_post_processor_content)
         del data[-1]  # 返回值最後一行會帶上測試結果的bool值，測試任務用的，所以要調試這裏要刪掉
 
         output = {'code': 1, 'msg': '调试任务启动成功', 'exception': None, 'success': True, 'data': data}

@@ -10,7 +10,7 @@ project = Blueprint('project', __name__)
 
 """获取项目列表"""
 @project.route('/projectList', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_project():
     try:
         # 从get请求拿参数
@@ -35,7 +35,7 @@ def list_project():
 
 """添加项目"""
 @project.route('/saveProject', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_project():
     # 从post请求拿参数
     data = request.get_json()
@@ -59,7 +59,7 @@ def add_project():
 
 """修改项目"""
 @project.route('/saveProject', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def edit_project():
     # 从put请求拿参数
     data = request.get_json()
@@ -84,7 +84,7 @@ def edit_project():
 
 """删除项目"""
 @project.route('/deleteProject', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_project():
     # 从delete请求拿参数
     param_id = request.args.get('id')

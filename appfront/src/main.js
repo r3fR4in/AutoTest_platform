@@ -39,13 +39,22 @@ axios.interceptors.response.use(data => {
   const code = data.data.code;
   if (code === 401) {
     MessageBox.alert('登錄已過期，請先登錄', '提示', {
-      confirmButtonText: '確定',
+      confirmButtonText: '确定',
       callback: action => {
         localStorage.removeItem('userInfo');
         localStorage.removeItem('logintoken');
         localStorage.removeItem('userdata');
         router.replace({
           path: '/login'
+        })
+      }
+    })
+  } else if (code === 403) {
+    MessageBox.alert('用户无权限', '提示', {
+      confirmButtonText: '确定',
+      callback: action => {
+        router.replace({
+          path: '/' + JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
         })
       }
     })

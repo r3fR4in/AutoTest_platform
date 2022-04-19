@@ -100,7 +100,7 @@ def menu():
 
 """获取用户列表"""
 @user.route('/userList', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def list_user():
     try:
         # 从get请求拿参数
@@ -124,7 +124,7 @@ def list_user():
 
 """获取角色权限选项"""
 @user.route('/getRoleCode', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def get_role_code():
     try:
         role_option = DataDictionary.query.filter(DataDictionary.key == 'role_option').first()
@@ -137,7 +137,7 @@ def get_role_code():
 
 """添加用户"""
 @user.route('/saveUser', methods=['POST'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def add_user():
     # 从post请求拿参数
     data = request.get_json()
@@ -159,7 +159,7 @@ def add_user():
 
 """修改用户"""
 @user.route('/saveUser', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def edit_user():
     # 从put请求拿参数
     data = request.get_json()
@@ -186,7 +186,7 @@ def edit_user():
 
 """用户状态变更"""
 @user.route('/changeUserStatus', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def change_user_status():
     # 从put请求拿参数
     data = request.get_json()
@@ -205,7 +205,7 @@ def change_user_status():
 
 """删除用户"""
 @user.route('/deleteUser', methods=['DELETE'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def delete_user():
     # 从delete请求拿参数
     param_id = request.args.get('id')
@@ -230,7 +230,7 @@ def delete_user():
 
 """重置用户名密码"""
 @user.route('/resetPwd', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def reset_pwd():
     # 从put请求拿参数
     data = request.get_json()
@@ -253,7 +253,7 @@ def reset_pwd():
 
 """返回项目权限分配列表"""
 @user.route('/projectPermissionsList', methods=['GET'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def list_project_permissions():
     # 从get请求拿参数
     param_id = request.args.get('id')
@@ -276,7 +276,7 @@ def list_project_permissions():
 
 """保存项目权限分配"""
 @user.route('/projectPermissionsSave', methods=['POST'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def save_project_permissions():
     # 从post请求拿参数
     data = request.get_json()
@@ -300,7 +300,7 @@ def save_project_permissions():
 
 """修改密码"""
 @user.route('/modifyPwd', methods=['POST'])
-@token_util.login_required()
+@token_util.login_required('admin_role')
 def modify_pwd():
     try:
         # 从post请求拿参数

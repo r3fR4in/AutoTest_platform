@@ -1,6 +1,3 @@
-import mimetypes
-import os
-
 from requests import Response
 
 from utils.extensions import db
@@ -10,8 +7,7 @@ from models.apiTestModel import ApiTestcase
 from models.projectModel import ProjectModule
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestTask
-from utils import requests
-from config import setting
+from engine import requests
 import ast
 from utils.extensions import celery
 from utils.log import Log

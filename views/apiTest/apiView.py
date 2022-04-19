@@ -11,7 +11,7 @@ api = Blueprint('api', __name__)
 
 """根据项目环境配置的id查找module"""
 @api.route('/getAllApiModule', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def load_all_apiModule():
     # 从get请求获取参数
     param_e_id = request.args.get('id')
@@ -28,7 +28,7 @@ def load_all_apiModule():
 
 """获取api列表"""
 @api.route('/apiList', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_api():
     try:
         # 从get请求获取参数
@@ -85,7 +85,7 @@ def list_api():
 
 """保存api"""
 @api.route('/saveApi', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_api():
     # 从post请求拿参数
     data = request.get_json()
@@ -109,7 +109,7 @@ def add_api():
 
 """保存api"""
 @api.route('/saveApi', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def edit_api():
     # 从put请求拿参数
     data = request.get_json()
@@ -148,7 +148,7 @@ def edit_api():
 
 """删除api"""
 @api.route('/deleteApi', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_api():
     # 从delete请求拿参数
     param_id = request.args.get('id')
@@ -171,7 +171,7 @@ def delete_api():
 
 """api上移"""
 @api.route('/upApi', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def up_api():
     # 从put请求获取参数
     data = request.get_json()
@@ -196,7 +196,7 @@ def up_api():
 
 """api下移"""
 @api.route('/downApi', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def down_api():
     # 从put请求获取参数
     data = request.get_json()
@@ -221,7 +221,7 @@ def down_api():
 
 """状态启用/禁用"""
 @api.route('/changeApiStatus', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def change_status():
     # 从put请求获取参数
     data = request.get_json()

@@ -11,7 +11,7 @@ projectModule = Blueprint('projectModule', __name__)
 
 """根据项目环境id获取api模块"""
 @projectModule.route('/projectModuleList', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def list_projectModule():
     try:
         # 从get请求获取参数
@@ -54,7 +54,7 @@ def list_projectModule():
 
 """添加功能模块"""
 @projectModule.route('/saveProjectModule', methods=['post'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def add_projectModule():
     # 从post请求拿参数
     data = request.get_json()
@@ -79,7 +79,7 @@ def add_projectModule():
 
 """修改功能模块"""
 @projectModule.route('/saveProjectModule', methods=['put'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def edit_projectModule():
     # 从pput请求拿参数
     data = request.get_json()
@@ -110,7 +110,7 @@ def edit_projectModule():
 
 """删除api模块"""
 @projectModule.route('/deleteProjectModule', methods=['delete'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def delete_projectModule():
     # 从delete请求拿参数
     param_id = request.args.get('id')
@@ -138,7 +138,7 @@ def delete_projectModule():
 
 """根据项目名称获取项目环境"""
 @projectModule.route('/getAllProjectEnvironment', methods=['get'])
-@token_util.login_required()
+@token_util.login_required('admin_role', 'test_role')
 def load_all_projectEnvironment():
     # 从get请求获取参数
     param_projectName = request.args.get('name')
