@@ -8,6 +8,8 @@ import {loginreq, getReq, postReq, putReq, deleteReq, getFile} from './axiosFun'
 export const submittedTestsList = (params) => { return getReq("/submittedTests/submittedTestsList", params) };
 // 获取冒烟测试不通过原因
 export const getReasonOption = (params) => { return getReq("/submittedTests/getReasonOption", params) };
+// 获取查询条件下拉框选项
+export const getSubmittedTestOptions = (params) => { return getReq("/submittedTests/getSubmittedTestOptions", params) };
 // 保存提测申请
 export const addSubmittedTest = (params) => { return postReq("/submittedTests/saveSubmittedTest", params) };
 // 保存提测申请

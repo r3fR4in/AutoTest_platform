@@ -10,6 +10,36 @@
       <el-form-item label="项目名称：">
         <el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync"></el-autocomplete>
       </el-form-item>
+      <el-form-item label="测试状态：">
+        <el-select size="small" v-model="test_status_value" clearable placeholder="请选择">
+          <el-option
+            v-for="item in test_status_option"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="冒烟测试结果：">
+        <el-select size="small" v-model="smoke_testing_result_value" clearable placeholder="请选择">
+          <el-option
+            v-for="item in smoke_testing_result_option"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="最终测试结果：">
+        <el-select size="small" v-model="test_result_value" clearable placeholder="请选择">
+          <el-option
+            v-for="item in test_result_option"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item>
         <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
         <el-button size="small" type="primary" icon="el-icon-plus" @click="handleEdit()">添加</el-button>
@@ -17,8 +47,8 @@
     </el-form>
     <!--列表-->
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
-      <el-table-column align="center" type="selection" width="60">
-      </el-table-column>
+      <!--<el-table-column align="center" type="selection" width="60">-->
+      <!--</el-table-column>-->
       <el-table-column prop="id" label="提测id" v-if=false>
       </el-table-column>
       <el-table-column prop="project_id" label="项目id" v-if=false>
@@ -283,7 +313,8 @@
 <script>
 import Pagination from '../../components/Pagination'
 import { getAllProject } from '../../api/projectApi'
-import { submittedTestsList, getReasonOption, addSubmittedTest, editSubmittedTest, deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
+import { submittedTestsList, getReasonOption, addSubmittedTest, editSubmittedTest, getSubmittedTestOptions,
+  deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
 export default {
   data() {
     return {
@@ -370,11 +401,14 @@ export default {
       formInline: {
         page: 1,
         limit: 10,
-        varLable: '',
-        varName: '',
         projectName: '',
-        token: localStorage.getItem('logintoken')
       },
+      smoke_testing_result_option: '',
+      smoke_testing_result_value: '',
+      test_result_option: '',
+      test_result_value: '',
+      test_status_option: '',
+      test_status_value: '',
       listData: [], //提测申请数据
       // 分页参数
       pageparm: {
@@ -396,6 +430,7 @@ export default {
     this.getdata(this.formInline);
     this.loadAllProject();
     this.getReasonOption();
+    this.getSubmittedTestOptions();
   },
   /**
    * 里面的方法只有被调用才会执行
@@ -409,7 +444,10 @@ export default {
       parameter = {
         currentPage: this.pageparm.currentPage,
         pageSize: this.pageparm.pageSize,
-        projectName : this.formInline.projectName
+        projectName : this.formInline.projectName,
+        test_status: this.test_status_value,
+        smoke_testing_result: this.smoke_testing_result_value,
+        test_result: this.test_result_value
       };
       submittedTestsList(parameter)
         .then(res => {
@@ -444,6 +482,14 @@ export default {
         this.formInline.limit = parm.pageSize;
         this.getdata(this.formInline)
       }
+    },
+    // 获取查询条件下拉框选项
+    getSubmittedTestOptions(){
+      getSubmittedTestOptions().then(res => {
+        this.smoke_testing_result_option = res.data.smoke_testing_result_option;
+        this.test_result_option = res.data.test_result_option;
+        this.test_status_option = res.data.test_status_option;
+      })
     },
     // 获取冒烟测试不通过原因
     getReasonOption(){

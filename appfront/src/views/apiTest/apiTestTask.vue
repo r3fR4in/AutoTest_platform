@@ -20,8 +20,8 @@
     </el-form>
     <!--列表-->
     <el-table size="small" :data="taskData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
-      <el-table-column align="center" type="selection" width="60">
-      </el-table-column>
+      <!--<el-table-column align="center" type="selection" width="60">-->
+      <!--</el-table-column>-->
       <el-table-column prop="id" label="任务id" v-if=false>
       </el-table-column>
       <el-table-column sortable prop="title" label="任务标题" width="300">

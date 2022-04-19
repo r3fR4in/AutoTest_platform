@@ -1,6 +1,8 @@
 import datetime
 
 from flask import Blueprint, jsonify, request, send_file
+from sqlalchemy import or_
+
 from utils.extensions import db
 from utils import token_util
 from models.projectModel import Project
@@ -23,6 +25,9 @@ def list_submittedTests():
         param_currentPage = request.args.get('currentPage')
         param_pageSize = request.args.get('pageSize')
         param_projectName = request.args.get('projectName')
+        param_test_status = request.args.get('test_status')
+        param_smoke_testing_result = request.args.get('smoke_testing_result')
+        param_test_result = request.args.get('test_result')
 
         filterList = []
 
@@ -44,6 +49,12 @@ def list_submittedTests():
             else:
                 output = {'code': 0, 'msg': '项目不存在', 'count': 0, 'success': False, 'errorMsg': ''}
                 return jsonify(output)
+        if param_test_status is not None and param_test_status != '':
+            filterList.append(SubmittedTests.test_status == int(param_test_status))
+        if param_smoke_testing_result is not None and param_smoke_testing_result != '':
+            filterList.append(SubmittedTests.smoke_testing_result == int(param_smoke_testing_result))
+        if param_test_result is not None and param_test_result != '':
+            filterList.append(SubmittedTests.test_result == int(param_test_result))
 
         submittedTests = SubmittedTests.query.filter(*filterList).order_by(SubmittedTests.id.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
         num = SubmittedTests.query.filter(*filterList).count()
@@ -371,5 +382,22 @@ def save_test_result():
         output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     except Exception as e:
         output = {'code': 0, 'msg': '保存失败', 'exception': e.args[0], 'success': False}
+
+    return jsonify(output)
+
+
+"""获取下拉框选项"""
+@submittedTests.route('/getSubmittedTestOptions', methods=['get'])
+@token_util.login_required()
+def get_submittedTest_options():
+    try:
+        datas = DataDictionary.query.filter(or_(DataDictionary.key == 'test_status_option', DataDictionary.key == 'smoke_testing_result_option', DataDictionary.key == 'test_result_option')).all()
+        options_dic = {}
+        for d in datas:
+            dic = d.to_json()
+            options_dic[dic['key']] = ast.literal_eval(dic['value'])
+        output = {'code': 1, 'data': options_dic, 'exception': None, 'success': True}
+    except Exception as e:
+        output = {'code': 0, 'msg': '获取失败', 'exception': e.args[0], 'success': False}
 
     return jsonify(output)

@@ -17,8 +17,8 @@
     </el-form>
     <!--列表-->
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
-      <el-table-column align="center" type="selection" width="60">
-      </el-table-column>
+      <!--<el-table-column align="center" type="selection" width="60">-->
+      <!--</el-table-column>-->
       <el-table-column prop="id" label="项目环境id" v-if=false>
       </el-table-column>
       <el-table-column prop="project_id" label="项目id" v-if=false>
