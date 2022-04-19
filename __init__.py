@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+import os
+
+from flask import Flask, render_template, send_from_directory
 from utils import time
 from flask_socketio import SocketIO
 from config import SQLSETTING, setting
@@ -44,6 +46,7 @@ def create_app():
     # socketio.init_app(app, async_mode=async_mode)
 
     register_blueprint(app)
+
 
     return app
 

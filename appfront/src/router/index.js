@@ -65,6 +65,13 @@ import apiTestTask from "@/views/apiTest/apiTestTask";
 // 接口测试报告界面
 import apiTestReport from "@/views/apiTest/apiTestReport";
 
+// 处理路由跳转报错问题
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location, resolve, reject) {
+    if ( resolve || reject ) return originalPush.call(this, location, resolve, reject)
+    return originalPush.call(this, location).catch((e)=>{})
+};
+
 // 启用路由
 Vue.use(Router);
 

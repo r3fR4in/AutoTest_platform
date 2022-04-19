@@ -53,37 +53,50 @@ axios.interceptors.response.use(data => {
 // 路由拦截器
 router.beforeEach((to, from, next) => {
     if (to.matched.length != 0) {
-        if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
-            if (Boolean(localStorage.getItem("userInfo"))) { // 通过vuex state获取当前的user是否存在
-                next();
-            } else {
-                console.log(to.fullPath);
-                next({
-                    path: '/login',
-                    query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
-                })
-            }
+      if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
+        if (Boolean(localStorage.getItem("userInfo"))) { // 通过vuex state获取当前的user是否存在
+          next();
         } else {
-            if (Boolean(localStorage.getItem("userInfo"))) { // 判断是否登录
-                if (to.path != "/" && to.path != "/login") { //判断是否要跳到登录界面
-                    next();
-                } else {
-                    /**
-                     * 防刷新，如果登录，修改路由跳转到登录页面，修改路由为登录后的首页
-                     */
-                    next({
-                        path: JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
-                    })
-                }
-            } else {
-                next();
-            }
-        }
-    } else {
-        next({
+          console.log(to.fullPath);
+          next({
             path: '/login',
             query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
-        })
+          })
+        }
+      } else {
+        if (Boolean(localStorage.getItem("userInfo"))) { // 判断是否登录
+          // if (to.path != "/" && to.path != "/login") { //判断是否要跳到登录界面
+          //     next();
+          // } else {
+          //     /**
+          //      * 防刷新，如果登录，修改路由跳转到登录页面，修改路由为登录后的首页
+          //      */
+          //     console.log(to);
+          //     next({
+          //         path: JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
+          //     })
+          // }
+          if (to.path === "/") {
+            next({
+              path: '/' + JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
+            })
+          } else if (to.path === "/login") {
+            next({
+              path: '/' + JSON.parse(localStorage.getItem('menu'))[0].menus[0].url
+            })
+          } else {
+            next();
+          }
+        } else {
+          next();
+        }
+      }
+    } else {
+      console.log(to);
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
     }
 });
 
