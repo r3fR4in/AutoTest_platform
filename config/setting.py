@@ -4,9 +4,9 @@ sys.path.append(BASE_DIR)
 
 # 日志目录
 LOG_DIR = os.path.join(BASE_DIR, "logs")
-# 接口测试的上传文件目录
+# 接口测试的docker镜像本地上传文件目录
 updateFiles_DIR_apiTest = os.path.join(BASE_DIR, "updateFiles/apiTest")
-# 提测申请管理的上传文件目录
+# 提测申请管理的docker镜像本地上传文件目录
 updateFiles_DIR_submittedTests = os.path.join(BASE_DIR, "updateFiles/submittedTests")
 # redis配置
 # REDIS = {
