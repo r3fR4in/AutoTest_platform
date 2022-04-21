@@ -1,6 +1,6 @@
 import datetime
 
-from flask import Blueprint, jsonify, request, send_file
+from flask import Blueprint, jsonify, request, send_file, after_this_request
 from sqlalchemy import or_
 
 from utils.extensions import db
@@ -13,6 +13,7 @@ import ast
 import uuid
 import os
 import mimetypes
+from utils.ssh_connect import SSH
 
 submittedTests = Blueprint('submittedTests', __name__)
 
@@ -110,7 +111,7 @@ def add_submittedTest():
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
     param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
-    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date']is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
@@ -129,7 +130,7 @@ def add_submittedTest():
             output = {'code': 0, 'msg': '保存失败，请输入存在的项目名称', 'exception': None, 'success': False}
         else:
             project1_dict = project1.to_json()
-            submittedTests1 = SubmittedTests(project_id=project1_dict['id'],submitted_test_name=param_submitted_test_name,
+            submittedTests1 = SubmittedTests(project_id=project1_dict['id'], submitted_test_name=param_submitted_test_name,
                                              submitted_date=param_submitted_date, test_date=param_test_date, online_date=param_online_date, fix_bug_director=param_fix_bug_director,
                                              self_test_report_url=param_self_test_report_url, test_url=param_test_url, test_scope=param_test_scope, influence_scope=param_influence_scope,
                                              points_for_attention=param_points_for_attention, config_url=param_config_url, script_url=param_script_url, compatibility_desc=param_compatibility_desc,
@@ -154,7 +155,7 @@ def edit_submittedTest():
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
     param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
-    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date']is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
@@ -207,6 +208,12 @@ def get_and_save_upload_files():
             if not os.path.exists(setting.updateFiles_DIR_submittedTests):
                 os.mkdir(setting.updateFiles_DIR_submittedTests)
             file.save(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
+            # 文件上传远程服务器
+            ssh = SSH(setting.host, setting.port, setting.username, setting.password)
+            ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+            ssh.close_connect()
+            # 删除镜像本地的文件
+            os.remove(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
             output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
         else:
             # 编辑：保存文件，同时更新表字段值
@@ -217,8 +224,14 @@ def get_and_save_upload_files():
                 file_list = eval(submittedTests1.file_name)
                 file_list.append({'realname': file_name + suffix, 'name': file.filename})
                 submittedTests1.file_name = str(file_list)
-            db.session.commit()
             file.save(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
+            # 文件上传远程服务器
+            ssh = SSH(setting.host, setting.port, setting.username, setting.password)
+            ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+            ssh.close_connect()
+            # 删除镜像本地的文件
+            os.remove(setting.updateFiles_DIR_submittedTests + '/' + file_name + suffix)
+            db.session.commit()
             output = {'code': 1, 'msg': '上传成功', 'exception': None, 'success': True, 'file_name': file.filename, 'real_file_name': file_name + suffix}
     except Exception as e:
         output = {'code': 0, 'msg': '上传失败', 'exception': e.args[0], 'success': False}
@@ -248,11 +261,11 @@ def delete_upload_file():
             if not file_list:
                 file_list = ''
             submittedTests1.file_name = str(file_list)
+        ssh = SSH(setting.host, setting.port, setting.username, setting.password)
+        if ssh.exist_file(setting.remote_updateFiles_DIR_submittedTests + '/' + param_file_realname):
+            ssh.delete_file(setting.remote_updateFiles_DIR_submittedTests, param_file_realname)
+            ssh.close_connect()
             db.session.commit()
-        # 删除对应路径的文件
-        path = setting.updateFiles_DIR_submittedTests + '/' + param_file_realname
-        if os.path.exists(path):
-            os.remove(path)
             output = {'code': 1, 'msg': '删除成功', 'exception': None, 'success': True}
         else:
             output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
@@ -269,10 +282,18 @@ def download_file():
     param_realname = request.args.get('file')
     path = setting.updateFiles_DIR_submittedTests + '/' + param_realname
     try:
-        if os.path.exists(path):
-            mimetype = mimetypes.guess_type(path)[0]
-            res = send_file(path, mimetype=mimetype, attachment_filename=param_realname, as_attachment=True)
-            return res
+        # 把文件从远程服务器拉到镜像本地
+        ssh = SSH(setting.host, setting.port, setting.username, setting.password)
+        if ssh.exist_file(setting.remote_updateFiles_DIR_submittedTests + '/' + param_realname):
+            ssh.download_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, param_realname)
+            ssh.close_connect()
+            if os.path.exists(path):
+                mimetype = mimetypes.guess_type(path)[0]
+                res = send_file(path, mimetype=mimetype, attachment_filename=param_realname, as_attachment=True)
+                return res
+            else:
+                output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
+                return jsonify(output)
         else:
             output = {'code': 0, 'msg': '文件不存在', 'exception': None, 'success': False}
             return jsonify(output)

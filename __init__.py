@@ -2,10 +2,10 @@ import os
 
 from flask import Flask, render_template, send_from_directory
 from utils import time
-from flask_socketio import SocketIO
+# from flask_socketio import SocketIO
 from config import SQLSETTING, setting
-# from config.SchedulerConfig import SchedulerConfig
-# from config import scheduler  # 引入APScheduler
+from jobs.SchedulerConfig import SchedulerConfig
+from jobs import scheduler  # 引入APScheduler
 # from celery import Celery
 # from utils import celery
 # from models.exts import db
@@ -14,7 +14,7 @@ def create_app():
     app = Flask(__name__, static_folder="static", template_folder="templates")
     app.json_encoder = time.CustomJSONEncoder  # 替换默认的json编码器，用于修改返回时间日期的格式
     app.config.from_object(SQLSETTING)  # 导入数据库连接配置
-    # app.config.from_object(SchedulerConfig)  # 导入定时任务配置
+    app.config.from_object(SchedulerConfig)  # 导入定时任务配置
 
     # 導入setting的redis配置
     app.config['REDIS_HOST'] = setting.REDIS['HOST']
@@ -36,17 +36,15 @@ def create_app():
     #
     # db.init_app(app)
 
-
     # 裝載定時任務
-    # scheduler.init_app(app)  # 把任务列表载入实例flask
-    # scheduler.start()  # 启动任务计划
+    scheduler.init_app(app)  # 把任务列表载入实例flask
+    scheduler.start()  # 启动任务计划
 
     # async_mode = None
     # socketio = SocketIO()
     # socketio.init_app(app, async_mode=async_mode)
 
     register_blueprint(app)
-
 
     return app
 

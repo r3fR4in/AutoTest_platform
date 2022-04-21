@@ -248,10 +248,14 @@ export default {
             this.apiData.id = res.data.id;
             if (res.data.request_body !== ''){
               this.apiData.request_body = JSON.parse(res.data.request_body);
+            } else {
+              this.apiData.request_body = ''
             }
             // this.apiData.request_param = res.data.request_param;
             if (res.data.request_header !== ''){
               this.apiData.request_header = JSON.parse(res.data.request_header);
+            } else {
+              this.apiData.request_header = ''
             }
             this.apiData.request_method = res.data.request_method;
             this.apiData.title = res.data.title;
@@ -262,10 +266,14 @@ export default {
             // this.apiData.assert_pattern = res.data.assert_pattern;
             if (res.data.assert_content !== ''){
               this.apiData.assert_content = JSON.parse(res.data.assert_content);
+            } else {
+              this.apiData.assert_content = ''
             }
             this.apiData.postProcessor = res.data.is_post_processor === 'true';
             if (res.data.post_processor_content !== ''){
               this.apiData.post_processor_content = JSON.parse(res.data.post_processor_content);
+            } else {
+              this.apiData.post_processor_content = ''
             }
             this.apiData.request_file = res.data.file_name;
           }

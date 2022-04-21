@@ -4,10 +4,19 @@ sys.path.append(BASE_DIR)
 
 # 日志目录
 LOG_DIR = os.path.join(BASE_DIR, "logs")
+# 文件上传远程服务器信息
+host = '172.30.21.53'
+port = '22'
+username = 'Niko'
+password = 'Abcd1234'
 # 接口测试的docker镜像本地上传文件目录
 updateFiles_DIR_apiTest = os.path.join(BASE_DIR, "updateFiles/apiTest")
+# 接口测试的服务器文件目录
+remote_updateFiles_DIR_apiTest = 'D:/PycharmProjects/at_platform_file/apiTest'
 # 提测申请管理的docker镜像本地上传文件目录
 updateFiles_DIR_submittedTests = os.path.join(BASE_DIR, "updateFiles/submittedTests")
+# 提测申请管理的服务器文件目录
+remote_updateFiles_DIR_submittedTests = 'D:/PycharmProjects/at_platform_file/submittedTests'
 # redis配置
 # REDIS = {
 #     'HOST': '127.0.0.1',
