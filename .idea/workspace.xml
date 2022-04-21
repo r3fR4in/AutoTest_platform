@@ -3,20 +3,48 @@
   <component name="ChangeListManager">
     <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="隨便更更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/SchedulerConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/SchedulerConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.bad05239afa505f2ac766f1f8811dc0e.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.bad05239afa505f2ac766f1f8811dc0e.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.1367082991b348291fca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.1367082991b348291fca.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ssh_connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ssh_connect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/api/basisMG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/api/payMG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/api/userMG.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/api/userMG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/charts/statistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/druid/login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/goods/Goods.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/machine/Machine.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/machine/MachineAisle.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/machine/MachineConfig.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/pay/Config.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/pay/Order.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/Dept.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/Module.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/Permission.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/Role.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/system/Variable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.5901e9fdac540c9593bdcd7beca0dcdf.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.5901e9fdac540c9593bdcd7beca0dcdf.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/element-icons.535877f.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/element-icons.732389d.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/iconfont.4f4ba31.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/iconfont.9a8d1b2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/iconfont.df0dca9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/jsoneditor-icons.256e3ab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.92b21c8ab6a1eade07b4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.92b21c8ab6a1eade07b4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor.f4229dcf6644b4104f06.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor.f4229dcf6644b4104f06.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/wx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/交易订单.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/商品管理.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/展开与压缩.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/支付配置.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/用户管理.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/登录.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/编辑.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/角色管理.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +54,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AutoTest_platform$manage.coverage" NAME="manage Coverage Results" MODIFIED="1620293623281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1650530074551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1650531238862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1650008747300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$assert.coverage" NAME="assert Coverage Results" MODIFIED="1624003849148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$ttt.coverage" NAME="ttt Coverage Results" MODIFIED="1630660030949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -80,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="260">
+              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -110,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="298" column="59" selection-start-line="298" selection-start-column="59" selection-end-line="298" selection-end-column="59" />
+            <state relative-caret-position="341">
+              <caret line="301" column="88" selection-start-line="301" selection-start-column="88" selection-end-line="301" selection-end-column="88" />
               <folding>
                 <element signature="n#style#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#el-select#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -206,9 +234,7 @@
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" />
         <option value="$PROJECT_DIR$/appfront/src/api/apiTestApi.js" />
         <option value="$PROJECT_DIR$/appfront/src/views/system/user.vue" />
-        <option value="$PROJECT_DIR$/appfront/src/api/userMG.js" />
         <option value="$PROJECT_DIR$/appfront/node_modules/vue-json-editor/assets/jsoneditor.js" />
-        <option value="$PROJECT_DIR$/appfront/src/router/index.js" />
         <option value="$PROJECT_DIR$/appfront/index.html" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/appfront/build/webpack.dev.conf.js" />
@@ -242,9 +268,11 @@
         <option value="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" />
         <option value="$PROJECT_DIR$/Lib/site-packages/paramiko/sftp_client.py" />
         <option value="$PROJECT_DIR$/utils/ssh_connect.py" />
-        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
         <option value="$PROJECT_DIR$/views/apiTest/apiTestcaseView.py" />
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" />
+        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
+        <option value="$PROJECT_DIR$/appfront/src/router/index.js" />
+        <option value="$PROJECT_DIR$/appfront/src/api/userMG.js" />
       </list>
     </option>
   </component>
@@ -279,21 +307,6 @@
               <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
               <item name="appfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoTest_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="appfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="apiTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoTest_platform" type="b2602c69:ProjectViewProjectNode" />
@@ -372,27 +385,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.AutoTest_platform">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AutoTest_platform" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+  <component name="RunManager" selected="JavaScript Debug.Variable.vue">
+    <configuration name="Variable.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AutoTest_platform/appfront/src/views/system/Variable.vue" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="remove_file_job" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -572,18 +566,18 @@
     <list>
       <item itemvalue="Flask server.AutoTest_platform" />
       <item itemvalue="Flask server.Flask (app.py)" />
-      <item itemvalue="Python.app" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.ssh_connect" />
       <item itemvalue="Python.remove_file_job" />
+      <item itemvalue="JavaScript Debug.Variable.vue" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Variable.vue" />
         <item itemvalue="Python.remove_file_job" />
         <item itemvalue="Python.ssh_connect" />
         <item itemvalue="Python.test" />
         <item itemvalue="Flask server.Flask (app.py)" />
-        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -649,7 +643,7 @@
       <workItem from="1649992827994" duration="7066000" />
       <workItem from="1650010993023" duration="51401000" />
       <workItem from="1650427152674" duration="5498000" />
-      <workItem from="1650510795497" duration="15163000" />
+      <workItem from="1650510795497" duration="15765000" />
     </task>
     <task id="LOCAL-00001" summary="隨便更更">
       <created>1641460444805</created>
@@ -662,7 +656,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1248669000" />
+    <option name="totallyTimeSpent" value="1249271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -676,7 +670,7 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.19402985" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="1" sideWeight="0.5048544" side_tool="true" weight="0.20095949" />
       <window_info id="Favorites" order="2" sideWeight="0.5048544" side_tool="true" weight="0.20095949" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -690,7 +684,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51226014" side_tool="true" weight="0.31995663" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.48773986" weight="0.35683298" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48773986" visible="true" weight="0.31995663" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48773986" visible="true" weight="0.31995663" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -804,92 +798,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appfront/src/api/submittedTestsApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="11" column="107" selection-start-line="11" selection-start-column="107" selection-end-line="11" selection-end-column="107" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="454" column="40" selection-start-line="454" selection-start-column="40" selection-end-line="454" selection-end-column="40" />
-          <folding>
-            <element signature="e#15167#15219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/extensions.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/api_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/requests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1240">
-          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding>
-            <element signature="e#8#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/template.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/Pagination.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/navcon.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1317">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/error.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/leftnav.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/components/JsonView.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1187,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/apiTest/apiTestcaseView.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1206,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="298" column="59" selection-start-line="298" selection-start-column="59" selection-end-line="298" selection-end-column="59" />
+        <state relative-caret-position="341">
+          <caret line="301" column="88" selection-start-line="301" selection-start-column="88" selection-end-line="301" selection-end-column="88" />
           <folding>
             <element signature="n#style#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-select#0;n#el-input#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -1218,6 +1119,79 @@
             <element signature="n#style#0;n#el-scrollbar#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#7674#7801#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/druid/login.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/charts/statistics.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/goods/Goods.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1740" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/machine/MachineConfig.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/machine/MachineAisle.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/system/Module.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/system/Role.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/system/Variable.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/api/axiosFun.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/api/basisMG.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/api/userMG.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -12,22 +12,7 @@ import index from '@/views/index';
 import user from '@/views/system/user';
 // 修改密码
 import modifyPwd from '@/views/system/modifyPwd';
-// 菜单管理
-import Module from '@/views/system/Module';
-// 角色管理
-import Role from '@/views/system/Role';
-// 公司管理
-import Dept from '@/views/system/Dept';
-// 系统环境变量
-import Variable from '@/views/system/Variable';
-// 权限管理
-import Permission from '@/views/system/Permission';
-/**
- * 数据监控
- */
 
-// 图表界面
-import statistics from '@/views/charts/statistics';
 
 /**
  * 项目管理
@@ -112,54 +97,6 @@ export default new Router({
             path: '/system/modifyPwd',
             name: '修改密码',
             component: modifyPwd,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/system/Module',
-            name: '菜单管理',
-            component: Module,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/system/Role',
-            name: '角色管理',
-            component: Role,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/system/Dept',
-            name: '公司管理',
-            component: Dept,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/system/Variable',
-            name: '系统环境变量',
-            component: Variable,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/system/Permission',
-            name: '权限管理',
-            component: Permission,
-            meta: {
-                requireAuth: true,
-                keepAlive: false
-            }
-        }, {
-            path: '/charts/statistics',
-            name: '数据可视化',
-            component: statistics,
             meta: {
                 requireAuth: true,
                 keepAlive: false
