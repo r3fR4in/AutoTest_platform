@@ -5,11 +5,13 @@
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>项目非一次性通过原因分析</el-breadcrumb-item>
     </el-breadcrumb>
+    <div style="margin: 20px;"></div>
     <!-- 搜索筛选 -->
     <el-form :inline="true" :model="formInline" class="user-search">
       <el-form-item label="查询时间：">
         <el-date-picker
           v-model="date"
+          size="small"
           type="daterange"
           value-format="yyyy-MM-dd"
           range-separator="至"
@@ -31,7 +33,7 @@
         </el-table-column>
         <el-table-column sortable prop="smoke_testing_fail_reason_detail" label="原因分析" min-width="150">
         </el-table-column>
-        <el-table-column sortable prop="smoke_testing_fail_reason_category_num" label="出现次数" min-width="150">
+        <el-table-column sortable prop="smoke_testing_fail_reason_detail_num" label="出现次数" min-width="150">
         </el-table-column>
         <el-table-column sortable prop="detail_rate" label="占比" min-width="150">
         </el-table-column>

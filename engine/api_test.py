@@ -7,7 +7,7 @@ from models.apiTestModel import ApiTestcase
 from models.projectModel import ProjectModule
 from models.apiTestModel import Api
 from models.apiTestModel import ApiTestTask
-from engine import requests
+from engine import send_requests
 import ast
 from utils.extensions import celery
 from utils.log import Log
@@ -41,11 +41,9 @@ def replace_environment_variable(s, model, e_id):
 
 
 """调试api"""
-# @socketio.on('log_output', namespace='/debug_log')
 def debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
-    # start_line = log.get_number_of_rows()
     try:
         # 設置請求頭
         debug_log.append(log.info_return_message("标题:" + title))
@@ -74,7 +72,7 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
             debug_log.append(log.info_return_message("文件名:" + files[0]['name'] + "，後臺文件名:" + files[0]['realname']))
         # 发送请求
         debug_log.append(log.info_return_message("请求体:" + str(body)))
-        re = requests.SendRequests(method, url, header, body, files, encode, verify, log).request()
+        re = send_requests.SendRequests(method, url, header, body, files, encode, verify, log).request()
 
         # 判断有没有拿到响应，沒有則打印異常信息
         if type(re) is not Response:
@@ -152,10 +150,6 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
             debug_log.append(log.error_return_message("最终测试结果:失败"))
         log.info("==============================================end==============================================")
 
-        # end_line = log.get_number_of_rows() + 1
-        # # 根據開始結束行數，讀取返回日志文件指定行數的日志
-        # debugLog = log.get_log(start_line, end_line)
-        # debugLog.append(final_result)
         debug_log.append(final_result)
 
     return debug_log

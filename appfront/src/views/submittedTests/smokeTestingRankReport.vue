@@ -5,11 +5,13 @@
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>完成提测冒烟测试排名</el-breadcrumb-item>
     </el-breadcrumb>
+    <div style="margin: 20px;"></div>
     <!-- 搜索筛选 -->
     <el-form :inline="true" :model="formInline" class="user-search">
       <el-form-item label="查询时间：">
         <el-date-picker
           v-model="date"
+          size="small"
           type="daterange"
           value-format="yyyy-MM-dd"
           range-separator="至"
@@ -23,6 +25,7 @@
     </el-form>
     <!-- 图形 -->
     <div id="echarts_box" style="width: 90%;height: 400px"></div>
+    <div style="margin: 20px;"></div>
     <!--列表-->
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;">
       <el-table-column prop="project_id" label="项目id" v-if=false>
@@ -88,7 +91,16 @@ export default {
             ['items', '通过率', '提测总数', '通过数']  // 图例
           ]
         },
-        xAxis: { type: 'category' },
+        xAxis: {
+          type: 'category',
+          axisLabel: {
+            show: true, // 是否显示刻度标签，默认显示
+            interval: 0, // 坐标轴刻度标签的显示间隔，在类目轴中有效；默认会采用标签不重叠的策略间隔显示标签；可以设置成0强制显示所有标签；如果设置为1，表示『隔一个标签显示一个标签』，如果值为2，表示隔两个标签显示一个标签，以此类推。
+            rotate: -30, // 刻度标签旋转的角度，在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠；旋转的角度从-90度到90度
+            inside: false, // 刻度标签是否朝内，默认朝外
+            margin: 9, // 刻度标签与轴线之间的距离
+          }
+        },
         yAxis: [
           {
             name: '通过率%',

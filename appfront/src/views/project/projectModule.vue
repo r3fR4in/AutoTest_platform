@@ -54,7 +54,7 @@
             </div>
             <el-form label-width="120px" :model="editForm" :rules="rules" ref="editForm">
               <el-form-item label="父模块" prop="parent_m_name">
-                <el-select size="small" v-model="p_value1" clearable placeholder="请选择" @change="p_handleChange">
+                <el-select size="small" v-model="p_value1" clearable placeholder="请选择" @change="p_handleChange1">
                   <el-option
                     v-for="item in p_options1"
                     :key="item.value"
@@ -80,7 +80,7 @@
       <el-dialog title="添加" :visible.sync="addFormVisible" width="30%" @click="closeDialog">
         <el-form label-width="120px" :model="addForm" :rules="rules" ref="addForm">
           <el-form-item label="父模块" prop="parent_m_name">
-            <el-select size="small" v-model="p_value2" clearable placeholder="请选择" @change="p_handleChange">
+            <el-select size="small" v-model="p_value2" clearable placeholder="请选择" @change="p_handleChange2">
               <el-option
                 v-for="item in p_options2"
                 :key="item.value"
@@ -259,8 +259,11 @@ export default {
       }
       this.getdata(this.formInline);
     },
-    p_handleChange(val) {
+    p_handleChange1(val) {
       this.editForm.parent_id = val;
+    },
+    p_handleChange2(val) {
+      this.addForm.parent_id = val;
     },
     //項目名稱修改后清空環境選擇
     inputChange(){
