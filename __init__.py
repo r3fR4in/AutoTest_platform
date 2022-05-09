@@ -4,7 +4,7 @@ from flask import Flask, render_template, send_from_directory
 from utils import time
 # from flask_socketio import SocketIO
 from config import SQLSETTING, setting
-from jobs.SchedulerConfig import SchedulerConfig
+from jobs.schedulerConfig import SchedulerConfig
 from jobs import scheduler  # 引入APScheduler
 # from celery import Celery
 # from utils import celery

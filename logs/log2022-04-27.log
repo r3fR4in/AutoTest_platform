@@ -1,0 +1,9 @@
+[2022-04-27 17:08:44,411] [log.py|__console] [line:43] ERROR   : 该项目下有关联数据，不能删除
+[2022-04-27 17:10:01,946] [log.py|__console] [line:43] ERROR   : 该项目下有关联数据，不能删除
+[2022-04-27 17:10:29,921] [log.py|__console] [line:43] ERROR   : 该项目下有关联数据，不能删除
+[2022-04-27 17:13:46,006] [log.py|__console] [line:43] ERROR   : 该项目下有关联数据，不能删除
+[2022-04-27 17:14:38,843] [log.py|__console] [line:43] ERROR   : 该项目下有关联数据，不能删除
+[2022-04-27 17:16:52,163] [log.py|__console] [line:43] ERROR   : (pymysql.err.IntegrityError) (1062, "Duplicate entry 'test' for key 'project.projectName'")
+[SQL: INSERT INTO project (`projectName`, `projectDescription`, create_time) VALUES (%(projectName)s, %(projectDescription)s, %(create_time)s)]
+[parameters: {'projectName': 'test', 'projectDescription': 'test', 'create_time': datetime.datetime(2022, 4, 27, 17, 16, 51, 864286)}]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)

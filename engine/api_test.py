@@ -158,7 +158,7 @@ def debug(log, e_id, title, url, header, method, body, files, encode, verify, is
 """执行测试任务"""
 @celery.task()
 def execute_apitest_task(task_id):
-    log = Log('log')
+    log = Log('ApiTaskLog')
     # celery传参不能传实例，所以传任务id进来，再用任务id查询对应实例
     apiTestTask = ApiTestTask.query.filter(ApiTestTask.id == task_id).first()
     try:
