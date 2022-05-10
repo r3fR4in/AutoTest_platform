@@ -27,7 +27,7 @@ class MissingTokenError(APIException):
     success = False
 
 class AuthInsufficient(APIException):
-    code = 401
+    code = 403
     msg = '权限不足'
     error_code = 9997
     success = False

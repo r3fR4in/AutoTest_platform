@@ -1,0 +1,258 @@
+[2022-05-10 10:50:37,714] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:50:40,302] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:50:49,252] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:51:35,329] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:51:35,330] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:51:45,844] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:51:49,416] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:54:50,186] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 10:56:56,446] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:05:25,780] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:08:37,971] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:08:41,581] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:11:21,034] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:22:27,693] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'lOh1b2vC07mucGGEUK0RraGrEXfIq0RDK5inJ6WbRPILeMkPqoJmWVqK_dOig67C9fGFhi3Kk-7zH3FKPGMWng' does not match
+
+[2022-05-10 11:22:42,360] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:25:53,233] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:36:20,678] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:37:48,374] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:37:49,869] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:37:59,920] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:39:19,977] [log.py|__console] [line:43] ERROR   : token转换失败:Signature expired
+[2022-05-10 11:39:21,652] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:39:29,209] [log.py|__console] [line:43] ERROR   : token转换失败:Signature expired
+[2022-05-10 11:44:38,944] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:46:02,131] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:48:12,075] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:49:56,376] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-05-10 11:51:45,083] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'uz2HPSU6PiwcFhSXkbMpGn4O1wiTbcuUk6rY-Bl_7LrSqA5JA-kkPFUpoMYa69G8JhRlUPJiA-7z5lyHCpzqOQ' does not match
+
+[2022-05-10 11:58:11,831] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'UTmuW6z4QzcgwVarDyahQf4vpgAz-wh9jRsUrN-5XZQNczcaYBsW2AlHjTd_dKwH_VKZoun48azLN1B4Jm0eug' does not match
+
+[2022-05-10 11:58:16,784] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'UTmuW6z4QzcgwVarDyahQf4vpgAz-wh9jRsUrN-5XZQNczcaYBsW2AlHjTd_dKwH_VKZoun48azLN1B4Jm0eug' does not match
+
+[2022-05-10 12:05:16,263] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'UTmuW6z4QzcgwVarDyahQf4vpgAz-wh9jRsUrN-5XZQNczcaYBsW2AlHjTd_dKwH_VKZoun48azLN1B4Jm0eug' does not match
+
+[2022-05-10 12:05:25,827] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'UTmuW6z4QzcgwVarDyahQf4vpgAz-wh9jRsUrN-5XZQNczcaYBsW2AlHjTd_dKwH_VKZoun48azLN1B4Jm0eug' does not match
+
+[2022-05-10 12:07:43,150] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'UTmuW6z4QzcgwVarDyahQf4vpgAz-wh9jRsUrN-5XZQNczcaYBsW2AlHjTd_dKwH_VKZoun48azLN1B4Jm0eug' does not match
+
+[2022-05-10 12:08:08,029] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 169, in unsign
+    raise BadSignature("Signature %r does not match" % sig, payload=value)
+itsdangerous.exc.BadSignature: Signature b'RNYSudBKbrJwvD5kEc1Mlt4T-hWq1qWIUOYtcDpraDahZyN9SLiiIbkVlCn1VGW5qmVAN8iTjLYt_r4zoFVhmA' does not match
+
