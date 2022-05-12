@@ -220,7 +220,7 @@ def change_status():
         return errorCode.ValError()
 
     api1 = Api.query.get(param_id)
-    if param_status == 'true':
+    if param_status is True:
         api1.status = 1
     else:
         api1.status = 0

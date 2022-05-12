@@ -17,8 +17,11 @@ class SubmittedTests(db.Model, EntityBase):
     submitted_date = db.Column(db.Date)  # 申请日期
     test_date = db.Column(db.Date)  # 提交测试日期
     online_date = db.Column(db.Date)  # 项目上线日期
+    # submitted_test_director_id = db.Column(db.Integer)  # 提测负责人id
     submitted_test_director = db.Column(db.String(20))  # 提测负责人
+    # fix_bug_director_id = db.Column(db.Integer)  # 缺陷修复处理人员id
     fix_bug_director = db.Column(db.String(100))  # 缺陷修复处理人员
+    # test_director_id = db.Column(db.Integer)  # 测试负责人id
     test_director = db.Column(db.String(20))  # 测试负责人
     self_test_report_url = db.Column(db.String(500))  # 自测报告地址
     test_url = db.Column(db.String(500))  # 测试地址

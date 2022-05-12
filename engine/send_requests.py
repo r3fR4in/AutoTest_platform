@@ -32,11 +32,11 @@ class SendRequests():
                     self.header = {}
                 self.header["Content-Type"] = mimetypes.guess_type(filepath)[0]
                 re = requests.request(self.method, self.url, headers=self.header, data=file, verify=self.verify)
-            elif self.method == 'GET':
+            elif self.method == 'GET' or self.method == 'get':
                 if self.body != '':
                     self.body = ast.literal_eval(str(self.body))
                 re = requests.request(self.method, self.url, headers=self.header, params=self.body, verify=self.verify)
-            elif self.method == 'POST':
+            elif self.method == 'POST' or self.method == 'post':
                 # 判斷content type
                 if "application/x-www-form-urlencoded" in str(self.header):  # application/x-www-form-urlencoded需要處理一下body的數據格式才能發送請求
                     body = ast.literal_eval(self.body)

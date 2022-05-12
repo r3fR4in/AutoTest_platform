@@ -62,13 +62,13 @@
         </el-form-item>
         <el-form-item label="角色" prop="role_code">
           <el-select v-model="editForm.role_code" size="small" placeholder="请选择">
-              <el-option
-                v-for="item in role_option"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+            <el-option
+              v-for="item in role_option"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="手机号" prop="userMobile">
           <el-input size="small" v-model="editForm.phone" placeholder="请输入手机号"></el-input>

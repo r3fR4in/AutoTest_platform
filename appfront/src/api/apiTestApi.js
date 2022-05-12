@@ -64,7 +64,8 @@ export const debugApi = (params) => { return postReq("/apiTest/debugApi", params
 export const deleteUploadFile = (params) => { return deleteReq("/apiTest/deleteUploadFile", params) };
 // 下载上传文件
 export const downloadFile = (params) => { return getFile("/apiTest/downloadFile", params) };
-
+// 获取加密下拉选项
+export const getEncryptOption = (params) => { return getReq("/apiTest/getEncryptOption", params) };
 /**
  * 测试任务
  **/

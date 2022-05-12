@@ -35,6 +35,16 @@
       <el-form-item label="字符编码">
         <el-input size="small" v-model="apiData.encode" auto-complete="off" placeholder="字符编码" style="width: 680px"></el-input>
       </el-form-item>
+      <el-form-item label="加密方式">
+        <el-select v-model="apiData.encrypt_value" size="small" placeholder="请选择" style="width: 200px">
+          <el-option
+            v-for="item in encrypt_option"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
       <el-checkbox v-model="apiData.verify">跳过SSL校验</el-checkbox>
       <el-checkbox v-model="apiData.assert">是否需要断言</el-checkbox>
       <el-checkbox v-model="apiData.postProcessor">后置处理</el-checkbox>
@@ -161,7 +171,7 @@
 </template>
 
 <script>
-  import {apiTestcaseData, debugApi, addApiTestcase, editApiTestcase, deleteUploadFile, downloadFile} from '../../api/apiTestApi'
+  import {apiTestcaseData, debugApi, addApiTestcase, editApiTestcase, deleteUploadFile, downloadFile, getEncryptOption} from '../../api/apiTestApi'
   import JsonView from '../../components/JsonView'
   import vueJsonEditor from 'vue-json-editor'
 export default {
@@ -198,6 +208,7 @@ export default {
         value: 'DELETE',
         label: 'DELETE'
       }],
+      encrypt_option: '',
       apiData: {
         api_id: '',
         encode: '',
@@ -213,7 +224,8 @@ export default {
         assert: false,
         assert_content: '',
         postProcessor: false,
-        post_processor_content: ' '
+        post_processor_content: ' ',
+        encrypt_value: ''
       },
       debugLog: [],
       uploadData: {id: ''},
@@ -224,6 +236,7 @@ export default {
   created() {
     this.getParams();
     this.getData();
+    this.getEncryptOption();
   },
   methods: {
     getData(parameter){
@@ -233,7 +246,7 @@ export default {
       };
       apiTestcaseData(parameter)
         .then(res => {
-          if (res.success == false) {
+          if (res.success === false) {
             this.$message({
               type: 'info',
               message: res.msg
@@ -245,6 +258,7 @@ export default {
             } else {
               this.apiData.encode = res.data.encode;
             }
+            this.apiData.encrypt_value = res.data.encrypt_type;
             this.apiData.id = res.data.id;
             if (res.data.request_body !== ''){
               this.apiData.request_body = JSON.parse(res.data.request_body);
@@ -292,6 +306,13 @@ export default {
       this.id = this.$route.query.id;
       this.api_id = this.$route.query.api_id;
       this.uploadData.id = this.$route.query.id;
+    },
+    // 获取加密选项
+    getEncryptOption(){
+      getEncryptOption()
+        .then(res => {
+          this.encrypt_option = res.data;
+        })
     },
     save(){
       this.apiData.post_processor_content = ''; // 不知道爲什麽初始化值為undefined，所以在這裏設為空格

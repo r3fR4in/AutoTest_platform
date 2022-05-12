@@ -35,7 +35,7 @@ class Log():
 
         if level == 'info':
             self.logger.info(message)
-        elif level == 'debug':
+        elif level == 'normal_debug':
             self.logger.debug(message)
         elif level == 'warning':
             self.logger.warning(message)
@@ -48,7 +48,7 @@ class Log():
         fh.close()
 
     def debug(self, message):
-        self.__console('debug', message)
+        self.__console('normal_debug', message)
 
     def info(self, message):
         self.__console('info', message)

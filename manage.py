@@ -8,7 +8,7 @@
 # migrate = Migrate(app, db)
 #
 # manager.add_command('db', MigrateCommand)
-# manager.add_command('run', socketio.run(app=app, host='127.0.0.1', port=5000, debug=True))  # 新加入的代码，重写manager的run命令
+# manager.add_command('run', socketio.run(app=app, host='127.0.0.1', port=5000, normal_debug=True))  # 新加入的代码，重写manager的run命令
 #
 #
 # if __name__ == '__main__':
@@ -31,7 +31,10 @@ from flask_migrate import Migrate, MigrateCommand
 from models.exts import db
 from flask_script import Manager
 from app import app
-import models
+from models import apiTestModel
+from models import baseModel
+from models import projectModel
+from models import submittedTestsModel
 
 db.init_app(app)
 

@@ -1,6 +1,8 @@
 import os
 
 from flask import Blueprint, jsonify, request, send_file, after_this_request
+
+from models.baseModel import DataDictionary
 from utils import tokenUtil
 from engine import api_test
 from utils.log import Log
@@ -142,6 +144,9 @@ def add_apiTestcase():
     data = request.get_json()
     param_api_id = data['api_id']
     param_encode = data['encode']
+    param_encrypt_type = data['encrypt_value']
+    if param_encrypt_type is None or param_encrypt_type == '':
+        param_encrypt_type = 1
     param_request_body = json_editor_format(data['request_body'])
     param_request_header = json_editor_format(data['request_header'])
     param_request_method = data['request_method']
@@ -153,7 +158,7 @@ def add_apiTestcase():
     param_post_processor = 'true' if data['postProcessor'] is True else 'false'
     param_post_processor_content = json_editor_format(data['post_processor_content'])
     apiTestcase1 = ApiTestcase(api_id=param_api_id, title=param_title, request_method=param_request_method, request_header=param_request_header, request_body=param_request_body
-                                , encode=param_encode, verify=param_verify, url=param_url, is_assert=param_assert
+                                , encode=param_encode, encrypt_type=param_encrypt_type, verify=param_verify, url=param_url, is_assert=param_assert
                                 , assert_content=param_assert_content, is_post_processor=param_post_processor
                                 , post_processor_content=param_post_processor_content)
     db.session.add(apiTestcase1)
@@ -170,6 +175,9 @@ def edit_apiTestcase():
     data = request.get_json()
     param_api_id = data['api_id']
     param_encode = data['encode']
+    param_encrypt_type = data['encrypt_value']
+    if param_encrypt_type is None or param_encrypt_type == '':
+        param_encrypt_type = 1
     param_id = data['id']
     param_request_body = json_editor_format(data['request_body'])
     param_request_header = json_editor_format(data['request_header'])
@@ -189,6 +197,7 @@ def edit_apiTestcase():
     apiTestcase1.request_header = param_request_header
     apiTestcase1.request_body = param_request_body
     apiTestcase1.encode = param_encode
+    apiTestcase1.encrypt_type = param_encrypt_type
     apiTestcase1.verify = param_verify
     apiTestcase1.url = param_url
     apiTestcase1.is_assert = param_assert
@@ -307,16 +316,19 @@ def debugApi():
     data = request.get_json()
     param_api_id = data['api_id']
     param_encode = data['encode']
-    # param_id = request.form.get('id')
-    param_request_body = data['request_body'].replace('\n', '').replace(' ', '')
-    # param_request_param = data['request_param'].replace('\n', '').replace(' ', '')
+    # param_request_body = data['request_body'].replace('\n', '').replace(' ', '')
+    param_request_body = data['request_body'].replace('\n', '')
     param_request_file = data['request_file']
-    param_request_header = data['request_header'].replace('\n', '').replace(' ', '')
+    # param_request_header = data['request_header'].replace('\n', '').replace(' ', '')
+    param_request_header = data['request_header'].replace('\n', '')
     if param_request_header != '':
         param_request_header = ast.literal_eval(param_request_header)
     param_request_method = data['request_method']
     param_title = data['title']
     param_url = data['url']
+    param_encrypt_type = data['encrypt_value']
+    if param_encrypt_type is None or param_encrypt_type == '':
+        param_encrypt_type = 1
     param_verify = 'true' if data['verify'] is True else 'false'
     param_assert = 'true' if data['assert'] is True else 'false'
     # param_assert_pattern = request.form.get('assert_pattern')
@@ -326,9 +338,9 @@ def debugApi():
     # 获取项目环境id，给后续取环境变量
     e_id = db.session.query(ProjectModule.projectEnvironment_id).join(Api).filter(Api.id == param_api_id).first()
 
-    data = api_test.debug(log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
-                          , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
-                          , param_post_processor_content)
+    data = api_test.debug_entrance(param_encrypt_type, log, e_id[0], param_title, param_url, param_request_header, param_request_method, param_request_body
+                                 , param_request_file, param_encode, param_verify, param_assert, param_assert_content, param_is_post_processor
+                                 , param_post_processor_content)
     del data[-1]  # 返回值最後一行會帶上測試結果的bool值，測試任務用的，所以要調試這裏要刪掉
 
     output = {'code': 1000, 'msg': '调试任务启动成功', 'exception': None, 'success': True, 'data': data}
@@ -336,3 +348,11 @@ def debugApi():
     return jsonify(output)
 
 
+"""获取加密下拉选项"""
+@apiTestcase.route('/getEncryptOption', methods=['GET'])
+@tokenUtil.login_required('admin_role', 'test_role')
+def get_encrypt_option():
+    encrypt_option = DataDictionary.query.filter(DataDictionary.key == 'encrypt_option').first()
+    output = {'code': 1000, 'data': ast.literal_eval(encrypt_option.value), 'success': True}
+
+    return jsonify(output)

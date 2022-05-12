@@ -62,12 +62,12 @@ print(randomKey)
 api = 'http://172.30.22.139/crm_api/crm-oa-server/p/by/usage/infos'
 api_header = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlQ2hhbm5lbFRlbXBVc2VyOjY5OTkxMzA2OjVmN2E2MDA4LTI1YTEtNDZkYi1iMTFmLWVjODEyZDdmM2M4NDI6MTY1MDU5Nzk4NzA3OSJ9.BF9Jfi9y_3lMBf2Lu0Zz0yqVRlQwUMtgjqsQw6_1PSrNSOtvTKz2BIlJQ1ChePkCcJtoYo5lZs0ezNlOVDDz7Q',
+    'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlQ2hhbm5lbFRlbXBVc2VyOjY5OTkxMzA3OmQxY2IyOTgxLWI1OTAtNGU4OC05NGI2LTAzNDhjZDNkZjNjOTk6MTY1MjE3MzYwMTU0MiJ9.4w1EdQtJQwYI5YaqoiWCV-X9zGcvkZbNoS538Cu80sQgkh1Ytj1fWciz6qJvTJs_GrwGF0uh42KLCMwe7LWwRw',
     'versionCode': '204'
 }
 api_body = {
     'serviceCategoryCode': 1,
-    'serviceNumber': '69991306'
+    'serviceNumber': '69991307'
 }
 
 # RSA加密randomKey得到secretKey

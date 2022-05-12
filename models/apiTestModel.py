@@ -49,6 +49,7 @@ class ApiTestcase(db.Model, EntityBase):
     is_post_processor = db.Column(db.String(10))  # 判断是否需要后置处理
     post_processor_content = db.Column(db.String(500))  # 后置处理内容
     file_name = db.Column(db.String(1000))  # 上传文件的名字
+    encrypt_type = db.Column(db.Integer)
 
 class ApiTestTask(db.Model, EntityBase):
     __tablename__ = 'apiTest_task'
