@@ -190,7 +190,7 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
         else:
             verify = True
 
-        # 替換環境變量
+        # 替换环境变量
         if '{{' in body and '}}' in body:
             debug_log.append(log.info_return_message("请求体替换环境变量"))
             body = replace_environment_variable(body, EnvironmentVariable, e_id)
