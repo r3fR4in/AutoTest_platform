@@ -98,6 +98,7 @@ export default {
           // }, 1000)
           // 注释
           let param = this.ruleForm;
+          let pwd = param.password;
           param.password = md5(param.password);
           login(param).then(res => {
             if (res.success) {
@@ -105,7 +106,7 @@ export default {
                 //保存帐号到cookie，有效期7天
                 setCookie('user', this.ruleForm.username, 7);
                 //保存密码到cookie，有效期7天
-                setCookie('pwd', this.ruleForm.password, 7);
+                setCookie('pwd', pwd, 7);
               } else {
                 delCookie('user');
                 delCookie('pwd');
