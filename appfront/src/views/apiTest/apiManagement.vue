@@ -83,7 +83,7 @@
                 </el-switch>
               </template>
             </el-table-column>
-            <el-table-column align="center" label="操作" min-width="300">
+            <el-table-column align="center" label="操作" min-width="300" fixed="right">
               <template slot-scope="scope">
                 <el-button size="mini" type="primary" @click="toTestCase(scope.row)">测试用例</el-button>
                 <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>

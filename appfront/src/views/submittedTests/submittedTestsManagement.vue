@@ -98,7 +98,7 @@
       </el-table-column>
       <el-table-column prop="smoke_testing_fail_reason_detail" label="冒烟测试不通过原因分析" v-if=false>
       </el-table-column>
-      <el-table-column align="center" label="操作" min-width="350">
+      <el-table-column align="center" label="操作" min-width="350" fixed="right">
         <template slot-scope="scope">
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row, 'check')">查看</el-button>
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row, 'edit')">编辑</el-button>

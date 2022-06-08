@@ -22,7 +22,7 @@
       </el-table-column>
       <el-table-column sortable prop="url" label="url" width="300">
       </el-table-column>
-      <el-table-column align="center" label="操作" min-width="300">
+      <el-table-column align="center" label="操作" min-width="300" fixed="right">
         <template slot-scope="scope">
           <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
           <el-button size="mini" @click="copy(scope.$index, scope.row)">复制</el-button>

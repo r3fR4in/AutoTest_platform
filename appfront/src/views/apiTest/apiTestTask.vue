@@ -42,7 +42,7 @@
           <p v-if="scope.row.status===3">执行失败</p>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="操作" min-width="300">
+      <el-table-column align="center" label="操作" min-width="300" fixed="right">
         <template slot-scope="scope">
           <el-button size="mini" @click="toTestReport(scope.row)">测试报告</el-button>
           <el-button size="mini" type="danger" @click="apiTestTaskDelete(scope.$index, scope.row)">删除</el-button>
