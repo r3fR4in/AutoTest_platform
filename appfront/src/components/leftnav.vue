@@ -8,12 +8,12 @@
     </div>
     <el-submenu v-for="menu in allmenu" :key="menu.menuid" :index="menu.menuname">
       <template slot="title">
-        <i class="iconfont" :class="menu.icon"></i>
+        <i :class="menu.icon"></i>
         <span>{{menu.menuname}}</span>
       </template>
       <el-menu-item-group>
         <el-menu-item v-for="chmenu in menu.menus" :index="'/'+chmenu.url" :key="chmenu.menuid">
-          <i class="iconfont" :class="chmenu.icon"></i>
+          <!--<i class="iconfont" :class="chmenu.icon"></i>-->
           <span>{{chmenu.menuname}}</span>
         </el-menu-item>
       </el-menu-item-group>

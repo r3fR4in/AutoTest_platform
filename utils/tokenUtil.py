@@ -61,26 +61,6 @@ def login_required(*role):
             except Exception as e:
                 log.error(traceback.format_exc())
                 return errorCode.TokenExpirationError()
-
-            # try:
-            #     # 在请求头上拿到token
-            #     token = request.headers["Authorization"]
-            # except Exception as e:
-            #     # 没接收的到token,给前端抛出错误
-            #     return jsonify(code=401, msg='缺少参数token')
-            # s = Serializer(setting.SECRET_KEY)
-            # try:
-            #     user = s.loads(token)
-            #     if role:
-            #         # 获取token中的权限列表如果在参数列表中则表示有权限，否则就表示没有权限
-            #         user_role = user['role']
-            #         # result = [x for x in user_role if x in list(role)]
-            #         # if not result:
-            #         #     return jsonify(code=1, msg="权限不够")
-            #         if user_role not in list(role):
-            #             return jsonify(code=403, msg="权限不够")
-            # except Exception as e:
-            #     return jsonify(code=401, msg="登录已过期")
             return func(*args, **kw)
         return wrapper
     return decorator

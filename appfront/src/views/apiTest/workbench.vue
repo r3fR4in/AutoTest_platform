@@ -46,56 +46,8 @@
         </el-select>
       </el-form-item>
       <el-checkbox v-model="apiData.verify">跳过SSL校验</el-checkbox>
-      <el-checkbox v-model="apiData.assert">是否需要断言</el-checkbox>
-      <el-checkbox v-model="apiData.postProcessor">后置处理</el-checkbox>
-      <div style="margin-top: 18px" v-show="apiData.assert">
-        <el-form-item label="断言">
-          <!--<el-input-->
-            <!--type="textarea"-->
-            <!--:rows="3"-->
-            <!--placeholder='输入预取断言字段，[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'-->
-            <!--v-model="apiData.assert_content"-->
-            <!--style="margin-top: 10px">-->
-          <!--</el-input>-->
-          <el-alert
-            title='格式如：[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'
-            type="info"
-            :closable="false"></el-alert>
-          <vue-json-editor
-            v-model="apiData.assert_content"
-            :show-btns="false"
-            :mode="'code'"
-            lang="zh"></vue-json-editor>
-        </el-form-item>
-      </div>
-      <div style="margin-top: 18px" v-show="apiData.postProcessor">
-        <el-form-item label="后置处理">
-          <!--<el-input-->
-            <!--type="textarea"-->
-            <!--:rows="3"-->
-            <!--placeholder='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'-->
-            <!--v-model="apiData.post_processor_content"-->
-            <!--style="margin-top: 10px">-->
-          <!--</el-input>-->
-          <el-alert
-            title='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'
-            type="info"
-            :closable="false"></el-alert>
-          <vue-json-editor
-            v-model="apiData.post_processor_content"
-            :show-btns="false"
-            :mode="'code'"
-            lang="zh"></vue-json-editor>
-        </el-form-item>
-      </div>
       <el-tabs v-model="activeName" @tab-click="handleClick" type="border-card" style="margin-top: 18px">
-        <el-tab-pane label="Headers" name="first">
-          <!--<el-input-->
-            <!--type="textarea"-->
-            <!--:rows="6"-->
-            <!--placeholder='输入字典，如：{"Content-Type": "application/json;charset=UTF-8", "Authorization": "xxxxxxxxxxxxx"}'-->
-            <!--v-model="apiData.request_header">-->
-          <!--</el-input>-->
+        <el-tab-pane label="请求头" name="first">
           <el-alert
             title='格式如：{"Content-Type": "application/json;charset=UTF-8", "Authorization": "xxxxxxxxxxxxx"}'
             type="info"
@@ -106,13 +58,7 @@
             :mode="'code'"
             lang="zh"></vue-json-editor>
         </el-tab-pane>
-        <el-tab-pane label="Body" name="second" id="body" v-bind:disabled="this.apiData.request_file.length !== 0">
-          <!--<el-input-->
-            <!--type="textarea"-->
-            <!--:rows="6"-->
-            <!--placeholder='输入字典，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'-->
-            <!--v-model="apiData.request_body">-->
-          <!--</el-input>-->
+        <el-tab-pane label="请求体" name="second" id="body" v-bind:disabled="this.apiData.request_file.length !== 0">
           <el-alert
             title='格式如：{"channel":"whatsapp","to":"85259842833","whatsapp":{"type":"text","text":{"body":"测试"},"preview_url":false}}'
             type="info"
@@ -123,15 +69,7 @@
             :mode="'code'"
             lang="zh"></vue-json-editor>
         </el-tab-pane>
-        <!--<el-tab-pane label="Params" name="third" id="param" v-bind:disabled="this.apiData.request_body !== '' || this.apiData.request_file.length !== 0">
-          <el-input
-            type="textarea"
-            :rows="6"
-            placeholder='输入字典，以params形式传输，如：{ "channel": "whatsapp", "to": "85259842833", "whatsapp":{ "type":"text", "text": { "body": "测试" }, "preview_url":false } }'
-            v-model="apiData.request_param">
-          </el-input>
-        </el-tab-pane>-->
-        <el-tab-pane label="Upload" name="fourth" id="upload" v-bind:disabled="this.apiData.request_body !== ''">
+        <el-tab-pane label="文件上传" name="third" id="upload" v-bind:disabled="this.apiData.request_body !== ''">
           <div style="width: 360px">
             <el-upload
               class="upload-demo"
@@ -147,6 +85,34 @@
               <el-button size="small" type="primary">点击上传</el-button>
               <div slot="tip" class="el-upload__tip">現在只支持请求一個文件，多個文件的情況等遇到了再去擴展</div>
             </el-upload>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="断言" name="fourth">
+          <el-checkbox v-model="apiData.assert">是否需要断言</el-checkbox>
+          <div v-show="apiData.assert">
+            <el-alert
+              title='格式如：[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'
+              type="info"
+              :closable="false"></el-alert>
+            <vue-json-editor
+              v-model="apiData.assert_content"
+              :show-btns="false"
+              :mode="'code'"
+              lang="zh"></vue-json-editor>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="提取参数" name="fifth">
+          <el-checkbox v-model="apiData.postProcessor">后置处理</el-checkbox>
+          <div v-show="apiData.postProcessor">
+            <el-alert
+              title='输入匹配规则，如{"name1":"key1[0].key2","name2":"key3"}，可获取响应头和响应体的数据存入环境变量，现仅适用于响应体是json格式的情况'
+              type="info"
+              :closable="false"></el-alert>
+            <vue-json-editor
+              v-model="apiData.post_processor_content"
+              :show-btns="false"
+              :mode="'code'"
+              lang="zh"></vue-json-editor>
           </div>
         </el-tab-pane>
       </el-tabs>
