@@ -91,7 +91,7 @@
           <el-checkbox v-model="apiData.assert">是否需要断言</el-checkbox>
           <div v-show="apiData.assert">
             <el-alert
-              title='格式如：[{"pattern":"in", "content":"success1"},{"pattern":"equal", "content":"success2"},{"pattern":"not in", "content":"success3"},{"pattern":"not equal", "content":"success4"}]'
+              title='格式如：[{"pattern":"in", "key":"key1[0].key2", "content":"success1"},{"pattern":"equal","key":"key1", "content":"success2"},{"pattern":"not in","key":"", "content":"success3"},{"pattern":"not equal","key":"", "content":"success4"}]'
               type="info"
               :closable="false"></el-alert>
             <vue-json-editor
@@ -281,7 +281,7 @@ export default {
         })
     },
     save(){
-      this.apiData.post_processor_content = ''; // 不知道爲什麽初始化值為undefined，所以在這裏設為空格
+      // this.apiData.post_processor_content = ''; // 不知道爲什麽初始化值為undefined，所以在這裏設為空格
       let param = this.apiData;
       param['request_header'] = JSON.stringify(param['request_header']);
       param['request_body'] = JSON.stringify(param['request_body']);

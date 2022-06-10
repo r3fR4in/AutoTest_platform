@@ -36,7 +36,8 @@ class SendRequests():
                 if self.body != '':
                     self.body = ast.literal_eval(str(self.body))
                 re = requests.request(self.method, self.url, headers=self.header, params=self.body, verify=self.verify)
-            elif self.method == 'POST' or self.method == 'post':
+            # elif self.method == 'POST' or self.method == 'post':
+            else:
                 # 判斷content type
                 if "application/x-www-form-urlencoded" in str(self.header):  # application/x-www-form-urlencoded需要處理一下body的數據格式才能發送請求
                     body = ast.literal_eval(self.body)

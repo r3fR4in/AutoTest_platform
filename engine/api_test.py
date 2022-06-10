@@ -13,17 +13,31 @@ from utils.extensions import celery
 from utils.log import Log
 from utils import encryptUtil
 import uuid
+import functools
+from engine import funcUtil
 
 """断言"""
-def assert_util(pattern, expected, actual):
+def assert_util(pattern, key, expected, response):
+    # 根据key获取需要断言的内容
+    if key != '':
+        response = dict(response)
+        json_list = key.split('.')
+        for k in json_list:
+            if '[' in k:
+                l = k.replace(']', '').split('[')
+                response = response[l[0]][int(l[1])]
+            else:
+                response = response[k]
+    response = str(response)
+
     if pattern == 'in':
-        result = expected in actual
+        result = expected in response
     elif pattern == 'equal':
-        result = expected == actual
+        result = expected == response
     elif pattern == 'not in':
-        result = expected not in actual
+        result = expected not in response
     elif pattern == 'not equal':
-        result = expected != actual
+        result = expected != response
     else:
         result = 'pattern错误'
 
@@ -42,6 +56,25 @@ def replace_environment_variable(s, model, e_id):
     return s
 
 
+"""装饰器用于替换环境变量"""
+def replace_ev():
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            print('获取位置参数内容', *args)
+            print('获取位置参数元祖', args)
+            new_args = list(args)
+            for i in range(0, len(new_args)):
+                if '{{' in str(new_args[i]) and '}}' in str(new_args[i]):
+                    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[2]指e_id
+                if '${' in str(new_args[i]) and '}$' in str(new_args[i]):
+                    new_args[i] = funcUtil.replace_func(new_args[i])
+
+            return func(*tuple(new_args), **kwargs)
+        return wrapper
+    return decorator
+
+
 """调试api入口"""
 def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     if encrypt_type == 1:
@@ -53,20 +86,16 @@ def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, fi
 
 
 """不加密调试api"""
+@replace_ev()
 def normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
     try:
         # 設置請求頭
         debug_log.append(log.info_return_message("标题:" + title))
-        if '{{' in url and '}}' in url:
-            debug_log.append(log.info_return_message("url替换环境变量"))
-            url = replace_environment_variable(url, EnvironmentVariable, e_id)
         debug_log.append(log.info_return_message("url:" + url))
         debug_log.append(log.info_return_message("请求方法:" + method))
-        if '{{' in str(header) and '}}' in str(header):
-            debug_log.append(log.info_return_message("请求头替换环境变量"))
-            header = ast.literal_eval(replace_environment_variable(str(header), EnvironmentVariable, e_id))
+        header = ast.literal_eval(str(header))  # 从str转回dict
         debug_log.append(log.info_return_message("请求头:" + str(header).replace('\'', '"')))
 
         if verify == 'true':
@@ -74,10 +103,6 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
         else:
             verify = True
 
-        # 替換環境變量
-        if '{{' in body and '}}' in body:
-            debug_log.append(log.info_return_message("请求体替换环境变量"))
-            body = replace_environment_variable(body, EnvironmentVariable, e_id)
         # 判断有无文件，有则打印日志
         if files:
             files = ast.literal_eval(str(files))
@@ -96,10 +121,10 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
         # 輸出響應數據
         debug_log.append(log.info_return_message("响应码:" + str(re.status_code)))
         response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
         debug_log.append(log.info_return_message("响应头:" + response_headers))
         response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
         debug_log.append(log.info_return_message("响应内容:" + response))
         if str(re.status_code) != '200':
             final_result = False
@@ -134,15 +159,12 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
         # 判断是否需要断言
         if is_assert == 'true':
-            if '{{' in assert_content and '}}' in assert_content:
-                debug_log.append(log.info_return_message("断言替换环境变量"))
-                assert_content = replace_environment_variable(assert_content, EnvironmentVariable, e_id)
             assert_list = ast.literal_eval(assert_content)
             # 遍历断言列表
             for assert_dict in assert_list:
                 debug_log.append(log.info_return_message("断言模式:" + assert_dict['pattern']))
                 debug_log.append(log.info_return_message("断言内容:" + assert_dict['content']))
-                assert_result = assert_util(assert_dict['pattern'], assert_dict['content'], str(re.json()))
+                assert_result = assert_util(assert_dict['pattern'], assert_dict['key'], assert_dict['content'], re.json())
                 if assert_result:
                     debug_log.append(log.info_return_message("断言结果:通过"))
                 elif not assert_result:
@@ -168,20 +190,16 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
 
 """buddy加密调试api"""
+@replace_ev()
 def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
     try:
         # 設置請求頭
         debug_log.append(log.info_return_message("标题:" + title))
-        if '{{' in url and '}}' in url:
-            debug_log.append(log.info_return_message("url替换环境变量"))
-            url = replace_environment_variable(url, EnvironmentVariable, e_id)
         debug_log.append(log.info_return_message("url:" + url))
         debug_log.append(log.info_return_message("请求方法:" + method))
-        if '{{' in str(header) and '}}' in str(header):
-            debug_log.append(log.info_return_message("请求头替换环境变量"))
-            header = ast.literal_eval(replace_environment_variable(str(header), EnvironmentVariable, e_id))
+        header = ast.literal_eval(header)  # 从str转回dict
         debug_log.append(log.info_return_message("请求头:" + str(header).replace('\'', '"')))
         debug_log.append(log.info_return_message("提醒:header不传versionCode，response就不会加密"))
 
@@ -189,11 +207,6 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
             verify = False
         else:
             verify = True
-
-        # 替换环境变量
-        if '{{' in body and '}}' in body:
-            debug_log.append(log.info_return_message("请求体替换环境变量"))
-            body = replace_environment_variable(body, EnvironmentVariable, e_id)
 
         # 加密，获取rsaKey和uniqueId
         debug_log.append(log.info_return_message("加密前请求体:" + str(body).replace('\'', '"')))
@@ -242,7 +255,7 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
         # 输出响应数据
         debug_log.append(log.info_return_message("响应码:" + str(re.status_code)))
         response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
         debug_log.append(log.info_return_message("响应头:" + response_headers))
         # 响应数据解密
         if 'versionCode' in header:
@@ -251,7 +264,7 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
             debug_log.append(log.info_return_message("解密后响应内容:" + dec_res))
         else:
             response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "') \
-                .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null')
+                .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
             debug_log.append(log.info_return_message("响应内容:" + response))
         if str(re.status_code) != '200':
             final_result = False
@@ -286,15 +299,12 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
 
         # 判断是否需要断言
         if is_assert == 'true':
-            if '{{' in assert_content and '}}' in assert_content:
-                debug_log.append(log.info_return_message("断言替换环境变量"))
-                assert_content = replace_environment_variable(assert_content, EnvironmentVariable, e_id)
             assert_list = ast.literal_eval(assert_content)
             # 遍历断言列表
             for assert_dict in assert_list:
                 debug_log.append(log.info_return_message("断言模式:" + assert_dict['pattern']))
                 debug_log.append(log.info_return_message("断言内容:" + assert_dict['content']))
-                assert_result = assert_util(assert_dict['pattern'], assert_dict['content'], str(re.json()))
+                assert_result = assert_util(assert_dict['pattern'], assert_dict['key'], assert_dict['content'], re.json())
                 if assert_result:
                     debug_log.append(log.info_return_message("断言结果:通过"))
                 elif not assert_result:

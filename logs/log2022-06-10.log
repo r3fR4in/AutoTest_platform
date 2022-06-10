@@ -1,0 +1,816 @@
+[2022-06-10 10:13:50,800] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-10 10:51:08,114] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:51:54,637] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:53:00,411] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '1', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:56:23,528] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:56:55,106] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:57:22,898] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 10:58:00,458] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(1, int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'api_testcase.encrypt_type' in 'field list'")
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '3', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-10 14:26:28,664] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    encrypt_type, log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 15, got 11)
+
+[2022-06-10 14:28:23,542] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 14:29:32,261] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 14:30:59,789] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 66, in wrapper
+    return func(*args, **kwargs)
+TypeError: normal_debug() missing 3 required positional arguments: 'assert_content', 'is_post_processor', and 'post_processor_content'
+
+[2022-06-10 14:31:19,060] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 66, in wrapper
+    return func(*args, **kwargs)
+TypeError: normal_debug() missing 3 required positional arguments: 'assert_content', 'is_post_processor', and 'post_processor_content'
+
+[2022-06-10 14:32:01,093] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 66, in wrapper
+    return func(*args, **kwargs)
+TypeError: normal_debug() missing 3 required positional arguments: 'assert_content', 'is_post_processor', and 'post_processor_content'
+
+[2022-06-10 14:32:45,744] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 11)
+
+[2022-06-10 14:33:40,213] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 14:34:47,809] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 74, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 65, in wrapper
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 14:49:31,845] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 84, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 75, in decorated
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 14:49:50,577] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 84, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 75, in decorated
+    log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content = func(*args, **kwargs)
+ValueError: not enough values to unpack (expected 14, got 12)
+
+[2022-06-10 15:19:22,771] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 78, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 68, in wrapper
+    new_args[i] = ast.literal_eval(replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"'))  # new_args[2]指e_id
+  File "D:\ProgramFiles(x86)\python37\lib\ast.py", line 46, in literal_eval
+    node_or_string = parse(node_or_string, mode='eval')
+  File "D:\ProgramFiles(x86)\python37\lib\ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "<unknown>", line 1
+    http://172.30.22.179:2230/spg/config/internet/soType/31
+        ^
+SyntaxError: invalid syntax
+
+[2022-06-10 16:39:51,676] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\engine\funcUtil.py", line 10, in replace_func
+    result = eval(func)
+  File "<string>", line 1
+    randomValue(10)}$","${randomValue(10)}$","${randomValue(10)}$"],"soTypeName":"${randomValue(10)
+                   ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 81, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 71, in wrapper
+    new_args[i] = funcUtil.replace_func(new_args[i])
+  File "D:\PycharmProjects\AutoTest_platform\engine\funcUtil.py", line 13, in replace_func
+    raise AttributeError('函数替换失败')
+AttributeError: 函数替换失败
+
+[2022-06-10 16:41:05,685] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\engine\funcUtil.py", line 10, in replace_func
+    result = eval(func)
+  File "<string>", line 1
+    randomValue(10)}$","${randomValue(10)}$","${randomValue(10)}$"],"soTypeName":"${randomValue(10)
+                   ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 81, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 71, in wrapper
+    new_args[i] = funcUtil.replace_func(new_args[i])
+  File "D:\PycharmProjects\AutoTest_platform\engine\funcUtil.py", line 13, in replace_func
+    raise AttributeError('函数替换失败')
+AttributeError: 函数替换失败
+
