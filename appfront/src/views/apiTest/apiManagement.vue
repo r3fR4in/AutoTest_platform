@@ -20,6 +20,12 @@
             </el-option>
           </el-select>
         </el-form-item>
+        <el-form-item label="接口名称：">
+          <el-input size="small" v-model="formInline.apiName" placeholder="输入项目名称"></el-input>
+        </el-form-item>
+        <el-form-item label="url：">
+          <el-input size="small" v-model="formInline.url" placeholder="输入项目名称"></el-input>
+        </el-form-item>
         <el-form-item>
           <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
           <el-button size="small" type="primary" icon="el-icon-plus" @click="handleEdit()">添加</el-button>
@@ -248,7 +254,8 @@
         projectEnvironment_name: '',
         module_id: '',
         module_name: '',
-        token: localStorage.getItem('logintoken')
+        apiName: '',
+        url: ''
       },
       e_formInline: {
         page: 1,
@@ -340,7 +347,9 @@
         currentPage: this.pageparm.currentPage,
         pageSize: this.pageparm.pageSize,
         projectEnvironmentId: this.formInline.projectEnvironment_id,
-        apiModuleId: this.formInline.module_id
+        apiModuleId: this.formInline.module_id,
+        apiName: this.formInline.apiName,
+        url: this.formInline.url
       };
       /***
        * 调用接口，注释上面模拟数据 取消下面注释

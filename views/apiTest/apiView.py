@@ -37,6 +37,8 @@ def list_api():
     param_projectEnvironmentId = request.args.get('projectEnvironmentId')
     param_apiModuleId = request.args.get('apiModuleId')
     param_apiModuleName = request.args.get('apiModuleName')
+    param_apiName = request.args.get('apiName')
+    param_url = request.args.get('url')
     # 判断有没有选项目环境
     if param_projectEnvironmentId == '':
         return errorCode.DoesNotChooseProjectEnv()
@@ -60,6 +62,11 @@ def list_api():
             for apiModule in apiModules:
                 id_list.append(apiModule.id)
             filterList.append(Api.apiModule_id.in_(id_list))
+
+    if param_apiName is not None and param_apiName != '':
+        filterList.append(Api.api_name.like('%{keyword}%'.format(keyword=param_apiName)))
+    if param_url is not None and param_url != '':
+        filterList.append(Api.url.like('%{keyword}%'.format(keyword=param_url)))
 
     apis = Api.query.filter(*filterList).order_by(Api.seq).paginate(int(param_currentPage), int(param_pageSize)).items
     num = Api.query.filter(*filterList).count()
