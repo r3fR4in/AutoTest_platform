@@ -14,6 +14,7 @@ from utils.log import Log
 from utils import encryptUtil
 import uuid
 import functools
+import json
 from engine import funcUtil
 
 """断言"""
@@ -57,17 +58,15 @@ def replace_environment_variable(s, model, e_id):
 
 
 """装饰器用于替换环境变量"""
-def replace_ev():
+def replace_ev_and_func():
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
-            print('获取位置参数内容', *args)
-            print('获取位置参数元祖', args)
             new_args = list(args)
             for i in range(0, len(new_args)):
                 if '{{' in str(new_args[i]) and '}}' in str(new_args[i]):
                     new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[2]指e_id
-                if '${' in str(new_args[i]) and '}$' in str(new_args[i]):
+                if '${' in str(new_args[i]):
                     new_args[i] = funcUtil.replace_func(new_args[i])
 
             return func(*tuple(new_args), **kwargs)
@@ -86,7 +85,7 @@ def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, fi
 
 
 """不加密调试api"""
-@replace_ev()
+@replace_ev_and_func()
 def normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
@@ -96,7 +95,9 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
         debug_log.append(log.info_return_message("url:" + url))
         debug_log.append(log.info_return_message("请求方法:" + method))
         header = ast.literal_eval(str(header))  # 从str转回dict
-        debug_log.append(log.info_return_message("请求头:" + str(header).replace('\'', '"')))
+        log.info_return_message("请求头:" + str(header).replace('\'', '"'))
+        debug_log.append(log.info_return_message("请求头:"))
+        debug_log.append(header)
 
         if verify == 'true':
             verify = False
@@ -108,7 +109,9 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
             files = ast.literal_eval(str(files))
             debug_log.append(log.info_return_message("文件名:" + files[0]['name'] + "，後臺文件名:" + files[0]['realname']))
         # 发送请求
-        debug_log.append(log.info_return_message("请求体:" + str(body).replace('\'', '"')))
+        log.info_return_message("请求体:" + str(body).replace('\'', '"'))
+        debug_log.append(log.info_return_message("请求体:"))
+        debug_log.append(json.loads(str(body).replace('\'', '"')))
         re = send_requests.SendRequests(method, url, header, body, files, encode, verify, log).request()
 
         # 判断有没有拿到响应，沒有則打印異常信息
@@ -120,12 +123,16 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
         # 輸出響應數據
         debug_log.append(log.info_return_message("响应码:" + str(re.status_code)))
-        response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
-        debug_log.append(log.info_return_message("响应头:" + response_headers))
-        response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
-        debug_log.append(log.info_return_message("响应内容:" + response))
+        # response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
+        #     .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
+        response_headers = str(re.headers)
+        log.info_return_message("响应头:" + response_headers)
+        debug_log.append(log.info_return_message("响应头"))
+        debug_log.append(dict(re.headers))
+        response = str(re.json())
+        log.info_return_message("响应内容:" + response)
+        debug_log.append(log.info_return_message("响应内容"))
+        debug_log.append(re.json())
         if str(re.status_code) != '200':
             final_result = False
             raise Exception  # 主動抛出異常，執行finally語句
@@ -190,7 +197,7 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
 
 """buddy加密调试api"""
-@replace_ev()
+@replace_ev_and_func()
 def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
     debug_log = [log.info_return_message("==============================================start==============================================")]
@@ -199,8 +206,10 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
         debug_log.append(log.info_return_message("标题:" + title))
         debug_log.append(log.info_return_message("url:" + url))
         debug_log.append(log.info_return_message("请求方法:" + method))
-        header = ast.literal_eval(header)  # 从str转回dict
-        debug_log.append(log.info_return_message("请求头:" + str(header).replace('\'', '"')))
+        header = ast.literal_eval(str(header))  # 从str转回dict
+        log.info_return_message("请求头:" + str(header).replace('\'', '"'))
+        debug_log.append(log.info_return_message("请求头:"))
+        debug_log.append(header)
         debug_log.append(log.info_return_message("提醒:header不传versionCode，response就不会加密"))
 
         if verify == 'true':
@@ -209,7 +218,9 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
             verify = True
 
         # 加密，获取rsaKey和uniqueId
-        debug_log.append(log.info_return_message("加密前请求体:" + str(body).replace('\'', '"')))
+        log.info_return_message("加密前请求体:" + str(body).replace('\'', '"'))
+        debug_log.append(log.info_return_message("加密前请求体:"))
+        debug_log.append(json.loads(str(body).replace('\'', '"')))
         debug_log.append(log.info_return_message("开始加密处理，获取rsaKey和uniqueId"))
         secretKey_api = 'http://172.30.22.139/crm_api/crm-portal-server/n/buddy/secretKey?language=zh-TW'
         secretKey_header = {
@@ -236,7 +247,9 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
             'secretKey': secretKey,
             'uniqueId': uniqueId
         }
-        debug_log.append(log.info_return_message("加密后请求体:" + str(body).replace('\'', '"')))
+        log.info_return_message("加密后请求体:" + str(body).replace('\'', '"'))
+        debug_log.append(log.info_return_message("加密后请求体:"))
+        debug_log.append(json.loads(str(body).replace('\'', '"')))
 
         # 判断有无文件，有则打印日志
         if files:
@@ -254,18 +267,28 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
 
         # 输出响应数据
         debug_log.append(log.info_return_message("响应码:" + str(re.status_code)))
-        response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
-            .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
-        debug_log.append(log.info_return_message("响应头:" + response_headers))
+        # response_headers = str(re.headers).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "')\
+        #     .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
+        # debug_log.append(log.info_return_message("响应头:" + response_headers))
+        response_headers = str(re.headers)
+        log.info_return_message("响应头:" + response_headers)
+        debug_log.append(log.info_return_message("响应头"))
+        debug_log.append(dict(re.headers))
         # 响应数据解密
         if 'versionCode' in header:
             debug_log.append(log.info_return_message("解密前响应内容:" + str(re.text)))
             dec_res = encryptUtil.decrypt_by_aes(re.text[8:], 'hrerujfgjsrtasfr'.encode('utf-8'), 'tdrdadq59tbss5Y5'.encode('utf-8'))
-            debug_log.append(log.info_return_message("解密后响应内容:" + dec_res))
+            log.info_return_message("解密后响应内容:" + dec_res)
+            debug_log.append(log.info_return_message("解密后响应内容:"))
+            debug_log.append(json.loads(dec_res[:-6]))  # 解密后的字符串后六位是不知道什么来的非法字符，需要去除后才能转格式
         else:
-            response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "') \
-                .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
-            debug_log.append(log.info_return_message("响应内容:" + response))
+            # response = str(re.json()).replace('{\'', '{"').replace('\':', '":').replace(': \'', ': "').replace('\',', '",').replace(', \'', ', "') \
+            #     .replace('\'}', '"}').replace('True', 'true').replace('False', 'false').replace('None', 'null').replace('[\'', '["').replace('\']', '"]')
+            # debug_log.append(log.info_return_message("响应内容:" + response))
+            response = str(re.json())
+            log.info_return_message("响应内容:" + response)
+            debug_log.append(log.info_return_message("响应内容"))
+            debug_log.append(re.json())
         if str(re.status_code) != '200':
             final_result = False
             raise Exception  # 主動抛出異常，執行finally語句

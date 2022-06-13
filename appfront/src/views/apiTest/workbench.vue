@@ -19,6 +19,7 @@
         <el-input size="small" v-model="apiData.title" auto-complete="off" placeholder="标题" style="width: 680px"></el-input>
         <el-button size="small" type="primary" style="margin-left: 20px" @click="debug">调试</el-button>
         <el-button size="small" type="primary" style="margin-left: 10px" @click="save">保存</el-button>
+        <el-button size="small" type="primary" style="margin-left: 10px" @click="handleFunc">函数助手</el-button>
       </el-form-item>
       <el-form-item label="url">
         <el-input class="input-with-select" v-model="apiData.url" size="small" style="width: 680px" :disabled="true">
@@ -121,18 +122,32 @@
       <el-card class="box-card;">
         <el-scrollbar style="height: 500px;overflow-wrap:break-word;">
           <div v-for="value in debugLog">
-            <div v-if="value.includes('INFO')">
-              <!--<span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '}}{{jsonView(value)}}</span>-->
-              <span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '+value.split(' : ')[1].split(':')[0]+':'}}<JsonView :json="jsonView(value)"></JsonView></span>
-              <span v-else>{{value}}</span>
+            <div v-if="typeof value === 'string'">
+              <div v-if="value.includes('INFO')">
+                <!--<span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '}}{{jsonView(value)}}</span>-->
+                <!--<span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '+value.split(' : ')[1].split(':')[0]+':'}}<JsonView :json="jsonView(value)"></JsonView></span>-->
+                <!--<span v-else>{{value}}</span>-->
+                <span>{{value}}</span>
+              </div>
+              <div v-else-if="value.includes('ERROR')">
+                <span style="color: red">{{value}}</span>
+              </div>
             </div>
-            <div v-else-if="value.includes('ERROR')">
-              <span style="color: red">{{value}}</span>
+            <div v-else>
+              <span><JsonView :json="value"></JsonView></span>
             </div>
           </div>
         </el-scrollbar>
       </el-card>
     </div>
+    <el-dialog title="函数助手" :visible.sync="funcVariableData" width="55%">
+      <el-row>
+        <div>randomNum(x, y):生成x到y之间的随机数，示例 ${randomNum(0, 10)}</div>
+      </el-row>
+      <el-row>
+        <div>randomValue(x):生成长度为x的随机字符串，示例 ${randomValue(10)}</div>
+      </el-row>
+    </el-dialog>
   </div>
 </template>
 
@@ -193,6 +208,7 @@ export default {
         post_processor_content: ' ',
         encrypt_value: ''
       },
+      funcVariableData: false,
       debugLog: [],
       uploadData: {id: ''},
       // 獲取緩存中的token
@@ -370,6 +386,7 @@ export default {
     },
     //切换json显示
     jsonView(str){
+      console.log(str);
       let v = str.match(/\{.*\}/);
       try {
         // console.log(v[0]);
@@ -449,6 +466,10 @@ export default {
           a.click(); //点击触发下载
           window.URL.revokeObjectURL(url);  //下载完成进行释放
         })
+    },
+    // 显示函数助手框
+    handleFunc() {
+      this.funcVariableData = true;
     }
   }
 }

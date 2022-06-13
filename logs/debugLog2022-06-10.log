@@ -1563,3 +1563,31 @@
 [2022-06-10 17:37:10,671] [log.py|__console] [line:37] INFO    : 断言结果:通过
 [2022-06-10 17:37:10,672] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
 [2022-06-10 17:37:10,672] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-10 17:46:53,751] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-10 17:46:53,752] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-10 17:46:53,752] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType
+[2022-06-10 17:46:53,753] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-10 17:46:53,754] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU0ODU0MzI1NTMxIn0.hCo-wSyIb4ZSn_1iyqTaxMms04zhTmHZK25cOm6bALgecIA2ccUUxRNGvROLKkBBOcR0N6xpdrV2Cjq9PWaRjg"}
+[2022-06-10 17:46:53,754] [log.py|__console] [line:37] INFO    : 请求体:{"soTypeId":"36","soTypeName":"eeeeee","soTypeStatus":"enable","filteringSo":false,"soOfferId":["ccc2","asfsadf2","asdfvvvv2"]}
+[2022-06-10 17:46:53,826] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-10 17:46:53,826] [log.py|__console] [line:37] INFO    : 响应头:{"Server": "nginx", "Date": "Fri, 10 Jun 2022 09:46:33 GMT", "Content-Type": "application/json;charset=UTF-8", "Connection": "keep-alive", "X-Content-Type-Options": "nosniff, nosniff", "X-XSS-Protection": "1; mode=block, 1; mode=block", "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store", "Pragma": "no-cache", "Expires": "0", "Content-Security-Policy": "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", "Strict-Transport-Security": "max-age=31536000; includeSubDomains", "X-Frame-Options": "DENY", "Content-Length": "59"}
+[2022-06-10 17:46:53,827] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "01100111", "message": "名稱已存在"}
+[2022-06-10 17:46:53,828] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-10 17:46:53,829] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-10 17:46:53,830] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-06-10 17:46:53,830] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-06-10 17:46:53,831] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-10 17:48:18,041] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-10 17:48:18,042] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-10 17:48:18,042] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType
+[2022-06-10 17:48:18,043] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-10 17:48:18,043] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU0ODU0MzI1NTMxIn0.hCo-wSyIb4ZSn_1iyqTaxMms04zhTmHZK25cOm6bALgecIA2ccUUxRNGvROLKkBBOcR0N6xpdrV2Cjq9PWaRjg"}
+[2022-06-10 17:48:18,044] [log.py|__console] [line:37] INFO    : 请求体:{"soTypeId":"36","soTypeName":"${randomValue(10)}","soTypeStatus":"enable","filteringSo":false,"soOfferId":["${randomValue(10)}","${randomValue(10)}","${randomValue(10)}"]}
+[2022-06-10 17:48:18,156] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-10 17:48:18,157] [log.py|__console] [line:37] INFO    : 响应头:{"Server": "nginx", "Date": "Fri, 10 Jun 2022 09:47:57 GMT", "Content-Type": "application/json;charset=UTF-8", "Connection": "keep-alive", "X-Content-Type-Options": "nosniff, nosniff", "X-XSS-Protection": "1; mode=block, 1; mode=block", "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store", "Pragma": "no-cache", "Expires": "0", "Content-Security-Policy": "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", "Strict-Transport-Security": "max-age=31536000; includeSubDomains", "X-Frame-Options": "DENY", "Content-Length": "46"}
+[2022-06-10 17:48:18,158] [log.py|__console] [line:37] INFO    : 响应内容:{"data": null, "code": "10000000", "message": null}
+[2022-06-10 17:48:18,159] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-10 17:48:18,159] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-10 17:48:18,160] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-10 17:48:18,161] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-10 17:48:18,161] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
