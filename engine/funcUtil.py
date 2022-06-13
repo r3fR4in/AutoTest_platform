@@ -13,7 +13,7 @@ def replace_func(s):
             # 拿到函数字符串后执行函数
             result = eval(func)
             # 计算原字符串中的函数字符串的下标范围，使用切片替换结果值
-            s = s.replace(s[start:start+end+1], result, 1)
+            s = s.replace(s[start:start+end+1], str(result), 1)
             start = s.find('${')
 
     except Exception as e:

@@ -1528,3 +1528,455 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkF6JX4a/n7eFrir60aOV+ENpxXh3qMzAsxf+
 [2022-06-13 16:04:15,849] [log.py|__console] [line:37] INFO    : 解密后响应内容:
 [2022-06-13 16:04:15,850] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
 [2022-06-13 16:04:15,850] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:17:05,301] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:17:05,302] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:17:05,302] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:17:05,303] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-13 16:17:05,303] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:17:05,304] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:17:05,305] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":null,"poTypeId":42,"lineType":"olt","planCode":"0YczgRNKU5","planStatus":"enable","speedProfileName":"256K","ename":"123","trafficSpeedUp":"11","trafficSpeedDown":"22","poOfferId":["123123"],"remark":"123"}
+[2022-06-13 16:17:05,306] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:17:05,433] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:17:05,434] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:16:45 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:17:05,434] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:17:05,435] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000001', 'message': "計劃編號請輸入正整數,計劃編號不可小於0,計劃編號不可大於99999999 detail : Validation failed for argument at index 0 in method: public com.teleone.common.core.model.dto.ResponseDTO<java.lang.Long> com.teleone.spg.config.vobbplandata.controller.ConfigVobbPlanDataController.insert(com.teleone.spg.config.vobbplandata.model.bo.ConfigVobbPlanDataInsertBo), with 3 error(s): [Field error in object 'configVobbPlanDataInsertBo' on field 'planCode': rejected value [0YczgRNKU5]; codes [Pattern.configVobbPlanDataInsertBo.planCode,Pattern.planCode,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [configVobbPlanDataInsertBo.planCode,planCode]; arguments []; default message [planCode],[Ljavax.validation.constraints.Pattern$Flag;@9912e78,org.springframework.validation.beanvalidation.SpringValidatorAdapter$ResolvableAttribute@4b34633c]; default message [計劃編號請輸入正整數]] [Field error in object 'configVobbPlanDataInsertBo' on field 'planCode': rejected value [0YczgRNKU5]; codes [Min.configVobbPlanDataInsertBo.planCode,Min.planCode,Min.java.lang.String,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [configVobbPlanDataInsertBo.planCode,planCode]; arguments []; default message [planCode],0]; default message [計劃編號不可小於0]] [Field error in object 'configVobbPlanDataInsertBo' on field 'planCode': rejected value [0YczgRNKU5]; codes [Max.configVobbPlanDataInsertBo.planCode,Max.planCode,Max.java.lang.String,Max]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [configVobbPlanDataInsertBo.planCode,planCode]; arguments []; default message [planCode],99999999]; default message [計劃編號不可大於99999999]] "}
+[2022-06-13 16:17:05,436] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:17:05,436] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:17:05,437] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:22:56,296] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:22:56,297] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:22:56,297] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:22:56,297] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-13 16:22:56,298] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:22:56,298] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:22:56,298] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":null,"poTypeId":42,"lineType":"olt","planCode":"16504259","planStatus":"enable","speedProfileName":"256K","ename":"123","trafficSpeedUp":"11","trafficSpeedDown":"22","poOfferId":["123123"],"remark":"123"}
+[2022-06-13 16:22:56,299] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:22:56,452] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:22:56,452] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:22:36 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:22:56,453] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:22:56,453] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100074', 'message': 'offerId不能重复'}
+[2022-06-13 16:22:56,453] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:22:56,454] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:22:56,454] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:23:22,777] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:23:22,778] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:23:22,778] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:23:22,779] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-13 16:23:22,779] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:23:22,780] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:23:22,781] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":null,"poTypeId":42,"lineType":"olt","planCode":"45482711","planStatus":"enable","speedProfileName":"256K","ename":"123","trafficSpeedUp":"11","trafficSpeedDown":"22","poOfferId":["Nqbg7EkBE1"],"remark":"123"}
+[2022-06-13 16:23:22,781] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:23:22,926] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:23:22,927] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:23:03 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:23:22,927] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:23:22,928] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 4, 'code': '10000000', 'message': None}
+[2022-06-13 16:23:22,929] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:23:22,929] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:23:22,930] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:24:47,461] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:24:47,462] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:24:47,462] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:24:47,463] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-13 16:24:47,464] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:24:47,464] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:24:47,465] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":null,"poTypeId":42,"lineType":"olt","planCode":"99536454","planStatus":"enable","speedProfileName":"256K","ename":"123","trafficSpeedUp":"11","trafficSpeedDown":"22","poOfferId":["hiBvwT9i9r"],"remark":"123"}
+[2022-06-13 16:24:47,465] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:24:47,569] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:24:47,570] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:24:27 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:24:47,571] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:24:47,571] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 5, 'code': '10000000', 'message': None}
+[2022-06-13 16:24:47,572] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:24:47,572] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-13 16:24:47,573] [log.py|__console] [line:37] INFO    : 获取data
+[2022-06-13 16:24:47,574] [log.py|__console] [line:37] INFO    : 成功获取值5
+[2022-06-13 16:24:48,321] [log.py|__console] [line:37] INFO    : 已更新环境变量new_VOBBPlanDataId
+[2022-06-13 16:24:48,322] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:24:48,322] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:24:48,323] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:24:48,324] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:24:48,324] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:26:42,642] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:26:42,643] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:26:42,644] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:26:42,644] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-13 16:26:42,645] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:26:42,646] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:26:42,646] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":"{{new_planDataId}}","poTypeId":42,"planCode":"89638179","ename":"123","poType":"1234","lineType":"olt","poOfferId":["R21ZfEvNBm"],"planStatus":"enable","trafficSpeedUp":11,"trafficSpeedDown":22,"speedProfileName":"256K"}
+[2022-06-13 16:26:42,647] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:26:42,697] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:26:42,698] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:26:23 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:26:42,698] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:26:42,699] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000001', 'message': 'JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "{{new_planDataId}}": not a valid Long value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String "{{new_planDataId}}": not a valid Long value\n at [Source: (PushbackInputStream); line: 1, column: 15] (through reference chain: com.teleone.spg.config.vobbplandata.model.bo.ConfigVobbPlanDataUpdateBo["planDataId"])'}
+[2022-06-13 16:26:42,700] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:26:42,700] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:26:42,701] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:27:06,795] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:27:06,797] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:27:06,799] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:27:06,801] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-13 16:27:06,803] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:27:06,805] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:27:06,807] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":"5","poTypeId":42,"planCode":"27307517","ename":"123","poType":"1234","lineType":"olt","poOfferId":["ClBQ31w0lA"],"planStatus":"enable","trafficSpeedUp":11,"trafficSpeedDown":22,"speedProfileName":"256K"}
+[2022-06-13 16:27:06,809] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:27:06,963] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:27:06,966] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:26:47 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:27:06,968] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:27:06,970] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-13 16:27:06,972] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:27:06,974] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:27:06,976] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:27:31,170] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:27:31,170] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:27:31,171] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:27:31,172] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-13 16:27:31,172] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:27:31,173] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:27:31,173] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":"5","poTypeId":42,"planCode":"37475379","ename":"123","poType":"1234","lineType":"olt","poOfferId":["5N098NE7TU"],"planStatus":"enable","trafficSpeedUp":11,"trafficSpeedDown":22,"speedProfileName":"256K"}
+[2022-06-13 16:27:31,174] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:27:31,248] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:27:31,249] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:27:11 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:27:31,250] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:27:31,251] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-13 16:27:31,252] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:27:31,252] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:27:31,253] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:27:31,253] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:27:31,254] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:27:31,255] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:27:35,414] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:27:35,415] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-13 16:27:35,416] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-06-13 16:27:35,416] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-13 16:27:35,417] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:27:35,417] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:27:35,418] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":"5","poTypeId":42,"planCode":"60401059","ename":"123","poType":"1234","lineType":"olt","poOfferId":["tyqkgRHbgO"],"planStatus":"enable","trafficSpeedUp":11,"trafficSpeedDown":22,"speedProfileName":"256K"}
+[2022-06-13 16:27:35,419] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:27:35,487] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:27:35,488] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:27:15 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:27:35,488] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:27:35,489] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-13 16:27:35,490] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:27:35,490] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:27:35,491] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:27:35,492] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:27:35,492] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:27:35,493] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:29:11,326] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:29:11,327] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:29:11,327] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData/5
+[2022-06-13 16:29:11,328] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:29:11,329] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:29:11,329] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:29:11,330] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:29:11,331] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:29:11,399] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:29:11,400] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:28:51 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:29:11,401] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:29:11,402] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'planDataId': 5, 'poTypeId': 42, 'planCode': '60401059', 'ename': '123', 'poType': '1234', 'lineType': 'olt', 'poOfferId': ['tyqkgRHbgO'], 'planStatus': 'enable', 'trafficSpeedUp': 11, 'trafficSpeedDown': 22, 'speedProfileName': '256K'}, 'code': '10000000', 'message': None}
+[2022-06-13 16:29:11,403] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:29:11,404] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:29:11,404] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:29:59,463] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:29:59,464] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:29:59,464] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData/5
+[2022-06-13 16:29:59,465] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:29:59,466] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:29:59,466] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:29:59,467] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:29:59,467] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:29:59,547] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:29:59,548] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:29:39 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:29:59,549] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:29:59,550] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'planDataId': 5, 'poTypeId': 42, 'planCode': '60401059', 'ename': '123', 'poType': '1234', 'lineType': 'olt', 'poOfferId': ['tyqkgRHbgO'], 'planStatus': 'enable', 'trafficSpeedUp': 11, 'trafficSpeedDown': 22, 'speedProfileName': '256K'}, 'code': '10000000', 'message': None}
+[2022-06-13 16:29:59,551] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:29:59,551] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:29:59,552] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:29:59,552] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:29:59,553] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:29:59,554] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:31:11,615] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:31:11,616] [log.py|__console] [line:37] INFO    : 标题:正常删除
+[2022-06-13 16:31:11,617] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData/5
+[2022-06-13 16:31:11,617] [log.py|__console] [line:37] INFO    : 请求方法:DELETE
+[2022-06-13 16:31:11,618] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:31:11,618] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:31:11,619] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:31:11,620] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:31:11,699] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:31:11,700] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:30:52 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:31:11,700] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:31:11,701] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-13 16:31:11,702] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:31:11,702] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:31:11,703] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:31:38,256] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:31:38,257] [log.py|__console] [line:37] INFO    : 标题:正常删除
+[2022-06-13 16:31:38,257] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData/5
+[2022-06-13 16:31:38,258] [log.py|__console] [line:37] INFO    : 请求方法:DELETE
+[2022-06-13 16:31:38,259] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:31:38,259] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:31:38,260] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:31:38,260] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:31:38,334] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:31:38,335] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:31:18 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:31:38,335] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:31:38,336] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-13 16:31:38,337] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:31:38,338] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:31:38,338] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:31:38,339] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:31:38,340] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:31:38,341] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:34:26,701] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:34:26,702] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:34:26,702] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/page
+[2022-06-13 16:34:26,703] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:34:26,703] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:34:26,704] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:34:26,705] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"userId":"","action":"","result":"","startTime":"","endTime":"","operateItem":"","keyword":"","moduleCode":"config"}
+[2022-06-13 16:34:26,705] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:34:26,772] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:34:26,773] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:34:07 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:34:26,774] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:34:26,775] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 85, 'list': [{'operateLogId': 85, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109079000}, {'operateLogId': 84, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109052000}, {'operateLogId': 83, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108836000}, {'operateLogId': 82, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108832000}, {'operateLogId': 81, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108807000}, {'operateLogId': 80, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108668000}, {'operateLogId': 79, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108583000}, {'operateLogId': 78, 'userId': 'vincent', 'operateItem': '删除Po Type記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 77, 'userId': 'vincent', 'operateItem': '更新Po Type記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 73, 'userId': 'vincent', 'operateItem': '更新SO Type', 'action': 'UPDATE', 'result': True, 'createDate': 1655102272000}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 9, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3, 4, 5, 6, 7, 8], 'navigateFirstPage': 1, 'navigateLastPage': 8, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:34:26,775] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:34:26,776] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:34:26,776] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:34:50,451] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:34:50,452] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:34:50,453] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/page
+[2022-06-13 16:34:50,453] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:34:50,454] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:34:50,454] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:34:50,455] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"userId":"","action":"","result":"","startTime":"","endTime":"","operateItem":"","keyword":"","moduleCode":"config"}
+[2022-06-13 16:34:50,456] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:34:50,528] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:34:50,529] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:34:30 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:34:50,530] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:34:50,530] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 85, 'list': [{'operateLogId': 85, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109079000}, {'operateLogId': 84, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109052000}, {'operateLogId': 83, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108836000}, {'operateLogId': 82, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108832000}, {'operateLogId': 81, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108807000}, {'operateLogId': 80, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108668000}, {'operateLogId': 79, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108583000}, {'operateLogId': 78, 'userId': 'vincent', 'operateItem': '删除Po Type記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 77, 'userId': 'vincent', 'operateItem': '更新Po Type記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 73, 'userId': 'vincent', 'operateItem': '更新SO Type', 'action': 'UPDATE', 'result': True, 'createDate': 1655102272000}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 9, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3, 4, 5, 6, 7, 8], 'navigateFirstPage': 1, 'navigateLastPage': 8, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:34:50,531] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:34:50,532] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:34:50,532] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:34:50,533] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:34:50,534] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:34:50,534] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:35:25,589] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:35:25,590] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:35:25,591] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/page
+[2022-06-13 16:35:25,591] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:35:25,592] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:35:25,593] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:35:25,593] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"userId":"","action":"","result":"","startTime":"","endTime":"","operateItem":"","keyword":"","moduleCode":"config"}
+[2022-06-13 16:35:25,594] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:35:25,650] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:35:25,651] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:35:05 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:35:25,651] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:35:25,652] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 85, 'list': [{'operateLogId': 85, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109079000}, {'operateLogId': 84, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109052000}, {'operateLogId': 83, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108836000}, {'operateLogId': 82, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108832000}, {'operateLogId': 81, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108807000}, {'operateLogId': 80, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108668000}, {'operateLogId': 79, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108583000}, {'operateLogId': 78, 'userId': 'vincent', 'operateItem': '删除Po Type記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 77, 'userId': 'vincent', 'operateItem': '更新Po Type記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 73, 'userId': 'vincent', 'operateItem': '更新SO Type', 'action': 'UPDATE', 'result': True, 'createDate': 1655102272000}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 9, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3, 4, 5, 6, 7, 8], 'navigateFirstPage': 1, 'navigateLastPage': 8, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:35:25,653] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:35:25,653] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:35:25,654] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:35:25,655] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:35:25,655] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:35:25,656] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:36:02,879] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:36:02,879] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:36:02,880] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/page
+[2022-06-13 16:36:02,881] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:36:02,881] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:36:02,882] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:36:02,882] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"userId":"","action":"","result":"","startTime":"","endTime":"","operateItem":"","keyword":"","moduleCode":"config"}
+[2022-06-13 16:36:02,883] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:36:02,958] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:36:02,958] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:35:43 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:36:02,959] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:36:02,960] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 85, 'list': [{'operateLogId': 85, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109079000}, {'operateLogId': 84, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655109052000}, {'operateLogId': 83, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108836000}, {'operateLogId': 82, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108832000}, {'operateLogId': 81, 'userId': 'vincent', 'operateItem': '更新VOBB Plan Data記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655108807000}, {'operateLogId': 80, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108668000}, {'operateLogId': 79, 'userId': 'vincent', 'operateItem': '新增VOBB Plan Data記錄', 'action': 'NEW', 'result': True, 'createDate': 1655108583000}, {'operateLogId': 78, 'userId': 'vincent', 'operateItem': '删除Po Type記錄', 'action': 'DELETE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 77, 'userId': 'vincent', 'operateItem': '更新Po Type記錄', 'action': 'UPDATE', 'result': True, 'createDate': 1655102273000}, {'operateLogId': 73, 'userId': 'vincent', 'operateItem': '更新SO Type', 'action': 'UPDATE', 'result': True, 'createDate': 1655102272000}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 9, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3, 4, 5, 6, 7, 8], 'navigateFirstPage': 1, 'navigateLastPage': 8, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:36:02,961] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:36:02,961] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-13 16:36:02,962] [log.py|__console] [line:37] INFO    : 获取data.list[0].operateLogId
+[2022-06-13 16:36:02,963] [log.py|__console] [line:37] INFO    : 成功获取值85
+[2022-06-13 16:36:03,030] [log.py|__console] [line:37] INFO    : 已更新环境变量operateLogId
+[2022-06-13 16:36:03,031] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:36:03,032] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:36:03,032] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:36:03,033] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:36:03,034] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:37:19,343] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:37:19,344] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:37:19,344] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/85
+[2022-06-13 16:37:19,345] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:37:19,345] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:37:19,346] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:37:19,346] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:37:19,347] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:37:19,407] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:37:19,408] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:36:59 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:37:19,409] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:37:19,410] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'createdUserId': None, 'createDate': 1655109079000, 'updatedUserId': None, 'updateDate': None, 'status': 1, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'param': {'inputParam': [5]}, 'failMessage': None, 'operateLogId': 85}, 'code': '10000000', 'message': None}
+[2022-06-13 16:37:19,411] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:37:19,411] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:37:19,412] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:37:51,406] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:37:51,407] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:37:51,407] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/85
+[2022-06-13 16:37:51,408] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:37:51,408] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA1NDUyMDY1In0.A0VB7W1Bu3HRKz3bS2rGvxfZbqAq8Xl0RC0_8GHjg49wMlSBoV_lYB0uzH3nRwKh1it2OX24AtpCzJOFaCLdIA"}
+[2022-06-13 16:37:51,409] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:37:51,410] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:37:51,410] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:37:51,460] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:37:51,461] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:37:31 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:37:51,461] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:37:51,462] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'createdUserId': None, 'createDate': 1655109079000, 'updatedUserId': None, 'updateDate': None, 'status': 1, 'userId': 'vincent', 'operateItem': '刪除VOBB Plan Data記錄', 'action': 'DELETE', 'result': True, 'param': {'inputParam': [5]}, 'failMessage': None, 'operateLogId': 85}, 'code': '10000000', 'message': None}
+[2022-06-13 16:37:51,463] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:37:51,464] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:37:51,464] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:37:51,465] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:37:51,465] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:37:51,466] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:39:31,537] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:39:31,537] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:39:31,538] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/operate/log/91
+[2022-06-13 16:39:31,539] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:39:31,539] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA5NDczNDU5In0.RVvoiC3NlUYIUhDOze9vZm93KAgEjJn8mc2QOtZidZ9DbWP3Iu_Gczkmr3J6Jo4ZapEKeA2Mp9VMpgOdweOR4Q"}
+[2022-06-13 16:39:31,540] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:39:31,540] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:39:31,541] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:39:31,593] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:39:31,593] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:39:11 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:39:31,594] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:39:31,595] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'createdUserId': None, 'createDate': 1655109476000, 'updatedUserId': None, 'updateDate': None, 'status': 1, 'userId': 'vincent', 'operateItem': '更新卡類型記錄', 'action': 'UPDATE', 'result': True, 'param': {'inputParam': [{'cardTypeId': 40, 'cardType': 'xV1NqKMiOY', 'equipType': 'olt', 'maxPort': 123, 'startingPort': 11, 'maxLine': '22', 'startingLine': '11', 'remark': '123'}]}, 'failMessage': None, 'operateLogId': 91}, 'code': '10000000', 'message': None}
+[2022-06-13 16:39:31,595] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:39:31,596] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:39:31,597] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:39:31,597] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:39:31,598] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:39:31,598] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:46:12,319] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:46:12,320] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:46:12,321] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType/46
+[2022-06-13 16:46:12,321] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:46:12,322] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA5OTIwMzU5In0.QVWZEF8f0cw3LLzz9l3odIIXezTHOrBz9ZWnW0gNo8dARTBf-V2Vb1yYx33q7AfcWyBGCkBbRaViPRNIsfe5ZA"}
+[2022-06-13 16:46:12,323] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:46:12,323] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:46:12,324] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:46:12,383] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:46:12,384] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:45:52 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:46:12,384] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:46:12,385] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'soTypeId': 46, 'soTypeName': 'k9cFvIc7Ue', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': ['GzOaqghgpB', 'UxcVs58IIF', 'gpelvq8UIh']}, 'code': '10000000', 'message': None}
+[2022-06-13 16:46:12,386] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:46:12,387] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:46:12,387] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:46:12,388] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:46:12,389] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:46:12,389] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:47:06,061] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:47:06,062] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:47:06,063] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType/page
+[2022-06-13 16:47:06,063] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:47:06,064] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTA5OTIwMzU5In0.QVWZEF8f0cw3LLzz9l3odIIXezTHOrBz9ZWnW0gNo8dARTBf-V2Vb1yYx33q7AfcWyBGCkBbRaViPRNIsfe5ZA"}
+[2022-06-13 16:47:06,064] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:47:06,065] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:47:06,066] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:47:06,115] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:47:06,116] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:46:46 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:47:06,117] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:47:06,118] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 22, 'list': [{'soTypeId': 47, 'soTypeName': 'lu9LlGHBeZ', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '0NyZtfsAQD,IFMsEtgshY,i7DTsI9ZGG'}, {'soTypeId': 46, 'soTypeName': 'k9cFvIc7Ue', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'GzOaqghgpB,UxcVs58IIF,gpelvq8UIh'}, {'soTypeId': 45, 'soTypeName': 'S9NDA4MHi0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'rHhGXz4Nxo,uSchY8ovzX,z68mZT0KWm'}, {'soTypeId': 43, 'soTypeName': 'ZlwnvOkh8u', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1fOBX5pxUk,Hzd3faQGXz,TNTGHgzdlm'}, {'soTypeId': 42, 'soTypeName': 'v2H1BXXWPl', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1eTQgLY8ko,8mUUDtqaGr,yda9u7kRtS'}, {'soTypeId': 41, 'soTypeName': 'CNxtWKZN7Y', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'KAluzvZrFN,fHGppvt2wy,tLZMPlHeFU'}, {'soTypeId': 40, 'soTypeName': '1wpVuMvV6a', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'Z2Vy8OvvtE,cwPPk3EQcv,eXbDFZ5BeZ'}, {'soTypeId': 39, 'soTypeName': 'lhKgYRm5K0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '0oKiHgLeLS,T2sh3Z21GU,uTyfLSwVwM'}, {'soTypeId': 38, 'soTypeName': '${randomValue(10)', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '${randomValue(10),${randomValue(10),${randomValue(10)'}, {'soTypeId': 36, 'soTypeName': '${randomValue(10)}', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '${randomValue(10)},${randomValue(10)},${randomValue(10)}'}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 3, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3], 'navigateFirstPage': 1, 'navigateLastPage': 3, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:47:06,118] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:47:06,119] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-13 16:47:06,119] [log.py|__console] [line:37] INFO    : 获取data.list[0].soTypeId
+[2022-06-13 16:47:06,120] [log.py|__console] [line:37] INFO    : 成功获取值47
+[2022-06-13 16:47:06,475] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeId
+[2022-06-13 16:47:06,476] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:47:06,476] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:47:06,477] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:47:06,477] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:47:06,478] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:47:06,479] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:47:06,479] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:47:06,480] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:47:59,423] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:47:59,424] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:47:59,425] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType/page
+[2022-06-13 16:47:59,425] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:47:59,426] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTEwMDMyMjQ1In0.lP7MrdBZM-UfM2VY4i72MVzRPIa69oBFuefu8xp0kKcR7KugemASo1IMpNUZMQJk7bQ_FdPZe2xHqPQmazFTAA"}
+[2022-06-13 16:47:59,427] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:47:59,428] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"soTypeName":"","soTypeStatus":"","soOfferId":""}
+[2022-06-13 16:47:59,428] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:47:59,479] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:47:59,479] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:47:39 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:47:59,480] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:47:59,481] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 23, 'list': [{'soTypeId': 48, 'soTypeName': 'OavHQsX9Ss', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'WlkHTwLmG9,fgy32dZK4g,yYLGLz2YWc'}, {'soTypeId': 47, 'soTypeName': 'Ns7PSqLgdV', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '5YIXCgYNgN,Agey82N0mn,U6CGiz8sHt'}, {'soTypeId': 46, 'soTypeName': 'k9cFvIc7Ue', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'GzOaqghgpB,UxcVs58IIF,gpelvq8UIh'}, {'soTypeId': 45, 'soTypeName': 'S9NDA4MHi0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'rHhGXz4Nxo,uSchY8ovzX,z68mZT0KWm'}, {'soTypeId': 43, 'soTypeName': 'ZlwnvOkh8u', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1fOBX5pxUk,Hzd3faQGXz,TNTGHgzdlm'}, {'soTypeId': 42, 'soTypeName': 'v2H1BXXWPl', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1eTQgLY8ko,8mUUDtqaGr,yda9u7kRtS'}, {'soTypeId': 41, 'soTypeName': 'CNxtWKZN7Y', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'KAluzvZrFN,fHGppvt2wy,tLZMPlHeFU'}, {'soTypeId': 40, 'soTypeName': '1wpVuMvV6a', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'Z2Vy8OvvtE,cwPPk3EQcv,eXbDFZ5BeZ'}, {'soTypeId': 39, 'soTypeName': 'lhKgYRm5K0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '0oKiHgLeLS,T2sh3Z21GU,uTyfLSwVwM'}, {'soTypeId': 38, 'soTypeName': '${randomValue(10)', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '${randomValue(10),${randomValue(10),${randomValue(10)'}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 3, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3], 'navigateFirstPage': 1, 'navigateLastPage': 3, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:47:59,481] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:47:59,482] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-13 16:47:59,483] [log.py|__console] [line:37] INFO    : 获取data.list[0].soTypeId
+[2022-06-13 16:47:59,483] [log.py|__console] [line:37] INFO    : 成功获取值48
+[2022-06-13 16:47:59,554] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeId
+[2022-06-13 16:47:59,555] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:47:59,555] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:47:59,556] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:47:59,557] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:47:59,557] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:47:59,558] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:47:59,558] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:47:59,559] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:48:04,176] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:48:04,177] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:48:04,178] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType/page
+[2022-06-13 16:48:04,178] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:48:04,179] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTEwMDMyMjQ1In0.lP7MrdBZM-UfM2VY4i72MVzRPIa69oBFuefu8xp0kKcR7KugemASo1IMpNUZMQJk7bQ_FdPZe2xHqPQmazFTAA"}
+[2022-06-13 16:48:04,180] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:48:04,180] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"soTypeName":"","soTypeStatus":"","soOfferId":""}
+[2022-06-13 16:48:04,181] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:48:04,214] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:48:04,215] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:47:44 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:48:04,216] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:48:04,217] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 23, 'list': [{'soTypeId': 48, 'soTypeName': 'OavHQsX9Ss', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'WlkHTwLmG9,fgy32dZK4g,yYLGLz2YWc'}, {'soTypeId': 47, 'soTypeName': 'Ns7PSqLgdV', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '5YIXCgYNgN,Agey82N0mn,U6CGiz8sHt'}, {'soTypeId': 46, 'soTypeName': 'k9cFvIc7Ue', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'GzOaqghgpB,UxcVs58IIF,gpelvq8UIh'}, {'soTypeId': 45, 'soTypeName': 'S9NDA4MHi0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'rHhGXz4Nxo,uSchY8ovzX,z68mZT0KWm'}, {'soTypeId': 43, 'soTypeName': 'ZlwnvOkh8u', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1fOBX5pxUk,Hzd3faQGXz,TNTGHgzdlm'}, {'soTypeId': 42, 'soTypeName': 'v2H1BXXWPl', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '1eTQgLY8ko,8mUUDtqaGr,yda9u7kRtS'}, {'soTypeId': 41, 'soTypeName': 'CNxtWKZN7Y', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'KAluzvZrFN,fHGppvt2wy,tLZMPlHeFU'}, {'soTypeId': 40, 'soTypeName': '1wpVuMvV6a', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': 'Z2Vy8OvvtE,cwPPk3EQcv,eXbDFZ5BeZ'}, {'soTypeId': 39, 'soTypeName': 'lhKgYRm5K0', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '0oKiHgLeLS,T2sh3Z21GU,uTyfLSwVwM'}, {'soTypeId': 38, 'soTypeName': '${randomValue(10)', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': '${randomValue(10),${randomValue(10),${randomValue(10)'}], 'pageNum': 1, 'pageSize': 10, 'size': 10, 'startRow': 1, 'endRow': 10, 'pages': 3, 'prePage': 0, 'nextPage': 2, 'hasPreviousPage': False, 'hasNextPage': True, 'navigatePages': 8, 'navigatepageNums': [1, 2, 3], 'navigateFirstPage': 1, 'navigateLastPage': 3, 'firstPage': True, 'lastPage': False}, 'code': '10000000', 'message': None}
+[2022-06-13 16:48:04,217] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:48:04,218] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-13 16:48:04,219] [log.py|__console] [line:37] INFO    : 获取data.list[0].soTypeId
+[2022-06-13 16:48:04,219] [log.py|__console] [line:37] INFO    : 成功获取值48
+[2022-06-13 16:48:04,228] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeId
+[2022-06-13 16:48:04,229] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:48:04,229] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:48:04,230] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:48:04,231] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:48:04,231] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:48:04,232] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:48:04,233] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:48:04,233] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:53:58,128] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:53:58,129] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:53:58,131] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/soType/48
+[2022-06-13 16:53:58,132] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:53:58,134] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTEwMDMyMjQ1In0.lP7MrdBZM-UfM2VY4i72MVzRPIa69oBFuefu8xp0kKcR7KugemASo1IMpNUZMQJk7bQ_FdPZe2xHqPQmazFTAA"}
+[2022-06-13 16:53:58,135] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:53:58,137] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:53:58,138] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:53:58,216] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:53:58,218] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:53:38 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:53:58,220] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:53:58,222] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'soTypeId': 48, 'soTypeName': 'OavHQsX9Ss', 'soTypeStatus': 'enable', 'filteringSo': False, 'soOfferId': ['WlkHTwLmG9', 'fgy32dZK4g', 'yYLGLz2YWc']}, 'code': '10000000', 'message': None}
+[2022-06-13 16:53:58,223] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:53:58,225] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:53:58,227] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:53:58,228] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:53:58,230] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:53:58,231] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-13 16:59:22,972] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-13 16:59:22,973] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-13 16:59:22,973] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/internet/poType/63
+[2022-06-13 16:59:22,974] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-13 16:59:22,975] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1MTEwNjA4OTc5In0.AfDT6ruqtswBVxLw4_ck1EWzLE9pLg2u-jr7IDLd00LzL24ndyrAhZG1-DmUj4SSgtvUAb-X_NKtZuZ7JNXjIA"}
+[2022-06-13 16:59:22,976] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-13 16:59:22,976] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-13 16:59:22,977] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-13 16:59:23,042] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-13 16:59:23,044] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 13 Jun 2022 08:59:03 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-13 16:59:23,046] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-13 16:59:23,048] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'poTypeId': 63, 'businessType': 'internet', 'poType': 'gTScTvF1Gv', 'poTypeStatus': 'enable'}, 'code': '10000000', 'message': None}
+[2022-06-13 16:59:23,049] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-13 16:59:23,051] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-13 16:59:23,052] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-13 16:59:23,053] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-13 16:59:23,054] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-13 16:59:23,055] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

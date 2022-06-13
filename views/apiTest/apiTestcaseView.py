@@ -147,16 +147,16 @@ def add_apiTestcase():
     param_encrypt_type = data['encrypt_value']
     if param_encrypt_type is None or param_encrypt_type == '':
         param_encrypt_type = 1
-    param_request_body = json_editor_format(data['request_body'])
-    param_request_header = json_editor_format(data['request_header'])
+    param_request_body = data['request_body']
+    param_request_header = data['request_header']
     param_request_method = data['request_method']
     param_title = data['title']
     param_verify = 'true' if data['verify'] is True else 'false'
     param_url = data['url']
     param_assert = 'true' if data['assert'] is True else 'false'
-    param_assert_content = json_editor_format(data['assert_content'])
+    param_assert_content = data['assert_content']
     param_post_processor = 'true' if data['postProcessor'] is True else 'false'
-    param_post_processor_content = json_editor_format(data['post_processor_content'])
+    param_post_processor_content = data['post_processor_content']
     apiTestcase1 = ApiTestcase(api_id=param_api_id, title=param_title, request_method=param_request_method, request_header=param_request_header, request_body=param_request_body
                                 , encode=param_encode, encrypt_type=param_encrypt_type, verify=param_verify, url=param_url, is_assert=param_assert
                                 , assert_content=param_assert_content, is_post_processor=param_post_processor
@@ -179,16 +179,16 @@ def edit_apiTestcase():
     if param_encrypt_type is None or param_encrypt_type == '':
         param_encrypt_type = 1
     param_id = data['id']
-    param_request_body = json_editor_format(data['request_body'])
-    param_request_header = json_editor_format(data['request_header'])
+    param_request_body = data['request_body']
+    param_request_header = data['request_header']
     param_request_method = data['request_method']
     param_title = data['title']
     param_verify = 'true' if data['verify'] is True else 'false'
     param_url = data['url']
     param_assert = 'true' if data['assert'] is True else 'false'
-    param_assert_content = json_editor_format(data['assert_content'])
+    param_assert_content = data['assert_content']
     param_post_processor = 'true' if data['postProcessor'] is True else 'false'
-    param_post_processor_content = json_editor_format(data['post_processor_content'])
+    param_post_processor_content = data['post_processor_content']
 
     apiTestcase1 = ApiTestcase.query.get(param_id)
     apiTestcase1.api_id = param_api_id
@@ -210,11 +210,11 @@ def edit_apiTestcase():
     return jsonify(output)
 
 
-"""json editor如果传{}或双引号，处理为空字符串"""
-def json_editor_format(json):
-    if json == '\"\"' or json == '{}':
-        json = ''
-    return json
+# """json editor如果传{}或双引号，处理为空字符串"""
+# def json_editor_format(json):
+#     if json == '\"\"' or json == '{}':
+#         json = ''
+#     return json
 
 
 """获取上传的文件并保存"""
