@@ -1,11 +1,14 @@
-# 1.先将容器的文件夹拷贝至本地
-# docker cp autotest_platform:/AutoTest_platform/logs D:\PycharmProjects
-# docker cp autotest_platform:/AutoTest_platform/updateFiles D:\PycharmProjects
-# 2.打包镜像
+# dockerhub仓库：r3fr41n/autotest_platform
+# 1.打包镜像
 # docker build -t autotest_platform:1.0.0 .
-# 3.启动镜像后，把拷出来的文件放到容器中
-# docker cp D:\PycharmProjects\logs autotest_platform:/AutoTest_platform/
-# docker cp D:\PycharmProjects\updateFiles autotest_platform:/AutoTest_platform/
+# 2.导出镜像
+# docker save -o autotest_platform_1.1.6.tar autotest_platform:1.1.6
+# 4.把文件传到服务器上
+# sudo rz -y
+# 5.把镜像导入至服务器docker上
+# docker load < autotest_platform_1.1.6.tar
+# 6.启动镜像
+# docker run -p 5000:5000 -d --name autotest_platform autotest_platform:1.1.6
 
 FROM python:3.7.5-slim-stretch
 #FROM python:3.7.5-windowsservercore-1809

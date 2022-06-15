@@ -30,7 +30,7 @@ def list_projectModule():
         rets_list = []
         # 查询结果集格式调整为符合json的格式
         for ret in rets:
-            # 取出结果集中的列明和值，将tuple类型转为list类型，再把冒烟测试通过率的decimal类型转成保留两位小数的float类型，并添加进result_list中
+            # 取出结果集中的列明和值，将tuple类型转为list类型，并添加进result_list中
             column = list(ret._fields)
             row = list(ret._data)
             dic = dict(zip(column, row))

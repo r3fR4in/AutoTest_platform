@@ -47,9 +47,24 @@ def list_api():
 
     # 判断param_apiModuleId是否为空，为空代表用户未输入模块名查询，默认显示该环境下所有api
     if param_apiModuleId is not None and param_apiModuleId != '':
-        apiModule = ProjectModule.query.filter(ProjectModule.id == param_apiModuleId).first()
-        if apiModule is not None:
-            filterList.append(Api.apiModule_id == apiModule.id)
+        # apiModule = ProjectModule.query.filter(ProjectModule.id == param_apiModuleId).first()
+        sql = """
+                WITH RECURSIVE cte AS
+                (SELECT * FROM project_module WHERE id = :id
+                UNION ALL
+                SELECT project_module.* FROM project_module INNER JOIN cte ON project_module.parent_id = cte.id)
+                SELECT distinct * FROM cte;
+                """
+        rets = db.session.execute(sql, {'id': param_apiModuleId})
+        rets = list(rets)
+        rets_list = []
+        for ret in rets:
+            # 取出结果集中的第一列id，并添加进result_list中
+            row = list(ret._data)
+            rets_list.append(row[0])
+
+        if rets_list is not None:
+            filterList.append(Api.apiModule_id.in_(rets_list))
     else:
         if param_apiModuleName is not None and param_apiModuleName != '':
             output = {'code': 1000, 'msg': None, 'count': 0, 'success': True, 'data': ''}
@@ -73,15 +88,15 @@ def list_api():
 
     # 封装字典并转成json返回前端
     output = {'code': 1000, 'msg': None, 'count': num, 'success': True}
-    list = []
+    data_list = []
     for api in apis:
         module_name = api.project_module.module_name
         dic = api.to_json()
         dic['module_name'] = module_name
         # 删除字典中的project对象，否则转json会报错
         del dic['project_module']
-        list.append(dic)
-    output['data'] = list
+        data_list.append(dic)
+    output['data'] = data_list
 
     return jsonify(output)
 

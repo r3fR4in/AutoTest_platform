@@ -1,2 +1,13 @@
 [2022-06-15 09:58:30,468] [log.py|__console] [line:43] ERROR   : name 'param_e_id' is not defined
 [2022-06-15 09:58:30,468] [log.py|write] [line:232] WARNING : [2022-06-15 09:58:30,468] [log.py|__console] [line:43] ERROR   : name 'param_e_id' is not defined
+[2022-06-15 16:42:59,698] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiView.py", line 60, in list_api
+    rets = list(rets)
+UnboundLocalError: local variable 'list' referenced before assignment
+

@@ -52,7 +52,7 @@ def list_projectEnvironment():
 
 """获取所有项目数据"""
 @projectEnvironment.route('/getAllProject', methods=['get'])
-@tokenUtil.login_required('admin_role', 'test_role')
+@tokenUtil.login_required()
 def load_all_project():
     filterList = []
 
