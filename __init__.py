@@ -59,6 +59,7 @@ def register_blueprint(app):
         from views.apiTest.apiTestcaseView import apiTestcase
         from views.apiTest.environmentVariableView import environmentVariable
         from views.apiTest.apiTestTaskView import apiTestTask
+        from views.apiTest.apiImportView import apiImport
         from views.base.userView import user
         from views.submittedTests.submittedTestsManagementView import submittedTests
         from views.submittedTests.submittedTestsReportView import submittedTestsReport
@@ -70,6 +71,7 @@ def register_blueprint(app):
     app.register_blueprint(apiTestcase, url_prefix='/apiTest')
     app.register_blueprint(environmentVariable, url_prefix='/apiTest')
     app.register_blueprint(apiTestTask, url_prefix='/apiTest')
+    app.register_blueprint(apiImport, url_prefix='/apiTest')
     app.register_blueprint(user, url_prefix='/user')
     app.register_blueprint(submittedTests, url_prefix='/submittedTests')
     app.register_blueprint(submittedTestsReport, url_prefix='/submittedTestsReport')

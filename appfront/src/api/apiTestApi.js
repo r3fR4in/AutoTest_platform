@@ -66,6 +66,7 @@ export const deleteUploadFile = (params) => { return deleteReq("/apiTest/deleteU
 export const downloadFile = (params) => { return getFile("/apiTest/downloadFile", params) };
 // 获取加密下拉选项
 export const getEncryptOption = (params) => { return getReq("/apiTest/getEncryptOption", params) };
+
 /**
  * 测试任务
  **/
@@ -77,3 +78,9 @@ export const addApiTestTask = (params) => { return postReq("/apiTest/addApiTestT
 export const deleteApiTestTask = (params) => { return deleteReq("/apiTest/deleteApiTestTask", params) };
 // 跳转api测试报告
 export const apiTestReport = (params) => { return getReq("/apiTest/apiTestReport", params) };
+
+/**
+ * 接口导入
+ **/
+// 从swagger导入
+export const importFromSwagger = (params) => { return getReq("/apiTest/importFromSwagger", params) };

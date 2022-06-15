@@ -161,5 +161,11 @@ class CannotDeleteProgressTask(APIException):
 class ExistSameEnvVar(APIException):
     code = 200
     msg = '同一环境下存在重复变量名'
-    error_code = 9976
+    error_code = 9975
+    success = False
+
+class SwaggerApiImportError(APIException):
+    code = 200
+    msg = '导入失败'
+    error_code = 9974
     success = False

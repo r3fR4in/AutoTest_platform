@@ -49,6 +49,8 @@ import workbench from "@/views/apiTest/workbench";
 import apiTestTask from "@/views/apiTest/apiTestTask";
 // 接口测试报告界面
 import apiTestReport from "@/views/apiTest/apiTestReport";
+// 接口导入界面
+import apiImport from "@/views/apiTest/apiImport";
 
 // 处理路由跳转报错问题
 const originalPush = Router.prototype.push;
@@ -169,6 +171,14 @@ export default new Router({
             path: '/apiTest/apiTestTask/apiTestReport',
             name: '测试报告',
             component: apiTestReport,
+            meta: {
+                requireAuth: true,
+                keepAlive: false
+            }
+        }, {
+            path: '/apiTest/apiImport',
+            name: '接口导入',
+            component: apiImport,
             meta: {
                 requireAuth: true,
                 keepAlive: false

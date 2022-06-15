@@ -407,5 +407,13 @@
 </script>
 
 <style scoped>
-
+.user-search {
+  margin-top: 20px;
+}
+.userRole {
+  width: 100%;
+}
+/deep/ textarea {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif !important;
+}
 </style>
