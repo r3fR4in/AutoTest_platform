@@ -123,14 +123,14 @@
         <el-scrollbar style="height: 500px;overflow-wrap:break-word;">
           <div v-for="value in debugLog">
             <div v-if="typeof value === 'string'">
-              <div v-if="value.includes('INFO')">
+              <div v-if="value.includes('ERROR')">
                 <!--<span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '}}{{jsonView(value)}}</span>-->
                 <!--<span v-if="value.includes('{')">{{value.split(' : ')[0]+' : '+value.split(' : ')[1].split(':')[0]+':'}}<JsonView :json="jsonView(value)"></JsonView></span>-->
                 <!--<span v-else>{{value}}</span>-->
-                <span>{{value}}</span>
-              </div>
-              <div v-else-if="value.includes('ERROR')">
                 <span style="color: red">{{value}}</span>
+              </div>
+              <div v-else>
+                <span>{{value}}</span>
               </div>
             </div>
             <div v-else>

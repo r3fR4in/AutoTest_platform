@@ -18,6 +18,8 @@ import json
 from engine import funcUtil
 
 """断言"""
+
+
 def assert_util(pattern, key, expected, response):
     # 根据key获取需要断言的内容
     if key != '':
@@ -46,18 +48,22 @@ def assert_util(pattern, key, expected, response):
 
 
 """替换环境变量"""
+
+
 def replace_environment_variable(s, model, e_id):
     start = s.find('{{')
     end = s.find('}}')
     # 从数据库获取环境变量
-    environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s[start+2:end]).first()
+    environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s[start + 2:end]).first()
     if environmentVariable is not None:
-        s = s.replace(s[start:end+2], environmentVariable[0])
+        s = s.replace(s[start:end + 2], environmentVariable[0])
 
     return s
 
 
 """装饰器用于替换环境变量"""
+
+
 def replace_ev_and_func():
     def decorator(func):
         @functools.wraps(func)
@@ -70,11 +76,15 @@ def replace_ev_and_func():
                     new_args[i] = funcUtil.replace_func(new_args[i])
 
             return func(*tuple(new_args), **kwargs)
+
         return wrapper
+
     return decorator
 
 
 """调试api入口"""
+
+
 def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     if encrypt_type == 1:
         return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
@@ -85,6 +95,8 @@ def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, fi
 
 
 """不加密调试api"""
+
+
 @replace_ev_and_func()
 def normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
@@ -129,10 +141,16 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
         log.info_return_message("响应头:" + response_headers)
         debug_log.append(log.info_return_message("响应头"))
         debug_log.append(dict(re.headers))
-        response = str(re.json())
-        log.info_return_message("响应内容:" + response)
-        debug_log.append(log.info_return_message("响应内容"))
-        debug_log.append(re.json())
+        try:
+            response = str(re.json())
+            log.info_return_message("响应内容:" + response)
+            debug_log.append(log.info_return_message("响应内容"))
+            debug_log.append(re.json())
+        except:
+            response = re.text
+            log.info_return_message("响应内容:" + response)
+            debug_log.append(log.info_return_message("响应内容"))
+            debug_log.append(re.text)
         if str(re.status_code) != '200':
             final_result = False
             raise Exception  # 主動抛出異常，執行finally語句
@@ -197,6 +215,8 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
 
 """buddy加密调试api"""
+
+
 @replace_ev_and_func()
 def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
@@ -353,6 +373,8 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
 
 
 """执行测试任务"""
+
+
 @celery.task()
 def execute_apitest_task(task_id):
     log = Log('ApiTaskLog')
@@ -376,8 +398,8 @@ def execute_apitest_task(task_id):
                         if request_header != '':
                             request_header = ast.literal_eval(request_header)
                         debug_log = debug_entrance(api_testcase1.encrypt_type, log, e_id[0], api_testcase1.title, api_testcase1.url, request_header, api_testcase1.request_method, request_body, api_testcase1.file_name
-                                                 , api_testcase1.encode, api_testcase1.verify, api_testcase1.is_assert, api_testcase1.assert_content, api_testcase1.is_post_processor
-                                                 , api_testcase1.post_processor_content)
+                                                   , api_testcase1.encode, api_testcase1.verify, api_testcase1.is_assert, api_testcase1.assert_content, api_testcase1.is_post_processor
+                                                   , api_testcase1.post_processor_content)
                         if debug_log[-1] is True:
                             apitest_detail.status = 1
                         else:
@@ -407,4 +429,3 @@ def execute_apitest_task(task_id):
         log.error(e)
         apiTestTask.status = 3
         db.session.commit()
-

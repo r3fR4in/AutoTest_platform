@@ -21,10 +21,10 @@
           </el-select>
         </el-form-item>
         <el-form-item label="接口名称：">
-          <el-input size="small" v-model="formInline.apiName" placeholder="输入项目名称"></el-input>
+          <el-input size="small" v-model="formInline.apiName" placeholder="输入接口名称"></el-input>
         </el-form-item>
         <el-form-item label="url：">
-          <el-input size="small" v-model="formInline.url" placeholder="输入项目名称"></el-input>
+          <el-input size="small" v-model="formInline.url" placeholder="输入url"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
@@ -77,7 +77,7 @@
                 <p v-if="scope.row.independent===true">是</p>
               </template>
             </el-table-column>
-            <el-table-column sortable prop="summary" label="概述" width="300">
+            <el-table-column sortable prop="summary" label="概述" width="250">
             </el-table-column>
             <el-table-column sortable prop="status" label="状态" width="75" align="center">
               <template slot-scope="scope">

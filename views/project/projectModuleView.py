@@ -35,13 +35,10 @@ def list_projectModule():
             row = list(ret._data)
             dic = dict(zip(column, row))
             rets_list.append(dic)
-        # # 将数据格式处理为前端el-tree的格式
-        # result_dict = {}
-        # for l in rets_list:
-        #     l["parent_id"] = l["parent_id"] if l["parent_id"] else 0
-        #     result_dict.setdefault(l['id'], l).update(l)
-        #     result_dict.setdefault(l['parent_id'], {}).setdefault('children', []).append(result_dict.get(l['id'], l))
-        # result_list = result_dict[0]['children']
+        # 把未分类接口放到列表最末尾
+        for ret in rets_list:
+            if ret['module_name'] == '未分类接口':
+                rets_list.append(rets_list.pop(rets_list.index(ret)))
         output = {'code': 1000, 'msg': None, 'success': True, 'data': rets_list}
     else:
         return errorCode.DoesNotChooseProjectEnv()
