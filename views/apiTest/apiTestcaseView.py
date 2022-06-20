@@ -85,7 +85,7 @@ def copy_testcase():
     apitestcase2 = ApiTestcase(api_id=apiTestcase1.api_id, title=apiTestcase1.title, request_method=apiTestcase1.request_method, request_header=apiTestcase1.request_header
                                , request_body=apiTestcase1.request_body, encode=apiTestcase1.encode, verify=apiTestcase1.verify
                                , url=apiTestcase1.url, is_assert=apiTestcase1.is_assert, assert_content=apiTestcase1.assert_content, is_post_processor=apiTestcase1.is_post_processor
-                               , post_processor_content=apiTestcase1.post_processor_content)
+                               , post_processor_content=apiTestcase1.post_processor_content, encrypt_type=1)
     db.session.add(apitestcase2)
     db.session.commit()
     output = {'code': 1, 'msg': '复制成功', 'exception': None, 'success': True, 'id': apitestcase2.id}

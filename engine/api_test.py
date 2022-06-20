@@ -51,12 +51,21 @@ def assert_util(pattern, key, expected, response):
 
 
 def replace_environment_variable(s, model, e_id):
+    # start = s.find('{{')
+    # end = s.find('}}')
+    # # 从数据库获取环境变量
+    # environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s[start + 2:end]).first()
+    # if environmentVariable is not None:
+    #     s = s.replace(s[start:end + 2], environmentVariable[0])
+
     start = s.find('{{')
-    end = s.find('}}')
-    # 从数据库获取环境变量
-    environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s[start + 2:end]).first()
-    if environmentVariable is not None:
-        s = s.replace(s[start:end + 2], environmentVariable[0])
+    while start > 0:
+        s_temp = s[start:]
+        end = s_temp.find('}}')
+        environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s_temp[2:end]).first()
+        if environmentVariable is not None:
+            s = s.replace(s[start:start + end + 2], str(environmentVariable[0]), 1)
+        start = s.find('{{')
 
     return s
 
@@ -71,7 +80,7 @@ def replace_ev_and_func():
             new_args = list(args)
             for i in range(0, len(new_args)):
                 if '{{' in str(new_args[i]) and '}}' in str(new_args[i]):
-                    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[2]指e_id
+                    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
                 if '${' in str(new_args[i]):
                     new_args[i] = funcUtil.replace_func(new_args[i])
 

@@ -171,7 +171,7 @@
           </el-table-column>
         </el-table>
         <!-- 分页组件 -->
-        <Pagination v-bind:child-msg="e_pageparm" @callFather="callFather"></Pagination>
+        <Pagination v-bind:child-msg="e_pageparm" @callFather="e_callFather"></Pagination>
       </el-dialog>
       <!-- 编辑界面 -->
       <el-dialog :title="e_title" :visible.sync="e_editFormVisible" width="30%" @click="e_editFormVisible = false">
@@ -385,6 +385,18 @@
         this.getdata(this.formInline)
       }
     },
+    // 分页插件事件
+    e_callFather(parm) {
+      if(this.e_pageparm.pageSize !== parm.pageSize){
+        this.e_formInline.page = 1;
+        this.e_formInline.limit = parm.pageSize;
+        this.handleEnvironmentVariable()
+      }else {
+        this.e_formInline.page = parm.currentPage;
+        this.e_formInline.limit = parm.pageSize;
+        this.handleEnvironmentVariable()
+      }
+    },
     // 搜索事件
     search() {
       this.formInline.page = 1;
@@ -445,6 +457,7 @@
           if (res.success){
             this.environmentVariableData = res.data;
             this.environmentVariableVisible = true;
+            this.e_pageparm.total = res.count;
           }else {
             this.$message({
               type: 'info',
