@@ -1,0 +1,123 @@
+[2022-06-21 13:47:24,816] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 63, in replace_environment_variable
+    raise AttributeError('环境变量替换失败')
+AttributeError: 环境变量替换失败
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 97, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 81, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 68, in replace_environment_variable
+    raise AttributeError('环境变量替换失败')
+AttributeError: 环境变量替换失败
+
+[2022-06-21 13:48:55,279] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 63, in replace_environment_variable
+    raise Exception
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 97, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 81, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 68, in replace_environment_variable
+    raise Exception
+Exception
+
+[2022-06-21 13:49:25,322] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 63, in replace_environment_variable
+    raise AttributeError('环境变量替换失败')
+AttributeError: 环境变量替换失败
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 97, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 81, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 68, in replace_environment_variable
+    raise AttributeError('环境变量替换失败')
+AttributeError: 环境变量替换失败
+
+[2022-06-21 13:55:27,531] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 100, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 84, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+AttributeError: 'ReplaceEVError' object has no attribute 'replace'
+
+[2022-06-21 13:55:35,087] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 100, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 84, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+AttributeError: 'ReplaceEVError' object has no attribute 'replace'
+
+[2022-06-21 13:56:42,937] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-21 13:56:42,940] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 343, in debugApi
+    , param_post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 100, in debug_entrance
+    return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
+  File "D:\PycharmProjects\AutoTest_platform\engine\api_test.py", line 84, in wrapper
+    new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
+AttributeError: 'ReplaceEVError' object has no attribute 'replace'
+
+[2022-06-21 13:57:03,124] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-21 16:13:38,554] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 1)
+[2022-06-21 16:13:48,826] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 1)
+[2022-06-21 16:14:07,132] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 1)
+[2022-06-21 16:36:41,789] [log.py|__console] [line:43] ERROR   : 200 OK: None

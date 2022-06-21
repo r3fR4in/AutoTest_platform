@@ -169,3 +169,15 @@ class SwaggerApiImportError(APIException):
     msg = '导入失败'
     error_code = 9974
     success = False
+
+class ReplaceEVError(APIException):
+    code = 200
+    msg = '替换环境变量失败，请检查该变量是否存在'
+    error_code = 9973
+    success = False
+
+class ReplaceFuncError(APIException):
+    code = 200
+    msg = '替换函数失败，请检查该函数是否存在'
+    error_code = 9972
+    success = False

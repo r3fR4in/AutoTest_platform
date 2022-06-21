@@ -12,14 +12,13 @@ import ast
 from utils.extensions import celery
 from utils.log import Log
 from utils import encryptUtil
+from utils import errorCode
 import uuid
 import functools
 import json
 from engine import funcUtil
 
 """断言"""
-
-
 def assert_util(pattern, key, expected, response):
     # 根据key获取需要断言的内容
     if key != '':
@@ -48,31 +47,27 @@ def assert_util(pattern, key, expected, response):
 
 
 """替换环境变量"""
-
-
 def replace_environment_variable(s, model, e_id):
-    # start = s.find('{{')
-    # end = s.find('}}')
-    # # 从数据库获取环境变量
-    # environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s[start + 2:end]).first()
-    # if environmentVariable is not None:
-    #     s = s.replace(s[start:end + 2], environmentVariable[0])
-
-    start = s.find('{{')
-    while start > 0:
-        s_temp = s[start:]
-        end = s_temp.find('}}')
-        environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s_temp[2:end]).first()
-        if environmentVariable is not None:
-            s = s.replace(s[start:start + end + 2], str(environmentVariable[0]), 1)
+    try:
         start = s.find('{{')
+        while start > 0:
+            s_temp = s[start:]
+            end = s_temp.find('}}')
+            environmentVariable = db.session.query(model.value).filter(model.e_id == e_id, model.name == s_temp[2:end]).first()
+            if environmentVariable is not None:
+                s = s.replace(s[start:start + end + 2], str(environmentVariable[0]), 1)
+            else:
+                raise errorCode.ReplaceEVError()
+            start = s.find('{{')
 
-    return s
+        return s
+    except Exception as e:
+        log = Log('log')
+        log.error(e)
+        raise errorCode.ReplaceEVError()
 
 
 """装饰器用于替换环境变量"""
-
-
 def replace_ev_and_func():
     def decorator(func):
         @functools.wraps(func)
@@ -92,8 +87,6 @@ def replace_ev_and_func():
 
 
 """调试api入口"""
-
-
 def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     if encrypt_type == 1:
         return normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content)
@@ -104,8 +97,6 @@ def debug_entrance(encrypt_type, log, e_id, title, url, header, method, body, fi
 
 
 """不加密调试api"""
-
-
 @replace_ev_and_func()
 def normal_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
@@ -224,8 +215,6 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
 
 
 """buddy加密调试api"""
-
-
 @replace_ev_and_func()
 def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, encode, verify, is_assert, assert_content, is_post_processor, post_processor_content):
     final_result = True
@@ -382,8 +371,6 @@ def buddy_encrypt_debug(log, e_id, title, url, header, method, body, files, enco
 
 
 """执行测试任务"""
-
-
 @celery.task()
 def execute_apitest_task(task_id):
     log = Log('ApiTaskLog')
