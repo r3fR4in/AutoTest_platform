@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="隨便更更">
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/api_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/api_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/funcUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/funcUtil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.4f48b94b87004380a6be8d0621789806.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.4f48b94b87004380a6be8d0621789806.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.faefd31f6e52b904cace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.faefd31f6e52b904cace.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/errorCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errorCode.py" afterDir="false" />
+    <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/engine/api_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="141">
+              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -117,8 +108,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="155" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="-253">
+              <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#el-input#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -725,7 +716,7 @@
       <workItem from="1650510795497" duration="81218000" />
       <workItem from="1651825161847" duration="77549000" />
       <workItem from="1653457309476" duration="123922000" />
-      <workItem from="1655704312317" duration="10221000" />
+      <workItem from="1655704312317" duration="10482000" />
     </task>
     <task id="LOCAL-00001" summary="隨便更更">
       <created>1641460444805</created>
@@ -734,11 +725,25 @@
       <option name="project" value="LOCAL" />
       <updated>1641460444805</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修复bug">
+      <created>1655805034617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655805034617</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修复bug">
+      <created>1655805087879</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655805087879</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1526416000" />
+    <option name="totallyTimeSpent" value="1526677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -751,7 +756,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.20042644" />
       <window_info id="Structure" order="1" sideWeight="0.5048544" side_tool="true" weight="0.20095949" />
@@ -767,9 +771,9 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5133262" side_tool="true" weight="0.31995663" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.48720682" weight="0.35683298" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48667377" visible="true" weight="0.31995663" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48667377" weight="0.31995663" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3286334" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -856,7 +860,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="隨便更更" />
-    <option name="LAST_COMMIT_MESSAGE" value="隨便更更" />
+    <MESSAGE value="修复bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复bug" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -883,16 +888,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-          <folding>
-            <element signature="e#969#1014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1286,10 +1281,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/engine/api_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="141">
+          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -1308,8 +1306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/workbench.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        <state relative-caret-position="-253">
+          <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-input#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
