@@ -121,3 +121,330 @@ AttributeError: 'ReplaceEVError' object has no attribute 'replace'
 [2022-06-21 16:13:48,826] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 1)
 [2022-06-21 16:14:07,132] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 1)
 [2022-06-21 16:36:41,789] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-21 18:10:24,487] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestTaskView.py", line 149, in api_test_report
+    names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id, ApiTestDetail.module_name).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+[SQL: SELECT DISTINCT `apiTest_detail`.module_name, `apiTest_detail`.api_name AS `apiTest_detail_api_name` 
+FROM `apiTest_detail` 
+WHERE `apiTest_detail`.task_id = %(task_id_1)s ORDER BY `apiTest_detail`.id, `apiTest_detail`.module_name]
+[parameters: {'task_id_1': '31'}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-21 18:10:26,718] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestTaskView.py", line 149, in api_test_report
+    names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id, ApiTestDetail.module_name).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+[SQL: SELECT DISTINCT `apiTest_detail`.module_name, `apiTest_detail`.api_name AS `apiTest_detail_api_name` 
+FROM `apiTest_detail` 
+WHERE `apiTest_detail`.task_id = %(task_id_1)s ORDER BY `apiTest_detail`.id, `apiTest_detail`.module_name]
+[parameters: {'task_id_1': '20'}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-21 18:10:53,040] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestTaskView.py", line 149, in api_test_report
+    names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+[SQL: SELECT DISTINCT `apiTest_detail`.module_name, `apiTest_detail`.api_name AS `apiTest_detail_api_name` 
+FROM `apiTest_detail` 
+WHERE `apiTest_detail`.task_id = %(task_id_1)s ORDER BY `apiTest_detail`.id]
+[parameters: {'task_id_1': '31'}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-21 18:10:55,155] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestTaskView.py", line 149, in api_test_report
+    names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3065, "Expression #1 of ORDER BY clause is not in SELECT list, references column 'autotest_platform_prod.apiTest_detail.id' which is not in SELECT list; this is incompatible with DISTINCT")
+[SQL: SELECT DISTINCT `apiTest_detail`.module_name, `apiTest_detail`.api_name AS `apiTest_detail_api_name` 
+FROM `apiTest_detail` 
+WHERE `apiTest_detail`.task_id = %(task_id_1)s ORDER BY `apiTest_detail`.id]
+[parameters: {'task_id_1': '20'}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-21 18:13:55,610] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestTaskView.py", line 149, in api_test_report
+    names = db.session.query(distinct(ApiTestDetail.module_name, ApiTestDetail.id), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id).all()
+TypeError: distinct() takes 1 positional argument but 2 were given
+

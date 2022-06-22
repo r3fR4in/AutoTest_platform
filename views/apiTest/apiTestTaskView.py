@@ -146,7 +146,7 @@ def api_test_report():
 
     # 获取所有测试用例
     # names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id, ApiTestDetail.module_name).all()
-    names = db.session.query(ApiTestDetail.module_name, ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).order_by(ApiTestDetail.id, ApiTestDetail.module_name).all()
+    names = db.session.query(distinct(ApiTestDetail.module_name), ApiTestDetail.api_name).filter(ApiTestDetail.task_id == param_task_id).all()
     api_list = []
     for i in range(len(names)):
         apiTest_details = ApiTestDetail.query.filter(and_(ApiTestDetail.module_name == names[i][0], ApiTestDetail.api_name == names[i][1], ApiTestDetail.task_id == param_task_id)).all()

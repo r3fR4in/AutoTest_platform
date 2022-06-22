@@ -14,11 +14,11 @@
     <div style="margin: 20px;"></div>
     <!-- 表格报告 -->
     <el-table size="small" :data="listData" v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;"
-              :header-cell-style="{background:'#eef1f6',color:'#606266'}">
+              :header-cell-style="{background:'#eef1f6',color:'#606266'}" :row-style="tableRowStyle2">
       <el-table-column type="expand">
         <template slot-scope="scope">
           <el-table :data="scope.row.testcase" style="width: calc(100% - 47px)" size="small" border
-                    :header-cell-style="{background:'#eef1f6'}" :row-style="tableRowStyle" :show-header="false">
+                    :header-cell-style="{background:'#eef1f6'}" :row-style="tableRowStyle1" :show-header="false">
             <el-table-column sortable prop="testcase_name" label="用例名称">
             </el-table-column>
             <el-table-column sortable prop="status" label="状态">
@@ -44,8 +44,13 @@
       <el-table-column sortable prop="pass_count" label="通过" width="250">
       </el-table-column>
       <el-table-column sortable prop="fail_count" label="失败" width="250">
-        <template scope="scope">
-          <div v-if="scope.row.fail_count !== '0'" style="color: #EA1B29">{{scope.row.fail_count}}</div>
+        <template slot-scope="scope">
+          <div v-if="scope.row.fail_count > '0'">
+            <div style="color: #EA1B29">{{scope.row.fail_count}}</div>
+          </div>
+          <div v-else>
+            <div>{{scope.row.fail_count}}</div>
+          </div>
         </template>
       </el-table-column>
     </el-table>
@@ -149,7 +154,7 @@
           }
         },
         // 动态修改内表格行背景色
-        tableRowStyle({ row, rowIndex }) {
+        tableRowStyle1({ row, rowIndex }) {
           // 注意，这里返回的是一个对象
           let rowBackground = {};
           if (row.status === 1 ) {
@@ -159,6 +164,13 @@
           }
           return rowBackground;
         },
+        tableRowStyle2({row, rowIndex}){
+          let rowBackground = {};
+          if (row.fail_count > 0){
+            rowBackground.background = "#f5c1bf";
+          }
+          return rowBackground;
+        }
       }
     }
 </script>
