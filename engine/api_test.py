@@ -173,12 +173,12 @@ def normal_debug(log, e_id, title, url, header, method, body, files, encode, ver
                 # 检查环境变量表有没有重复数据，有则更新，无则新增
                 ev = EnvironmentVariable.query.filter(EnvironmentVariable.e_id == e_id, EnvironmentVariable.name == key).first()
                 if ev is None:
-                    ev1 = EnvironmentVariable(e_id=e_id, name=key, value=result)
+                    ev1 = EnvironmentVariable(e_id=e_id, name=key, value=str(result))
                     db.session.add(ev1)
                     db.session.commit()
                 else:
                     ev.name = key
-                    ev.value = result
+                    ev.value = str(result)
                     db.session.commit()
                 debug_log.append(log.info_return_message("已更新环境变量" + str(key)))
 

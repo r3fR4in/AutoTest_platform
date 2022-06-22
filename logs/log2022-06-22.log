@@ -1,0 +1,221 @@
+[2022-06-22 11:28:24,721] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiView.py", line 226, in down_api
+    api2.seq = param_seq
+AttributeError: 'NoneType' object has no attribute 'seq'
+
+[2022-06-22 11:28:27,311] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiView.py", line 226, in down_api
+    api2.seq = param_seq
+AttributeError: 'NoneType' object has no attribute 'seq'
+
+[2022-06-22 11:28:31,324] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiView.py", line 226, in down_api
+    api2.seq = param_seq
+AttributeError: 'NoneType' object has no attribute 'seq'
+
+[2022-06-22 11:28:38,731] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiView.py", line 203, in up_api
+    api2.seq = param_seq
+AttributeError: 'NoneType' object has no attribute 'seq'
+
+[2022-06-22 16:36:36,402] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-22 16:37:27,126] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-22 16:37:40,066] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-22 17:14:20,791] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 732, in _read_bytes
+    data = self._rfile.read(num_bytes)
+  File "D:\ProgramFiles(x86)\python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 692, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 740, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,),
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 692, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 740, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,),
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '277', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-22 17:18:37,409] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 732, in _read_bytes
+    data = self._rfile.read(num_bytes)
+  File "D:\ProgramFiles(x86)\python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 692, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 740, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,),
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 39, in list_apiTestcase
+    apiTestcases = ApiTestcase.query.filter(ApiTestcase.api_id == param_apiId).paginate(int(param_currentPage), int(param_pageSize)).items
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2699, in all
+    return self._iter().all()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 2837, in _iter
+    execution_options={"_sa_orm_load_options": self.load_options},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 692, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 740, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,),
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10053] 你的主机中的软件中止了一个已建立的连接。)')
+[SQL: SELECT api_testcase.id AS api_testcase_id, api_testcase.api_id AS api_testcase_api_id, api_testcase.title AS api_testcase_title, api_testcase.request_method AS api_testcase_request_method, api_testcase.request_header AS api_testcase_request_header, api_testcase.request_body AS api_testcase_request_body, api_testcase.encode AS api_testcase_encode, api_testcase.verify AS api_testcase_verify, api_testcase.url AS api_testcase_url, api_testcase.is_assert AS api_testcase_is_assert, api_testcase.assert_content AS api_testcase_assert_content, api_testcase.is_post_processor AS api_testcase_is_post_processor, api_testcase.post_processor_content AS api_testcase_post_processor_content, api_testcase.file_name AS api_testcase_file_name, api_testcase.encrypt_type AS api_testcase_encrypt_type 
+FROM api_testcase 
+WHERE api_testcase.api_id = %(api_id_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'api_id_1': '277', 'param_1': 0, 'param_2': 10}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+

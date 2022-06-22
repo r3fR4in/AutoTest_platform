@@ -149,6 +149,12 @@ def edit_api():
         db.session.commit()
 
     api1 = Api.query.get(param_id)
+
+    # 检查apiModule_id有没有变，有变则要查对应模块下的api数量，seq=总数+1
+    if api1.apiModule_id != param_module_id:
+        api_num = Api.query.filter(Api.apiModule_id == param_module_id).count()
+        api1.seq = api_num + 1
+
     api1.apiModule_id = param_module_id
     api1.request_method = param_request_method
     api1.api_name = param_api_name
