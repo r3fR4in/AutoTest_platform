@@ -1,0 +1,587 @@
+[2022-06-23 09:25:21,762] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 61, in exist_path
+    self.sftp.stat(path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 493, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 40, in upload_file
+    self.exist_path(remotepath)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 64, in exist_path
+    self.sftp.mkdir(path, mode)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 460, in mkdir
+    self._request(CMD_MKDIR, path, attr)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+[2022-06-23 09:33:19,711] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 61, in exist_path
+    self.sftp.stat(path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 493, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 40, in upload_file
+    self.exist_path(remotepath)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 64, in exist_path
+    self.sftp.mkdir(path, mode)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 460, in mkdir
+    self._request(CMD_MKDIR, path, attr)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 09:37:39,474] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 61, in exist_path
+    self.sftp.stat(path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 493, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 40, in upload_file
+    self.exist_path(remotepath)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 64, in exist_path
+    self.sftp.mkdir(path, mode)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 460, in mkdir
+    self._request(CMD_MKDIR, path, attr)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 09:37:55,256] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 61, in exist_path
+    self.sftp.stat(path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 493, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 40, in upload_file
+    self.exist_path(remotepath)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 65, in exist_path
+    self.sftp.exec_command('sudo mkdir ' + path)
+AttributeError: 'SFTPClient' object has no attribute 'exec_command'
+
+[2022-06-23 09:41:25,733] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 41, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+[2022-06-23 09:49:48,681] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 41, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+[2022-06-23 09:53:15,228] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 29, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:21:16,009] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 29, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:27:06,737] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 29, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:36:51,980] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 26, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 903, in _convert_status
+    raise IOError(errno.ENOENT, text)
+FileNotFoundError: [Errno 2] No such file
+
+[2022-06-23 10:37:14,998] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 26, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:51:56,080] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 226, in get_and_save_upload_files
+    ssh = SSH(setting.host, setting.port, setting.username, setting.password)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 13, in __init__
+    self.client.connect(hostname=self.hostname, port=self.port, username=self.username, password=self.password)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\client.py", line 446, in connect
+    passphrase,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\client.py", line 766, in _auth
+    raise saved_exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\transport.py", line 1563, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\auth_handler.py", line 258, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+[2022-06-23 10:56:34,989] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 30, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:57:47,018] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 30, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 10:58:58,917] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 30, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 11:11:51,976] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 33, in upload_file
+    buff += resp
+TypeError: can only concatenate str (not "bytes") to str
+
+[2022-06-23 11:12:54,371] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 41, in upload_file
+    self.sftp.put(localFilepath, remoteFilepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 759, in put
+    return self.putfo(fl, remotepath, file_size, callback, confirm)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 714, in putfo
+    with self.file(remotepath, "wb") as fr:
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 372, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 11:14:44,069] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 227, in get_and_save_upload_files
+    ssh.upload_file(setting.updateFiles_DIR_submittedTests, setting.remote_updateFiles_DIR_submittedTests, file_name + suffix)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 41, in upload_file
+    shell.put(localFilepath, remoteFilepath)
+AttributeError: 'Channel' object has no attribute 'put'
+
+[2022-06-23 13:58:03,109] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 279, in deleteUploadFile
+    ssh.delete_file(setting.remote_updateFiles_DIR_apiTest, new_file_name)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 43, in delete_file
+    self.sftp.remove(filepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 398, in remove
+    self._request(CMD_REMOVE, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 13:58:14,165] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 279, in deleteUploadFile
+    ssh.delete_file(setting.remote_updateFiles_DIR_apiTest, new_file_name)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 43, in delete_file
+    self.sftp.remove(filepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 398, in remove
+    self._request(CMD_REMOVE, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 14:03:19,703] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 279, in deleteUploadFile
+    ssh.delete_file(setting.remote_updateFiles_DIR_apiTest, new_file_name)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 43, in delete_file
+    self.sftp.remove(filepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 398, in remove
+    self._request(CMD_REMOVE, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 14:05:30,220] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 279, in deleteUploadFile
+    ssh.delete_file(setting.remote_updateFiles_DIR_apiTest, new_file_name)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 43, in delete_file
+    self.sftp.remove(filepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 398, in remove
+    self._request(CMD_REMOVE, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 14:09:56,505] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 279, in deleteUploadFile
+    ssh.delete_file(setting.remote_updateFiles_DIR_apiTest, new_file_name)
+  File "D:\PycharmProjects\AutoTest_platform\utils\sshConnect.py", line 43, in delete_file
+    self.sftp.remove(filepath)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 398, in remove
+    self._request(CMD_REMOVE, path)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 822, in _request
+    return self._read_response(num)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 874, in _read_response
+    self._convert_status(msg)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\paramiko\sftp_client.py", line 905, in _convert_status
+    raise IOError(errno.EACCES, text)
+PermissionError: [Errno 13] Permission denied
+
+[2022-06-23 15:13:44,776] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-23 15:22:03,196] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-23 16:19:43,371] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-23 17:01:22,293] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+

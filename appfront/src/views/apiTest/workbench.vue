@@ -70,7 +70,7 @@
             :mode="'code'"
             lang="zh"></vue-json-editor>
         </el-tab-pane>
-        <el-tab-pane label="文件上传" name="third" id="upload" v-bind:disabled="this.apiData.request_body !== ''">
+        <el-tab-pane label="文件上传" name="third" id="upload" v-bind:disabled="JSON.stringify(this.apiData.request_body) !== '{}'">
           <div style="width: 360px">
             <el-upload
               class="upload-demo"

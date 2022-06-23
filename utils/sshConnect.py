@@ -1,4 +1,7 @@
+import time
+
 import paramiko
+
 
 
 class SSH:
@@ -13,21 +16,6 @@ class SSH:
         self.client.connect(hostname=self.hostname, port=self.port, username=self.username, password=self.password)
         self.sftp = paramiko.SFTPClient.from_transport(self.client.get_transport())
 
-    # """ssh连接"""
-    # def ssh_connect(self):
-    #     client = paramiko.SSHClient()
-    #     # 如果之前没有，连接过的ip，会出现选择yes或者no的操作，自动选择yes
-    #     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    #     client.connect(hostname=self.hostname, port=self.port, username=self.username, password=self.password)
-    #
-    #     return client
-    #
-    # """sftp"""
-    # def sftp_connect(self, client):
-    #     sftp = paramiko.SFTPClient.from_transport(client.get_transport())
-    #
-    #     return sftp
-
     """关闭连接"""
     def close_connect(self):
         self.sftp.close()
@@ -39,6 +27,7 @@ class SSH:
         remoteFilepath = remotepath + '/' + filename
         self.exist_path(remotepath)
         self.sftp.put(localFilepath, remoteFilepath)
+        # self.session.exec_command('sudo put ' + localFilepath + ' [' + remoteFilepath + ']')
 
     """下载文件"""
     def download_file(self, localpath, remotepath, filename):
@@ -46,6 +35,7 @@ class SSH:
         remoteFilepath = remotepath + '/' + filename
         self.exist_path(remotepath)
         self.sftp.get(remoteFilepath, localFilepath)
+        # self.session.exec_command('sudo scp ')
 
     """删除文件"""
     def delete_file(self, remotepath, filename):
@@ -62,6 +52,7 @@ class SSH:
         except IOError as e:
             print('error:' + str(e))
             self.sftp.mkdir(path, mode)
+            # self.client.exec_command('sudo mkdir ' + path)
 
     """判断文件是否存在"""
     def exist_file(self, path):
