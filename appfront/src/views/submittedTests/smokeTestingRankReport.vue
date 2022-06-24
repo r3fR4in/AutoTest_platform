@@ -73,6 +73,10 @@ export default {
             } else {
               this.listData = res.data;
               this.showChart(res.data);
+              // 把冒烟测试通过率加上%
+              this.listData.forEach((item) => {
+                item.smokeTesting_pass_rate = item.smokeTesting_pass_rate.toString() + '%'
+              });
             }
           })
           .catch(err => {
@@ -99,7 +103,7 @@ export default {
             interval: 0, // 坐标轴刻度标签的显示间隔，在类目轴中有效；默认会采用标签不重叠的策略间隔显示标签；可以设置成0强制显示所有标签；如果设置为1，表示『隔一个标签显示一个标签』，如果值为2，表示隔两个标签显示一个标签，以此类推。
             rotate: -30, // 刻度标签旋转的角度，在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠；旋转的角度从-90度到90度
             inside: false, // 刻度标签是否朝内，默认朝外
-            margin: 9, // 刻度标签与轴线之间的距离
+            margin: 14, // 刻度标签与轴线之间的距离
           }
         },
         yAxis: [
@@ -130,7 +134,7 @@ export default {
       // 遍历data，将数据加入source中
       let max_num = 0; //设置最大值，用于动态设置数量y轴最大值
       data.forEach(item => {
-        let array = [item.projectName + '-' + item.submitted_test_director, item.smokeTesting_pass_rate, item.submittedTest_num, item.smokeTesting_pass_num];
+        let array = [item.projectName + '\n' + item.submitted_test_director, item.smokeTesting_pass_rate, item.submittedTest_num, item.smokeTesting_pass_num];
         option.dataset.source.push(array);
         if (item.submittedTest_num > max_num){
           max_num = item.submittedTest_num;

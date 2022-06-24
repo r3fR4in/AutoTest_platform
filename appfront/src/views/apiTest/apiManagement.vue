@@ -151,7 +151,15 @@
       </el-dialog>
       <!-- 环境变量页面 -->
       <el-dialog title="环境变量" :visible.sync="environmentVariableVisible" width="55%" @click="closeDialog">
-        <el-button size="small" type="primary" icon="el-icon-plus" @click="e_handleEdit()">添加</el-button>
+        <el-form :inline="true" :model="e_formInline" class="user-search">
+          <el-form-item label="输入变量名：">
+            <el-input size="small" v-model="e_formInline.ev_name" placeholder="输入变量名"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button size="small" type="primary" icon="el-icon-search" @click="handleEnvironmentVariable">搜索</el-button>
+            <el-button size="small" type="primary" icon="el-icon-plus" @click="e_handleEdit()">添加</el-button>
+          </el-form-item>
+        </el-form>
         <el-table size="small" :data="environmentVariableData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;margin-top: 20px">
           <el-table-column align="center" type="selection" width="60">
           </el-table-column>
@@ -261,6 +269,7 @@
         page: 1,
         limit: 10,
         projectEnvironment_id: '',
+        ev_name: ''
       },
       userparm: [], //搜索权限
       listData: [], //项目环境数据
@@ -450,7 +459,8 @@
       let param = {
         currentPage: this.e_pageparm.currentPage,
         pageSize: this.e_pageparm.pageSize,
-        e_id: this.e_formInline.projectEnvironment_id
+        e_id: this.e_formInline.projectEnvironment_id,
+        ev_name: this.e_formInline.ev_name
       };
       getEnvironmentVariable(param)
         .then(res => {

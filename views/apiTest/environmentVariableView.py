@@ -15,11 +15,20 @@ def list_environmentVariable():
     param_currentPage = request.args.get('currentPage')
     param_pageSize = request.args.get('pageSize')
     param_e_id = request.args.get('e_id')
+    param_ev_name = request.args.get('ev_name')
     if param_e_id == '':
         return errorCode.DoesNotChooseProjectEnv()
+
+    filterList = []
+
+    if param_e_id is not None and param_e_id != '':
+        filterList.append(EnvironmentVariable.e_id == param_e_id)
+    if param_ev_name is not None and param_ev_name != '':
+        filterList.append(EnvironmentVariable.name.like("%" + str(param_ev_name) + "%"))
+
     # 根据e_id获取环境变量
-    environmentVariables = EnvironmentVariable.query.filter(EnvironmentVariable.e_id == param_e_id).paginate(int(param_currentPage), int(param_pageSize)).items
-    environmentVariableNum = EnvironmentVariable.query.filter(EnvironmentVariable.e_id == param_e_id).count()
+    environmentVariables = EnvironmentVariable.query.filter(*filterList).paginate(int(param_currentPage), int(param_pageSize)).items
+    environmentVariableNum = EnvironmentVariable.query.filter(*filterList).count()
 
     # 封装字典并转成json返回前端
     output = {'code': 1000, 'msg': None, 'count': environmentVariableNum, 'success': True}

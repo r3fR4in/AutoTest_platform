@@ -114,7 +114,7 @@
     <el-dialog :title="title" :visible.sync="editFormVisible" width="45%" @click="closeDialog">
       <el-form label-width="140px" :model="editForm" :rules="rules" ref="editForm">
         <el-form-item label="测试系统" prop="projectName">
-          <el-autocomplete size="small" v-model="editForm.projectName" @select="handleSelect" :fetch-suggestions="querySearchAsync" placeholder="请输入项目名称" :readonly=editFormControl.projectName_disabled></el-autocomplete>
+          <el-autocomplete size="small" v-model="editForm.projectName" @select="handleSelect" :fetch-suggestions="querySearchAsync" placeholder="请输入项目名称" :disabled=editFormControl.projectName_disabled></el-autocomplete>
         </el-form-item>
         <el-form-item label="提测名称" prop="submitted_test_name">
           <el-input size="small" v-model="editForm.submitted_test_name" auto-complete="off" placeholder="请输入提测名称" :readonly=editFormControl.submitted_test_name_disabled></el-input>

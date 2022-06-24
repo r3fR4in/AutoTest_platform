@@ -1,8 +1,4 @@
-import time
-
 import paramiko
-
-
 
 class SSH:
 

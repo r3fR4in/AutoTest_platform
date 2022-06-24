@@ -109,7 +109,11 @@ def add_submittedTest():
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
     param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
-    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    if data['online_date'] == '' or data['online_date'] is None:
+        param_online_date = None
+    else:
+        param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    # param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
@@ -151,7 +155,11 @@ def edit_submittedTest():
     param_submitted_test_name = data['submitted_test_name']
     param_submitted_date = datetime.datetime.strptime(data['submitted_date'], '%Y-%m-%d')
     param_test_date = datetime.datetime.strptime(data['test_date'], '%Y-%m-%d')
-    param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    if data['online_date'] == '' or data['online_date'] is None:
+        param_online_date = None
+    else:
+        param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    # param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     param_submitted_test_director = data['submitted_test_director']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']

@@ -1,0 +1,285 @@
+[2022-06-24 11:50:37,206] [log.py|__console] [line:43] ERROR   : 200 OK: None
+[2022-06-24 14:41:19,882] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '' for column 'online_date' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 138, in add_submittedTest
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3255, in flush
+    self._flush(objects)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3395, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3355, in _flush
+    flush_context.execute()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1222, in _emit_insert_statements
+    execution_options=execution_options,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '' for column 'online_date' at row 1")
+[SQL: INSERT INTO submitted_tests (project_id, submitted_test_name, submitted_date, test_date, online_date, submitted_test_director, fix_bug_director, test_director, self_test_report_url, test_url, test_scope, influence_scope, points_for_attention, config_url, script_url, compatibility_desc, file_name, test_status, smoke_testing_result, smoke_testing_fail_reason_category, smoke_testing_fail_reason_detail, test_result, complete_date) VALUES (%(project_id)s, %(submitted_test_name)s, %(submitted_date)s, %(test_date)s, %(online_date)s, %(submitted_test_director)s, %(fix_bug_director)s, %(test_director)s, %(self_test_report_url)s, %(test_url)s, %(test_scope)s, %(influence_scope)s, %(points_for_attention)s, %(config_url)s, %(script_url)s, %(compatibility_desc)s, %(file_name)s, %(test_status)s, %(smoke_testing_result)s, %(smoke_testing_fail_reason_category)s, %(smoke_testing_fail_reason_detail)s, %(test_result)s, %(complete_date)s)]
+[parameters: {'project_id': 36, 'submitted_test_name': 'test', 'submitted_date': datetime.datetime(2022, 6, 24, 0, 0), 'test_date': datetime.datetime(2022, 6, 24, 0, 0), 'online_date': '', 'submitted_test_director': 'admin', 'fix_bug_director': 'test', 'test_director': '', 'self_test_report_url': '', 'test_url': '', 'test_scope': '', 'influence_scope': '', 'points_for_attention': '', 'config_url': '', 'script_url': '', 'compatibility_desc': '', 'file_name': '', 'test_status': 1, 'smoke_testing_result': 0, 'smoke_testing_fail_reason_category': None, 'smoke_testing_fail_reason_detail': None, 'test_result': 0, 'complete_date': None}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-24 14:44:08,793] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '' for column 'online_date' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 138, in add_submittedTest
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3255, in flush
+    self._flush(objects)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3395, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3355, in _flush
+    flush_context.execute()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1222, in _emit_insert_statements
+    execution_options=execution_options,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '' for column 'online_date' at row 1")
+[SQL: INSERT INTO submitted_tests (project_id, submitted_test_name, submitted_date, test_date, online_date, submitted_test_director, fix_bug_director, test_director, self_test_report_url, test_url, test_scope, influence_scope, points_for_attention, config_url, script_url, compatibility_desc, file_name, test_status, smoke_testing_result, smoke_testing_fail_reason_category, smoke_testing_fail_reason_detail, test_result, complete_date) VALUES (%(project_id)s, %(submitted_test_name)s, %(submitted_date)s, %(test_date)s, %(online_date)s, %(submitted_test_director)s, %(fix_bug_director)s, %(test_director)s, %(self_test_report_url)s, %(test_url)s, %(test_scope)s, %(influence_scope)s, %(points_for_attention)s, %(config_url)s, %(script_url)s, %(compatibility_desc)s, %(file_name)s, %(test_status)s, %(smoke_testing_result)s, %(smoke_testing_fail_reason_category)s, %(smoke_testing_fail_reason_detail)s, %(test_result)s, %(complete_date)s)]
+[parameters: {'project_id': 28, 'submitted_test_name': 'test', 'submitted_date': datetime.datetime(2022, 6, 24, 0, 0), 'test_date': datetime.datetime(2022, 6, 24, 0, 0), 'online_date': '', 'submitted_test_director': 'admin', 'fix_bug_director': 'test', 'test_director': '', 'self_test_report_url': '', 'test_url': '', 'test_scope': '', 'influence_scope': '', 'points_for_attention': '', 'config_url': '', 'script_url': '', 'compatibility_desc': '', 'file_name': '', 'test_status': 1, 'smoke_testing_result': 0, 'smoke_testing_fail_reason_category': None, 'smoke_testing_fail_reason_detail': None, 'test_result': 0, 'complete_date': None}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+
+[2022-06-24 15:07:59,004] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 369, in save_test_result
+    param_test_result = int(data['test_result'])
+ValueError: invalid literal for int() with base 10: ''
+
+[2022-06-24 15:09:25,731] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 369, in save_test_result
+    param_test_result = int(data['test_result'])
+ValueError: invalid literal for int() with base 10: ''
+
+[2022-06-24 16:01:18,053] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:18,057] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:18,087] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:18,089] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,315] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,326] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,337] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,331] [_internal.py|_log] [line:113] INFO    : 172.30.21.130 - - [24/Jun/2022 16:01:19] "[33mGET /static/js/manifest.3523b7013fb29c3cf8ce.js HTTP/1.1[0m" 404 -
+[2022-06-24 16:01:19,348] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,363] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:19,379] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:23,371] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:23,383] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:23,398] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:23,409] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:24,357] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:24,369] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,430] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,459] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,459] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,464] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,470] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,464] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:25,475] [_internal.py|_log] [line:113] INFO    : 172.30.21.130 - - [24/Jun/2022 16:01:25] "[33mGET /static/js/manifest.3523b7013fb29c3cf8ce.js HTTP/1.1[0m" 404 -
+[2022-06-24 16:01:25,481] [_internal.py|_log] [line:113] INFO    : 172.30.21.130 - - [24/Jun/2022 16:01:25] "[33mGET /static/js/vendor.f4229dcf6644b4104f06.js HTTP/1.1[0m" 404 -
+[2022-06-24 16:01:37,839] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:37,850] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:38,564] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:38,567] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:38,570] [_internal.py|_log] [line:113] INFO    : 172.30.21.192 - - [24/Jun/2022 16:01:38] "[33mGET /static/css/app.958466036e5972de2956e7b8dddd0c16.css HTTP/1.1[0m" 404 -
+[2022-06-24 16:01:39,131] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,143] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,285] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,300] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,398] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,410] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,526] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,537] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,656] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,668] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,795] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,805] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,954] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:39,956] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,062] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,064] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,068] [_internal.py|_log] [line:113] INFO    : 172.30.21.192 - - [24/Jun/2022 16:01:40] "[33mGET /static/css/app.958466036e5972de2956e7b8dddd0c16.css HTTP/1.1[0m" 404 -
+[2022-06-24 16:01:40,170] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,181] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,364] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,375] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,845] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,845] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:40,846] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,043] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,048] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,182] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,193] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,365] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,391] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,526] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,534] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,672] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,683] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,840] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,851] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,964] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:41,975] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:42,104] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-24 16:01:42,114] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
