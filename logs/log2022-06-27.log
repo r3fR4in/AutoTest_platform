@@ -1,0 +1,66 @@
+[2022-06-27 09:37:41,569] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-27 09:37:42,241] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-27 09:37:43,083] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-27 09:37:43,083] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-27 09:37:43,084] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-06-27 16:08:07,189] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-06-27 17:26:16,584] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,584] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,584] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,585] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,585] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,586] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-06-27 17:26:16,590] [_internal.py|_log] [line:113] INFO    : 172.30.21.130 - - [27/Jun/2022 17:26:16] "[31m[1mGET /submittedTests/submittedTestsList?currentPage=1&pageSize=10&projectName=&test_status=&smoke_testing_result=&test_result= HTTP/1.1[0m" 401 -
+[2022-06-27 17:26:16,590] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+

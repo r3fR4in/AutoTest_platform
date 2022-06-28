@@ -1,0 +1,430 @@
+[2022-06-27 16:18:38,028] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,028] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,028] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,028] [log.py|__console] [line:37] INFO    : 新增保存vobb po type
+[2022-06-27 16:18:38,028] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,028] [log.py|__console] [line:37] INFO    : 新增保存vobb po type
+[2022-06-27 16:18:38,029] [log.py|__console] [line:37] INFO    : 正常保存
+[2022-06-27 16:18:38,029] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,029] [log.py|__console] [line:37] INFO    : 正常保存
+[2022-06-27 16:18:38,043] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,086] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,043] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,087] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-27 16:18:38,088] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,087] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-27 16:18:38,088] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:38,089] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,088] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:38,089] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-27 16:18:38,090] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,089] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-27 16:18:38,090] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,090] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,090] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,091] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,091] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,091] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,091] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"RhH6kPXGOu","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,092] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,091] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"RhH6kPXGOu","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,092] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,092] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,092] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,245] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,245] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,245] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,246] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,246] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,246] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,247] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,247] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,247] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,248] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 120, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,248] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,248] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 120, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,248] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,249] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,248] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,249] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-27 16:18:38,249] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,249] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-27 16:18:38,250] [log.py|__console] [line:37] INFO    : 获取data
+[2022-06-27 16:18:38,250] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,250] [log.py|__console] [line:37] INFO    : 获取data
+[2022-06-27 16:18:38,250] [log.py|__console] [line:37] INFO    : 成功获取值120
+[2022-06-27 16:18:38,251] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,250] [log.py|__console] [line:37] INFO    : 成功获取值120
+[2022-06-27 16:18:38,365] [log.py|__console] [line:37] INFO    : 已更新环境变量new_poTypeId
+[2022-06-27 16:18:38,366] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,365] [log.py|__console] [line:37] INFO    : 已更新环境变量new_poTypeId
+[2022-06-27 16:18:38,368] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,369] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,368] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,369] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,369] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,369] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,370] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,370] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,370] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,370] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,370] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,370] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,371] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,371] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,371] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,448] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,448] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,448] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,448] [log.py|__console] [line:37] INFO    : 新增保存vobb po type
+[2022-06-27 16:18:38,448] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,448] [log.py|__console] [line:37] INFO    : 新增保存vobb po type
+[2022-06-27 16:18:38,449] [log.py|__console] [line:37] INFO    : poType重复
+[2022-06-27 16:18:38,449] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,449] [log.py|__console] [line:37] INFO    : poType重复
+[2022-06-27 16:18:38,456] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,457] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,456] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,457] [log.py|__console] [line:37] INFO    : 标题:poType重复
+[2022-06-27 16:18:38,457] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,457] [log.py|__console] [line:37] INFO    : 标题:poType重复
+[2022-06-27 16:18:38,458] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:38,458] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,458] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:38,458] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-27 16:18:38,458] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,458] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-06-27 16:18:38,459] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,459] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,459] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,459] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,460] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,459] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,460] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"InternetTest20220616","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,460] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,460] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"InternetTest20220616","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,460] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,461] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,460] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,501] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,502] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,501] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,503] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,504] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,503] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,504] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,504] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,504] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,505] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100129', 'message': 'vobb po type只能存在一个启用'}
+[2022-06-27 16:18:38,505] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,505] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100129', 'message': 'vobb po type只能存在一个启用'}
+[2022-06-27 16:18:38,506] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,506] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,506] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,506] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,507] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,506] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,507] [log.py|__console] [line:37] INFO    : 断言内容:01100052
+[2022-06-27 16:18:38,507] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,507] [log.py|__console] [line:37] INFO    : 断言内容:01100052
+[2022-06-27 16:18:38,507] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-06-27 16:18:38,508] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,507] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-06-27 16:18:38,508] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,508] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,508] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,509] [log.py|__console] [line:37] INFO    : 断言内容:po type name已存在
+[2022-06-27 16:18:38,509] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,509] [log.py|__console] [line:37] INFO    : 断言内容:po type name已存在
+[2022-06-27 16:18:38,509] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-06-27 16:18:38,509] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,509] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-06-27 16:18:38,510] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-06-27 16:18:38,511] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,510] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-06-27 16:18:38,511] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,512] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,511] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,565] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,565] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,565] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,566] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,566] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,566] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,567] [log.py|__console] [line:37] INFO    : 正常查询
+[2022-06-27 16:18:38,567] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,567] [log.py|__console] [line:37] INFO    : 正常查询
+[2022-06-27 16:18:38,573] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,574] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,573] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,574] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-27 16:18:38,574] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,574] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-27 16:18:38,575] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,575] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,575] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,575] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,575] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,575] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,576] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,576] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,576] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,576] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,576] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,576] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,577] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"","poTypeStatus":""}
+[2022-06-27 16:18:38,577] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,577] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"","poTypeStatus":""}
+[2022-06-27 16:18:38,577] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,577] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,577] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,606] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,607] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,606] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,607] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,608] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,607] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,608] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,608] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,608] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,609] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,609] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,609] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,609] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,610] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,609] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,611] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-27 16:18:38,612] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,611] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-06-27 16:18:38,612] [log.py|__console] [line:37] INFO    : 获取data.list[0].poTypeId
+[2022-06-27 16:18:38,612] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,612] [log.py|__console] [line:37] INFO    : 获取data.list[0].poTypeId
+[2022-06-27 16:18:38,612] [log.py|__console] [line:37] INFO    : 成功获取值120
+[2022-06-27 16:18:38,613] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,612] [log.py|__console] [line:37] INFO    : 成功获取值120
+[2022-06-27 16:18:38,657] [log.py|__console] [line:37] INFO    : 已更新环境变量poTypeId
+[2022-06-27 16:18:38,657] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,657] [log.py|__console] [line:37] INFO    : 已更新环境变量poTypeId
+[2022-06-27 16:18:38,658] [log.py|__console] [line:37] INFO    : 获取data.list[0].poType
+[2022-06-27 16:18:38,658] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,658] [log.py|__console] [line:37] INFO    : 获取data.list[0].poType
+[2022-06-27 16:18:38,658] [log.py|__console] [line:37] INFO    : 成功获取值RhH6kPXGOu
+[2022-06-27 16:18:38,659] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,658] [log.py|__console] [line:37] INFO    : 成功获取值RhH6kPXGOu
+[2022-06-27 16:18:38,727] [log.py|__console] [line:37] INFO    : 已更新环境变量poType
+[2022-06-27 16:18:38,727] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,727] [log.py|__console] [line:37] INFO    : 已更新环境变量poType
+[2022-06-27 16:18:38,727] [log.py|__console] [line:37] INFO    : 获取data.list[0].poTypeStatus
+[2022-06-27 16:18:38,728] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,727] [log.py|__console] [line:37] INFO    : 获取data.list[0].poTypeStatus
+[2022-06-27 16:18:38,728] [log.py|__console] [line:37] INFO    : 成功获取值enable
+[2022-06-27 16:18:38,729] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,728] [log.py|__console] [line:37] INFO    : 成功获取值enable
+[2022-06-27 16:18:38,732] [log.py|__console] [line:37] INFO    : 已更新环境变量poTypeStatus
+[2022-06-27 16:18:38,732] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,732] [log.py|__console] [line:37] INFO    : 已更新环境变量poTypeStatus
+[2022-06-27 16:18:38,733] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,733] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,733] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,733] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,734] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,733] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,735] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,735] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,736] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,735] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,801] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,801] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,801] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,802] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,802] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,802] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,802] [log.py|__console] [line:37] INFO    : 根据poType查询
+[2022-06-27 16:18:38,802] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,802] [log.py|__console] [line:37] INFO    : 根据poType查询
+[2022-06-27 16:18:38,811] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,812] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,811] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,812] [log.py|__console] [line:37] INFO    : 标题:根据poType查询
+[2022-06-27 16:18:38,812] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,812] [log.py|__console] [line:37] INFO    : 标题:根据poType查询
+[2022-06-27 16:18:38,812] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,813] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,812] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,813] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,813] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,813] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,814] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,814] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,814] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,814] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,814] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,814] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,815] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"RhH6kPXGOu","poTypeStatus":""}
+[2022-06-27 16:18:38,815] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,815] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"RhH6kPXGOu","poTypeStatus":""}
+[2022-06-27 16:18:38,815] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,815] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,815] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,851] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,852] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,851] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,852] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,852] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,852] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,853] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,853] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,853] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,853] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,854] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,853] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,854] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,854] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,854] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,855] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,855] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,855] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,856] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,856] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,856] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,856] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,856] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,856] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,857] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,857] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,857] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,857] [log.py|__console] [line:37] INFO    : 断言内容:RhH6kPXGOu
+[2022-06-27 16:18:38,857] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,857] [log.py|__console] [line:37] INFO    : 断言内容:RhH6kPXGOu
+[2022-06-27 16:18:38,858] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,858] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,858] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,858] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,859] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,858] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,859] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,859] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,859] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,928] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,929] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,928] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:38,929] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,929] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,929] [log.py|__console] [line:37] INFO    : 查看vobb PO Type列表
+[2022-06-27 16:18:38,929] [log.py|__console] [line:37] INFO    : 根据poTypeStatus查询
+[2022-06-27 16:18:38,930] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,929] [log.py|__console] [line:37] INFO    : 根据poTypeStatus查询
+[2022-06-27 16:18:38,938] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,939] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,938] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:38,939] [log.py|__console] [line:37] INFO    : 标题:根据poTypeStatus查询
+[2022-06-27 16:18:38,939] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,939] [log.py|__console] [line:37] INFO    : 标题:根据poTypeStatus查询
+[2022-06-27 16:18:38,940] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,940] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,940] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/page
+[2022-06-27 16:18:38,940] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,940] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,940] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:38,941] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,941] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,941] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:38,941] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,941] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,941] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:38,942] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,942] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,942] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"poType":"","poTypeStatus":"enable"}
+[2022-06-27 16:18:38,942] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,942] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,942] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:38,977] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,977] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,977] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:38,978] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,978] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,978] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:38,979] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,979] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,979] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:38,979] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,980] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,979] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 1, 'list': [{'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:38,980] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,980] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,980] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:38,981] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,981] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,981] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,981] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,981] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,981] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:38,982] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,982] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,982] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,983] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,983] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,983] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:38,984] [log.py|__console] [line:37] INFO    : 断言内容:enable
+[2022-06-27 16:18:38,984] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,984] [log.py|__console] [line:37] INFO    : 断言内容:enable
+[2022-06-27 16:18:38,984] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,985] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,984] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:38,985] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,985] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,985] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:38,986] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:38,986] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:38,986] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,066] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,066] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,066] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,067] [log.py|__console] [line:37] INFO    : 查看vobb PO Type
+[2022-06-27 16:18:39,067] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,067] [log.py|__console] [line:37] INFO    : 查看vobb PO Type
+[2022-06-27 16:18:39,067] [log.py|__console] [line:37] INFO    : 正常查询
+[2022-06-27 16:18:39,067] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,067] [log.py|__console] [line:37] INFO    : 正常查询
+[2022-06-27 16:18:39,077] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,077] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,077] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,077] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-27 16:18:39,078] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,077] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-06-27 16:18:39,078] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/120
+[2022-06-27 16:18:39,078] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,078] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/120
+[2022-06-27 16:18:39,079] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:39,079] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,079] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-06-27 16:18:39,079] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,079] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,079] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,080] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,080] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,080] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,080] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-27 16:18:39,080] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,080] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-27 16:18:39,081] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,081] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,081] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,101] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,101] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,101] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,101] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,102] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,101] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,102] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,103] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,102] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,103] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,103] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,103] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'poTypeId': 120, 'businessType': 'vobb', 'poType': 'RhH6kPXGOu', 'poTypeStatus': 'enable'}, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,104] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,104] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,104] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,104] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,105] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,104] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,105] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,105] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,105] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,106] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,106] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,106] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,106] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,107] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,106] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,107] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,107] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,107] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,165] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,165] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,165] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,166] [log.py|__console] [line:37] INFO    : 更新vobb PO Type
+[2022-06-27 16:18:39,166] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,166] [log.py|__console] [line:37] INFO    : 更新vobb PO Type
+[2022-06-27 16:18:39,166] [log.py|__console] [line:37] INFO    : 正常保存
+[2022-06-27 16:18:39,166] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,166] [log.py|__console] [line:37] INFO    : 正常保存
+[2022-06-27 16:18:39,175] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,175] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,175] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,175] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-27 16:18:39,176] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,175] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-06-27 16:18:39,176] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:39,176] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,176] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:39,177] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-27 16:18:39,178] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,177] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-27 16:18:39,178] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,178] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,178] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,179] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,179] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,179] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,179] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":"120","businessType":"vobb","poType":"Y822xQz1ar","poTypeStatus":"disable"}
+[2022-06-27 16:18:39,179] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,179] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":"120","businessType":"vobb","poType":"Y822xQz1ar","poTypeStatus":"disable"}
+[2022-06-27 16:18:39,180] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,180] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,180] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,272] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,273] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,272] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,273] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,273] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,273] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,274] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,274] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,274] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,275] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,275] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,275] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,276] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,276] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,276] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,276] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,276] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,276] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,277] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,277] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,277] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,277] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,278] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,277] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,278] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,279] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,278] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,279] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,279] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,279] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,325] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,326] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,325] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,326] [log.py|__console] [line:37] INFO    : 更新vobb PO Type
+[2022-06-27 16:18:39,326] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,326] [log.py|__console] [line:37] INFO    : 更新vobb PO Type
+[2022-06-27 16:18:39,327] [log.py|__console] [line:37] INFO    : poType重复
+[2022-06-27 16:18:39,327] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,327] [log.py|__console] [line:37] INFO    : poType重复
+[2022-06-27 16:18:39,336] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,337] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,336] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,337] [log.py|__console] [line:37] INFO    : 标题:poType重复
+[2022-06-27 16:18:39,337] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,337] [log.py|__console] [line:37] INFO    : 标题:poType重复
+[2022-06-27 16:18:39,338] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:39,338] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,338] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-06-27 16:18:39,338] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-27 16:18:39,338] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,338] [log.py|__console] [line:37] INFO    : 请求方法:PUT
+[2022-06-27 16:18:39,339] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,339] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,339] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,339] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,340] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,339] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,340] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":"120","businessType":"vobb","poType":"InternetTest20220616","poTypeStatus":"enable"}
+[2022-06-27 16:18:39,340] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,340] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":"120","businessType":"vobb","poType":"InternetTest20220616","poTypeStatus":"enable"}
+[2022-06-27 16:18:39,340] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,341] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,340] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,375] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,376] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,375] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,376] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,376] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,376] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,377] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,377] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,377] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,378] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100052', 'message': 'po type name已存在'}
+[2022-06-27 16:18:39,378] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,378] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100052', 'message': 'po type name已存在'}
+[2022-06-27 16:18:39,378] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,379] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,378] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,379] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,379] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,379] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,380] [log.py|__console] [line:37] INFO    : 断言内容:01100052
+[2022-06-27 16:18:39,380] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,380] [log.py|__console] [line:37] INFO    : 断言内容:01100052
+[2022-06-27 16:18:39,380] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,380] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,380] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,381] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,381] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,381] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,381] [log.py|__console] [line:37] INFO    : 断言内容:po type name已存在
+[2022-06-27 16:18:39,382] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,381] [log.py|__console] [line:37] INFO    : 断言内容:po type name已存在
+[2022-06-27 16:18:39,382] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,382] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,382] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,383] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,383] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,383] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,383] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,384] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,383] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,501] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,501] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,501] [log.py|__console] [line:37] INFO    : VOBB PO Type
+[2022-06-27 16:18:39,503] [log.py|__console] [line:37] INFO    : 删除vobb PO Type
+[2022-06-27 16:18:39,503] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,503] [log.py|__console] [line:37] INFO    : 删除vobb PO Type
+[2022-06-27 16:18:39,503] [log.py|__console] [line:37] INFO    : 正常删除
+[2022-06-27 16:18:39,504] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,503] [log.py|__console] [line:37] INFO    : 正常删除
+[2022-06-27 16:18:39,516] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,516] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,516] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-06-27 16:18:39,517] [log.py|__console] [line:37] INFO    : 标题:正常删除
+[2022-06-27 16:18:39,517] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,517] [log.py|__console] [line:37] INFO    : 标题:正常删除
+[2022-06-27 16:18:39,517] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/120
+[2022-06-27 16:18:39,517] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,517] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType/120
+[2022-06-27 16:18:39,518] [log.py|__console] [line:37] INFO    : 请求方法:DELETE
+[2022-06-27 16:18:39,518] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,518] [log.py|__console] [line:37] INFO    : 请求方法:DELETE
+[2022-06-27 16:18:39,518] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,518] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,518] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU1ODc4NjUxMjQ1In0.uhcLMt9ZjWKK9Gn69K7ZY99YSs6A0NicfH1uOg51AVLBbkeKiuMXybAjNG7D3kdXf-IVUDeiC-ZJQXNOxXsNMg"}
+[2022-06-27 16:18:39,519] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,519] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,519] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-06-27 16:18:39,520] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-27 16:18:39,521] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,520] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-06-27 16:18:39,523] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,523] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,523] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-06-27 16:18:39,575] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,575] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,575] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-06-27 16:18:39,576] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,576] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,576] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Mon, 27 Jun 2022 08:17:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-06-27 16:18:39,576] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,577] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,576] [log.py|__console] [line:37] INFO    : 响应头
+[2022-06-27 16:18:39,577] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,577] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,577] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-06-27 16:18:39,578] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,578] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,578] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-06-27 16:18:39,578] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,578] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,578] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-06-27 16:18:39,579] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,579] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,579] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-06-27 16:18:39,579] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,579] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,579] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-06-27 16:18:39,580] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,580] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,580] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-06-27 16:18:39,580] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-06-27 16:18:39,580] [log.py|write] [line:232] WARNING : [2022-06-27 16:18:39,580] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

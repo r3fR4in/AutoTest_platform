@@ -376,6 +376,8 @@ def execute_apitest_task(task_id):
     log = Log('ApiTaskLog')
     # celery传参不能传实例，所以传任务id进来，再用任务id查询对应实例
     apiTestTask = ApiTestTask.query.filter(ApiTestTask.id == task_id).first()
+    apiTestTask.status = 1
+    db.session.commit()
     try:
         apitest_details = ApiTestDetail.query.filter(ApiTestDetail.task_id == task_id).order_by(ApiTestDetail.id).all()
         if apitest_details is not None:

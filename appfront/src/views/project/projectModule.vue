@@ -28,23 +28,25 @@
       <el-row :gutter="20">
         <el-col :span="4">
           <el-card class="box-card;">
-            <el-input
-              size="small"
-              placeholder="输入关键字进行过滤"
-              v-model="filterText">
-            </el-input>
-            <div style="margin: 20px;"></div>
-            <el-tree
-              class="filter-tree"
-              :data="listData"
-              :props="defaultProps"
-              node-key="id"
-              default-expand-all
-              :highlight-current="true"
-              :filter-node-method="filterNode"
-              @node-click="handleNodeClick"
-              ref="tree">
-            </el-tree>
+            <el-scrollbar style="height: 700px;overflow-wrap:break-word;" wrap-style="overflow-x:auto;">
+              <el-input
+                size="small"
+                placeholder="输入关键字进行过滤"
+                v-model="filterText">
+              </el-input>
+              <div style="margin: 20px;"></div>
+              <el-tree
+                class="filter-tree"
+                :data="listData"
+                :props="defaultProps"
+                node-key="id"
+                default-expand-all
+                :highlight-current="true"
+                :filter-node-method="filterNode"
+                @node-click="handleNodeClick"
+                ref="tree">
+              </el-tree>
+            </el-scrollbar>
           </el-card>
         </el-col>
         <el-col :span="20">

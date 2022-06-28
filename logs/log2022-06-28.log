@@ -1,0 +1,7 @@
+[2022-06-28 09:32:05,019] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
