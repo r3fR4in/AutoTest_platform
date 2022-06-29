@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/project/projectModule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/project/projectModule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/setting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/api_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/api_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debugLog2022-06-24.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debugLog2022-06-24.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.f0fd69936636680303792cd5def0ef0c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.f0fd69936636680303792cd5def0ef0c.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.8a23329efd514db712c3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.8a23329efd514db712c3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingFailReasonAnalysisReport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingFailReasonAnalysisReport.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/SQLSETTING.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/SQLSETTING.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.702b17c4e98ce2bcf7d7020ca277b62d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.702b17c4e98ce2bcf7d7020ca277b62d.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.be10294707bae9d584d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app.be10294707bae9d584d4.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AutoTest_platform$manage.coverage" NAME="manage Coverage Results" MODIFIED="1652237412375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$funcUtil.coverage" NAME="funcUtil Coverage Results" MODIFIED="1654852165254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
-    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1656408453883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AutoTest_platform$AutoTest_platform.coverage" NAME="AutoTest_platform Coverage Results" MODIFIED="1656486219010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1652236993701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$assert.coverage" NAME="assert Coverage Results" MODIFIED="1624003849148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/AutoTest_platform$ttt.coverage" NAME="ttt Coverage Results" MODIFIED="1630660030949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -74,16 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/setting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -91,10 +80,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/engine/api_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1783">
-              <caret line="379" column="23" selection-start-line="379" selection-start-column="23" selection-end-line="379" selection-end-column="23" />
+            <state relative-caret-position="-137">
+              <caret line="172" column="42" selection-start-line="172" selection-start-column="42" selection-end-line="172" selection-end-column="42" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/submittedTestsModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="35" column="24" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="218" column="23" lean-forward="true" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingFailReasonAnalysisReport.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="195" column="62" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#2336#2418#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/appfront/src/views/index.vue" />
         <option value="$PROJECT_DIR$/appfront/src/main.js" />
         <option value="$PROJECT_DIR$/migrations/versions/b4230b119f17_.py" />
         <option value="$PROJECT_DIR$/models/submittedTestsModel.py" />
@@ -189,9 +225,7 @@
         <option value="$PROJECT_DIR$/engine/send_requests.py" />
         <option value="$PROJECT_DIR$/utils/sshConnect.py" />
         <option value="$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py" />
-        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
         <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py" />
         <option value="$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingRankReport.vue" />
         <option value="$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue" />
         <option value="$PROJECT_DIR$/views/apiTest/environmentVariableView.py" />
@@ -200,12 +234,15 @@
         <option value="$PROJECT_DIR$/appfront/src/views/apiTest/apiManagement.vue" />
         <option value="$PROJECT_DIR$/appfront/src/views/project/projectModule.vue" />
         <option value="$PROJECT_DIR$/config/setting.py" />
+        <option value="$PROJECT_DIR$/config/SQLSETTING.py" />
+        <option value="$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingFailReasonAnalysisReport.vue" />
+        <option value="$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2125" />
-    <option name="y" value="-14" />
+    <option name="x" value="1957" />
+    <option name="y" value="-8" />
     <option name="width" value="654" />
     <option name="height" value="447" />
   </component>
@@ -686,7 +723,7 @@
       <workItem from="1650510795497" duration="81218000" />
       <workItem from="1651825161847" duration="77549000" />
       <workItem from="1653457309476" duration="123922000" />
-      <workItem from="1655704312317" duration="58745000" />
+      <workItem from="1655704312317" duration="73261000" />
     </task>
     <task id="LOCAL-00001" summary="隨便更更">
       <created>1641460444805</created>
@@ -713,7 +750,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1574940000" />
+    <option name="totallyTimeSpent" value="1589456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,6 +848,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="修复bug" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.FlaskServer">
         <watch expression="e" language="Python" />
@@ -835,45 +881,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/22604837/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="929" column="6" selection-start-line="929" selection-start-column="6" selection-end-line="929" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/project/projectEnvironmentView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="110" column="30" lean-forward="true" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/errorCode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="178" column="13" selection-start-line="178" selection-start-column="13" selection-end-line="178" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/node_modules/element-ui/packages/infinite-scroll/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/project/project.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/views/apiTest/apiTestReport.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1054,26 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="42" column="92" lean-forward="true" selection-start-line="42" selection-start-column="92" selection-end-line="42" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
-          <caret line="116" column="163" selection-start-line="116" selection-start-column="163" selection-end-line="116" selection-end-column="163" />
-          <folding>
-            <element signature="e#16262#16314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4097">
@@ -1131,13 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1236,27 +1216,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/api_test.py">
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1783">
-          <caret line="379" column="23" selection-start-line="379" selection-start-column="23" selection-end-line="379" selection-end-column="23" />
+        <state relative-caret-position="100">
+          <caret line="23" column="97" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#16262#16314#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project/projectModuleView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/projectModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/setting.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="189">
+          <caret line="315" column="14" selection-start-line="315" selection-start-column="14" selection-end-line="315" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/node_modules/element-ui/packages/table/src/table.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5871">
+          <caret line="309" column="11" selection-start-line="309" selection-start-column="11" selection-end-line="309" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/api_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="172" column="42" selection-start-line="172" selection-start-column="42" selection-end-line="172" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/smokeTestingFailReasonAnalysisReport.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="195" column="62" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#2336#2418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/submittedTestsModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/SQLSETTING.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsReportView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="218" column="23" lean-forward="true" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

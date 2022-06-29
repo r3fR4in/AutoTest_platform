@@ -1,0 +1,57 @@
+[2022-06-29 11:41:34,278] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsReportView.py", line 84, in smokeTesting_fail_reason_analysis_report
+    return Response(json.dumps(output), mimetype='application/json')
+  File "D:\ProgramFiles(x86)\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Row is not JSON serializable
+
+[2022-06-29 11:43:36,151] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsReportView.py", line 84, in smokeTesting_fail_reason_analysis_report
+    return Response(json.dumps(output), mimetype='application/json')
+  File "D:\ProgramFiles(x86)\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Decimal is not JSON serializable
+
+[2022-06-29 11:45:53,647] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsReportView.py", line 84, in smokeTesting_fail_reason_analysis_report
+    return Response(json.dumps(output), mimetype='application/json')
+  File "D:\ProgramFiles(x86)\python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\ProgramFiles(x86)\python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Decimal is not JSON serializable
+

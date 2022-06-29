@@ -21,6 +21,16 @@
           end-placeholder="结束日期">
         </el-date-picker>
       </el-form-item>
+      <el-form-item label="统计维度：">
+        <el-select size="small" v-model="dimension_value" placeholder="请选择">
+          <el-option
+            v-for="item in dimension_options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item>
         <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
       </el-form-item>
@@ -34,6 +44,8 @@
         <!--列表-->
         <el-table size="small" :data="value" highlight-current-row v-loading="loading" :span-method="objectSpanMethod" border element-loading-text="拼命加载中" style="width: 100%;">
           <el-table-column prop="project_id" label="项目id" v-if=false>
+          </el-table-column>
+          <el-table-column prop="rowspan" label="rowspan" v-if=false>
           </el-table-column>
           <el-table-column sortable prop="smoke_testing_fail_reason_category" label="原因分类" min-width="150">
           </el-table-column>
@@ -59,6 +71,14 @@ export default {
   data() {
     return {
       date: '',
+      dimension_value: '1',
+      dimension_options: [{
+        value: '1',
+        label: '按项目'
+      },{
+        value: '2',
+        label: '按全部'
+      }],
       list: '',
       categoryArr:[], //第一列做合并操作时存放的数组变量
       categoryPos: 0  //上面数组的下标值
@@ -79,7 +99,8 @@ export default {
     search() {
       let param = {
         start_date: this.date[0],
-        end_date: this.date[1]
+        end_date: this.date[1],
+        dimension: this.dimension_value
       };
       smokeTestingFailReasonAnalysisReport(param)
         .then(res => {
@@ -143,57 +164,58 @@ export default {
            let dic = { value: item.smoke_testing_fail_reason_detail_num, name: item.smoke_testing_fail_reason_detail };
            option.series[0].data.push(dic);
         });
-        console.log(option);
+        // console.log(option);
         myChart.setOption(option, true);
       }
-    }
-    // merageInit() {
+    },
+    // mergeInit() {
     //     this.categoryArr = [];
     //     this.categoryPos = 0;
     // },
-    // merage(index) {
-    //   this.merageInit();
-    //   console.log(this.$refs.list);
-    //   for (let i = 0; i < this.$refs.list[index].length; i += 1) {
-    //     if (i === 0){
-    //       // 第一行必须存在
-    //       this.categoryArr.push(1);
-    //       this.categoryPos = 0;
-    //     } else {
-    //       // 判断当前元素与上一个元素是否相同,eg：this.categoryPos 是 this.categoryArr
-    //       // 第一列 下面的是eslint的不限制语法
-    //       // eslint-disable-next-line no-lonely-if
-    //       if (this.$refs.list[index][i].smoke_testing_fail_reason_category === this.$refs.list[index][i - 1].smoke_testing_fail_reason_category) {
-    //         this.categoryArr[this.categoryPos] += 1;
-    //         this.categoryArr.push(0);
-    //       } else {
+    // merge(data) {
+    //   this.mergeInit();
+    //   if (data.length > 0) {
+    //     for (let i = 0; i < data.len(); i++) {
+    //       if (i === 0) {
+    //         //第一行必须存在，以第一行为基准
     //         this.categoryArr.push(1);
-    //         this.categoryPos = i;
+    //         this.categoryPos = 0;
+    //       } else {
+    //         // 判断当前元素与上一元素是否相同
+    //         if (data[i].smoke_testing_fail_reason_category === data[i - 1].smoke_testing_fail_reason_category){
+    //           this.categoryArr[this.categoryPos] += 1;
+    //           this.categoryArr.push(0);
+    //         } else {
+    //           this.categoryArr.push(1);
+    //           this.categoryPos = i;
+    //         }
     //       }
     //     }
     //   }
     // },
-    // objectSpanMethod({ row, column, rowIndex, columnIndex }) {
-    //   if (columnIndex === 0) {
-    //     // 第一列的合并方法
-    //     const row1 = this.categoryArr[rowIndex];
-    //     return {
-    //       rowspan: row1,
-    //       colspan: 1
-    //     };
-    //   } else if (columnIndex === 3){
-    //     const row1 = this.categoryArr[rowIndex];
-    //     return {
-    //       rowspan: row1,
-    //       colspan: 1
-    //     };
-    //   } else {
-    //     return {
-    //       rowspan: 0,
-    //       colspan: 0
-    //     };
-    //   }
-    // }
+    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+      if (columnIndex === 0) {
+        // 第一列的合并方法
+        const row1 = row.rowspan;
+        const col1 = row1 > 0 ? 1 : 0;
+        return {
+          rowspan: row1,
+          colspan: col1
+        };
+      } else if (columnIndex === 4){
+        const row1 = row.rowspan;
+        const col1 = row1 > 0 ? 1 : 0;
+        return {
+          rowspan: row1,
+          colspan: col1
+        };
+      } else {
+        return {
+          rowspan: 1,
+          colspan: 1
+        };
+      }
+    }
   }
 }
 </script>
