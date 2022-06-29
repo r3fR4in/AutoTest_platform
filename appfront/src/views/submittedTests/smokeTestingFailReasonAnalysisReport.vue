@@ -42,7 +42,7 @@
         <div style="margin-top: 20px;"></div>
         <div :id="'echarts_box_'+ key" style="width: 90%;height: 360px"></div>
         <!--列表-->
-        <el-table size="small" :data="value" highlight-current-row v-loading="loading" :span-method="objectSpanMethod" border element-loading-text="拼命加载中" style="width: 100%;">
+        <el-table size="small" :data="value" v-loading="loading" :span-method="objectSpanMethod" border element-loading-text="拼命加载中" style="width: 100%;">
           <el-table-column prop="project_id" label="项目id" v-if=false>
           </el-table-column>
           <el-table-column prop="rowspan" label="rowspan" v-if=false>
