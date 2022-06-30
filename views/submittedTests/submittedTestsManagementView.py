@@ -33,6 +33,8 @@ def list_submittedTests():
     param_test_status = request.args.get('test_status')
     param_smoke_testing_result = request.args.get('smoke_testing_result')
     param_test_result = request.args.get('test_result')
+    param_start_date = request.args.get('start_date')
+    param_end_date = request.args.get('end_date')
 
     filterList = []
 
@@ -59,6 +61,9 @@ def list_submittedTests():
         filterList.append(SubmittedTests.smoke_testing_result == int(param_smoke_testing_result))
     if param_test_result is not None and param_test_result != '':
         filterList.append(SubmittedTests.test_result == int(param_test_result))
+    if param_start_date is not None and param_start_date != '' and param_end_date is not None and param_end_date != '':
+        filterList.append(SubmittedTests.submitted_date >= param_start_date)
+        filterList.append(SubmittedTests.submitted_date <= param_end_date)
 
     submittedTests = SubmittedTests.query.filter(*filterList).order_by(SubmittedTests.id.desc()).paginate(int(param_currentPage), int(param_pageSize)).items
     num = SubmittedTests.query.filter(*filterList).count()

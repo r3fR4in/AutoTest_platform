@@ -8,10 +8,10 @@
     <!-- 搜索筛选 -->
     <el-form :inline="true" :model="formInline" class="user-search">
       <el-form-item label="项目名称：">
-        <el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync"></el-autocomplete>
+        <el-autocomplete size="small" v-model="formInline.projectName" placeholder="输入项目名称" @select="handleSelect" :fetch-suggestions="querySearchAsync" style="width: 150px"></el-autocomplete>
       </el-form-item>
       <el-form-item label="测试状态：">
-        <el-select size="small" v-model="test_status_value" clearable placeholder="请选择">
+        <el-select size="small" v-model="test_status_value" clearable placeholder="请选择" style="width: 100px">
           <el-option
             v-for="item in test_status_option"
             :key="item.value"
@@ -21,7 +21,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="冒烟测试结果：">
-        <el-select size="small" v-model="smoke_testing_result_value" clearable placeholder="请选择">
+        <el-select size="small" v-model="smoke_testing_result_value" clearable placeholder="请选择" style="width: 120px">
           <el-option
             v-for="item in smoke_testing_result_option"
             :key="item.value"
@@ -31,7 +31,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="最终测试结果：">
-        <el-select size="small" v-model="test_result_value" clearable placeholder="请选择">
+        <el-select size="small" v-model="test_result_value" clearable placeholder="请选择" style="width: 120px">
           <el-option
             v-for="item in test_result_option"
             :key="item.value"
@@ -39,6 +39,18 @@
             :value="item.value">
           </el-option>
         </el-select>
+      </el-form-item>
+      <el-form-item label="申请日期：">
+        <el-date-picker
+          v-model="formInline.date"
+          size="small"
+          type="daterange"
+          value-format="yyyy-MM-dd"
+          unlink-panels
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期">
+        </el-date-picker>
       </el-form-item>
       <el-form-item>
         <el-button size="small" type="primary" icon="el-icon-search" @click="search">搜索</el-button>
@@ -151,7 +163,7 @@
         <!--</el-form-item>-->
         <el-form-item label="提测负责人" prop="submitted_test_director">
           <el-select size="small" v-model="editForm.submitted_test_director_id" filterable placeholder="请选择提测负责人" @change ="selectChange1"
-                     :disabled=editFormControl.submitted_test_director_disabled>
+                     :disabled=editFormControl.submitted_test_director_disabled :filter-method="pinyinMatch" @focus="resetOptions">
             <el-option
               v-for="item in user_options"
               :key="item.value"
@@ -165,7 +177,7 @@
         <!--</el-form-item>-->
         <el-form-item label="缺陷修复处理人员" prop="fix_bug_director">
           <el-select size="small" v-model="editForm.fix_bug_director_id" filterable multiple placeholder="请选择缺陷修复处理人员" @change ="selectChange2"
-                     :disabled=editFormControl.fix_bug_director_disabled>
+                     :disabled=editFormControl.fix_bug_director_disabled :filter-method="pinyinMatch" @focus="resetOptions">
             <el-option
               v-for="item in user_options"
               :key="item.value"
@@ -238,7 +250,8 @@
           <!--<el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :readonly=editFormControl.test_director_disabled></el-input>-->
         <!--</el-form-item>-->
         <el-form-item label="测试负责人" prop="test_director">
-          <el-select size="small" v-model="editForm.test_director_id" filterable placeholder="请选择测试负责人" @change="selectChange3" :disabled=editFormControl.test_director_disabled>
+          <el-select size="small" v-model="editForm.test_director_id" filterable placeholder="请选择测试负责人" @change="selectChange3"
+                     :disabled=editFormControl.test_director_disabled :filter-method="pinyinMatch" @focus="resetOptions">
             <el-option
               v-for="item in user_options"
               :key="item.value"
@@ -347,6 +360,7 @@
   import {getAllProject} from '../../api/projectApi'
   import {getUserOptions} from '../../api/userMG'
   import {addSubmittedTest, deleteSubmittedTest, deleteUploadFile, downloadFile, editSubmittedTest, getReasonOption, getSubmittedTestOptions, saveSmokeTestingResult, saveTestResult, submittedTestsList} from '../../api/submittedTestsApi'
+  import pinyin from 'pinyin-match'
 
   export default {
   data() {
@@ -412,6 +426,7 @@
         file_name: ''
       },
       user_options: '',
+      copy_user_options: '',
       smokeTestFormVisible: false,
       smokeTestForm: {
         id: '',
@@ -439,6 +454,7 @@
         page: 1,
         limit: 10,
         projectName: '',
+        date: ''
       },
       smoke_testing_result_option: '',
       smoke_testing_result_value: '',
@@ -478,6 +494,7 @@
     getUserOptions(){
       getUserOptions().then(res => {
         this.user_options = res.data;
+        this.copy_user_options = res.data;
       })
     },
     // 获取项目列表
@@ -485,14 +502,29 @@
       this.loading = true;
       this.pageparm.currentPage = this.formInline.page;
       this.pageparm.pageSize = this.formInline.limit;
-      parameter = {
-        currentPage: this.pageparm.currentPage,
-        pageSize: this.pageparm.pageSize,
-        projectName : this.formInline.projectName,
-        test_status: this.test_status_value,
-        smoke_testing_result: this.smoke_testing_result_value,
-        test_result: this.test_result_value
-      };
+      if (this.formInline.date === undefined || this.formInline.date === null){
+        parameter = {
+          currentPage: this.pageparm.currentPage,
+          pageSize: this.pageparm.pageSize,
+          projectName : this.formInline.projectName,
+          test_status: this.test_status_value,
+          smoke_testing_result: this.smoke_testing_result_value,
+          test_result: this.test_result_value,
+          start_date: '',
+          end_date: ''
+        };
+      } else {
+        parameter = {
+          currentPage: this.pageparm.currentPage,
+          pageSize: this.pageparm.pageSize,
+          projectName : this.formInline.projectName,
+          test_status: this.test_status_value,
+          smoke_testing_result: this.smoke_testing_result_value,
+          test_result: this.test_result_value,
+          start_date: this.formInline.date[0],
+          end_date: this.formInline.date[1]
+        };
+      }
       submittedTestsList(parameter)
         .then(res => {
             this.loading = false;
@@ -1003,6 +1035,23 @@
     },
     selectChange3(val) {
       this.editForm.test_director = this.user_options.find(item => item.value === val).label;
+    },
+    pinyinMatch(val) {
+      if (val) {
+        let result = [];//声明一个空数组保存搜索内容
+        this.copy_user_options.forEach(e => {//循环判断内容和拼音首字母是否匹配
+          let m = pinyin.match(e.label, val);
+          if (m) {
+            result.push(e)
+          }
+        });
+        this.user_options = result; //返回匹配的数组
+      } else {
+        this.user_options = this.copy_user_options //未输入返回开始copy的原数组
+      }
+    },
+    resetOptions(){
+      this.user_options = this.copy_user_options;
     }
   }
 }
