@@ -31,4 +31,6 @@ export const projectPermissionsList = (params) => { return getReq("/user/project
 export const projectPermissionsSave = (params) => { return postReq("/user/projectPermissionsSave", params) };
 // 保存项目权限
 export const modifyPwd = (params) => { return postReq("/user/modifyPwd", params) };
+// 获取用户下拉选项
+export const getUserOptions = (params) => { return getReq("/user/getUserOptions", params) };
 

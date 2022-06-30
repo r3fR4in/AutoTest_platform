@@ -73,6 +73,9 @@ def list_submittedTests():
         dict['projectName'] = p_name
         # 删除字典中的project对象，否则转json会报错
         del dict['project']
+        # 将fix_bug_director_id从str转成list
+        if dict['fix_bug_director_id'] != '' and dict['fix_bug_director_id'] is not None:
+            dict['fix_bug_director_id'] = ast.literal_eval(dict['fix_bug_director_id'])
         # 将文件名从字符串转成列表
         if dict['file_name'] != '':
             if dict['file_name'] is None:
@@ -114,7 +117,9 @@ def add_submittedTest():
     else:
         param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     # param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_submitted_test_director_id = data['submitted_test_director_id']
     param_submitted_test_director = data['submitted_test_director']
+    param_fix_bug_director_id = data['fix_bug_director_id']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
     param_test_url = data['test_url']
@@ -124,6 +129,7 @@ def add_submittedTest():
     param_config_url = data['config_url']
     param_script_url = data['script_url']
     param_compatibility_desc = data['compatibility_desc']
+    param_test_director_id = data['test_director_id']
     param_test_director = data['test_director']
     param_file_name = data['file_name']
 
@@ -136,8 +142,9 @@ def add_submittedTest():
                                          submitted_date=param_submitted_date, test_date=param_test_date, online_date=param_online_date, fix_bug_director=param_fix_bug_director,
                                          self_test_report_url=param_self_test_report_url, test_url=param_test_url, test_scope=param_test_scope, influence_scope=param_influence_scope,
                                          points_for_attention=param_points_for_attention, config_url=param_config_url, script_url=param_script_url, compatibility_desc=param_compatibility_desc,
-                                         submitted_test_director=param_submitted_test_director, test_director=param_test_director,
-                                         test_status=1, smoke_testing_result=0, test_result=0, file_name=str(param_file_name))
+                                         submitted_test_director=param_submitted_test_director, test_director=param_test_director, test_status=1, smoke_testing_result=0, test_result=0,
+                                         file_name=str(param_file_name), submitted_test_director_id=param_submitted_test_director_id, fix_bug_director_id=str(param_fix_bug_director_id),
+                                         test_director_id=param_test_director_id)
         db.session.add(submittedTests1)
         db.session.commit()
         output = {'code': 1000, 'msg': '保存成功', 'exception': None, 'success': True}
@@ -160,7 +167,9 @@ def edit_submittedTest():
     else:
         param_online_date = datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
     # param_online_date = data['online_date'] if data['online_date'] == '' or data['online_date'] is None else datetime.datetime.strptime(data['online_date'], '%Y-%m-%d')
+    param_submitted_test_director_id = data['submitted_test_director_id']
     param_submitted_test_director = data['submitted_test_director']
+    param_fix_bug_director_id = data['fix_bug_director_id']
     param_fix_bug_director = data['fix_bug_director']
     param_self_test_report_url = data['self_test_report_url']
     param_test_url = data['test_url']
@@ -170,6 +179,7 @@ def edit_submittedTest():
     param_config_url = data['config_url']
     param_script_url = data['script_url']
     param_compatibility_desc = data['compatibility_desc']
+    param_test_director_id = data['test_director_id']
     param_test_director = data['test_director']
 
     if not param_id:
@@ -180,7 +190,9 @@ def edit_submittedTest():
     submittedTests1.submitted_date = param_submitted_date
     submittedTests1.test_date = param_test_date
     submittedTests1.online_date = param_online_date
+    submittedTests1.submitted_test_director_id = param_submitted_test_director_id
     submittedTests1.submitted_test_director = param_submitted_test_director
+    submittedTests1.fix_bug_director_id = str(param_fix_bug_director_id)
     submittedTests1.fix_bug_director = param_fix_bug_director
     submittedTests1.self_test_report_url = param_self_test_report_url
     submittedTests1.test_url = param_test_url
@@ -190,6 +202,7 @@ def edit_submittedTest():
     submittedTests1.config_url = param_config_url
     submittedTests1.script_url = param_script_url
     submittedTests1.compatibility_desc = param_compatibility_desc
+    submittedTests1.test_director_id = param_test_director_id
     submittedTests1.test_director = param_test_director
     db.session.commit()
     output = {'code': 1000, 'msg': '保存成功', 'exception': None, 'success': True}

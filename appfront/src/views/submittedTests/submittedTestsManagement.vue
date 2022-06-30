@@ -146,11 +146,33 @@
             placeholder="选择日期">
           </el-date-picker>
         </el-form-item>
+        <!--<el-form-item label="提测负责人" prop="submitted_test_director">-->
+          <!--<el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :readonly=editFormControl.submitted_test_director_disabled></el-input>-->
+        <!--</el-form-item>-->
         <el-form-item label="提测负责人" prop="submitted_test_director">
-          <el-input size="small" v-model="editForm.submitted_test_director" auto-complete="off" placeholder="请输入提测负责人" :readonly=editFormControl.submitted_test_director_disabled></el-input>
+          <el-select size="small" v-model="editForm.submitted_test_director_id" filterable placeholder="请选择提测负责人" @change ="selectChange1"
+                     :disabled=editFormControl.submitted_test_director_disabled>
+            <el-option
+              v-for="item in user_options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
         </el-form-item>
+        <!--<el-form-item label="缺陷修复处理人员" prop="fix_bug_director">-->
+          <!--<el-input size="small" v-model="editForm.fix_bug_director" auto-complete="off" placeholder="请输入缺陷修复处理人员" :readonly=editFormControl.fix_bug_director_disabled></el-input>-->
+        <!--</el-form-item>-->
         <el-form-item label="缺陷修复处理人员" prop="fix_bug_director">
-          <el-input size="small" v-model="editForm.fix_bug_director" auto-complete="off" placeholder="请输入缺陷修复处理人员" :readonly=editFormControl.fix_bug_director_disabled></el-input>
+          <el-select size="small" v-model="editForm.fix_bug_director_id" filterable multiple placeholder="请选择缺陷修复处理人员" @change ="selectChange2"
+                     :disabled=editFormControl.fix_bug_director_disabled>
+            <el-option
+              v-for="item in user_options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="自测报告地址" prop="self_test_report_url">
           <el-input size="small" v-model="editForm.self_test_report_url" auto-complete="off" placeholder="请输入自测报告地址" :readonly=editFormControl.self_test_report_url_disabled></el-input>
@@ -212,8 +234,18 @@
                     :rows="5"
                     :readonly=editFormControl.compatibility_desc_disabled></el-input>
         </el-form-item>
+        <!--<el-form-item label="测试负责人" prop="test_director">-->
+          <!--<el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :readonly=editFormControl.test_director_disabled></el-input>-->
+        <!--</el-form-item>-->
         <el-form-item label="测试负责人" prop="test_director">
-          <el-input size="small" v-model="editForm.test_director" auto-complete="off" placeholder="请输入测试负责人" :readonly=editFormControl.test_director_disabled></el-input>
+          <el-select size="small" v-model="editForm.test_director_id" filterable placeholder="请选择测试负责人" @change="selectChange3" :disabled=editFormControl.test_director_disabled>
+            <el-option
+              v-for="item in user_options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="测试状态" prop="test_status" v-if=editFormControl.test_status_show>
           <el-tag v-if="editForm.test_status===1">测试中</el-tag>
@@ -311,11 +343,12 @@
 </template>
 
 <script>
-import Pagination from '../../components/Pagination'
-import { getAllProject } from '../../api/projectApi'
-import { submittedTestsList, getReasonOption, addSubmittedTest, editSubmittedTest, getSubmittedTestOptions,
-  deleteSubmittedTest, saveSmokeTestingResult, saveTestResult, deleteUploadFile, downloadFile } from '../../api/submittedTestsApi'
-export default {
+  import Pagination from '../../components/Pagination'
+  import {getAllProject} from '../../api/projectApi'
+  import {getUserOptions} from '../../api/userMG'
+  import {addSubmittedTest, deleteSubmittedTest, deleteUploadFile, downloadFile, editSubmittedTest, getReasonOption, getSubmittedTestOptions, saveSmokeTestingResult, saveTestResult, submittedTestsList} from '../../api/submittedTestsApi'
+
+  export default {
   data() {
     return {
       nshow: true, //switch开启
@@ -357,8 +390,11 @@ export default {
         submitted_date: '',
         test_date: '',
         online_date: '',
+        submitted_test_director_id: '',
         submitted_test_director: '',
+        fix_bug_director_id: [],
         fix_bug_director: '',
+        test_director_id: '',
         test_director: '',
         self_test_report_url: '',
         test_url: '',
@@ -375,6 +411,7 @@ export default {
         complete_date: '',
         file_name: ''
       },
+      user_options: '',
       smokeTestFormVisible: false,
       smokeTestForm: {
         id: '',
@@ -389,8 +426,8 @@ export default {
         submitted_test_name: [{ required: true, message: '请输入提测名称', trigger: 'blur' }],
         submitted_date: [{ required: true, message: '请选择申请日期', trigger: 'change' }],
         test_date: [{ required: true, message: '请选择提交测试日期', trigger: 'change' }],
-        submitted_test_director: [{ required: true, message: '请输入提测负责人', trigger: 'blur' }],
-        fix_bug_director: [{ required: true, message: '请输入缺陷修复处理人员', trigger: 'blur' }],
+        submitted_test_director: [{ required: true, message: '请选择提测负责人', trigger: 'blur' }],
+        fix_bug_director: [{ required: true, message: '请选择缺陷修复处理人员', trigger: 'blur' }],
         // test_director: [{ required: true, message: '请输入测试负责人', trigger: 'blur' }],
         smoke_testing_result: [{ required: true, message: '请选择冒烟测试结果', trigger: 'blur' }],
         smoke_testing_fail_reason: [{ required: true, message: '请选择不通过原因', trigger: 'blur' }],
@@ -431,11 +468,18 @@ export default {
     this.loadAllProject();
     this.getReasonOption();
     this.getSubmittedTestOptions();
+    this.getUserOptions();
   },
   /**
    * 里面的方法只有被调用才会执行
    */
   methods: {
+    // 获取用户下拉选项
+    getUserOptions(){
+      getUserOptions().then(res => {
+        this.user_options = res.data;
+      })
+    },
     // 获取项目列表
     getdata(parameter) {
       this.loading = true;
@@ -608,7 +652,9 @@ export default {
           this.editForm.submitted_date = row.submitted_date;
           this.editForm.test_date = row.test_date;
           this.editForm.online_date = row.online_date;
+          this.editForm.submitted_test_director_id = row.submitted_test_director_id;
           this.editForm.submitted_test_director = row.submitted_test_director;
+          this.editForm.fix_bug_director_id = row.fix_bug_director_id;
           this.editForm.fix_bug_director = row.fix_bug_director;
           this.editForm.self_test_report_url = row.self_test_report_url;
           this.editForm.test_url = row.test_url;
@@ -618,6 +664,7 @@ export default {
           this.editForm.config_url = row.config_url;
           this.editForm.script_url = row.script_url;
           this.editForm.compatibility_desc = row.compatibility_desc;
+          this.editForm.test_director_id = row.test_director_id;
           this.editForm.test_director = row.test_director;
           this.editForm.test_status = row.test_status;
           this.editForm.smoke_testing_result = row.smoke_testing_result;
@@ -656,7 +703,9 @@ export default {
           this.editForm.submitted_date = row.submitted_date;
           this.editForm.test_date = row.test_date;
           this.editForm.online_date = row.online_date;
+          this.editForm.submitted_test_director_id = row.submitted_test_director_id;
           this.editForm.submitted_test_director = row.submitted_test_director;
+          this.editForm.fix_bug_director_id = row.fix_bug_director_id;
           this.editForm.fix_bug_director = row.fix_bug_director;
           this.editForm.self_test_report_url = row.self_test_report_url;
           this.editForm.test_url = row.test_url;
@@ -666,6 +715,7 @@ export default {
           this.editForm.config_url = row.config_url;
           this.editForm.script_url = row.script_url;
           this.editForm.compatibility_desc = row.compatibility_desc;
+          this.editForm.test_director_id = row.test_director_id;
           this.editForm.test_director = row.test_director;
           this.editForm.test_status = row.test_status;
           this.editForm.smoke_testing_result = row.smoke_testing_result;
@@ -936,6 +986,23 @@ export default {
     },
     handleSelect(item) {
       console.log(item);
+    },
+    selectChange1(val) {
+      this.editForm.submitted_test_director = this.user_options.find(item => item.value === val).label;
+    },
+    selectChange2(val) {
+      let label = [];
+      for (let i=0;i<=val.length-1;i++) {
+        this.user_options.find((item) => {
+          if (item.value === val[i]){
+            label.push(item.label)
+          }
+        })
+      }
+      this.editForm.fix_bug_director = label.join(",");
+    },
+    selectChange3(val) {
+      this.editForm.test_director = this.user_options.find(item => item.value === val).label;
     }
   }
 }

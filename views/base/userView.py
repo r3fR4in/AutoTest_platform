@@ -293,3 +293,20 @@ def modify_pwd():
     output = {'code': 1000, 'msg': '修改密码成功', 'exception': None, 'success': True}
 
     return jsonify(output)
+
+
+"""把所有用户作为下拉选项返回"""
+@user.route('/getUserOptions', methods=['GET'])
+@tokenUtil.login_required()
+def get_user_options():
+    users = User.query.filter(User.username != 'admin').all()
+    userList = []
+    for user in users:
+        user = user.to_json()
+        dic = {'value': user['id'], 'label': user['nickname']}
+        userList.append(dic)
+
+    output = {'code': 1000, 'data': userList, 'success': True}
+
+    return jsonify(output)
+
