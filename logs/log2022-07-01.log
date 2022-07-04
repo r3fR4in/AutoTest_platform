@@ -1,0 +1,24 @@
+[2022-07-01 14:39:55,001] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-01 14:39:55,017] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-01 14:39:55,075] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-01 14:39:55,077] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-01 14:39:55,081] [_internal.py|_log] [line:113] INFO    : 172.30.21.53 - - [01/Jul/2022 14:39:55] "[33mGET /static/js/vendor.263fd0e7b9dba004eafe.js.map HTTP/1.1[0m" 404 -
+[2022-07-01 15:27:42,171] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 20, in get_message
+    messages = Message.query.limit(20).order_by(Message.create_time.desc()).all()
+  File "<string>", line 2, in order_by
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\base.py", line 105, in _generative
+    x = fn(self, *args, **kw)
+  File "<string>", line 2, in order_by
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\base.py", line 223, in generate
+    assertion(self, fn.__name__)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 310, in _no_limit_offset
+    "are applied." % (meth, meth)
+sqlalchemy.exc.InvalidRequestError: Query.order_by() being called on a Query which already has LIMIT or OFFSET applied.  Call order_by() before limit() or offset() are applied.
+

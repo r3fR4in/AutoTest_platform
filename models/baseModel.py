@@ -31,11 +31,12 @@ class UserProject(db.Model, EntityBase):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
 
-# # 创建中间表
-# user_project = db.Table(
-#     'user_project',
-#     db.Column('id', db.Integer, primary_key=True),
-#     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-#     db.Column('project_id', db.Integer, db.ForeignKey('project.id'))
-# )
-
+class Message(db.Model, EntityBase):
+    __tablename__ = 'message'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    title = db.Column(db.String(50))
+    content = db.Column(db.String(200))
+    create_time = db.Column(db.DateTime)
+    is_push = db.Column(db.Integer)  # 是否推送：0未推送，1已推送
+    is_read = db.Column(db.Integer)  # 是否已读：0未读，1已读

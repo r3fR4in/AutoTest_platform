@@ -8,6 +8,7 @@ from utils import tokenUtil, errorCode
 from models.projectModel import Project
 from models.baseModel import DataDictionary, UserProject
 from models.submittedTestsModel import SubmittedTests
+from views.base import messageView
 from config import setting
 import ast
 import uuid
@@ -135,6 +136,8 @@ def add_submittedTest():
     param_script_url = data['script_url']
     param_compatibility_desc = data['compatibility_desc']
     param_test_director_id = data['test_director_id']
+    if param_test_director_id == '':
+        param_test_director_id = None
     param_test_director = data['test_director']
     param_file_name = data['file_name']
 
@@ -152,6 +155,10 @@ def add_submittedTest():
                                          test_director_id=param_test_director_id)
         db.session.add(submittedTests1)
         db.session.commit()
+
+        # 添加消息
+        messageView.add_submitted_test_message(param_test_director_id, param_projectName, param_submitted_test_name, param_submitted_test_director)
+
         output = {'code': 1000, 'msg': '保存成功', 'exception': None, 'success': True}
 
     return jsonify(output)
@@ -191,6 +198,9 @@ def edit_submittedTest():
         return errorCode.ValError()
 
     submittedTests1 = SubmittedTests.query.get(param_id)
+    if submittedTests1.test_director_id != param_test_director_id:
+        project = Project.query.get(submittedTests1.project_id)
+        messageView.edit_submitted_test_message(param_test_director_id, project.projectName, param_submitted_test_name, param_submitted_test_director)
     submittedTests1.submitted_test_name = param_submitted_test_name
     submittedTests1.submitted_date = param_submitted_date
     submittedTests1.test_date = param_test_date
@@ -353,16 +363,14 @@ def save_smokeTesting_result():
     if not param_id:
         return errorCode.ValError()
 
+    submittedTests1 = SubmittedTests.query.get(param_id)
     if param_smoke_testing_result == 1:
         # 测试通过
-        submittedTests1 = SubmittedTests.query.get(param_id)
         submittedTests1.smoke_testing_result = param_smoke_testing_result
         db.session.commit()
-        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
     else:
         # 测试不通过
         param_complete_date = datetime.datetime.strptime(data['complete_date'], '%Y-%m-%d')
-        submittedTests1 = SubmittedTests.query.get(param_id)
         param_smoke_testing_fail_reason_category = param_smoke_testing_fail_reason[0]
         param_smoke_testing_fail_reason_detail = param_smoke_testing_fail_reason[1]
         submittedTests1.smoke_testing_result = param_smoke_testing_result
@@ -372,7 +380,11 @@ def save_smokeTesting_result():
         submittedTests1.test_status = 3
         submittedTests1.test_result = 2
         db.session.commit()
-        output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
+
+    project = Project.query.get(submittedTests1.project_id)
+    messageView.smoke_test_finish_message(submittedTests1.submitted_test_director_id, project.projectName, submittedTests1.submitted_test_name, param_smoke_testing_result)
+
+    output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
 
     return jsonify(output)
 
@@ -394,6 +406,10 @@ def save_test_result():
     submittedTests1.complete_date = param_complete_date
     submittedTests1.test_status = 2
     db.session.commit()
+
+    project = Project.query.get(submittedTests1.project_id)
+    messageView.test_finish_message(submittedTests1.submitted_test_director_id, project.projectName, submittedTests1.submitted_test_name, param_test_result)
+
     output = {'code': 1, 'msg': '保存成功', 'exception': None, 'success': True}
 
     return jsonify(output)

@@ -1,0 +1,457 @@
+[2022-07-04 15:02:55,032] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: '(1,)' for column 'user_id' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 158, in add_submittedTest
+    messageView.submitted_test_message(param_submitted_test_director_id, param_projectName, param_submitted_test_name, param_submitted_test_director)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 60, in submitted_test_message
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3255, in flush
+    self._flush(objects)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3395, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3355, in _flush
+    flush_context.execute()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1222, in _emit_insert_statements
+    execution_options=execution_options,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: '(1,)' for column 'user_id' at row 1")
+[SQL: INSERT INTO message (user_id, title, content, create_time, is_push, is_read) VALUES (%(user_id)s, %(title)s, %(content)s, %(create_time)s, %(is_push)s, %(is_read)s)]
+[parameters: {'user_id': (1,), 'title': 'EEP 提测', 'content': '开发人员 提测 测试提测1 ，请及时查看处理', 'create_time': datetime.datetime(2022, 7, 4, 15, 2, 54, 958349), 'is_push': 0, 'is_read': 0}]
+(Background on this error at: http://sqlalche.me/e/14/9h9h)
+
+[2022-07-04 15:14:08,618] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.DataError: (1366, "Incorrect integer value: '' for column 'test_director_id' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\submittedTests\submittedTestsManagementView.py", line 155, in add_submittedTest
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3255, in flush
+    self._flush(objects)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3395, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 3355, in _flush
+    flush_context.execute()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1222, in _emit_insert_statements
+    execution_options=execution_options,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1521, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\sql\elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1400, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1750, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1931, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\base.py", line 1707, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\engine\default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: '' for column 'test_director_id' at row 1")
+[SQL: INSERT INTO submitted_tests (project_id, submitted_test_name, submitted_date, test_date, online_date, submitted_test_director_id, submitted_test_director, fix_bug_director_id, fix_bug_director, test_director_id, test_director, self_test_report_url, test_url, test_scope, influence_scope, points_for_attention, config_url, script_url, compatibility_desc, file_name, test_status, smoke_testing_result, smoke_testing_fail_reason_category, smoke_testing_fail_reason_detail, test_result, complete_date) VALUES (%(project_id)s, %(submitted_test_name)s, %(submitted_date)s, %(test_date)s, %(online_date)s, %(submitted_test_director_id)s, %(submitted_test_director)s, %(fix_bug_director_id)s, %(fix_bug_director)s, %(test_director_id)s, %(test_director)s, %(self_test_report_url)s, %(test_url)s, %(test_scope)s, %(influence_scope)s, %(points_for_attention)s, %(config_url)s, %(script_url)s, %(compatibility_desc)s, %(file_name)s, %(test_status)s, %(smoke_testing_result)s, %(smoke_testing_fail_reason_category)s, %(smoke_testing_fail_reason_detail)s, %(test_result)s, %(complete_date)s)]
+[parameters: {'project_id': 28, 'submitted_test_name': 'fff', 'submitted_date': datetime.datetime(2022, 7, 4, 0, 0), 'test_date': datetime.datetime(2022, 7, 4, 0, 0), 'online_date': None, 'submitted_test_director_id': 5, 'submitted_test_director': '开发人员', 'fix_bug_director_id': '[5]', 'fix_bug_director': '开发人员', 'test_director_id': '', 'test_director': '', 'self_test_report_url': '', 'test_url': '', 'test_scope': '', 'influence_scope': '', 'points_for_attention': '', 'config_url': '', 'script_url': '', 'compatibility_desc': '', 'file_name': '', 'test_status': 1, 'smoke_testing_result': 0, 'smoke_testing_fail_reason_category': None, 'smoke_testing_fail_reason_detail': None, 'test_result': 0, 'complete_date': None}]
+(Background on this error at: http://sqlalche.me/e/14/9h9h)
+
+[2022-07-04 16:33:22,714] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:33:22,719] [log.py|info] [line:117] INFO    : BEGIN (implicit)
+[2022-07-04 16:33:25,675] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:33:28,647] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:33:31,640] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:33:34,680] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:33:37,643] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 63, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:36:48,185] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:36:49,644] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:36:52,643] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 16:49:03,371] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 797, in _prepare_impl
+    self.session.dispatch.before_commit(self.session)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\event\attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 240, in record_ops
+    state = inspect(target)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\inspection.py", line 73, in inspect
+    "available for object of type %s" % type_
+sqlalchemy.exc.NoInspectionAvailable: No inspection system is available for object of type <class 'models.baseModel.Message'>
+
+[2022-07-04 16:52:21,341] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 797, in _prepare_impl
+    self.session.dispatch.before_commit(self.session)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\event\attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 240, in record_ops
+    state = inspect(target)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\inspection.py", line 73, in inspect
+    "available for object of type %s" % type_
+sqlalchemy.exc.NoInspectionAvailable: No inspection system is available for object of type <class 'models.baseModel.Message'>
+
+[2022-07-04 16:57:17,941] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 64, in push_message
+    db.session.query(Message).filter(and_(Message.user_id == user['id'], Message.is_push == 0)).update({Message.is_push: 1})
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\query.py", line 3212, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1679, in execute
+    result,
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 1861, in orm_setup_cursor_result
+    cls._do_post_synchronize_evaluate(session, result, update_options)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\persistence.py", line 2203, in _do_post_synchronize_evaluate
+    attributes.instance_state(obj),
+AttributeError: 'Message' object has no attribute '_sa_instance_state'
+
+[2022-07-04 17:07:19,850] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\base\messageView.py", line 70, in push_message
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 1423, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\orm\session.py", line 797, in _prepare_impl
+    self.session.dispatch.before_commit(self.session)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\event\attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask_sqlalchemy\__init__.py", line 240, in record_ops
+    state = inspect(target)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\sqlalchemy\inspection.py", line 73, in inspect
+    "available for object of type %s" % type_
+sqlalchemy.exc.NoInspectionAvailable: No inspection system is available for object of type <class 'models.baseModel.Message'>
+

@@ -430,7 +430,7 @@
       smokeTestFormVisible: false,
       smokeTestForm: {
         id: '',
-        smoke_testing_result: '',
+        smoke_testing_result: 1,
         smoke_testing_fail_reason: [],
         complete_date: ''
       },
@@ -593,7 +593,9 @@
       this.editForm.submitted_date = '';
       this.editForm.test_date = '';
       this.editForm.online_date = '';
+      this.editForm.submitted_test_director_id = '';
       this.editForm.submitted_test_director = '';
+      this.editForm.fix_bug_director_id = '';
       this.editForm.fix_bug_director = '';
       this.editForm.self_test_report_url = '';
       this.editForm.test_url = '';
@@ -603,6 +605,7 @@
       this.editForm.config_url = '';
       this.editForm.script_url = '';
       this.editForm.compatibility_desc = '';
+      this.editForm.test_director_id = '';
       this.editForm.test_director = '';
       this.editForm.test_status = '';
       this.editForm.smoke_testing_result = '';
@@ -969,6 +972,7 @@
     completeTesting: function(index, row) {
       this.completeTestFormVisible = true;
       this.editForm.id = row.id;
+      this.editForm.test_result = 1;
     },
     // 删除提测申请
     submittedTestDelete(index, row) {

@@ -6,17 +6,48 @@
     <el-button class="buttonimg">
       <img class="showimg" :src="collapsed?imgsq:imgshow" @click="toggle(collapsed)">
     </el-button>
-    <el-submenu index="2" class="submenu">
-      <!-- <template slot="title">{{user.userRealName}}</template> -->
-      <template slot="title">{{user.nickname}}</template>
-      <!--<el-menu-item index="2-1">设置</el-menu-item>-->
-      <el-menu-item @click="toModifyPwd" index="2-2">修改密碼</el-menu-item>
-      <el-menu-item @click="exit()" index="2-3">退出</el-menu-item>
-    </el-submenu>
+    <div style="float: right">
+      <div style="display:inline">
+        <el-badge style="margin-top: 9px;margin-right: 9px;border: none" :is-dot="dot">
+          <el-button index="2" icon="el-icon-bell" circle style="border: none;font-size: 17px" type="primary" @click="openDrawer(true)"></el-button>
+        </el-badge>
+      </div>
+      <el-submenu index="3" class="submenu">
+        <!-- <template slot="title">{{user.userRealName}}</template> -->
+        <template slot="title">{{user.nickname}}</template>
+        <!--<el-menu-item index="2-1">设置</el-menu-item>-->
+        <el-menu-item @click="toModifyPwd" index="2-2">修改密碼</el-menu-item>
+        <el-menu-item @click="exit()" index="2-3">退出</el-menu-item>
+      </el-submenu>
+    </div>
+    <el-drawer
+      title="消息"
+      :visible.sync="drawer"
+      direction="rtl"
+      @closed="handleClose">
+      <!--<div style="width: 90%;height: 100%;display: block">-->
+      <!--<el-scrollbar wrap-style="overflow-x:auto;" style="height: 100%;overflow-wrap:break-word;">-->
+      <el-timeline style="width: 90%">
+        <el-timeline-item
+          v-for="item in listData"
+          placement="top"
+          :timestamp="item.create_time">
+          <el-badge style="display: block" :is-dot="item.is_read === 0">
+            <el-card>
+              <h4>{{item.title}}</h4>
+              <p>{{item.content}}</p>
+            </el-card>
+          </el-badge>
+        </el-timeline-item>
+      </el-timeline>
+      <!--</el-scrollbar>-->
+      <!--</div>-->
+    </el-drawer>
   </el-menu>
 </template>
 <script>
 import { logout } from '../api/userMG'
+import { getMessage, clearUnreadMessage, pushMessage } from '../api/messageApi'
 export default {
   name: 'navcon',
   data() {
@@ -24,12 +55,23 @@ export default {
       collapsed: true,
       imgshow: require('../assets/img/show.png'),
       imgsq: require('../assets/img/sq.png'),
-      user: {}
+      drawer: false,
+      listData: '',
+      dot: false,
+      user: {},
+      notifyPromise: Promise.resolve()
     }
   },
   // 创建完毕状态(里面是操作)
   created() {
-    this.user = JSON.parse(localStorage.getItem('userdata'))
+    this.user = JSON.parse(localStorage.getItem('userdata'));
+    this.openDrawer(false);
+    this.pushMessage();
+    setInterval(() => {
+      setTimeout(() => {
+        this.pushMessage();
+      }, 0);
+    }, 5*60000);
   },
   methods: {
     // 跳转修改密码页面
@@ -93,6 +135,51 @@ export default {
     toggle(showtype) {
       this.collapsed = !showtype;
       this.$root.Bus.$emit('toggle', this.collapsed)
+    },
+    // 打开消息抽屉
+    openDrawer(bool){
+      this.drawer = bool;
+      getMessage().then(res => {
+        if (res.success === false) {
+          this.$message({
+            type: 'info',
+            message: res.msg
+          })
+        } else {
+          this.listData = res.data;
+          this.dot = res.unread_count > 0;
+        }
+      })
+    },
+    // 关闭消息抽屉后清空未读提示
+    handleClose(){
+      clearUnreadMessage().then(res => {
+        if (res.success === false) {
+          this.$message({
+            type: 'info',
+            message: res.msg
+          })
+        } else {
+          this.dot = false;
+        }
+      })
+    },
+    // 获取未推送消息
+    pushMessage(){
+      pushMessage().then(res => {
+        res.forEach((item) => {
+          this.notifyPromise = this.notifyPromise.then(() => {
+            this.$notify({
+              title: item.title,
+              message: item.content,
+              duration: 0
+            });
+          });
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
   }
 }
@@ -101,8 +188,15 @@ export default {
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   border: none;
 }
+.el-button{
+  background-color: #334157;
+}
+.el-button:hover{
+  background-color: #293446;
+}
 .submenu {
   float: right;
+  display: inline;
 }
 .buttonimg {
   height: 60px;
@@ -118,5 +212,14 @@ export default {
 }
 .showimg:active {
   border: none;
+}
+</style>
+<style>
+.el-drawer__body {
+  overflow: auto;
+  /* overflow-x: auto; */
+}
+.el-drawer__container ::-webkit-scrollbar{
+    display: none;
 }
 </style>
