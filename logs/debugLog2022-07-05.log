@@ -215,3 +215,508 @@
 [2022-07-05 09:50:33,954] [log.py|__console] [line:37] INFO    : 断言结果:通过
 [2022-07-05 09:50:33,956] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
 [2022-07-05 09:50:33,958] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:22:14,015] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:22:14,018] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:22:14,021] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:22:14,022] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:22:14,024] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:22:14,026] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:22:14,027] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:22:14,029] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:22:14,031] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:22:14,032] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file or directory: '/home/chandao/autotest_platform/at_platform_file/apiTest\\fd92cc84a59b4b45bda88905b2ec6f54.xlsx'
+[2022-07-05 10:22:14,034] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file or directory: '/home/chandao/autotest_platform/at_platform_file/apiTest\\fd92cc84a59b4b45bda88905b2ec6f54.xlsx'
+[2022-07-05 10:22:14,036] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:22:14,038] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:22:14,039] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:32:44,419] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:32:44,419] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:32:44,420] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:32:44,421] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:32:44,422] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:32:44,422] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:32:44,423] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:32:44,424] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:32:44,424] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:32:44,425] [log.py|__console] [line:43] ERROR   : __init__() missing 4 required positional arguments: 'hostname', 'port', 'username', and 'password'
+[2022-07-05 10:32:44,426] [log.py|__console] [line:43] ERROR   : __init__() missing 4 required positional arguments: 'hostname', 'port', 'username', and 'password'
+[2022-07-05 10:32:44,426] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:32:44,427] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:32:44,428] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:34:39,698] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:34:39,699] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:34:39,699] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:34:39,700] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:34:39,701] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:34:39,701] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:34:39,702] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:34:39,702] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:34:39,703] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:34:40,612] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file
+[2022-07-05 10:34:40,613] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file
+[2022-07-05 10:34:40,614] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:34:40,614] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:34:40,615] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:34:55,451] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:34:55,452] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:34:55,454] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:34:55,455] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:34:55,457] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:34:55,459] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:34:55,460] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:34:55,462] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:34:55,463] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:35:03,153] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file
+[2022-07-05 10:35:03,154] [log.py|__console] [line:43] ERROR   : [Errno 2] No such file
+[2022-07-05 10:35:03,156] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:35:03,157] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:35:03,159] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:35:14,663] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:35:14,666] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:35:14,668] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:35:14,670] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:35:14,671] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:35:14,673] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:35:14,675] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:35:14,677] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:35:14,679] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:37:36,097] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:37:36,098] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:37:36,099] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:37:36,099] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:37:36,100] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:37:36,101] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:37:36,102] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:37:36,102] [log.py|__console] [line:37] INFO    : 请求体:"{}"
+[2022-07-05 10:37:36,103] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:37:36,353] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:37:36,354] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:37:36,355] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:37:36,355] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:37:36,356] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:37:42,685] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:37:42,687] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:37:42,688] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:37:42,689] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:37:42,691] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:37:42,693] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:37:42,694] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:37:42,696] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:37:42,697] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:37:42,963] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:37:42,965] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:37:42,966] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:37:42,968] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:37:42,969] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:37:50,038] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:37:50,040] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:37:50,042] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:37:50,044] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:37:50,046] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:37:50,047] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:37:50,050] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:37:50,052] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:37:50,054] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:38:03,841] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:38:03,842] [log.py|__console] [line:43] ERROR   : 找不到文件
+[2022-07-05 10:38:03,844] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 10:38:03,845] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 10:38:03,847] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:38:47,247] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:38:47,247] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:38:47,248] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:38:47,249] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:38:47,250] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:38:47,250] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:38:47,251] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:38:47,252] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:38:47,252] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:38:54,747] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 10:38:54,748] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 02:38:56 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-05 10:38:54,748] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 10:38:54,749] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '02040003', 'message': '請選擇xls或xlsx附件'}
+[2022-07-05 10:38:54,749] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 10:38:54,750] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 10:38:54,750] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:39:42,568] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:39:42,569] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:39:42,569] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:39:42,570] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:39:42,571] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:39:42,571] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:39:42,572] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:39:42,572] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:39:42,573] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:39:42,897] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 10:39:42,898] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 02:39:44 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '69'}
+[2022-07-05 10:39:42,899] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 10:39:42,900] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '02040003', 'message': '請選擇xls或xlsx附件'}
+[2022-07-05 10:39:42,900] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 10:39:42,901] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 10:39:42,902] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:40:30,516] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:40:30,517] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:40:30,519] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:40:30,519] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:40:30,522] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:40:30,523] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:40:30,524] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:40:30,526] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:40:30,527] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:47:16,101] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:47:16,101] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:47:16,102] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:47:16,103] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:47:16,104] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:47:16,105] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:47:16,106] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:47:16,107] [log.py|__console] [line:37] INFO    : 请求体:"{}"
+[2022-07-05 10:47:16,107] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 10:47:16,442] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 10:47:16,443] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 02:47:17 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '69'}
+[2022-07-05 10:47:16,444] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 10:47:16,444] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '02040003', 'message': '請選擇xls或xlsx附件'}
+[2022-07-05 10:47:16,445] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 10:47:16,446] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 10:47:16,447] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 10:47:23,371] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 10:47:23,373] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 10:47:23,374] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 10:47:23,376] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 10:47:23,378] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 10:47:23,380] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 10:47:23,381] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 10:47:23,383] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 10:47:23,384] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:19:57,900] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:19:57,900] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:19:57,901] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:19:57,902] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:19:57,903] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:19:57,903] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:19:57,904] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:19:57,904] [log.py|__console] [line:37] INFO    : 请求体:"{}"
+[2022-07-05 11:19:57,905] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:20:02,997] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:20:02,997] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:20:04 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '69'}
+[2022-07-05 11:20:02,998] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:20:02,998] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '02040003', 'message': '請選擇xls或xlsx附件'}
+[2022-07-05 11:20:02,999] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:20:02,999] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:20:02,999] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:20:49,657] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:20:49,658] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:20:49,658] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:20:49,659] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:20:49,660] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:20:49,660] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:20:49,661] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:20:49,661] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 11:20:49,662] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:26:41,370] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:26:41,372] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:26:41,374] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:26:41,376] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:26:41,377] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:26:41,379] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:26:41,381] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:26:41,383] [log.py|__console] [line:37] INFO    : 请求体:"{}"
+[2022-07-05 11:26:41,384] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:26:41,679] [log.py|__console] [line:43] ERROR   : 'bytes' object has no attribute 'readable'
+[2022-07-05 11:26:41,681] [log.py|__console] [line:43] ERROR   : 'bytes' object has no attribute 'readable'
+[2022-07-05 11:26:41,682] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 11:26:41,684] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:26:41,685] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:27:18,493] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:27:18,494] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:27:18,494] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:27:18,495] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:27:18,496] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:27:18,497] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:27:18,497] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:27:18,498] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 11:27:18,499] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:28:40,235] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:28:40,236] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:28:40,236] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:28:40,237] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:28:40,238] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:28:40,238] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:28:40,239] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:28:40,240] [log.py|__console] [line:37] INFO    : 请求体:"{}"
+[2022-07-05 11:28:40,240] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:32:37,932] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:32:37,933] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:32:37,934] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:32:37,934] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:32:37,935] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:32:37,935] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:32:37,936] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:32:37,937] [log.py|__console] [line:37] INFO    : 请求体:"\"{}\""
+[2022-07-05 11:32:37,937] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:36:12,363] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:36:12,364] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:36:12,365] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:36:12,366] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:36:12,367] [log.py|__console] [line:37] INFO    : 请求头:"{\"Authorization\":\"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g\"}"
+[2022-07-05 11:36:12,367] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:36:12,368] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:36:12,369] [log.py|__console] [line:37] INFO    : 请求体:"\"\\\"{}\\\"\""
+[2022-07-05 11:36:12,370] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:36:12,614] [log.py|__console] [line:43] ERROR   : open_file() missing 2 required positional arguments: 'remotepath' and 'filename'
+[2022-07-05 11:36:12,615] [log.py|__console] [line:43] ERROR   : open_file() missing 2 required positional arguments: 'remotepath' and 'filename'
+[2022-07-05 11:36:12,616] [log.py|__console] [line:43] ERROR   : 获取响应失败，请检查
+[2022-07-05 11:36:12,616] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:36:12,617] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:37:13,781] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:37:13,782] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:37:13,783] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:37:13,784] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:37:13,785] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:37:13,785] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:37:13,786] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:37:13,787] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 11:37:13,787] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:37:14,338] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:37:14,339] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:37:15 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '46'}
+[2022-07-05 11:37:14,339] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:37:14,340] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-07-05 11:37:14,341] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:37:14,341] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:37:14,342] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:37:24,493] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:37:24,493] [log.py|__console] [line:37] INFO    : 标题:正常导入
+[2022-07-05 11:37:24,494] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool/import
+[2022-07-05 11:37:24,494] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:37:24,496] [log.py|__console] [line:37] INFO    : 请求头:{"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTg3Mjc4NTI4In0.Hx8U3PBSAuHKhhoImMjBM41BTfn0U-WuNmELfgtgNr2aMSwN-wP09Kr12q5aM0wT9z5ROF_AjX775gNqGn6e8g"}
+[2022-07-05 11:37:24,496] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:37:24,497] [log.py|__console] [line:37] INFO    : 文件名:IP_Pool_Import 正常导入.xlsx，後臺文件名:fd92cc84a59b4b45bda88905b2ec6f54.xlsx
+[2022-07-05 11:37:24,497] [log.py|__console] [line:37] INFO    : 请求体:{}
+[2022-07-05 11:37:24,497] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:37:24,860] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:37:24,860] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:37:26 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '79'}
+[2022-07-05 11:37:24,861] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:37:24,862] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01110022', 'message': 'ip_block重複或者範圍已存在'}
+[2022-07-05 11:37:24,862] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:37:24,864] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:37:24,864] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:44:23,382] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:44:23,383] [log.py|__console] [line:37] INFO    : 标题:正常删除
+[2022-07-05 11:44:23,383] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/soType/None
+[2022-07-05 11:44:23,384] [log.py|__console] [line:37] INFO    : 请求方法:DELETE
+[2022-07-05 11:44:23,384] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:44:23,385] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:44:23,386] [log.py|__console] [line:37] INFO    : 请求体:""
+[2022-07-05 11:44:23,386] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:44:23,437] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:44:23,438] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:44:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '224'}
+[2022-07-05 11:44:23,439] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:44:23,439] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000001', 'message': 'typeMismatch : Failed to convert value of type \'java.lang.String\' to required type \'java.lang.Long\'; nested exception is java.lang.NumberFormatException: For input string: "None"'}
+[2022-07-05 11:44:23,440] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:44:23,441] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:44:23,441] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:44:23,442] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-05 11:44:23,442] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:44:23,443] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:45:07,139] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:45:07,140] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-07-05 11:45:07,140] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/soType
+[2022-07-05 11:45:07,141] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-07-05 11:45:07,141] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:45:07,142] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:45:07,143] [log.py|__console] [line:37] INFO    : 请求体:{"soTypeId":0,"soOfferId":["9827118","7892829","1260022"],"soTypeName":"M4GaKraM8R","soTypeStatus":"enable","filteringSo":false}
+[2022-07-05 11:45:07,143] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:45:07,216] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:45:07,217] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:45:08 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '44'}
+[2022-07-05 11:45:07,217] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:45:07,218] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 65, 'code': '10000000', 'message': None}
+[2022-07-05 11:45:07,219] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:45:07,219] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-05 11:45:07,220] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-05 11:45:07,221] [log.py|__console] [line:37] INFO    : 成功获取值65
+[2022-07-05 11:45:07,281] [log.py|__console] [line:37] INFO    : 已更新环境变量new_soTypeId
+[2022-07-05 11:45:07,282] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:45:07,282] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:45:07,283] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:45:07,283] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:45:07,284] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:50:38,250] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:50:38,251] [log.py|__console] [line:37] INFO    : 标题:正常新增(空闲)
+[2022-07-05 11:50:38,251] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:50:38,252] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-05 11:50:38,253] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:50:38,253] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:50:38,254] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"142.19.48.109","ipPoolStatus":"spare","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:50:38,254] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:50:38,352] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:50:38,353] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:50:39 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '46'}
+[2022-07-05 11:50:38,354] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:50:38,354] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 8764, 'code': '10000000', 'message': None}
+[2022-07-05 11:50:38,355] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:50:38,356] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-05 11:50:38,356] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-05 11:50:38,357] [log.py|__console] [line:37] INFO    : 成功获取值8764
+[2022-07-05 11:50:38,514] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ipPoolId
+[2022-07-05 11:50:38,515] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:50:38,517] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:50:38,518] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:50:38,519] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:50:38,521] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:50:45,985] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:50:45,985] [log.py|__console] [line:37] INFO    : 标题:正常更新(保留)
+[2022-07-05 11:50:45,986] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:50:45,986] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:50:45,987] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:50:45,988] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:50:45,988] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"70.70.132.191","ipPoolStatus":"reserved","ipPoolId":"14882","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:50:45,989] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:50:46,026] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:50:46,027] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:50:47 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '64'}
+[2022-07-05 11:50:46,027] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:50:46,028] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01110021', 'message': 'IP池數據不存在'}
+[2022-07-05 11:50:46,029] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:50:46,029] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:50:46,030] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:50:46,030] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-05 11:50:46,031] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:50:46,032] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:52:01,040] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:52:01,041] [log.py|__console] [line:37] INFO    : 标题:正常更新(保留)
+[2022-07-05 11:52:01,042] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:52:01,042] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:52:01,043] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:52:01,044] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:52:01,044] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"242.170.20.164","ipPoolStatus":"reserved","ipPoolId":"14882","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:52:01,045] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:52:01,086] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:52:01,087] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:52:02 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '64'}
+[2022-07-05 11:52:01,087] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:52:01,088] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01110021', 'message': 'IP池數據不存在'}
+[2022-07-05 11:52:01,089] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:52:01,089] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:52:01,090] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:52:01,091] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-05 11:52:01,091] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:52:01,092] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:52:57,439] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:52:57,440] [log.py|__console] [line:37] INFO    : 标题:正常更新(保留)
+[2022-07-05 11:52:57,440] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:52:57,441] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:52:57,441] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:52:57,442] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:52:57,443] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"190.219.24.34","ipPoolStatus":"reserved","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:52:57,443] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:52:57,515] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:52:57,516] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:52:58 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '46'}
+[2022-07-05 11:52:57,516] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:52:57,517] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-07-05 11:52:57,518] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:52:57,518] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:52:57,519] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:52:57,519] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:52:57,520] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:52:57,521] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:53:05,796] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:53:05,797] [log.py|__console] [line:37] INFO    : 标题:正常更新(空闲)
+[2022-07-05 11:53:05,797] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:53:05,798] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:53:05,799] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:53:05,800] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:53:05,800] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"123.239.245.0","ipPoolStatus":"spare","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:53:05,801] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:53:05,876] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:53:05,878] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:53:07 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '46'}
+[2022-07-05 11:53:05,879] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:53:05,881] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '10000000', 'message': None}
+[2022-07-05 11:53:05,882] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:53:05,884] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:53:05,885] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-05 11:53:05,886] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:53:05,887] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:53:05,888] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:53:21,996] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:53:21,997] [log.py|__console] [line:37] INFO    : 标题:max_number_ip小于min_number_ip
+[2022-07-05 11:53:21,997] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:53:21,998] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:53:21,999] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:53:22,000] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:53:22,000] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"93.59.53.80","ipPoolStatus":"reserved","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":24,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:53:22,001] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:53:22,061] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:53:22,063] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:53:23 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '86'}
+[2022-07-05 11:53:22,066] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:53:22,068] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01110023', 'message': 'minNumberIp 需要小於等於 maxNumberIp'}
+[2022-07-05 11:53:22,070] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:53:22,072] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:53:22,073] [log.py|__console] [line:37] INFO    : 断言内容:01110023
+[2022-07-05 11:53:22,074] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:53:22,076] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:53:22,077] [log.py|__console] [line:37] INFO    : 断言内容:minNumberIp 需要小於等於 maxNumberIp
+[2022-07-05 11:53:22,078] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:53:22,079] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:53:22,080] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:53:30,684] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:53:30,685] [log.py|__console] [line:37] INFO    : 标题:更新失败(预占)
+[2022-07-05 11:53:30,686] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:53:30,686] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:53:30,687] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:53:30,687] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:53:30,688] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"72.195.200.150","ipPoolStatus":"hold","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:53:30,689] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:53:30,767] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-05 11:53:30,768] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:53:32 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Length': '81'}
+[2022-07-05 11:53:30,769] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:53:30,769] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01110026', 'message': 'IP Pool狀態僅支持保留和空閑'}
+[2022-07-05 11:53:30,770] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:53:30,771] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:53:30,771] [log.py|__console] [line:37] INFO    : 断言内容:01110026
+[2022-07-05 11:53:30,772] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:53:30,773] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-05 11:53:30,773] [log.py|__console] [line:37] INFO    : 断言内容:IP Pool狀態僅支持保留和空閑
+[2022-07-05 11:53:30,774] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-05 11:53:30,774] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-05 11:53:30,775] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:53:40,117] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:53:40,118] [log.py|__console] [line:37] INFO    : 标题:更新失败(完成)
+[2022-07-05 11:53:40,118] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:53:40,119] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:53:40,120] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:53:40,120] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:53:40,121] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"115.119.204.88","ipPoolStatus":"complete","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:53:40,121] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:53:40,138] [log.py|__console] [line:37] INFO    : 响应码:502
+[2022-07-05 11:53:40,139] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:53:41 GMT', 'Content-Type': 'text/html', 'Content-Length': '150', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'}
+[2022-07-05 11:53:40,140] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:53:40,140] [log.py|__console] [line:37] INFO    : 响应内容:<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+[2022-07-05 11:53:40,141] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:53:40,142] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:53:40,142] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-05 11:53:46,086] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-05 11:53:46,086] [log.py|__console] [line:37] INFO    : 标题:更新失败(完成)
+[2022-07-05 11:53:46,087] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/inve/ipPool
+[2022-07-05 11:53:46,088] [log.py|__console] [line:37] INFO    : 请求方法:put
+[2022-07-05 11:53:46,089] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU2OTkyNDYzOTc2In0.m7opuFS4W-BwE3e4JXt4Kz1Lti_aOt5lXm1ZsMsufclT5QfNEsseVEitDxOHCFAlomhKr8V9a9hQiAFURRxROA"}
+[2022-07-05 11:53:46,089] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-05 11:53:46,090] [log.py|__console] [line:37] INFO    : 请求体:{"du":"string 用户账号","gateway":null,"hotSpotName":"string hotSpotName","ipBlock":"127.58.53.159","ipPoolStatus":"complete","ipPoolId":"8764","ipVersion":"ipv4","maxNumberIp":23,"minNumberIp":22,"serviceType":"","siteCode":"string siteCode","subnetMask":"string 子网掩码","usedNumber":null}
+[2022-07-05 11:53:46,091] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-05 11:53:46,108] [log.py|__console] [line:37] INFO    : 响应码:502
+[2022-07-05 11:53:46,108] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Tue, 05 Jul 2022 03:53:47 GMT', 'Content-Type': 'text/html', 'Content-Length': '150', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'}
+[2022-07-05 11:53:46,109] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-05 11:53:46,110] [log.py|__console] [line:37] INFO    : 响应内容:<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+[2022-07-05 11:53:46,110] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-05 11:53:46,111] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-05 11:53:46,112] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

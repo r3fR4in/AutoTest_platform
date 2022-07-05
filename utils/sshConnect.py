@@ -1,3 +1,5 @@
+import io
+
 import paramiko
 
 class SSH:
@@ -57,6 +59,12 @@ class SSH:
             return True
         except IOError:
             return False
+
+    """读取远程服务器文件"""
+    def open_file(self, localpath, remotepath, filename):
+        self.download_file(localpath, remotepath, filename)
+        localFilepath = localpath + '/' + filename
+        return open(localFilepath, 'rb')
 
 
 # if __name__ == '__main__':

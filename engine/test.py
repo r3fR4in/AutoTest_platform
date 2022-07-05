@@ -1,4 +1,2 @@
-list = [1,2,3]
-str_list = str(list)
-list2 = eval(str_list)
-print(str(list))
+file = open('D:\\PycharmProjects\\AutoTest_platform\\updateFiles\\apiTest\\test.xlsx', 'rb')
+print(file)

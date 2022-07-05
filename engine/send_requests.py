@@ -4,6 +4,7 @@ import os
 import requests
 import ast
 from config import setting
+from utils import sshConnect
 from utils import log
 from utils import time
 
@@ -26,14 +27,19 @@ class SendRequests():
         global re
         try:
             if self.files:
-                filepath = os.path.join(setting.remote_updateFiles_DIR_apiTest, self.files[0]['realname'])
-                file = open(filepath, 'rb')
+                # filepath = os.path.join(setting.remote_updateFiles_DIR_apiTest, self.files[0]['realname'])
+                # filepath = setting.remote_updateFiles_DIR_apiTest + '/' + self.files[0]['realname']
+                # file = open(filepath, 'rb')
+                ssh = sshConnect.SSH(setting.host, setting.port, setting.username, setting.password)
+                file = ssh.open_file(setting.updateFiles_DIR_apiTest, setting.remote_updateFiles_DIR_apiTest, self.files[0]['realname'])
                 if self.header == '':
                     self.header = {}
                 # self.header["Content-Type"] = mimetypes.guess_type(filepath)[0]
                 # re = requests.request(self.method, self.url, headers=self.header, data=file, verify=self.verify)
                 files = {'file': file}
                 re = requests.request(self.method, self.url, headers=self.header, files=files, verify=self.verify)
+                ssh.close_connect()
+                file.close()
             elif self.method == 'GET' or self.method == 'get':
                 if self.body != '':
                     self.body = ast.literal_eval(str(self.body))
