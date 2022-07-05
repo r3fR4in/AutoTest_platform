@@ -203,6 +203,11 @@ export default {
   background-color: transparent;
   border: none;
 }
+.buttonimg:hover {
+  height: 60px;
+  background-color: transparent;
+  border: none;
+}
 .showimg {
   width: 26px;
   height: 26px;

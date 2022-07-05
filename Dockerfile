@@ -3,11 +3,11 @@
 # docker build -t autotest_platform:1.0.0 .
 # 2.导出镜像
 # docker save -o autotest_platform_1.1.6.tar autotest_platform:1.1.6
-# 4.把文件传到服务器上
+# 3.把文件传到服务器上
 # sudo rz -y
-# 5.把镜像导入至服务器docker上
+# 4.把镜像导入至服务器docker上
 # docker load < autotest_platform_1.1.6.tar
-# 6.启动镜像
+# 5.启动镜像
 # docker run -p 5000:5000 -d --name autotest_platform autotest_platform:1.1.6
 
 FROM python:3.7.5-slim-stretch
