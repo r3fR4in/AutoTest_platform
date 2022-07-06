@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/apiTestReport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/apiTestReport.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/apiTest/apiTestTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/apiTest/apiTestTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/views/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debugLog2022-07-05.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debugLog2022-07-05.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.905f85202604afedab706e05d577c7ea.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.905f85202604afedab706e05d577c7ea.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.4d00b39d84ea9484c407.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.4d00b39d84ea9484c407.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/manifest.3523b7013fb29c3cf8ce.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/base/userView.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/base/userView.py" afterDir="false" />
-    </list>
+    <list default="true" id="321800fb-866b-420c-82cd-2a96ecdb6585" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/utils/errorHandler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -104,23 +90,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/base/userView.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/base/messageView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="344">
+              <caret line="138" column="98" selection-start-line="138" selection-start-column="98" selection-end-line="138" selection-end-column="98" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/errorCode.py">
+        <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+            <state relative-caret-position="464">
+              <caret line="149" column="163" selection-start-line="149" selection-start-column="163" selection-end-line="149" selection-end-column="163" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="1040" column="19" lean-forward="true" selection-start-line="1040" selection-start-column="19" selection-end-line="1040" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#el-autocomplete#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-select#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-select#0;n#el-form-item#2;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-select#0;n#el-form-item#3;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-table#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#18460#18512#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -715,7 +721,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1664980000" />
+    <option name="totallyTimeSpent" value="1664997000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,6 +734,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.20469083" />
       <window_info id="Structure" order="1" sideWeight="0.5048544" side_tool="true" weight="0.20095949" />
@@ -743,9 +750,9 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5143923" side_tool="true" weight="0.3557484" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.48560768" weight="0.3557484" />
       <window_info anchor="bottom" id="TODO" order="10" sideWeight="0.4989339" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48454157" visible="true" weight="0.318872" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48454157" weight="0.318872" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3286334" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1004,14 +1011,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/views/submittedTests/submittedTestsManagement.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3050">
-          <caret line="901" column="37" selection-start-line="901" selection-start-column="37" selection-end-line="901" selection-end-column="37" />
+        <state relative-caret-position="418">
+          <caret line="1040" column="19" lean-forward="true" selection-start-line="1040" selection-start-column="19" selection-end-line="1040" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#el-autocomplete#0;n#el-form-item#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-select#0;n#el-form-item#1;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-select#0;n#el-form-item#2;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-select#0;n#el-form-item#3;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-table#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#18460#18512#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1035,8 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/submittedTests/submittedTestsManagementView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="407" column="12" selection-start-line="407" selection-start-column="12" selection-end-line="407" selection-end-column="12" />
+        <state relative-caret-position="464">
+          <caret line="149" column="163" selection-start-line="149" selection-start-column="163" selection-end-line="149" selection-end-column="163" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -1055,8 +1063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/base/messageView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="64" column="79" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
+        <state relative-caret-position="344">
+          <caret line="138" column="98" selection-start-line="138" selection-start-column="98" selection-end-line="138" selection-end-column="98" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1281,7 +1289,7 @@
     <entry file="file://$PROJECT_DIR$/utils/errorHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
