@@ -177,7 +177,7 @@
         <!--</el-form-item>-->
         <el-form-item label="缺陷修复处理人员" prop="fix_bug_director">
           <el-select size="small" v-model="editForm.fix_bug_director_id" filterable multiple placeholder="请选择缺陷修复处理人员" @change ="selectChange2"
-                     :disabled=editFormControl.fix_bug_director_disabled :filter-method="pinyinMatch" @focus="resetOptions" @remove-tag="removeTag2">
+                     :disabled=editFormControl.fix_bug_director_disabled :filter-method="pinyinMatch" @focus="resetOptions">
             <el-option
               v-for="item in user_options"
               :key="item.value"
@@ -743,6 +743,7 @@
           this.editForm.submitted_test_director = row.submitted_test_director;
           this.editForm.fix_bug_director_id = row.fix_bug_director_id;
           this.editForm.fix_bug_director = row.fix_bug_director;
+          this.fix_bug_director_label = row.fix_bug_director.split(',');
           this.editForm.self_test_report_url = row.self_test_report_url;
           this.editForm.test_url = row.test_url;
           this.editForm.test_scope = row.test_scope;
@@ -1028,21 +1029,11 @@
       this.editForm.submitted_test_director = this.user_options.find(item => item.value === val).label;
     },
     selectChange2(val) {
+      this.fix_bug_director_label = [];
       for (let i=0;i<=val.length-1;i++) {
         this.user_options.find((item) => {
           if (item.value === val[i]){
             this.fix_bug_director_label.push(item.label)
-          }
-        })
-      }
-      this.editForm.fix_bug_director = this.fix_bug_director_label.join(",");
-    },
-    removeTag2(val){
-      for (let i=0;i<=val.length-1;i++) {
-        this.user_options.find((item) => {
-          if (item.value === val[i]){
-            let index = this.fix_bug_director_label.indexOf(item.label);
-            this.fix_bug_director_label.splice(index, 1)
           }
         })
       }
