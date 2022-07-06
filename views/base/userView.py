@@ -28,7 +28,7 @@ def login():
     user = User.query.filter(User.username == param_username).first()
     # 校驗用戶名密碼
     if user is None or user.password != param_password:
-        return errorCode.UsernameOrPwdIsFailed
+        return errorCode.UsernameOrPwdIsFailed()
     # 校驗用戶狀態
     if user.status == 2:
         return errorCode.UserDisabled()
@@ -121,7 +121,13 @@ def add_user():
     param_phone = data['phone']
     param_email = data['email']
 
-    user1 = User(username=param_username, password='a123456', nickname=param_nickname, email=param_email, phone=param_phone, status='1', role=param_role)
+    pwd = 'a123456'
+    m = hashlib.md5()
+    b = pwd.encode('utf-8')
+    m.update(b)
+    str_md5 = m.hexdigest()
+
+    user1 = User(username=param_username, password=str_md5, nickname=param_nickname, email=param_email, phone=param_phone, status='1', role=param_role)
     db.session.add(user1)
     db.session.commit()
     output = {'code': 1000, 'msg': '保存成功', 'exception': None, 'success': True}

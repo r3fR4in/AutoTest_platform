@@ -1,0 +1,13 @@
+[2022-07-06 09:56:41,034] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-06 09:56:41,051] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-06 10:10:23,885] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 187, in loads
+    self, s, salt, return_header=True
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 143, in loads
+    self.make_signer(salt, self.algorithm).unsign(want_bytes(s)),
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\signer.py", line 165, in unsign
+    raise BadSignature("No %r found in value" % self.sep)
+itsdangerous.exc.BadSignature: No b'.' found in value
+

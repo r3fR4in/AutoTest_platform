@@ -41,9 +41,9 @@ export default {
         //username和password默认为空
         username: '',
         password: '',
-        code: '',
-        randomStr: '',
-        codeimg: ''
+        // code: '',
+        // randomStr: '',
+        // codeimg: ''
       },
       //rules前端验证
       rules: {

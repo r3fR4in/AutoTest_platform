@@ -114,7 +114,7 @@ def smoke_test_finish_message(receive_id, project_name, submitted_test_name, smo
     else:
         smoke_testing_result = '测试不通过'
     for userid in receive_id:
-        Message1 = Message(user_id=userid, title=project_name + ' 冒烟测试结果', content=project_name + ' 提测 ' + submitted_test_name + ' 冒烟测试已完成，' + smoke_testing_result,
+        Message1 = Message(user_id=userid, title=project_name + ' 冒烟测试结果', content=project_name + ' ' + submitted_test_name + ' 冒烟测试已完成，' + smoke_testing_result,
                            create_time=create_time, is_push=0, is_read=0)
         db.session.add(Message1)
         db.session.commit()
@@ -136,7 +136,7 @@ def test_finish_message(receive_id, project_name, submitted_test_name, test_resu
     else:
         test_result = '测试不通过'
     for userid in receive_id:
-        Message1 = Message(user_id=userid, title=project_name + ' 测试结果', content=project_name + ' 提测 ' + submitted_test_name + ' 测试已完成，' + test_result,
+        Message1 = Message(user_id=userid, title=project_name + ' 测试结果', content=project_name + ' ' + submitted_test_name + ' 测试已完成，' + test_result,
                            create_time=create_time, is_push=0, is_read=0)
         db.session.add(Message1)
         db.session.commit()

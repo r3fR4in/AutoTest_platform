@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-loading="loading" element-loading-text="拼命加载中">
     <!-- 面包屑导航 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -88,6 +88,7 @@
       components: {JsonView},
       data() {
         return {
+          loading: true,
           task_id: '',
           listData: [],
           all_count: '',
@@ -126,7 +127,7 @@
                 this.pass_count = res.pass_count;
                 this.fail_count = res.fail_count;
                 this.report_title = res.title;
-                console.log(res.all_count);
+                this.loading = false;
               }
             })
             .catch(err => {

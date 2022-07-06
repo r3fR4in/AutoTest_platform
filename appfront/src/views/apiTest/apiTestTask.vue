@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :loading="submit_loading" element-loading-text="提交中">
     <!-- 面包屑导航 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -88,7 +88,7 @@
       </el-table>
       <div slot="footer" class="dialog-footer" align="center">
           <el-button size="small" @click="closeDialog1">取消</el-button>
-          <el-button size="small" type="primary" :loading="loading" class="title" @click="submit1">确定</el-button>
+          <el-button size="small" type="primary" class="title" @click="submit1">确定</el-button>
         </div>
     </el-dialog>
     <!-- 添加界面2 -->
@@ -103,7 +103,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button size="small" @click="closeDialog2">取消</el-button>
-        <el-button size="small" type="primary" :loading="loading" class="title" @click="submit2('a_formInline')">保存</el-button>
+        <el-button size="small" type="primary" class="title" @click="submit2('a_formInline')">保存</el-button>
       </div>
     </el-dialog>
   </div>
@@ -120,6 +120,7 @@
           nshow: true, //switch开启
           fshow: false, //switch关闭
           loading: false, //是显示加载
+          submit_loading: false,
           addFormVisible1: false, //控制添加页面显示与隐藏
           addFormVisible2: false, //控制添加页面显示与隐藏
           title: '添加',
@@ -327,17 +328,18 @@
         submit2(a_formInline){
           this.$refs[a_formInline].validate(valid => {
             if (valid) {
+              this.submit_loading = true;
               addApiTestTask(this.a_formInline)
                 .then(res => {
                   this.addFormVisible1 = false;
                   this.addFormVisible2 = false;
-                  this.loading = false;
+                  this.submit_loading = false;
                   if (res.success) {
-                    this.getdata(this.formInline);
                     this.$message({
                       type: 'success',
                       message: res.msg
-                    })
+                    });
+                    this.getdata(this.formInline);
                   } else {
                     this.$message({
                       type: 'info',
