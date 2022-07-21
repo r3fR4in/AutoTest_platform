@@ -9,7 +9,7 @@
     <div style="margin: 20px;"></div>
     <div>
       <div style="font-size: 40px;font-family: Avenir,Helvetica,Arial,sans-serif;">{{report_title}}</div>
-      <div style="font-family: Avenir,Helvetica,Arial,sans-serif;">测试结果：总共 {{all_count}}，通过{{pass_count}}，失败{{fail_count}}，通过率= {{parseFloat((pass_count/all_count)*100).toFixed(2)}}</div>
+      <div style="font-family: Avenir,Helvetica,Arial,sans-serif;">测试结果：总共 {{all_count}}，通过{{pass_count}}，失败{{fail_count}}，通过率= {{parseFloat((pass_count/all_count)*100).toFixed(2)}} %</div>
     </div>
     <div style="margin: 20px;"></div>
     <!-- 表格报告 -->

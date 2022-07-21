@@ -305,7 +305,7 @@ def modify_pwd():
 @user.route('/getUserOptions', methods=['GET'])
 @tokenUtil.login_required()
 def get_user_options():
-    users = User.query.filter(User.username != 'admin').all()
+    users = User.query.filter(and_(User.username != 'admin', User.status == 1)).all()
     userList = []
     for user in users:
         user = user.to_json()

@@ -77,7 +77,7 @@ def replace_ev_and_func():
                 if '{{' in str(new_args[i]) and '}}' in str(new_args[i]):
                     new_args[i] = replace_environment_variable(str(new_args[i]), EnvironmentVariable, new_args[1]).replace('\'', '"')  # new_args[1]指e_id
                 if '${' in str(new_args[i]):
-                    new_args[i] = funcUtil.replace_func(new_args[i])
+                    new_args[i] = funcUtil.replace_func(str(new_args[i]))
 
             return func(*tuple(new_args), **kwargs)
 

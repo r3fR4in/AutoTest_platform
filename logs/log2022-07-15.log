@@ -1,0 +1,4 @@
+[2022-07-15 10:00:26,950] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-15 10:00:27,107] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-15 10:00:27,108] [_internal.py|_log] [line:113] INFO    : 172.30.21.53 - - [15/Jul/2022 10:00:27] "[37mGET /static/js/manifest.3523b7013fb29c3cf8ce.js.map HTTP/1.1[0m" 200 -
+[2022-07-15 13:59:49,322] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.

@@ -1,0 +1,4 @@
+[2022-07-07 13:41:09,311] [log.py|__console] [line:43] ERROR   : invalid syntax (<string>, line 1)
+[2022-07-07 13:58:10,248] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-07 14:09:50,636] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-07 14:54:03,283] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.

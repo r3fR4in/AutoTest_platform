@@ -73,19 +73,40 @@
         </el-form-item>
       </el-form>
       <!--列表-->
-      <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" max-height="400"
-                style="width: 100%;" @selection-change="handleSelectionChange" ref="moduleTable">
-        <el-table-column align="center" type="selection" width="60">
-        </el-table-column>
-        <el-table-column prop="id" label="模块id" v-if=false>
-        </el-table-column>
-        <el-table-column prop="projectEnvironment_id" label="项目环境id" v-if=false>
-        </el-table-column>
-        <el-table-column sortable prop="module_name" label="模块名称" width="300">
-        </el-table-column>
-        <el-table-column sortable prop="module_description" label="模块描述">
-        </el-table-column>
-      </el-table>
+      <!--<el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" max-height="400"-->
+                <!--style="width: 100%;" @selection-change="handleSelectionChange" ref="moduleTable">-->
+        <!--<el-table-column align="center" type="selection" width="60">-->
+        <!--</el-table-column>-->
+        <!--<el-table-column prop="id" label="模块id" v-if=false>-->
+        <!--</el-table-column>-->
+        <!--<el-table-column prop="projectEnvironment_id" label="项目环境id" v-if=false>-->
+        <!--</el-table-column>-->
+        <!--<el-table-column sortable prop="module_name" label="模块名称" width="300">-->
+        <!--</el-table-column>-->
+        <!--<el-table-column sortable prop="module_description" label="模块描述">-->
+        <!--</el-table-column>-->
+      <!--</el-table>-->
+      <el-scrollbar style="height: 700px;overflow-wrap:break-word;" wrap-style="overflow-x:auto;">
+        <el-input
+          size="small"
+          placeholder="输入关键字进行过滤"
+          v-model="filterText">
+        </el-input>
+        <div style="margin: 20px;"></div>
+        <el-checkbox v-model="isSelectAll" @change="selectAll">全选/全不选</el-checkbox>
+        <el-tree
+          class="filter-tree"
+          :data="listData"
+          :props="defaultProps"
+          node-key="id"
+          default-expand-all
+          :highlight-current="true"
+          :filter-node-method="filterNode"
+          show-checkbox
+          @check="handleCheckChange"
+          ref="tree">
+        </el-tree>
+      </el-scrollbar>
       <div slot="footer" class="dialog-footer" align="center">
           <el-button size="small" @click="closeDialog1">取消</el-button>
           <el-button size="small" type="primary" class="title" @click="submit1">确定</el-button>
@@ -110,302 +131,355 @@
 </template>
 
 <script>
-    import { apiTestTaskList, apiModuleList, addApiTestTask, deleteApiTestTask } from '../../api/apiTestApi'
-    import { getAllProject, projectModuleList, getAllProjectEnvironment } from '../../api/projectApi'
-    import Pagination from '../../components/Pagination'
+import { apiTestTaskList, apiModuleList, addApiTestTask, deleteApiTestTask } from '../../api/apiTestApi'
+import { getAllProject, projectModuleList, getAllProjectEnvironment } from '../../api/projectApi'
+import { list_to_tree } from '../../utils/util'
+import Pagination from '../../components/Pagination'
 
-    export default {
-      data() {
-        return {
-          nshow: true, //switch开启
-          fshow: false, //switch关闭
-          loading: false, //是显示加载
-          submit_loading: false,
-          addFormVisible1: false, //控制添加页面显示与隐藏
-          addFormVisible2: false, //控制添加页面显示与隐藏
-          title: '添加',
-          addForm: {
-            token: localStorage.getItem('logintoken')
-          },
-          projects: '',
-          formInline: {
-            page: 1,
-            limit: 10,
-            varLable: '',
-            varName: '',
-            projectName:'',
-            title: '',
-            token: localStorage.getItem('logintoken')
-          },
-          a_formInline: {
-            projectName:'',
-            projectEnvironment_id: '',
-            projectEnvironment_name: '',
-            title: '',
-            summary: '',
-            moduleSelection: [], //选择的模块
-            token: localStorage.getItem('logintoken')
-          },
-          // rules表单验证
-          rules: {
-            title: [{ required: true, message: '请输入任务标题', trigger: 'blur' }]
-          },
-          // 分页参数
-          pageparm: {
-            currentPage: 1,
-            pageSize: 10,
-            oldPageSize: 10,
-            total: 10
-          },
-          taskData: [], //任务数据
-          listData: [], //模块数据
-          // 下拉框选项
-          options: '',
-          value: ''
-        }
+export default {
+  data() {
+    return {
+      nshow: true, //switch开启
+      fshow: false, //switch关闭
+      loading: false, //是显示加载
+      submit_loading: false,
+      addFormVisible1: false, //控制添加页面显示与隐藏
+      addFormVisible2: false, //控制添加页面显示与隐藏
+      title: '添加',
+      addForm: {
+        token: localStorage.getItem('logintoken')
       },
-      // 注册组件
-      components: {
-        Pagination
+      projects: '',
+      formInline: {
+        page: 1,
+        limit: 10,
+        varLable: '',
+        varName: '',
+        projectName:'',
+        title: '',
+        token: localStorage.getItem('logintoken')
       },
-      created() {
-        this.getdata(this.formInline);
-        this.loadAllProject();
+      a_formInline: {
+        projectName:'',
+        projectEnvironment_id: '',
+        projectEnvironment_name: '',
+        title: '',
+        summary: '',
+        moduleSelection: [], //选择的模块
+        token: localStorage.getItem('logintoken')
       },
-      methods: {
-        // 获取测试任务列表
-        getdata(parameter) {
-          this.loading = true;
-          this.pageparm.currentPage = this.formInline.page;
-          this.pageparm.pageSize = this.formInline.limit;
-          parameter = {
-            currentPage: this.pageparm.currentPage,
-            pageSize: this.pageparm.pageSize,
-            projectName : this.formInline.projectName,
-            title : this.formInline.title
-          };
-          apiTestTaskList(parameter)
-            .then(res => {
-              this.loading = false;
-              if (res.success === false) {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              } else {
-                this.taskData = res.data;
-                // 分页赋值
-                // this.pageparm.currentPage = this.formInline.page;
-                // this.pageparm.pageSize = this.formInline.limit;
-                this.pageparm.total = res.count;
-              }
-            })
-            .catch(err => {
-              this.loading = false;
-              console.log(err);
-              this.$message.error('菜单加载失败，请稍后再试！')
-            })
-        },
-        // 获取功能模块列表
-        getModuledata(parameter) {
-          this.loading = true;
-          parameter = {
-            projectEnvironment_id : this.a_formInline.projectEnvironment_id
-          };
-          /***
-          * 调用接口，注释上面模拟数据 取消下面注释
-          */
-          projectModuleList(parameter)
-            .then(res => {
-              this.loading = false;
-              if (res.success === false) {
-                this.$message({
-                  type: 'info',
-                  message: res.msg
-                })
-              } else {
-                this.listData = res.data;
-              }
-            })
-            .catch(err => {
-              this.loading = false;
-              console.log(err);
-              this.$message.error('菜单加载失败，请稍后再试！')
-            })
-        },
-        handleSelect1(item) {
-          this.loadAllProjectEnvironment(item);
-        },
-        // 选择项目名称后，获取项目环境名称
-        loadAllProjectEnvironment(item){
-          var params = {
-            name: item.value
-          };
-          getAllProjectEnvironment(params).then(
-            res => {
-              this.options = res;
-            }
-          )
-        },
-        querySearchAsync1(queryString, cb) {
-          var projects = this.projects;
-          var results = queryString ? projects.filter(this.createStateFilter(queryString)) : projects;
-
-          cb(results);
-        },
-        createStateFilter(queryString) {
-          return (state) => {
-            return (state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
-          };
-        },
-        // 获取所有项目信息
-        loadAllProject(){
-          getAllProject().then(
-            res => {
-              this.projects = res;
-            }
-          )
-        },
-        // 分页插件事件
-        callFather(parm) {
-          if(this.pageparm.pageSize !== parm.pageSize){
-            this.formInline.page = 1;
-            this.formInline.limit = parm.pageSize;
-            this.getdata(this.formInline)
-          }else {
-            this.formInline.page = parm.currentPage;
-            this.formInline.limit = parm.pageSize;
-            this.getdata(this.formInline)
-          }
-        },
-        // 搜索事件
-        search() {
-          this.formInline.page = 1;
-          this.getdata(this.formInline)
-        },
-        a_search() {
-          this.getModuledata(this.a_formInline);
-        },
-        // 选择项目环境名称后，获取api模块列表
-        handleChange(val){
-          this.a_formInline.projectEnvironment_id = val;
-          let obj = {};
-          obj = this.options.find((item) => {
-            return item.value === val;
-          });
-          this.a_formInline.projectEnvironment_name = obj.label;
-          this.getModuledata(this.a_formInline);
-        },
-        //显示编辑界面
-        handleAdd: function(index, row) {
-          this.addFormVisible1 = true;
-          this.title = '添加任务';
-        },
-        // 关闭添加弹出框
-        closeDialog1() {
-          this.addFormVisible1 = false;
-          this.$refs.moduleTable.clearSelection();
-        },
-        // 关闭添加弹出框
-        closeDialog2() {
-          this.addFormVisible2 = false;
-        },
-        // 选择模块
-        handleSelectionChange(val) {
-          this.a_formInline.moduleSelection = val;
-        },
-        // 选择模块后提交
-        submit1(){
-          if (this.a_formInline.moduleSelection.length === 0) {
+      // rules表单验证
+      rules: {
+        title: [{ required: true, message: '请输入任务标题', trigger: 'blur' }]
+      },
+      // 分页参数
+      pageparm: {
+        currentPage: 1,
+        pageSize: 10,
+        oldPageSize: 10,
+        total: 10
+      },
+      taskData: [], //任务数据
+      listData: [], //模块数据
+      // 下拉框选项
+      options: '',
+      value: '',
+      defaultProps: {
+        children: 'children',
+        label: 'module_name'
+      },
+      // tree是否全选，复选框默认状态（）
+      isSelectAll: false
+    }
+  },
+  // 注册组件
+  components: {
+    Pagination
+  },
+  created() {
+    this.getdata(this.formInline);
+    this.loadAllProject();
+  },
+  methods: {
+    // 获取测试任务列表
+    getdata(parameter) {
+      this.loading = true;
+      this.pageparm.currentPage = this.formInline.page;
+      this.pageparm.pageSize = this.formInline.limit;
+      parameter = {
+        currentPage: this.pageparm.currentPage,
+        pageSize: this.pageparm.pageSize,
+        projectName : this.formInline.projectName,
+        title : this.formInline.title
+      };
+      apiTestTaskList(parameter)
+        .then(res => {
+          this.loading = false;
+          if (res.success === false) {
             this.$message({
               type: 'info',
-              message: '未选择模块'
+              message: res.msg
             })
           } else {
-            this.addFormVisible2 = true;
+            this.taskData = res.data;
+            // 分页赋值
+            // this.pageparm.currentPage = this.formInline.page;
+            // this.pageparm.pageSize = this.formInline.limit;
+            this.pageparm.total = res.count;
           }
-        },
-        submit2(a_formInline){
-          this.$refs[a_formInline].validate(valid => {
-            if (valid) {
-              this.submit_loading = true;
-              addApiTestTask(this.a_formInline)
-                .then(res => {
-                  this.addFormVisible1 = false;
-                  this.addFormVisible2 = false;
-                  this.submit_loading = false;
-                  if (res.success) {
-                    this.$message({
-                      type: 'success',
-                      message: res.msg
-                    });
-                    this.getdata(this.formInline);
-                  } else {
-                    this.$message({
-                      type: 'info',
-                      message: res.msg
-                    })
-                  }
-                })
-                .catch(err => {
-                  this.addFormVisible1 = false;
-                  this.addFormVisible2 = false;
-                  this.loading = false;
-                  this.$message.error('任务提交失败，请稍后再试！')
-                });
-              console.log(this.a_formInline);
+        })
+        .catch(err => {
+          this.loading = false;
+          console.log(err);
+          this.$message.error('菜单加载失败，请稍后再试！')
+        })
+    },
+    // 获取功能模块列表
+    getModuledata(parameter) {
+      this.loading = true;
+      parameter = {
+        projectEnvironment_id : this.a_formInline.projectEnvironment_id
+      };
+      /***
+      * 调用接口，注释上面模拟数据 取消下面注释
+      */
+      projectModuleList(parameter)
+        .then(res => {
+          this.loading = false;
+          if (res.success === false) {
+            this.$message({
+              type: 'info',
+              message: res.msg
+            })
+          } else {
+            this.originData = res.data;
+            if (this.originData.length > 0) {
+              this.listData = list_to_tree(this.originData);
             } else {
-              return false
+              this.listData = [];
             }
-          })
-        },
-        // 删除api测试任务
-        apiTestTaskDelete(index, row) {
-          this.$confirm('确定要删除吗?', '信息', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-          })
-            .then(() => {
-              let parameter = {
-                id: row.id
-              };
-              deleteApiTestTask(parameter)
-                .then(res => {
-                  if (res.success) {
-                    this.$message({
-                      type: 'success',
-                      message: res.msg
-                    });
-                    this.getdata(this.formInline)
-                  } else {
-                    this.$message({
-                      type: 'info',
-                      message: res.msg
-                    })
-                  }
+          }
+        })
+        .catch(err => {
+          this.loading = false;
+          console.log(err);
+          this.$message.error('菜单加载失败，请稍后再试！')
+        })
+    },
+    handleSelect1(item) {
+      this.loadAllProjectEnvironment(item);
+    },
+    // 选择项目名称后，获取项目环境名称
+    loadAllProjectEnvironment(item){
+      let params = {
+        name: item.value
+      };
+      getAllProjectEnvironment(params).then(
+        res => {
+          this.options = res;
+        }
+      )
+    },
+    querySearchAsync1(queryString, cb) {
+      var projects = this.projects;
+      var results = queryString ? projects.filter(this.createStateFilter(queryString)) : projects;
+
+      cb(results);
+    },
+    createStateFilter(queryString) {
+      return (state) => {
+        return (state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
+      };
+    },
+    // 获取所有项目信息
+    loadAllProject(){
+      getAllProject().then(
+        res => {
+          this.projects = res;
+        }
+      )
+    },
+    // 分页插件事件
+    callFather(parm) {
+      if(this.pageparm.pageSize !== parm.pageSize){
+        this.formInline.page = 1;
+        this.formInline.limit = parm.pageSize;
+        this.getdata(this.formInline)
+      }else {
+        this.formInline.page = parm.currentPage;
+        this.formInline.limit = parm.pageSize;
+        this.getdata(this.formInline)
+      }
+    },
+    // 搜索事件
+    search() {
+      this.formInline.page = 1;
+      this.getdata(this.formInline)
+    },
+    a_search() {
+      this.getModuledata(this.a_formInline);
+    },
+    // 选择项目环境名称后，获取api模块列表
+    handleChange(val){
+      this.a_formInline.projectEnvironment_id = val;
+      let obj = {};
+      obj = this.options.find((item) => {
+        return item.value === val;
+      });
+      this.a_formInline.projectEnvironment_name = obj.label;
+      this.getModuledata(this.a_formInline);
+    },
+    //显示编辑界面
+    handleAdd: function(index, row) {
+      this.addFormVisible1 = true;
+      this.title = '添加任务';
+    },
+    // 关闭添加弹出框
+    closeDialog1() {
+      this.addFormVisible1 = false;
+    },
+    // 关闭添加弹出框
+    closeDialog2() {
+      this.addFormVisible2 = false;
+    },
+    // 选择模块
+    // handleSelectionChange(val) {
+    //   this.a_formInline.moduleSelection = val;
+    // },
+    // 选择模块后提交
+    submit1(){
+      if (this.a_formInline.moduleSelection.length === 0) {
+        this.$message({
+          type: 'info',
+          message: '未选择模块'
+        })
+      } else {
+        this.addFormVisible2 = true;
+      }
+    },
+    submit2(a_formInline){
+      this.$refs[a_formInline].validate(valid => {
+        if (valid) {
+          this.submit_loading = true;
+          addApiTestTask(this.a_formInline)
+            .then(res => {
+              this.addFormVisible1 = false;
+              this.addFormVisible2 = false;
+              this.submit_loading = false;
+              if (res.success) {
+                this.$message({
+                  type: 'success',
+                  message: res.msg
+                });
+                this.getdata(this.formInline);
+              } else {
+                this.$message({
+                  type: 'info',
+                  message: res.msg
                 })
-                .catch(err => {
-                  console.log(err);
-                  this.loading = false;
-                  this.$message.error('任务删除失败，请稍后再试！')
+              }
+            })
+            .catch(err => {
+              this.addFormVisible1 = false;
+              this.addFormVisible2 = false;
+              this.loading = false;
+              this.$message.error('任务提交失败，请稍后再试！')
+            });
+          console.log(this.a_formInline);
+        } else {
+          return false
+        }
+      })
+    },
+    // 删除api测试任务
+    apiTestTaskDelete(index, row) {
+      this.$confirm('确定要删除吗?', '信息', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        .then(() => {
+          let parameter = {
+            id: row.id
+          };
+          deleteApiTestTask(parameter)
+            .then(res => {
+              if (res.success) {
+                this.$message({
+                  type: 'success',
+                  message: res.msg
+                });
+                this.getdata(this.formInline)
+              } else {
+                this.$message({
+                  type: 'info',
+                  message: res.msg
                 })
+              }
             })
-            .catch((err) => {
-              console.log(err)
+            .catch(err => {
+              console.log(err);
+              this.loading = false;
+              this.$message.error('任务删除失败，请稍后再试！')
             })
-        },
-        // 跳转测试报告页面
-        toTestReport(row){
-          this.$router.push({
-            path: '/apiTest/apiTestTask/apiTestReport',
-            query: {
-              task_id: row.id
-            }
-          })
-        },
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    // 跳转测试报告页面
+    toTestReport(row){
+      this.$router.push({
+        path: '/apiTest/apiTestTask/apiTestReport',
+        query: {
+          task_id: row.id
+        }
+      })
+    },
+    filterNode(value, data) {
+      if (!value) return true;
+      return data.module_name.indexOf(value) !== -1;
+    },
+    // handleCheckChange(data, checked, indeterminate) {
+    //   if (checked === true) {
+    //     this.a_formInline.moduleSelection.push(data);
+    //   } else {
+    //     let id = this.a_formInline.moduleSelection.findIndex(item => {
+    //       if (item.id === data.id) {
+    //         return true
+    //       }
+    //     });
+    //     if (id !== -1) {
+    //       this.a_formInline.moduleSelection.splice(id, 1);
+    //     }
+    //   }
+    //
+    //   this.a_formInline.moduleSelection.sort(this.sortBy('id'));
+    //   this.a_formInline.moduleSelection.sort(this.sortBy('parent_id'));
+    //   console.log(this.a_formInline.moduleSelection);
+    // },
+    handleCheckChange(){
+      this.a_formInline.moduleSelection = this.$refs.tree.getCheckedNodes();
+    },
+    sortBy(i){
+      return function (a, b) {
+        return a[i] - b[i]
+      }
+    },
+    // 全选/不全选
+    selectAll() {
+      if (this.isSelectAll) {
+          // 	设置目前勾选的节点，使用此方法必须设置 node-key 属性
+         this.$refs.tree.setCheckedNodes(this.listData);
+         this.a_formInline.moduleSelection = this.$refs.tree.getCheckedNodes();
+      } else {
+          // 全部不选中
+          this.$refs.tree.setCheckedNodes([]);
+        this.a_formInline.moduleSelection = this.$refs.tree.getCheckedNodes();
       }
     }
+  }
+}
 </script>
 
 <style scoped>

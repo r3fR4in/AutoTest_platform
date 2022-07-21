@@ -148,7 +148,7 @@
         <div>randomValue(x):生成长度为x的随机字符串，示例 ${randomValue(10)}</div>
       </el-row>
       <el-row>
-        <div>根据标点符号截取字符串，并返回对应下标的字符串，示例 ${splitStr('1061221,6183655', ',' , 0)}</div>
+        <div>splitStr(string, pun, index):根据标点符号截取字符串，并返回对应下标的字符串，示例 ${splitStr('1061221,6183655', ',' , 0)}</div>
       </el-row>
     </el-dialog>
   </div>

@@ -111,7 +111,7 @@
       <el-dialog :title="title" :visible.sync="editFormVisible" width="30%" @click="closeDialog">
         <el-form label-width="120px" :model="editForm" :rules="rules" ref="editForm">
           <el-form-item label="所属模块" prop="module_id">
-            <el-select size="small" v-model="editForm.module_id" clearable placeholder="请选择" @change="m_handleChange">
+            <el-select size="small" v-model="editForm.module_id" clearable placeholder="请选择" filterable @change="m_handleChange" :filter-method="pinyinMatch">
               <el-option
                 v-for="item in m_options"
                 :key="item.value"
@@ -207,6 +207,7 @@
     , addApi, editApi, addEnvironmentVariable, editEnvironmentVariable, upApi, changeApiStatus} from '../../api/apiTestApi'
   import Pagination from '../../components/Pagination'
   import { list_to_option, list_to_tree } from '../../utils/util'
+  import pinyin from 'pinyin-match'
 
   export default {
    name: "apiManagement",
@@ -293,6 +294,7 @@
       value: '',
       // 编辑页模块下拉框选项
       m_options: '',
+      copy_m_options: '',
       request_method_options: [{
         value: 'GET',
         label: 'GET'
@@ -339,6 +341,7 @@
             this.originData = res.data;
             if (res.data !== []) {
               this.m_options = list_to_option(this.originData);
+              this.copy_m_options = list_to_option(this.originData);
               this.module_list = list_to_tree(this.originData);
             }
           }
@@ -839,6 +842,20 @@
       this.current_module_id = data.id;
       this.getdata(this.formInline);
     },
+    pinyinMatch(val) {
+      if (val) {
+        let result = [];//声明一个空数组保存搜索内容
+        this.copy_m_options.forEach(e => {//循环判断内容和拼音首字母是否匹配
+          let m = pinyin.match(e.label, val);
+          if (m) {
+            result.push(e)
+          }
+        });
+        this.m_options = result; //返回匹配的数组
+      } else {
+        this.m_options = this.copy_m_options //未输入返回开始copy的原数组
+      }
+    }
   }
 }
 </script>

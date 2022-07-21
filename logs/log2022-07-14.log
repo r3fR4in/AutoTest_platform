@@ -1,0 +1,43 @@
+[2022-07-14 09:17:55,445] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-14 09:17:55,570] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-14 16:47:07,682] [log.py|__console] [line:43] ERROR   : unexpected EOF while parsing (<string>, line 0)
+[2022-07-14 16:48:08,209] [log.py|__console] [line:43] ERROR   : 'dict' object has no attribute 'find'
+[2022-07-14 16:48:19,379] [log.py|__console] [line:43] ERROR   : 'dict' object has no attribute 'find'
+[2022-07-14 16:48:48,168] [log.py|__console] [line:43] ERROR   : 'dict' object has no attribute 'find'
+[2022-07-14 16:49:17,950] [log.py|__console] [line:43] ERROR   : 'dict' object has no attribute 'find'
+[2022-07-14 16:49:52,651] [log.py|__console] [line:43] ERROR   : 'dict' object has no attribute 'find'
+[2022-07-14 17:24:06,919] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-07-14 17:24:06,924] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-07-14 17:24:06,927] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-07-14 17:24:06,927] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+
+[2022-07-14 17:24:06,928] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 52, in wrapper
+    user = s.loads(token)
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\itsdangerous\jws.py", line 205, in loads
+    date_signed=self.get_issue_date(header),
+itsdangerous.exc.SignatureExpired: Signature expired
+

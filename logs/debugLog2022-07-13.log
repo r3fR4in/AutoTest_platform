@@ -1,0 +1,273 @@
+[2022-07-13 14:08:23,398] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:08:23,401] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-07-13 14:08:23,403] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-07-13 14:08:23,405] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-07-13 14:08:23,407] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:08:23,409] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:08:23,412] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"vhmS7lA2DF","poTypeStatus":"enable"}
+[2022-07-13 14:08:23,414] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:08:23,554] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:08:23,556] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:08:29 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:08:23,558] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:08:23,561] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100129', 'message': 'vobb po type只能存在一个启用'}
+[2022-07-13 14:08:23,563] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:08:23,565] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:08:23,566] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:08:23,569] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 14:08:23,648] [log.py|__console] [line:37] INFO    : 已更新环境变量new_poTypeId
+[2022-07-13 14:08:23,651] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:08:23,653] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:08:23,655] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 14:08:23,657] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 14:08:23,659] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:08:40,238] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:08:40,240] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-07-13 14:08:40,242] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/poType
+[2022-07-13 14:08:40,243] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-07-13 14:08:40,246] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:08:40,248] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:08:40,249] [log.py|__console] [line:37] INFO    : 请求体:{"poTypeId":0,"poType":"YH56oziloY","poTypeStatus":"enable"}
+[2022-07-13 14:08:40,251] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:08:40,323] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:08:40,325] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:08:46 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:08:40,326] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:08:40,329] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 163, 'code': '10000000', 'message': None}
+[2022-07-13 14:08:40,330] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:08:40,332] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:08:40,334] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:08:40,336] [log.py|__console] [line:37] INFO    : 成功获取值163
+[2022-07-13 14:08:41,438] [log.py|__console] [line:37] INFO    : 已更新环境变量new_poTypeId
+[2022-07-13 14:08:41,440] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:08:41,442] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:08:41,444] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 14:08:41,446] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 14:08:41,448] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:08:49,144] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:08:49,146] [log.py|__console] [line:37] INFO    : 标题:正常保存
+[2022-07-13 14:08:49,147] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/planData
+[2022-07-13 14:08:49,149] [log.py|__console] [line:37] INFO    : 请求方法:POST
+[2022-07-13 14:08:49,151] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:08:49,152] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:08:49,154] [log.py|__console] [line:37] INFO    : 请求体:{"planDataId":null,"poTypeId":"163","lineType":"olt","planCode":"21725074","planStatus":"enable","speedProfileName":"256K","ename":"123","trafficSpeedUp":"11","trafficSpeedDown":"22","poOfferId":["16674737"],"remark":"123"}
+[2022-07-13 14:08:49,156] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:08:49,334] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:08:49,337] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:08:55 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:08:49,338] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:08:49,341] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 69, 'code': '10000000', 'message': None}
+[2022-07-13 14:08:49,343] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:08:49,344] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:08:49,346] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:08:49,348] [log.py|__console] [line:37] INFO    : 成功获取值69
+[2022-07-13 14:08:49,524] [log.py|__console] [line:37] INFO    : 已更新环境变量new_VOBBPlanDataId
+[2022-07-13 14:08:49,526] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 14:08:49,527] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:19:00,203] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:19:00,205] [log.py|__console] [line:37] INFO    : 标题:正常查询
+[2022-07-13 14:19:00,207] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/soType/page
+[2022-07-13 14:19:00,208] [log.py|__console] [line:37] INFO    : 请求方法:GET
+[2022-07-13 14:19:00,210] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:19:00,212] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:19:00,213] [log.py|__console] [line:37] INFO    : 请求体:{"pageNum":1,"pageSize":10,"soTypeName":"","soTypeStatus":"","soOfferId":""}
+[2022-07-13 14:19:00,215] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:19:00,312] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:19:00,315] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:19:06 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:19:00,317] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:19:00,319] [log.py|__console] [line:37] INFO    : 响应内容:{'data': {'total': 6, 'list': [{'vobbSoTypeId': 8, 'soTypeName': 'ChXW8VWrWI', 'includeParam': True, 'soTypeStatus': 'enable', 'soOfferId': '1792257,3112317,5590880'}, {'vobbSoTypeId': 6, 'soTypeName': 'test4', 'includeParam': True, 'soTypeStatus': 'enable', 'soOfferId': '12345'}, {'vobbSoTypeId': 5, 'soTypeName': 'ace_test', 'includeParam': True, 'soTypeStatus': 'enable', 'soOfferId': '123456789'}, {'vobbSoTypeId': 3, 'soTypeName': 'test3', 'includeParam': False, 'soTypeStatus': 'enable', 'soOfferId': '123'}, {'vobbSoTypeId': 2, 'soTypeName': 'test2', 'includeParam': True, 'soTypeStatus': 'enable', 'soOfferId': '2333'}, {'vobbSoTypeId': 1, 'soTypeName': 'test1', 'includeParam': True, 'soTypeStatus': 'enable', 'soOfferId': '1111,2222'}], 'pageNum': 1, 'pageSize': 10, 'size': 6, 'startRow': 1, 'endRow': 10, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1, 'firstPage': True, 'lastPage': True}, 'code': '10000000', 'message': None}
+[2022-07-13 14:19:00,320] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:19:00,322] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:19:00,324] [log.py|__console] [line:37] INFO    : 获取data.list[0].vobbSoTypeId
+[2022-07-13 14:19:00,326] [log.py|__console] [line:37] INFO    : 成功获取值8
+[2022-07-13 14:19:00,346] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeId
+[2022-07-13 14:19:00,347] [log.py|__console] [line:37] INFO    : 获取data.list[0].soTypeName
+[2022-07-13 14:19:00,349] [log.py|__console] [line:37] INFO    : 成功获取值ChXW8VWrWI
+[2022-07-13 14:19:00,369] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeName
+[2022-07-13 14:19:00,371] [log.py|__console] [line:37] INFO    : 获取data.list[0].soTypeStatus
+[2022-07-13 14:19:00,374] [log.py|__console] [line:37] INFO    : 成功获取值enable
+[2022-07-13 14:19:00,394] [log.py|__console] [line:37] INFO    : 已更新环境变量soTypeStatus
+[2022-07-13 14:19:00,396] [log.py|__console] [line:37] INFO    : 获取data.list[0].soOfferId
+[2022-07-13 14:19:00,398] [log.py|__console] [line:37] INFO    : 成功获取值1792257,3112317,5590880
+[2022-07-13 14:19:00,418] [log.py|__console] [line:37] INFO    : 已更新环境变量soOfferId
+[2022-07-13 14:19:00,420] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:19:00,422] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:19:00,424] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 14:19:00,425] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:19:00,427] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:19:00,429] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 14:19:00,430] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 14:19:00,432] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:23:01,920] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:23:01,921] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:New)
+[2022-07-13 14:23:01,923] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 14:23:01,924] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 14:23:01,926] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:23:01,928] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:23:01,930] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_new","action":"new","currentService":"na","oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":null,"flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":[],"currentPoTypeId":null,"currentSoTypeIds":[],"newPoTypeId":"163","newSoTypeIds":["8"],"vobbFlowId":null}]}
+[2022-07-13 14:23:01,931] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:23:02,034] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:23:02,036] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:23:08 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:23:02,038] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:23:02,040] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 113, 'code': '10000000', 'message': None}
+[2022-07-13 14:23:02,042] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:23:02,043] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:23:02,045] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:23:02,047] [log.py|__console] [line:37] INFO    : 成功获取值113
+[2022-07-13 14:23:02,130] [log.py|__console] [line:37] INFO    : 已更新环境变量new_New_flowId
+[2022-07-13 14:23:02,132] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:23:02,133] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:23:02,135] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 14:23:02,136] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 14:23:02,138] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:25:12,291] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:25:12,293] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change Plan)
+[2022-07-13 14:25:12,295] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 14:25:12,296] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 14:25:12,298] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:25:12,300] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:25:12,302] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_plan","action":"changePlan","currentService":"vobb","oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":"163","ceaseSoTypeIds":["8"],"currentPoTypeId":null,"currentSoTypeIds":["8"],"newPoTypeId":"163","newSoTypeId":["8"],"vobbFlowId":null}]}
+[2022-07-13 14:25:12,305] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:25:12,470] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:25:12,472] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:25:18 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:25:12,474] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:25:12,477] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000000', 'message': '系统错误'}
+[2022-07-13 14:25:12,478] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:25:12,480] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:25:12,482] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:25:12,484] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 14:25:12,504] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangePlan_flowId
+[2022-07-13 14:25:12,506] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:25:12,508] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:25:12,509] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 14:25:12,511] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 14:25:12,512] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:44:56,460] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:44:56,461] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change Line)
+[2022-07-13 14:44:56,464] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 14:44:56,464] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 14:44:56,466] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:44:56,468] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:44:56,469] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_line","action":"changeLine","currentService":null,"oldLineService":"vobb","oldService":"vobb","newLineService":"na","newService":"na","flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":["8"],"currentPoTypeId":"163","currentSoTypeIds":["8"],"newPoTypeId":null,"newSoTypeIds":["8"],"vobbFlowId":null}]}
+[2022-07-13 14:44:56,472] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:44:56,573] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:44:56,576] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:45:02 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:44:56,577] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:44:56,580] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000000', 'message': '系统错误'}
+[2022-07-13 14:44:56,582] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:44:56,582] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:44:56,585] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:44:56,587] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 14:44:56,660] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangeLine_flowId
+[2022-07-13 14:44:56,661] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:44:56,664] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:44:56,666] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 14:44:56,667] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 14:44:56,668] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:46:35,685] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:46:35,686] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change Plan And Line)
+[2022-07-13 14:46:35,688] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 14:46:35,689] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 14:46:35,691] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:46:35,693] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:46:35,694] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_plan_and_line","action":"changePlanAndLine","currentService":null,"oldLineService":"vobb","oldService":"vobb","newLineService":"na","newService":"na","flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":["8"],"currentPoTypeId":"163","currentSoTypeIds":["8"],"newPoTypeId":null,"newSoTypeIds":["8"],"vobbFlowId":null}]}
+[2022-07-13 14:46:35,696] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:46:35,820] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:46:35,825] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:46:41 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:46:35,828] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:46:35,831] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000000', 'message': '系统错误'}
+[2022-07-13 14:46:35,833] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:46:35,836] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:46:35,838] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:46:35,841] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 14:46:35,860] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangePlanAndLine_flowId
+[2022-07-13 14:46:35,862] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:46:35,863] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:46:35,865] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 14:46:35,867] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 14:46:35,868] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 14:48:30,061] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 14:48:30,062] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Cease)
+[2022-07-13 14:48:30,064] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 14:48:30,067] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 14:48:30,068] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 14:48:30,070] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 14:48:30,072] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_cease","action":"cease","currentService":"vobb","oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":[],"currentPoTypeId":"163","currentSoTypeIds":[],"newPoTypeId":null,"newSoTypeIds":[],"vobbFlowId":null}]}
+[2022-07-13 14:48:30,074] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 14:48:30,174] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 14:48:30,177] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 06:48:36 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 14:48:30,179] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 14:48:30,181] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 119, 'code': '10000000', 'message': None}
+[2022-07-13 14:48:30,184] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 14:48:30,186] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 14:48:30,188] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 14:48:30,190] [log.py|__console] [line:37] INFO    : 成功获取值119
+[2022-07-13 14:48:30,357] [log.py|__console] [line:37] INFO    : 已更新环境变量new_Cease_flowId
+[2022-07-13 14:48:30,362] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 14:48:30,366] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 14:48:30,370] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 14:48:30,373] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 14:48:30,376] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 15:19:33,038] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 15:19:33,039] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change So)
+[2022-07-13 15:19:33,041] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 15:19:33,043] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 15:19:33,044] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 15:19:33,046] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 15:19:33,048] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_so","action":"changeSo","currentService":null,"oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":["8"],"currentPoTypeId":"163","currentSoTypeIds":["8"],"newPoTypeId":null,"newSoTypeIds":["8"],"vobbFlowId":null}]}
+[2022-07-13 15:19:33,049] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 15:19:33,459] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 15:19:33,461] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 07:19:39 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 15:19:33,463] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 15:19:33,465] [log.py|__console] [line:37] INFO    : 响应内容:{'data': 120, 'code': '10000000', 'message': None}
+[2022-07-13 15:19:33,466] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 15:19:33,468] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 15:19:33,470] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 15:19:33,472] [log.py|__console] [line:37] INFO    : 成功获取值120
+[2022-07-13 15:19:33,559] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangeSo_flowId
+[2022-07-13 15:19:33,561] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 15:19:33,563] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 15:19:33,564] [log.py|__console] [line:37] INFO    : 断言结果:通过
+[2022-07-13 15:19:33,566] [log.py|__console] [line:37] INFO    : 最终测试结果:通过
+[2022-07-13 15:19:33,567] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 15:24:19,334] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 15:24:19,335] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change PhoneNumber)
+[2022-07-13 15:24:19,337] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 15:24:19,339] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 15:24:19,340] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 15:24:19,342] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 15:24:19,344] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_phonenumber","action":"changePhoneNumber","currentService":"vobb","oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":[],"currentPoTypeId":null,"currentSoTypeIds":[],"newPoTypeId":"163","newSoTypeIds":["8"],"vobbFlowId":null}]}
+[2022-07-13 15:24:19,345] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 15:24:19,455] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 15:24:19,457] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 07:24:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 15:24:19,459] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 15:24:19,461] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '01100124', 'message': 'po type不能为空'}
+[2022-07-13 15:24:19,462] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 15:24:19,464] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 15:24:19,466] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 15:24:19,468] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 15:24:19,487] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangePhoneNumber_flowId
+[2022-07-13 15:24:19,489] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 15:24:19,491] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 15:24:19,493] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 15:24:19,494] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 15:24:19,496] [log.py|__console] [line:37] INFO    : ==============================================end==============================================
+[2022-07-13 15:25:55,032] [log.py|__console] [line:37] INFO    : ==============================================start==============================================
+[2022-07-13 15:25:55,034] [log.py|__console] [line:37] INFO    : 标题:正常新增(Action:Change PhoneNumber)
+[2022-07-13 15:25:55,036] [log.py|__console] [line:37] INFO    : url:http://172.30.22.179:2230/spg/config/vobb/flow
+[2022-07-13 15:25:55,038] [log.py|__console] [line:37] INFO    : 请求方法:post
+[2022-07-13 15:25:55,040] [log.py|__console] [line:37] INFO    : 请求头:{"Content-Type": "application/json;charset=UTF-8", "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzcGc6dmluY2VudDoxNjU3NjgxNTcyODE4In0.lGE9PwZkDsLnydYEeaac76zbik0d1VsttmTZWtQMkTztStXTwOoiqDhMzKarABNI4xCCZVNwAeJUmjYBGkQxow"}
+[2022-07-13 15:25:55,041] [log.py|__console] [line:37] INFO    : 请求头:
+[2022-07-13 15:25:55,043] [log.py|__console] [line:37] INFO    : 请求体:{"flowName":"test_flow_change_phonenumber","action":"changePhoneNumber","currentService":"vobb","oldLineService":null,"oldService":null,"newLineService":null,"newService":null,"flowStatus":"enable","remark":"test","flowSteps":[],"planProfiles":[],"vobbFlowId":null,"vobbFlowSteps":[{"cmdLogicId":"179","stepType":"olt","vobbFlowId":null,"sequence":0},{"cmdLogicId":"481","stepType":"ncefan","vobbFlowId":null,"sequence":0},{"cmdLogicId":"","stepType":"socommand","vobbFlowId":null,"sequence":0},{"cmdLogicId":2,"stepType":"soap","vobbFlowId":null,"sequence":0}],"poTypes":[{"ceasePoTypeId":null,"ceaseSoTypeIds":[],"currentPoTypeId":"163","currentSoTypeIds":[],"newPoTypeId":null,"newSoTypeIds":[],"vobbFlowId":null}]}
+[2022-07-13 15:25:55,045] [log.py|__console] [line:37] INFO    : 请求体:
+[2022-07-13 15:25:55,264] [log.py|__console] [line:37] INFO    : 响应码:200
+[2022-07-13 15:25:55,266] [log.py|__console] [line:37] INFO    : 响应头:{'Server': 'nginx', 'Date': 'Wed, 13 Jul 2022 07:26:01 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Content-Type-Options': 'nosniff, nosniff', 'X-XSS-Protection': '1; mode=block, 1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Security-Policy': "default-src 'self' object-src 'none' 'unsafe-inline' 'unsafe-eval' blob: data: ;", 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Frame-Options': 'DENY', 'Content-Encoding': 'gzip'}
+[2022-07-13 15:25:55,267] [log.py|__console] [line:37] INFO    : 响应头
+[2022-07-13 15:25:55,270] [log.py|__console] [line:37] INFO    : 响应内容:{'data': None, 'code': '00000000', 'message': '系统错误'}
+[2022-07-13 15:25:55,271] [log.py|__console] [line:37] INFO    : 响应内容
+[2022-07-13 15:25:55,273] [log.py|__console] [line:37] INFO    : 开始后置处理
+[2022-07-13 15:25:55,274] [log.py|__console] [line:37] INFO    : 获取data
+[2022-07-13 15:25:55,277] [log.py|__console] [line:37] INFO    : 成功获取值None
+[2022-07-13 15:25:55,295] [log.py|__console] [line:37] INFO    : 已更新环境变量new_ChangePhoneNumber_flowId
+[2022-07-13 15:25:55,297] [log.py|__console] [line:37] INFO    : 断言模式:in
+[2022-07-13 15:25:55,299] [log.py|__console] [line:37] INFO    : 断言内容:10000000
+[2022-07-13 15:25:55,301] [log.py|__console] [line:43] ERROR   : 断言结果:失败
+[2022-07-13 15:25:55,302] [log.py|__console] [line:43] ERROR   : 最终测试结果:失败
+[2022-07-13 15:25:55,304] [log.py|__console] [line:37] INFO    : ==============================================end==============================================

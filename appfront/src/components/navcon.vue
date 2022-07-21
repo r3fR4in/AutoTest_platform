@@ -68,10 +68,12 @@ export default {
     this.openDrawer(false);
     this.pushMessage();
     setInterval(() => {
-      setTimeout(() => {
-        this.pushMessage();
-      }, 0);
-    }, 5*60000);
+      if (Boolean(localStorage.getItem("userInfo"))){
+        setTimeout(() => {
+          this.pushMessage();
+        }, 0);
+      }
+    }, 5*60000); //五分钟
   },
   methods: {
     // 跳转修改密码页面
