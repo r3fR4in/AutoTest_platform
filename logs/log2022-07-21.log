@@ -1,0 +1,89 @@
+[2022-07-21 14:18:58,044] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-07-21 14:19:04,830] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 178, in edit_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-07-21 14:19:11,179] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 178, in edit_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-07-21 14:19:35,447] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 181, in edit_apiTestcase
+    param_id = data['id']
+KeyError: 'id'
+
+[2022-07-21 14:19:43,387] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 181, in edit_apiTestcase
+    param_id = data['id']
+KeyError: 'id'
+
+[2022-07-21 15:04:17,493] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-07-21 15:07:33,082] [log.py|__console] [line:43] ERROR   : 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-07-21 15:07:33,601] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+
+[2022-07-21 15:13:14,834] [log.py|__console] [line:43] ERROR   : Traceback (most recent call last):
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PycharmProjects\AutoTest_platform\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PycharmProjects\AutoTest_platform\utils\tokenUtil.py", line 64, in wrapper
+    return func(*args, **kw)
+  File "D:\PycharmProjects\AutoTest_platform\views\apiTest\apiTestcaseView.py", line 147, in add_apiTestcase
+    param_encrypt_type = data['encrypt_value']
+KeyError: 'encrypt_value'
+

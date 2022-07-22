@@ -306,6 +306,9 @@ export default {
       param['request_body'] = JSON.stringify(param['request_body']);
       param['assert_content'] = JSON.stringify(param['assert_content']);
       param['post_processor_content'] = JSON.stringify(param['post_processor_content']);
+      if (param['encrypt_value'] === undefined) {
+        param['encrypt_value'] = 1;
+      }
       if (this.apiData.id === ''){
         delete param['id'];
         addApiTestcase(param)
